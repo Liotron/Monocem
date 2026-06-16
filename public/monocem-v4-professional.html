@@ -322,7 +322,7 @@ p{line-height:1.7;color:#6f6a61}
 <header id="header" class="solid">
   <a class="logo" onclick="showPage('home')" style="cursor:pointer">MONOCEM</a>
   <nav class="nav-desktop">
-    <a onclick="showPage('systems')">Systems</a>
+    <a onclick="showPage('applications')">Applications</a>
     <a onclick="showPage('projects')">Projects</a>
     <a onclick="showPage('products')">Products</a>
     <a onclick="showPage('colours')">Colours</a>
@@ -340,11 +340,11 @@ p{line-height:1.7;color:#6f6a61}
   <div id="menu-drawer">
     <button class="menu-close" onclick="closeMenu()">&#x2715;</button>
     <nav class="menu-nav">
-      <span class="menu-sub">Systems</span>
+      <a onclick="showPage('applications')">Applications</a>
+      <span class="menu-sub" style="margin-top:0.25rem">By Surface</span>
       <a onclick="showPage('floors')">Floors</a>
       <a onclick="showPage('walls')">Walls</a>
       <a onclick="showPage('bathrooms')">Bathrooms</a>
-      <a onclick="showPage('applications')">All Applications</a>
       <span class="menu-sub" style="margin-top:0.75rem">Explore</span>
       <a onclick="showPage('projects')">Projects</a>
       <a onclick="showPage('products')">Products</a>
@@ -376,74 +376,33 @@ p{line-height:1.7;color:#6f6a61}
       <p>Seamless, durable, and endlessly adaptable. MONOCEM microcement transforms floors, walls, and bathrooms into architectural statements.</p>
       <div class="hero-btns">
         <a class="btn btn-gold" onclick="showPage('contact')">Get a Free Quote</a>
-        <a class="btn btn-outline-light" onclick="showPage('systems')">Our Systems</a>
+        <a class="btn btn-outline-light" onclick="showPage('applications')">Our Applications</a>
       </div>
     </div>
     <div class="hero-scroll"><span>Scroll</span></div>
   </section>
 
-  <!-- Systems overview -->
+  <!-- Applications teaser -->
   <section class="section" style="background:var(--bg)">
     <div class="section-inner">
-      <div class="fade-up"><p class="label">What We Do</p></div>
+      <div class="fade-up"><p class="label">Applications</p></div>
       <div class="fade-up" style="transition-delay:0.1s">
-        <h2 style="margin:1rem 0 0.5rem;color:var(--charcoal);max-width:600px">Microcement for Every<br><em style="color:var(--muted);font-style:italic">Surface &amp; Space</em></h2>
+        <h2 style="margin:1rem 0 1rem;color:var(--charcoal);max-width:640px">Microcement For Every<br><em style="color:var(--muted);font-style:italic">Surface &amp; Space</em></h2>
       </div>
-      <div class="systems-grid">
-        <div class="fade-up system-card" style="transition-delay:0.05s" onclick="showPage('floors')">
-          <div class="system-card-bg bg-floor"></div>
-          <div class="system-card-overlay"></div>
-          <div class="system-card-arrow">&#x2192;</div>
-          <div class="system-card-content">
-            <h3>Floors</h3>
-            <p>Seamless, polished, durable</p>
+      <div class="fade-up" style="transition-delay:0.15s">
+        <p style="max-width:540px;margin-bottom:2.5rem">From polished floors and waterproof bathrooms to seamless kitchen worktops and dramatic feature walls — MONOCEM microcement is engineered for every surface in every space.</p>
+      </div>
+      <div class="fade-up" style="transition-delay:0.2s">
+        <div style="aspect-ratio:16/7;width:100%;background:linear-gradient(160deg,#3d3830 0%,#272320 40%,#b8a890 100%);margin-bottom:2.5rem;position:relative;overflow:hidden">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#c4b89a 0%,#9a8a72 40%,#3d3830 100%);opacity:0.85"></div>
+          <div style="position:absolute;bottom:2rem;left:2rem">
+            <p style="font-family:'Jost',sans-serif;font-size:0.65rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:0.4rem">Floors · Walls · Bathrooms · Kitchens · Worktops · Stairs</p>
+            <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,4vw,2.2rem);font-weight:300;color:#fff;line-height:1.2;margin:0">One material.<br><em style="font-style:italic;color:rgba(255,255,255,0.6)">Limitless application.</em></p>
           </div>
         </div>
-        <div class="fade-up system-card" style="transition-delay:0.1s" onclick="showPage('walls')">
-          <div class="system-card-bg bg-wall"></div>
-          <div class="system-card-overlay"></div>
-          <div class="system-card-arrow">&#x2192;</div>
-          <div class="system-card-content">
-            <h3>Walls</h3>
-            <p>Texture without grout lines</p>
-          </div>
-        </div>
-        <div class="fade-up system-card" style="transition-delay:0.15s" onclick="showPage('bathrooms')">
-          <div class="system-card-bg bg-bath"></div>
-          <div class="system-card-overlay"></div>
-          <div class="system-card-arrow">&#x2192;</div>
-          <div class="system-card-content">
-            <h3>Bathrooms</h3>
-            <p>100% waterproof elegance</p>
-          </div>
-        </div>
-        <div class="fade-up system-card" style="transition-delay:0.2s" onclick="showPage('applications')">
-          <div class="system-card-bg bg-kitchen"></div>
-          <div class="system-card-overlay"></div>
-          <div class="system-card-arrow">&#x2192;</div>
-          <div class="system-card-content">
-            <h3>Kitchens</h3>
-            <p>Heat and stain resistant</p>
-          </div>
-        </div>
-        <div class="fade-up system-card" style="transition-delay:0.25s" onclick="showPage('applications')">
-          <div class="system-card-bg bg-worktop"></div>
-          <div class="system-card-overlay"></div>
-          <div class="system-card-arrow">&#x2192;</div>
-          <div class="system-card-content">
-            <h3>Worktops</h3>
-            <p>Hygienic continuous surface</p>
-          </div>
-        </div>
-        <div class="fade-up system-card" style="transition-delay:0.3s" onclick="showPage('applications')">
-          <div class="system-card-bg bg-stair"></div>
-          <div class="system-card-overlay"></div>
-          <div class="system-card-arrow">&#x2192;</div>
-          <div class="system-card-content">
-            <h3>Stairs</h3>
-            <p>Bold architectural flow</p>
-          </div>
-        </div>
+      </div>
+      <div class="fade-up" style="transition-delay:0.25s">
+        <a class="btn-ghost" onclick="showPage('applications')">Explore Applications <span>&#x2192;</span></a>
       </div>
     </div>
   </section>
@@ -816,12 +775,51 @@ p{line-height:1.7;color:#6f6a61}
 <div id="page-applications" class="page">
   <div class="inner-hero">
     <div class="section-inner">
-      <p class="label label-dark">All Applications</p>
-      <h1>Every Surface, <em>One System</em></h1>
-      <p>Microcement works on virtually any surface. Here's where MONOCEM can be applied.</p>
+      <p class="label label-dark">Applications</p>
+      <h1>Microcement For Every<br><em>Surface &amp; Space</em></h1>
+      <p>Six specialist systems. Every application. One consistent standard of craftsmanship.</p>
     </div>
   </div>
   <section class="section">
+    <div class="section-inner">
+      <div class="systems-grid">
+        <div class="fade-up system-card" onclick="showPage('floors')">
+          <div class="system-card-bg bg-floor"></div>
+          <div class="system-card-overlay"></div>
+          <div class="system-card-arrow">&#x2192;</div>
+          <div class="system-card-content"><h3>Floors</h3><p>Seamless, polished, durable</p></div>
+        </div>
+        <div class="fade-up system-card" style="transition-delay:0.05s" onclick="showPage('walls')">
+          <div class="system-card-bg bg-wall"></div>
+          <div class="system-card-overlay"></div>
+          <div class="system-card-arrow">&#x2192;</div>
+          <div class="system-card-content"><h3>Walls</h3><p>Texture without grout lines</p></div>
+        </div>
+        <div class="fade-up system-card" style="transition-delay:0.1s" onclick="showPage('bathrooms')">
+          <div class="system-card-bg bg-bath"></div>
+          <div class="system-card-overlay"></div>
+          <div class="system-card-arrow">&#x2192;</div>
+          <div class="system-card-content"><h3>Bathrooms</h3><p>100% waterproof elegance</p></div>
+        </div>
+        <div class="fade-up system-card" style="transition-delay:0.15s">
+          <div class="system-card-bg bg-kitchen"></div>
+          <div class="system-card-overlay"></div>
+          <div class="system-card-content"><h3>Kitchens</h3><p>Heat and stain resistant</p></div>
+        </div>
+        <div class="fade-up system-card" style="transition-delay:0.2s">
+          <div class="system-card-bg bg-worktop"></div>
+          <div class="system-card-overlay"></div>
+          <div class="system-card-content"><h3>Worktops</h3><p>Hygienic continuous surface</p></div>
+        </div>
+        <div class="fade-up system-card" style="transition-delay:0.25s">
+          <div class="system-card-bg bg-stair"></div>
+          <div class="system-card-overlay"></div>
+          <div class="system-card-content"><h3>Stairs</h3><p>Bold architectural flow</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section" style="background:#f0ece4;padding-top:0">
     <div class="section-inner">
       <div style="display:grid;grid-template-columns:1fr;gap:2px">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px">
