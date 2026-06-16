@@ -377,8 +377,20 @@ p{line-height:1.7;color:#6f6a61}
 .lux-single-project:hover .lux-single-project-bg{transform:scale(1.04)}
 .lux-single-project-info{position:absolute;bottom:0;left:0;right:0;padding:2rem;background:linear-gradient(to top,rgba(0,0,0,0.75) 0%,transparent 100%)}
 
-.lux-palette-band{height:72px;width:100%;margin:2.5rem 0 1.5rem;display:block}
-@media(min-width:768px){.lux-palette-band{height:104px}}
+/* Colour section — luxury redesign */
+.lux-colour-section{background:#f0ece4;padding:3.5rem 0}
+.lux-colour-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:1fr;gap:2.5rem;align-items:center}
+@media(min-width:768px){.lux-colour-inner{grid-template-columns:1.72fr 1fr;gap:4.5rem}}
+.lux-colour-mosaic{display:grid;grid-template-columns:repeat(5,1fr);gap:3px;height:88px;overflow:hidden;border-radius:1px;background:#cbc6be}
+@media(min-width:768px){.lux-colour-mosaic{grid-template-columns:2fr 1fr 1fr;grid-template-rows:1fr 1fr;height:400px}}
+.lux-swatch{display:block}
+.lux-swatch-span{background:#e8e4de}
+@media(min-width:768px){.lux-swatch-span{grid-row:1/span 2}}
+.lux-colour-content .label{display:block;margin-bottom:1.25rem}
+.lux-colour-content h2{margin:0 0 1.25rem;color:var(--charcoal)}
+.lux-colour-content>p{font-size:1rem;line-height:1.75;margin:0 0 2.25rem}
+.btn-palette{display:inline-flex;align-items:center;gap:0.55rem;font-family:'Jost',sans-serif;font-size:0.72rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--charcoal);border:none;border-bottom:1px solid var(--gold);padding:0 0 0.25rem;background:none;cursor:pointer;transition:color 0.25s ease,gap 0.3s ease}
+.btn-palette:hover{color:var(--gold);gap:1rem}
 
 .lux-testimonial-section{padding:6rem 2rem;background:var(--dark);text-align:center}
 .lux-testimonial-section .stars{font-size:0.85rem;letter-spacing:4px;color:var(--gold);margin-bottom:2.5rem;display:block}
@@ -545,17 +557,23 @@ p{line-height:1.7;color:#6f6a61}
     </div>
   </div>
 
-  <!-- 6. Colours (palette gradient) -->
-  <div style="background:#f0ece4;padding:5rem 2rem">
-    <div class="section-inner">
-      <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:1rem">
-        <div class="fade-up"><p class="label">Colour Palette</p></div>
-        <div class="fade-up" style="transition-delay:0.08s"><a class="btn-ghost" onclick="showPage('colours')">View Full Palette <span>&#x2192;</span></a></div>
+  <!-- 6. Colours — luxury material presentation -->
+  <div class="lux-colour-section">
+    <div class="lux-colour-inner">
+      <!-- Colour mosaic: mobile = 5-swatch filmstrip · desktop = editorial 5-tile asymmetric grid -->
+      <div class="fade-up lux-colour-mosaic">
+        <div class="lux-swatch lux-swatch-span"></div>
+        <div class="lux-swatch" style="background:#c8bfb0"></div>
+        <div class="lux-swatch" style="background:#8a8680"></div>
+        <div class="lux-swatch" style="background:#6e5e4a"></div>
+        <div class="lux-swatch" style="background:#1a1a18"></div>
       </div>
-      <div class="fade-up" style="transition-delay:0.1s">
-        <div class="lux-palette-band" style="background:linear-gradient(to right,#eeece8 0%,#d0ccc4 16%,#c4b49a 32%,#8a8680 48%,#6e5e4a 64%,#504438 80%,#1a1a18 100%)"></div>
-        <h2 style="color:var(--charcoal);margin:0 0 0.75rem">100+ Curated <em style="font-style:italic;color:var(--muted)">Colours</em></h2>
-        <p style="max-width:480px;margin-bottom:0">From soft mineral whites to deep anthracite. Every shade formulated with natural pigments for depth that paint can never match.</p>
+      <!-- Text content -->
+      <div class="fade-up lux-colour-content" style="transition-delay:0.15s">
+        <p class="label">Colour Palette</p>
+        <h2>100+ Curated <em>Colours</em></h2>
+        <p>From soft mineral whites to deep anthracite. Every shade formulated with natural pigments for depth and richness that paint can never replicate.</p>
+        <button class="btn-palette" onclick="showPage('colours')">View Full Palette &#x2192;</button>
       </div>
     </div>
   </div>
