@@ -377,18 +377,36 @@ p{line-height:1.7;color:#6f6a61}
 .lux-single-project:hover .lux-single-project-bg{transform:scale(1.04)}
 .lux-single-project-info{position:absolute;bottom:0;left:0;right:0;padding:2rem;background:linear-gradient(to top,rgba(0,0,0,0.75) 0%,transparent 100%)}
 
-/* Colour section — luxury redesign */
-.lux-colour-section{background:#f0ece4;padding:3.5rem 0}
-.lux-colour-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:1fr;gap:2.5rem;align-items:center}
-@media(min-width:768px){.lux-colour-inner{grid-template-columns:1.72fr 1fr;gap:4.5rem}}
-.lux-colour-mosaic{display:grid;grid-template-columns:repeat(5,1fr);gap:3px;height:88px;overflow:hidden;border-radius:1px;background:#cbc6be}
-@media(min-width:768px){.lux-colour-mosaic{grid-template-columns:2fr 1fr 1fr;grid-template-rows:1fr 1fr;height:400px}}
-.lux-swatch{display:block}
-.lux-swatch-span{background:#e8e4de}
+/* Applications grid */
+.app-section{background:var(--dark);padding:4.5rem 0 0}
+.app-section-header{padding:0 2rem 3rem;max-width:1200px;margin:0 auto}
+.app-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px}
+@media(min-width:900px){.app-grid{grid-template-columns:repeat(3,1fr)}}
+.app-card{position:relative;aspect-ratio:3/4;overflow:hidden;cursor:pointer}
+@media(min-width:600px){.app-card{aspect-ratio:4/5}}
+@media(min-width:900px){.app-card{aspect-ratio:3/4}}
+.app-card-bg{position:absolute;inset:0;transition:transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94)}
+.app-card:hover .app-card-bg{transform:scale(1.06)}
+.app-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.08) 60%,transparent 100%);transition:background 0.4s}
+.app-card:hover .app-card-overlay{background:linear-gradient(to top,rgba(0,0,0,0.84) 0%,rgba(0,0,0,0.14) 60%,transparent 100%)}
+.app-card-info{position:absolute;bottom:0;left:0;right:0;padding:1.25rem 1.1rem}
+@media(min-width:768px){.app-card-info{padding:1.75rem 1.5rem}}
+.app-card-info h3{font-family:'Cormorant Garamond',serif;font-size:clamp(1.15rem,2.2vw,1.55rem);font-weight:300;color:#fff;margin:0 0 0.25rem;line-height:1.2}
+.app-card-arrow{font-family:'Jost',sans-serif;font-size:0.6rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.38);display:inline-flex;align-items:center;gap:0.35rem;transition:color 0.25s,gap 0.3s}
+.app-card:hover .app-card-arrow{color:var(--gold);gap:0.75rem}
+
+/* Colour section — editorial material presentation */
+.lux-colour-section{background:#f0ece4;padding:2.25rem 0}
+.lux-colour-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:1fr;gap:2rem;align-items:center}
+@media(min-width:768px){.lux-colour-inner{grid-template-columns:1.72fr 1fr;gap:4rem}}
+.lux-colour-mosaic{display:grid;grid-template-columns:repeat(5,1fr);gap:3px;height:80px;overflow:hidden;border-radius:1px;background:#c8c3bb}
+@media(min-width:768px){.lux-colour-mosaic{grid-template-columns:2fr 1fr 1fr;grid-template-rows:1fr 1fr;height:285px}}
+.lux-swatch{display:block;position:relative}
+.lux-swatch-span{background:linear-gradient(145deg,#ede9e2 0%,#d4d0c8 100%)}
 @media(min-width:768px){.lux-swatch-span{grid-row:1/span 2}}
 .lux-colour-content .label{display:block;margin-bottom:1.25rem}
 .lux-colour-content h2{margin:0 0 1.25rem;color:var(--charcoal)}
-.lux-colour-content>p{font-size:1rem;line-height:1.75;margin:0 0 2.25rem}
+.lux-colour-content>p{font-size:1rem;line-height:1.75;margin:0 0 2rem}
 .btn-palette{display:inline-flex;align-items:center;gap:0.55rem;font-family:'Jost',sans-serif;font-size:0.72rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--charcoal);border:none;border-bottom:1px solid var(--gold);padding:0 0 0.25rem;background:none;cursor:pointer;transition:color 0.25s ease,gap 0.3s ease}
 .btn-palette:hover{color:var(--gold);gap:1rem}
 
@@ -526,15 +544,60 @@ p{line-height:1.7;color:#6f6a61}
     </div>
   </div>
 
-  <!-- 4. Applications (full-width image) -->
-  <div class="fade-up" onclick="showPage('applications')" style="cursor:pointer">
-    <div class="lux-full-image">
-      <div class="lux-full-image-bg" style="background:linear-gradient(135deg,#c4b89a 0%,#9a8a72 35%,#5a4e42 65%,#2a2320 100%)"></div>
-      <div class="lux-full-image-overlay"></div>
-      <div class="lux-full-image-content">
-        <p class="label" style="color:rgba(255,255,255,0.5);margin-bottom:0.75rem">Applications</p>
-        <h2 style="color:#fff;margin:0 0 1.5rem;max-width:480px">Floors. Walls. Bathrooms.<br><em style="font-style:italic;color:rgba(255,255,255,0.55)">Every space, reimagined.</em></h2>
-        <span class="btn-ghost" style="color:#fff;pointer-events:none">Explore Applications <span>&#x2192;</span></span>
+  <!-- 4. Applications — six destination cards -->
+  <div class="app-section">
+    <div class="app-section-header">
+      <p class="fade-up label label-dark">Applications</p>
+      <h2 class="fade-up" style="color:#fff;margin:0;transition-delay:0.08s">Every Space, <em>Transformed</em></h2>
+    </div>
+    <div class="app-grid">
+      <div class="app-card" onclick="showPage('bathrooms')">
+        <div class="app-card-bg" style="background:linear-gradient(155deg,#ccd4da 0%,#40525f 100%)"></div>
+        <div class="app-card-overlay"></div>
+        <div class="app-card-info">
+          <h3>Bathrooms</h3>
+          <span class="app-card-arrow">Explore &#x2192;</span>
+        </div>
+      </div>
+      <div class="app-card" onclick="showPage('applications')">
+        <div class="app-card-bg" style="background:linear-gradient(155deg,#e2dbd2 0%,#887060 100%)"></div>
+        <div class="app-card-overlay"></div>
+        <div class="app-card-info">
+          <h3>Kitchens</h3>
+          <span class="app-card-arrow">Explore &#x2192;</span>
+        </div>
+      </div>
+      <div class="app-card" onclick="showPage('floors')">
+        <div class="app-card-bg" style="background:linear-gradient(155deg,#c8c2b6 0%,#302820 100%)"></div>
+        <div class="app-card-overlay"></div>
+        <div class="app-card-info">
+          <h3>Floors</h3>
+          <span class="app-card-arrow">Explore &#x2192;</span>
+        </div>
+      </div>
+      <div class="app-card" onclick="showPage('walls')">
+        <div class="app-card-bg" style="background:linear-gradient(155deg,#d4d0cc 0%,#504e4a 100%)"></div>
+        <div class="app-card-overlay"></div>
+        <div class="app-card-info">
+          <h3>Walls</h3>
+          <span class="app-card-arrow">Explore &#x2192;</span>
+        </div>
+      </div>
+      <div class="app-card" onclick="showPage('applications')">
+        <div class="app-card-bg" style="background:linear-gradient(155deg,#dcd8d0 0%,#1e1c1a 100%)"></div>
+        <div class="app-card-overlay"></div>
+        <div class="app-card-info">
+          <h3>Stairs</h3>
+          <span class="app-card-arrow">Explore &#x2192;</span>
+        </div>
+      </div>
+      <div class="app-card" onclick="showPage('applications')">
+        <div class="app-card-bg" style="background:linear-gradient(155deg,#bec2ca 0%,#24282e 100%)"></div>
+        <div class="app-card-overlay"></div>
+        <div class="app-card-info">
+          <h3>Commercial</h3>
+          <span class="app-card-arrow">Explore &#x2192;</span>
+        </div>
       </div>
     </div>
   </div>
@@ -563,10 +626,10 @@ p{line-height:1.7;color:#6f6a61}
       <!-- Colour mosaic: mobile = 5-swatch filmstrip · desktop = editorial 5-tile asymmetric grid -->
       <div class="fade-up lux-colour-mosaic">
         <div class="lux-swatch lux-swatch-span"></div>
-        <div class="lux-swatch" style="background:#c8bfb0"></div>
-        <div class="lux-swatch" style="background:#8a8680"></div>
-        <div class="lux-swatch" style="background:#6e5e4a"></div>
-        <div class="lux-swatch" style="background:#1a1a18"></div>
+        <div class="lux-swatch" style="background:linear-gradient(145deg,#d4c8b4 0%,#b8aa96 100%)"></div>
+        <div class="lux-swatch" style="background:linear-gradient(145deg,#9a9490 0%,#787270 100%)"></div>
+        <div class="lux-swatch" style="background:linear-gradient(145deg,#7a6a58 0%,#584c3c 100%)"></div>
+        <div class="lux-swatch" style="background:linear-gradient(145deg,#2e2a26 0%,#191816 100%)"></div>
       </div>
       <!-- Text content -->
       <div class="fade-up lux-colour-content" style="transition-delay:0.15s">
