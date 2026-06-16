@@ -314,51 +314,6 @@ p{line-height:1.7;color:#6f6a61}
 /* ── SURFACE PAGE IMG ── */
 .surface-hero-img{aspect-ratio:16/9;width:100%;margin:3rem 0}
 @media(min-width:768px){.surface-hero-img{aspect-ratio:21/9}}
-
-/* ── CATEGORY FILTER TABS ── */
-.filter-tabs{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2.5rem}
-.filter-tab{font-family:'Jost',sans-serif;font-size:0.62rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;padding:0.5rem 1.1rem;border:1px solid var(--border);color:var(--muted);cursor:pointer;transition:all 0.2s ease;background:none}
-.filter-tab:hover{border-color:var(--charcoal);color:var(--charcoal)}
-.filter-tab.active{background:var(--charcoal);color:#fff;border-color:var(--charcoal)}
-.project-card.hidden{display:none}
-
-/* ── FAQ ACCORDION ── */
-.faq-category{margin-bottom:3rem}
-.faq-cat-label{font-family:'Jost',sans-serif;font-size:0.62rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem;padding-bottom:0.75rem;border-bottom:1px solid var(--border);display:block}
-.faq-item{border-bottom:1px solid var(--border)}
-.faq-question{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 0;cursor:pointer;gap:1rem;list-style:none}
-.faq-question h4{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:300;color:var(--charcoal);line-height:1.3;margin:0}
-.faq-icon{font-size:1.4rem;color:var(--gold);flex-shrink:0;transition:transform 0.3s ease;line-height:1}
-.faq-item.open .faq-icon{transform:rotate(45deg)}
-.faq-answer{max-height:0;overflow:hidden;transition:max-height 0.4s ease}
-.faq-item.open .faq-answer{max-height:600px}
-.faq-answer p{padding-bottom:1.25rem;font-size:0.9rem;line-height:1.75;color:var(--muted)}
-
-/* ── HOME PREVIEW SECTIONS ── */
-.home-preview-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:2rem}
-@media(min-width:768px){.home-preview-grid{grid-template-columns:repeat(3,1fr)}}
-.preview-swatch-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:0.5rem;margin:2rem 0}
-.preview-swatch-box{aspect-ratio:1}
-.preview-swatch-label{font-size:0.6rem;color:var(--muted);margin-top:0.3rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.preview-product-row{margin-top:1.5rem}
-.preview-product-item{display:flex;gap:1rem;padding:1.1rem 0;border-bottom:1px solid var(--border);align-items:flex-start}
-.preview-product-icon{width:28px;height:28px;background:var(--gold);opacity:0.18;flex-shrink:0;margin-top:0.2rem}
-.preview-product-item h5{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;color:var(--charcoal);line-height:1.2}
-.preview-product-item p{font-size:0.78rem;margin:0.2rem 0 0;color:var(--muted)}
-.preview-product-item .price{font-size:0.7rem;color:var(--gold);font-weight:500;letter-spacing:0.1em}
-.preview-faq-item{padding:1.1rem 0;border-bottom:1px solid var(--border)}
-.preview-faq-item h5{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;color:var(--charcoal);margin-bottom:0.35rem}
-.preview-faq-item p{font-size:0.82rem;margin:0}
-
-/* ── EXTENDED COLOUR COLLECTIONS ── */
-.colour-collection{margin-top:4rem}
-.colour-collection-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--charcoal);margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
-
-/* ── PRODUCTS TECHNICAL TABLE ── */
-.tech-table{width:100%;border-collapse:collapse;margin-top:1.5rem;font-size:0.85rem}
-.tech-table th{font-family:'Jost',sans-serif;font-size:0.62rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);padding:0.75rem 1rem;border-bottom:2px solid var(--border);text-align:left}
-.tech-table td{padding:0.85rem 1rem;border-bottom:1px solid var(--border);color:var(--charcoal)}
-.tech-table tr:hover td{background:rgba(0,0,0,0.02)}
 </style>
 </head>
 <body>
@@ -394,7 +349,6 @@ p{line-height:1.7;color:#6f6a61}
       <a onclick="showPage('projects')">Projects</a>
       <a onclick="showPage('products')">Products</a>
       <a onclick="showPage('colours')">Colours</a>
-      <a onclick="showPage('faq')">FAQ</a>
       <a onclick="showPage('about')">About</a>
     </nav>
     <div class="menu-cta">
@@ -453,103 +407,110 @@ p{line-height:1.7;color:#6f6a61}
     </div>
   </section>
 
-  <!-- Projects preview -->
+  <!-- Why Choose -->
+  <div class="dark-section">
+    <div class="section-inner">
+      <div class="fade-up"><p class="label label-dark">Why MONOCEM</p></div>
+      <div class="fade-up" style="transition-delay:0.1s">
+        <h2 style="color:#fff;margin:1rem 0">The Standard<br><em style="color:rgba(255,255,255,0.5);font-style:italic">Others Follow</em></h2>
+      </div>
+      <div class="why-grid">
+        <div class="fade-up why-item">
+          <span class="why-num">01</span>
+          <h4>15+ Years Experience</h4>
+          <p>Over a decade of professional microcement application across residential and commercial projects throughout the UK.</p>
+        </div>
+        <div class="fade-up why-item" style="transition-delay:0.05s">
+          <span class="why-num">02</span>
+          <h4>Certified Installers</h4>
+          <p>Our technicians are fully certified and trained in the latest microcement application techniques and systems.</p>
+        </div>
+        <div class="fade-up why-item" style="transition-delay:0.1s">
+          <span class="why-num">03</span>
+          <h4>2mm Thin Application</h4>
+          <p>Applied at just 2–3mm, MONOCEM adds virtually no height, making it ideal for renovation projects.</p>
+        </div>
+        <div class="fade-up why-item" style="transition-delay:0.15s">
+          <span class="why-num">04</span>
+          <h4>Nationwide Coverage</h4>
+          <p>Professional installation teams operating in over 40 cities across England, Scotland, and Wales.</p>
+        </div>
+        <div class="fade-up why-item" style="transition-delay:0.2s">
+          <span class="why-num">05</span>
+          <h4>5-Year Guarantee</h4>
+          <p>Every MONOCEM installation is backed by our comprehensive 5-year workmanship guarantee.</p>
+        </div>
+        <div class="fade-up why-item" style="transition-delay:0.25s">
+          <span class="why-num">06</span>
+          <h4>100+ Colour Options</h4>
+          <p>Choose from over 100 curated shades, or work with our design team on a completely bespoke palette.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Projects teaser -->
   <section class="section" style="background:var(--bg)">
     <div class="section-inner">
-      <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;margin-bottom:0">
         <div>
           <div class="fade-up"><p class="label">Portfolio</p></div>
-          <div class="fade-up" style="transition-delay:0.08s"><h2 style="color:var(--charcoal);margin:0.75rem 0 0">Recent <em style="font-style:italic;color:var(--muted)">Projects</em></h2></div>
+          <div class="fade-up" style="transition-delay:0.1s">
+            <h2 style="color:var(--charcoal);margin:0.75rem 0 0">Recent <em style="font-style:italic;color:var(--muted)">Projects</em></h2>
+          </div>
         </div>
-        <div class="fade-up" style="transition-delay:0.12s"><a class="btn-ghost" onclick="showPage('projects')">View All Projects <span>&#x2192;</span></a></div>
+        <div class="fade-up" style="transition-delay:0.15s">
+          <a class="btn-ghost" onclick="showPage('projects')">View All Projects <span>&#x2192;</span></a>
+        </div>
       </div>
-      <div class="home-preview-grid">
+      <div class="projects-grid" style="margin-top:2.5rem">
         <div class="fade-up project-card" style="transition-delay:0.05s" onclick="showPage('projects')">
           <div class="project-card-bg bg-proj-1"></div>
-          <div class="project-card-info"><h4>Chelsea Residence</h4><span>Floors &amp; Walls · London</span></div>
+          <div class="project-card-info">
+            <h4>Chelsea Residence</h4>
+            <span>Floors &amp; Walls · London</span>
+          </div>
         </div>
         <div class="fade-up project-card" style="transition-delay:0.1s" onclick="showPage('projects')">
           <div class="project-card-bg bg-proj-2"></div>
-          <div class="project-card-info"><h4>Spa Bathroom Suite</h4><span>Bathroom · Manchester</span></div>
+          <div class="project-card-info">
+            <h4>Spa Bathroom Suite</h4>
+            <span>Bathroom · Manchester</span>
+          </div>
         </div>
-        <div class="fade-up project-card" style="display:none;transition-delay:0.15s" onclick="showPage('projects')">
+        <div class="fade-up project-card" style="transition-delay:0.15s" onclick="showPage('projects')">
           <div class="project-card-bg bg-proj-3"></div>
-          <div class="project-card-info"><h4>Open-Plan Kitchen</h4><span>Kitchen · Bristol</span></div>
+          <div class="project-card-info">
+            <h4>Open-Plan Kitchen</h4>
+            <span>Kitchen &amp; Worktop · Bristol</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Colours preview -->
-  <section class="section" style="background:#f0ece4;padding-top:4rem;padding-bottom:4rem">
+  <!-- Testimonials -->
+  <section class="section" style="background:#f0ece4">
     <div class="section-inner">
-      <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem">
-        <div>
-          <div class="fade-up"><p class="label">Colour Palette</p></div>
-          <div class="fade-up" style="transition-delay:0.08s"><h2 style="color:var(--charcoal);margin:0.75rem 0 0">100+ <em style="font-style:italic;color:var(--muted)">Colours</em></h2></div>
-        </div>
-        <div class="fade-up" style="transition-delay:0.12s"><a class="btn-ghost" onclick="showPage('colours')">View Full Palette <span>&#x2192;</span></a></div>
+      <div class="fade-up"><p class="label">Client Reviews</p></div>
+      <div class="fade-up" style="transition-delay:0.1s">
+        <h2 style="color:var(--charcoal);margin:0.75rem 0 0">What Our Clients<br><em style="font-style:italic;color:var(--muted)">Say</em></h2>
       </div>
-      <div class="fade-up preview-swatch-strip" style="transition-delay:0.1s">
-        <div><div class="preview-swatch-box" style="background:#eeece8"></div><p class="preview-swatch-label">Soft White</p></div>
-        <div><div class="preview-swatch-box" style="background:#d0ccc4"></div><p class="preview-swatch-label">Warm Grey</p></div>
-        <div><div class="preview-swatch-box" style="background:#c4b49a"></div><p class="preview-swatch-label">Sand</p></div>
-        <div><div class="preview-swatch-box" style="background:#8a8680"></div><p class="preview-swatch-label">Slate</p></div>
-        <div><div class="preview-swatch-box" style="background:#504438"></div><p class="preview-swatch-label">Mocha</p></div>
-        <div><div class="preview-swatch-box" style="background:#1a1a18"></div><p class="preview-swatch-label">Black Stone</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Products preview -->
-  <section class="section" style="background:var(--bg);padding-top:4rem;padding-bottom:4rem">
-    <div class="section-inner">
-      <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem">
-        <div>
-          <div class="fade-up"><p class="label">The Range</p></div>
-          <div class="fade-up" style="transition-delay:0.08s"><h2 style="color:var(--charcoal);margin:0.75rem 0 0">MONOCEM <em style="font-style:italic;color:var(--muted)">Products</em></h2></div>
+      <div class="testimonials-grid">
+        <div class="fade-up testimonial" style="transition-delay:0.05s">
+          <div class="stars">★★★★★</div>
+          <blockquote>"The finish is absolutely breathtaking. Our entire ground floor looks like a completely different space. The team were professional, tidy, and incredibly skilled."</blockquote>
+          <cite>Sarah M. — Chelsea, London</cite>
         </div>
-        <div class="fade-up" style="transition-delay:0.12s"><a class="btn-ghost" onclick="showPage('products')">View Full Range <span>&#x2192;</span></a></div>
-      </div>
-      <div class="fade-up preview-product-row" style="transition-delay:0.1s">
-        <div class="preview-product-item">
-          <div class="preview-product-icon"></div>
-          <div><h5>Microcement Base Coat</h5><p>High-build base layer. 25kg covers approx. 4m² per coat.</p><span class="price">From £85 / 25kg</span></div>
+        <div class="fade-up testimonial" style="transition-delay:0.1s">
+          <div class="stars">★★★★★</div>
+          <blockquote>"We had our bathroom transformed with MONOCEM and couldn't be happier. Seamless, waterproof, and stunning. Zero grout lines — a dream to clean."</blockquote>
+          <cite>James K. — Alderley Edge</cite>
         </div>
-        <div class="preview-product-item">
-          <div class="preview-product-icon"></div>
-          <div><h5>Microcement Finish Coat</h5><p>Fine-grain finish layer in 100+ colours, hand-trowelled.</p><span class="price">From £95 / 25kg</span></div>
-        </div>
-        <div class="preview-product-item" style="border-bottom:none">
-          <div class="preview-product-icon"></div>
-          <div><h5>Polyurethane Sealer</h5><p>Professional PU topcoat in matt, satin, or gloss.</p><span class="price">From £75 / 5L</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ preview -->
-  <section class="section" style="background:#f0ece4;padding-top:4rem;padding-bottom:4rem">
-    <div class="section-inner">
-      <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem">
-        <div>
-          <div class="fade-up"><p class="label">Common Questions</p></div>
-          <div class="fade-up" style="transition-delay:0.08s"><h2 style="color:var(--charcoal);margin:0.75rem 0 0">Quick <em style="font-style:italic;color:var(--muted)">Answers</em></h2></div>
-        </div>
-        <div class="fade-up" style="transition-delay:0.12s"><a class="btn-ghost" onclick="showPage('faq')">View All FAQs <span>&#x2192;</span></a></div>
-      </div>
-      <div class="fade-up" style="transition-delay:0.1s;margin-top:1.5rem">
-        <div class="preview-faq-item">
-          <h5>How thick is microcement?</h5>
-          <p>MONOCEM is applied at 2–3mm — thin enough to lay over existing tiles with no height gain.</p>
-        </div>
-        <div class="preview-faq-item">
-          <h5>Is microcement waterproof?</h5>
-          <p>Yes. Our sealed bathroom and wet-room systems are 100% waterproof when correctly applied and sealed.</p>
-        </div>
-        <div class="preview-faq-item" style="border-bottom:none">
-          <h5>How long does installation take?</h5>
-          <p>Most residential floors take 2–3 days. Bathrooms and multi-room projects typically 3–5 days.</p>
+        <div class="fade-up testimonial" style="transition-delay:0.15s">
+          <div class="stars">★★★★★</div>
+          <blockquote>"From design consultation to final seal, the process was seamless. MONOCEM delivered exactly what they promised — and it exceeded our expectations."</blockquote>
+          <cite>Rachel T. — Edinburgh</cite>
         </div>
       </div>
     </div>
@@ -913,51 +874,30 @@ p{line-height:1.7;color:#6f6a61}
   </div>
   <section class="section">
     <div class="section-inner">
-      <div class="fade-up filter-tabs">
-        <button class="filter-tab active" onclick="filterProjects('all',this)">All</button>
-        <button class="filter-tab" onclick="filterProjects('floors',this)">Floors</button>
-        <button class="filter-tab" onclick="filterProjects('walls',this)">Walls</button>
-        <button class="filter-tab" onclick="filterProjects('bathrooms',this)">Bathrooms</button>
-        <button class="filter-tab" onclick="filterProjects('kitchens',this)">Kitchens</button>
-        <button class="filter-tab" onclick="filterProjects('worktops',this)">Worktops</button>
-        <button class="filter-tab" onclick="filterProjects('stairs',this)">Stairs</button>
-      </div>
-      <div class="projects-grid" id="projects-grid">
-        <div class="fade-up project-card" data-cat="floors walls" style="transition-delay:0.05s">
+      <div class="projects-grid">
+        <div class="fade-up project-card" style="transition-delay:0.05s">
           <div class="project-card-bg bg-proj-1"></div>
           <div class="project-card-info"><h4>Chelsea Residence</h4><span>Floors &amp; Walls · London</span></div>
         </div>
-        <div class="fade-up project-card" data-cat="bathrooms" style="transition-delay:0.1s">
+        <div class="fade-up project-card" style="transition-delay:0.1s">
           <div class="project-card-bg bg-proj-2"></div>
           <div class="project-card-info"><h4>Spa Bathroom Suite</h4><span>Bathroom · Manchester</span></div>
         </div>
-        <div class="fade-up project-card" data-cat="kitchens worktops" style="transition-delay:0.15s">
+        <div class="fade-up project-card" style="transition-delay:0.15s">
           <div class="project-card-bg bg-proj-3"></div>
           <div class="project-card-info"><h4>Open-Plan Kitchen</h4><span>Kitchen &amp; Worktop · Bristol</span></div>
         </div>
-        <div class="fade-up project-card" data-cat="floors" style="transition-delay:0.05s">
+        <div class="fade-up project-card" style="transition-delay:0.05s">
           <div class="project-card-bg bg-proj-4"></div>
           <div class="project-card-info"><h4>Boutique Hotel Lobby</h4><span>Commercial Floors · Edinburgh</span></div>
         </div>
-        <div class="fade-up project-card" data-cat="bathrooms" style="transition-delay:0.1s">
+        <div class="fade-up project-card" style="transition-delay:0.1s">
           <div class="project-card-bg bg-proj-5"></div>
           <div class="project-card-info"><h4>Penthouse Bathroom</h4><span>Wet Room · Leeds</span></div>
         </div>
-        <div class="fade-up project-card" data-cat="stairs walls" style="transition-delay:0.15s">
+        <div class="fade-up project-card" style="transition-delay:0.15s">
           <div class="project-card-bg bg-proj-6"></div>
           <div class="project-card-info"><h4>Staircase Feature</h4><span>Stairs &amp; Feature Wall · Birmingham</span></div>
-        </div>
-        <div class="fade-up project-card" data-cat="floors kitchens" style="transition-delay:0.05s">
-          <div class="project-card-bg bg-proj-1" style="filter:hue-rotate(20deg)"></div>
-          <div class="project-card-info"><h4>Islington Apartment</h4><span>Floors &amp; Kitchen · London</span></div>
-        </div>
-        <div class="fade-up project-card" data-cat="walls" style="transition-delay:0.1s">
-          <div class="project-card-bg bg-proj-3" style="filter:hue-rotate(40deg)"></div>
-          <div class="project-card-info"><h4>Feature Wall Studio</h4><span>Walls · Bristol</span></div>
-        </div>
-        <div class="fade-up project-card" data-cat="worktops kitchens" style="transition-delay:0.15s">
-          <div class="project-card-bg bg-proj-2" style="filter:hue-rotate(-20deg)"></div>
-          <div class="project-card-info"><h4>Notting Hill Kitchen</h4><span>Worktops &amp; Splashback · London</span></div>
         </div>
       </div>
     </div>
@@ -1027,41 +967,6 @@ p{line-height:1.7;color:#6f6a61}
       <div class="fade-up" style="margin-top:3rem;text-align:center">
         <p style="color:var(--muted);max-width:480px;margin:0 auto 1.5rem">All products are available for direct purchase or can be supplied as part of a professional installation project.</p>
         <a class="btn btn-gold" onclick="showPage('contact')">Request Trade Pricing</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Technical Information -->
-  <section class="section" style="background:#f0ece4">
-    <div class="section-inner">
-      <div class="fade-up"><p class="label">Technical Data</p></div>
-      <div class="fade-up" style="transition-delay:0.1s">
-        <h2 style="color:var(--charcoal);margin:0.75rem 0 0">Technical <em style="font-style:italic;color:var(--muted)">Information</em></h2>
-      </div>
-      <div class="fade-up" style="transition-delay:0.15s;overflow-x:auto;margin-top:2rem">
-        <table class="tech-table">
-          <thead>
-            <tr>
-              <th>Product</th>
-              <th>Coverage</th>
-              <th>Dry Time</th>
-              <th>Recoat Time</th>
-              <th>Substrate</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Base Coat</td><td>4–5 m² / 25kg</td><td>2–4 hours</td><td>4–6 hours</td><td>Concrete, screed, tile, OSB</td></tr>
-            <tr><td>Finish Coat</td><td>5–6 m² / 25kg</td><td>2–3 hours</td><td>3–4 hours</td><td>Cured base coat</td></tr>
-            <tr><td>Epoxy Primer</td><td>6–8 m² / set</td><td>4–6 hours</td><td>12–24 hours</td><td>Most substrates</td></tr>
-            <tr><td>PU Sealer (matt)</td><td>10–12 m² / L</td><td>1–2 hours</td><td>4 hours</td><td>Cured microcement</td></tr>
-            <tr><td>PU Sealer (gloss)</td><td>10–12 m² / L</td><td>1–2 hours</td><td>4 hours</td><td>Cured microcement</td></tr>
-            <tr><td>Anti-Slip Sealer</td><td>8–10 m² / L</td><td>2–3 hours</td><td>6 hours</td><td>Floors, wet areas</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="fade-up" style="transition-delay:0.2s;margin-top:2rem">
-        <p style="font-size:0.8rem;color:var(--muted)">All figures are approximate and depend on substrate porosity and application technique. Allow 48–72 hours full cure before heavy use.</p>
-        <p style="font-size:0.8rem;color:var(--muted);margin-top:0.5rem">Full technical data sheets (TDS) and Safety Data Sheets (SDS) available on request. <a onclick="showPage('contact')" style="color:var(--gold);cursor:pointer">Contact us</a> for trade documentation.</p>
       </div>
     </div>
   </section>
@@ -1135,45 +1040,6 @@ p{line-height:1.7;color:#6f6a61}
           <h5>Black Stone</h5><p>#1a1a18</p>
         </div>
       </div>
-      <!-- Extended: Cool Tones -->
-      <div class="fade-up colour-collection">
-        <h3 class="colour-collection-title">Cool <em style="font-style:italic;color:var(--muted)">Tones</em></h3>
-        <div class="colours-grid">
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#e8eaec"></div><h5>Mist</h5><p>#e8eaec</p></div>
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#cdd2d6"></div><h5>Cloud</h5><p>#cdd2d6</p></div>
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#b2bcc4"></div><h5>Steel</h5><p>#b2bcc4</p></div>
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#8a9aa6"></div><h5>Gunmetal</h5><p>#8a9aa6</p></div>
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#607888"></div><h5>Marine</h5><p>#607888</p></div>
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#3c5060"></div><h5>Deep Navy</h5><p>#3c5060</p></div>
-        </div>
-      </div>
-
-      <!-- Extended: Warm Tones -->
-      <div class="fade-up colour-collection">
-        <h3 class="colour-collection-title">Warm <em style="font-style:italic;color:var(--muted)">Tones</em></h3>
-        <div class="colours-grid">
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#f0e8d8"></div><h5>Ivory</h5><p>#f0e8d8</p></div>
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#ddc8a8"></div><h5>Butter</h5><p>#ddc8a8</p></div>
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#c8a87a"></div><h5>Honey</h5><p>#c8a87a</p></div>
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#a87848"></div><h5>Amber</h5><p>#a87848</p></div>
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#784830"></div><h5>Terracotta</h5><p>#784830</p></div>
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#502818"></div><h5>Rust</h5><p>#502818</p></div>
-        </div>
-      </div>
-
-      <!-- Extended: Outdoor / Industrial -->
-      <div class="fade-up colour-collection">
-        <h3 class="colour-collection-title">Outdoor &amp; <em style="font-style:italic;color:var(--muted)">Industrial</em></h3>
-        <div class="colours-grid">
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#d8d4cc"></div><h5>Cement</h5><p>#d8d4cc</p></div>
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#b8b4ac"></div><h5>Aggregate</h5><p>#b8b4ac</p></div>
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#909088"></div><h5>Ash</h5><p>#909088</p></div>
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#686860"></div><h5>Graphite</h5><p>#686860</p></div>
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#404038"></div><h5>Anthracite</h5><p>#404038</p></div>
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#202018"></div><h5>Charcoal</h5><p>#202018</p></div>
-        </div>
-      </div>
-
       <div class="fade-up" style="margin-top:4rem;padding:3rem;background:#f0ece4;text-align:center">
         <h3 style="color:var(--charcoal);margin-bottom:1rem">Want a Bespoke Colour?</h3>
         <p style="color:var(--muted);max-width:480px;margin:0 auto 1.5rem">We can match virtually any colour using our mineral pigment system. Bring us a RAL code, a paint chip, or even a fabric swatch.</p>
@@ -1244,182 +1110,11 @@ p{line-height:1.7;color:#6f6a61}
     </div>
   </section>
 
-  <!-- Why Choose (moved from homepage) -->
-  <div class="dark-section">
-    <div class="section-inner">
-      <div class="fade-up"><p class="label label-dark">Why MONOCEM</p></div>
-      <div class="fade-up" style="transition-delay:0.1s">
-        <h2 style="color:#fff;margin:1rem 0">The Standard<br><em style="color:rgba(255,255,255,0.5);font-style:italic">Others Follow</em></h2>
-      </div>
-      <div class="why-grid">
-        <div class="fade-up why-item"><span class="why-num">01</span><h4>15+ Years Experience</h4><p>Over a decade of professional microcement application across residential and commercial projects throughout the UK.</p></div>
-        <div class="fade-up why-item" style="transition-delay:0.05s"><span class="why-num">02</span><h4>Certified Installers</h4><p>Our technicians are fully certified and trained in the latest microcement application techniques and systems.</p></div>
-        <div class="fade-up why-item" style="transition-delay:0.1s"><span class="why-num">03</span><h4>2mm Thin Application</h4><p>Applied at just 2–3mm, MONOCEM adds virtually no height, making it ideal for renovation projects.</p></div>
-        <div class="fade-up why-item" style="transition-delay:0.15s"><span class="why-num">04</span><h4>Nationwide Coverage</h4><p>Professional installation teams operating in over 40 cities across England, Scotland, and Wales.</p></div>
-        <div class="fade-up why-item" style="transition-delay:0.2s"><span class="why-num">05</span><h4>5-Year Guarantee</h4><p>Every MONOCEM installation is backed by our comprehensive 5-year workmanship guarantee.</p></div>
-        <div class="fade-up why-item" style="transition-delay:0.25s"><span class="why-num">06</span><h4>100+ Colour Options</h4><p>Choose from over 100 curated shades, or work with our design team on a completely bespoke palette.</p></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Testimonials (moved from homepage) -->
-  <section class="section" style="background:var(--bg)">
-    <div class="section-inner">
-      <div class="fade-up"><p class="label">Client Reviews</p></div>
-      <div class="fade-up" style="transition-delay:0.1s"><h2 style="color:var(--charcoal);margin:0.75rem 0 0">What Our Clients<br><em style="font-style:italic;color:var(--muted)">Say</em></h2></div>
-      <div class="testimonials-grid">
-        <div class="fade-up testimonial" style="transition-delay:0.05s">
-          <div class="stars">★★★★★</div>
-          <blockquote>"The finish is absolutely breathtaking. Our entire ground floor looks like a completely different space. The team were professional, tidy, and incredibly skilled."</blockquote>
-          <cite>Sarah M. — Chelsea, London</cite>
-        </div>
-        <div class="fade-up testimonial" style="transition-delay:0.1s">
-          <div class="stars">★★★★★</div>
-          <blockquote>"We had our bathroom transformed with MONOCEM and couldn't be happier. Seamless, waterproof, and stunning. Zero grout lines — a dream to clean."</blockquote>
-          <cite>James K. — Alderley Edge</cite>
-        </div>
-        <div class="fade-up testimonial" style="transition-delay:0.15s">
-          <div class="stars">★★★★★</div>
-          <blockquote>"From design consultation to final seal, the process was seamless. MONOCEM delivered exactly what they promised — and it exceeded our expectations."</blockquote>
-          <cite>Rachel T. — Edinburgh</cite>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <div class="dark-section" style="text-align:center;padding:5rem 2rem">
     <h2 style="color:#fff;margin-bottom:1.5rem">Work With <em style="font-style:italic;color:rgba(255,255,255,0.5)">Us</em></h2>
     <p style="color:rgba(255,255,255,0.55);max-width:480px;margin:0 auto 2rem">Whether you're an interior designer, architect, or homeowner — we'd love to hear about your project.</p>
     <a class="btn btn-gold" onclick="showPage('contact')">Get in Touch</a>
   </div>
-</div>
-
-
-<!-- ═══════════════════════════════════════════════════════════
-     PAGE: FAQ
-═══════════════════════════════════════════════════════════ -->
-<div id="page-faq" class="page">
-  <div class="inner-hero">
-    <div class="section-inner">
-      <p class="label label-dark">Knowledge Base</p>
-      <h1>Frequently Asked <em>Questions</em></h1>
-      <p>Everything you need to know about microcement — from substrate compatibility to aftercare. Can't find your answer? <a onclick="showPage('contact')" style="color:var(--gold);cursor:pointer">Ask us directly.</a></p>
-    </div>
-  </div>
-  <section class="section">
-    <div class="section-inner" style="max-width:800px">
-
-      <!-- General -->
-      <div class="faq-category">
-        <span class="faq-cat-label">General</span>
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h4>What is microcement?</h4><span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer"><p>Microcement is a cement-based decorative coating applied at 2–3mm thickness. It is trowelled by hand over almost any existing surface — floors, walls, bathrooms, kitchens — to create a seamless, polished finish that looks like polished concrete but is far more practical in residential settings.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h4>How thick is microcement?</h4><span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer"><p>MONOCEM is applied in two to three layers totalling just 2–3mm. This is thin enough to apply directly over existing tiles or flooring without raising the floor level significantly — ideal for renovation projects where height is a concern.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h4>Is microcement waterproof?</h4><span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer"><p>Yes — when correctly applied and sealed, MONOCEM bathroom and wet-room systems are fully waterproof. We use professional-grade polyurethane topcoats that create an impenetrable barrier rated for constant water exposure, including full submersion in shower trays.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h4>How long does microcement last?</h4><span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer"><p>Professionally applied and properly maintained microcement can last 20+ years. MONOCEM installations are backed by a 5-year workmanship guarantee. Regular maintenance with a pH-neutral cleaner will preserve the finish and appearance long-term.</p></div>
-        </div>
-      </div>
-
-      <!-- Installation -->
-      <div class="faq-category">
-        <span class="faq-cat-label">Installation</span>
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h4>Can microcement be applied over existing tiles?</h4><span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer"><p>Yes. Providing the existing tiles are sound, firmly fixed, and level, MONOCEM can be applied directly over them. We apply an epoxy primer first to ensure a perfect bond. This eliminates the cost and disruption of tile removal — one of microcement's key advantages for renovation projects.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h4>How long does installation take?</h4><span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer"><p>Most residential floor projects (up to 40m²) take 2–3 days including preparation, application, and sealing. Bathrooms typically take 2–3 days. Multi-room or large commercial projects are scheduled across 4–7 days depending on area and complexity. We'll give you a precise timeline in your quote.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h4>What substrates can microcement be applied to?</h4><span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer"><p>MONOCEM can be applied to concrete, cement screed, ceramic and porcelain tiles, wooden floors (with suitable primer), OSB, plasterboard, brick, and stone. The substrate must be structurally sound, clean, and free of movement. We assess the substrate during our free consultation.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h4>Is microcement compatible with underfloor heating?</h4><span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer"><p>Yes — MONOCEM is an excellent conductor of heat, making it ideal for use with underfloor heating systems. We work closely with UFH installers to ensure the system is properly commissioned before application and that temperature settings are appropriate for the microcement cure cycle.</p></div>
-        </div>
-      </div>
-
-      <!-- Maintenance -->
-      <div class="faq-category">
-        <span class="faq-cat-label">Maintenance &amp; Aftercare</span>
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h4>How do I clean microcement?</h4><span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer"><p>Day-to-day cleaning requires only a damp mop and pH-neutral floor cleaner. Avoid acidic cleaners (bleach, vinegar, lemon-based products) as these can break down the sealant over time. We provide a full aftercare guide at handover, including recommended cleaning products.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h4>Can microcement be repaired if damaged?</h4><span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer"><p>Minor surface scratches can often be addressed by re-applying the topcoat sealer. Deeper damage may require a localised patch repair. Unlike tiles, microcement repairs can be blended to be near-invisible. We offer an aftercare and repair service for all MONOCEM installations.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h4>Does microcement need resealing?</h4><span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer"><p>We recommend re-applying a maintenance coat of topcoat sealer every 3–5 years in residential settings, or annually in high-traffic commercial environments. This is a quick process (usually half a day) that restores the surface to its original condition.</p></div>
-        </div>
-      </div>
-
-      <!-- Design -->
-      <div class="faq-category">
-        <span class="faq-cat-label">Design &amp; Colour</span>
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h4>How many colours are available?</h4><span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer"><p>MONOCEM's core palette contains 30 standard colours across four collections: Neutrals, Cool Tones, Warm Tones, and Outdoor &amp; Industrial. We can also create completely bespoke colours by mixing our mineral pigments — bring us a RAL code, a paint chip, or a fabric swatch and we'll match it.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h4>Can I see samples before committing?</h4><span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer"><p>Absolutely. We recommend viewing physical sample boards before selecting your colour and finish, as colours and textures can appear different on screen. We can bring samples to your site consultation, or you can request samples by post. Note that microcement naturally has variation — sample boards give the best indication but each installation is unique.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <h4>What finishes are available?</h4><span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer"><p>We offer three topcoat finishes: matt (no sheen, most natural look), satin (subtle sheen, most popular for floors), and gloss (high shine, great for walls and feature areas). For wet rooms and shower floors, we offer a specialist anti-slip finish that provides grip without compromising aesthetics.</p></div>
-        </div>
-      </div>
-
-      <div class="fade-up" style="margin-top:3rem;text-align:center;padding:3rem;background:#f0ece4">
-        <h3 style="color:var(--charcoal);margin-bottom:0.75rem">Still have a question?</h3>
-        <p style="color:var(--muted);max-width:420px;margin:0 auto 1.5rem">Our team typically responds within a few hours during business hours.</p>
-        <a class="btn btn-gold" onclick="showPage('contact')">Ask Us Directly</a>
-      </div>
-    </div>
-  </section>
 </div>
 
 
@@ -1700,7 +1395,6 @@ p{line-height:1.7;color:#6f6a61}
           <li><span onclick="showPage('projects')">Projects</span></li>
           <li><span onclick="showPage('products')">Products</span></li>
           <li><span onclick="showPage('colours')">Colours</span></li>
-          <li><span onclick="showPage('faq')">FAQ</span></li>
           <li><span onclick="showPage('about')">About</span></li>
           <li><span onclick="showPage('contact')">Contact</span></li>
         </ul>
@@ -1844,30 +1538,8 @@ function submitQuoteForm(e) {
   }, 500);
 }
 
-// ── PROJECT CATEGORY FILTER ──
-function filterProjects(cat, btn) {
-  document.querySelectorAll('.filter-tab').forEach(function(t){ t.classList.remove('active'); });
-  btn.classList.add('active');
-  document.querySelectorAll('#projects-grid .project-card').forEach(function(card) {
-    if (cat === 'all') {
-      card.classList.remove('hidden');
-    } else {
-      var cats = (card.getAttribute('data-cat') || '').split(' ');
-      card.classList.toggle('hidden', !cats.includes(cat));
-    }
-  });
-}
-
-// ── FAQ ACCORDION ──
-function toggleFaq(questionEl) {
-  var item = questionEl.parentElement;
-  var isOpen = item.classList.contains('open');
-  // close all
-  document.querySelectorAll('.faq-item.open').forEach(function(el){ el.classList.remove('open'); });
-  if (!isOpen) item.classList.add('open');
-}
-
 // ── INIT ──
+// Make sure home page is active
 showPage('home');
 </script>
 </body>
