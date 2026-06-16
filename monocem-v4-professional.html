@@ -463,6 +463,34 @@ p{line-height:1.7;color:#6f6a61}
 .tech-table td{padding:0.85rem 1rem;border-bottom:1px solid var(--border);color:var(--charcoal)}
 .tech-table tr:hover td{background:rgba(0,0,0,0.02)}
 
+/* ── FRACTAL NOISE SWATCHES ── */
+.swatches-section{padding:5rem 2rem 6rem;background:var(--bg)}
+@media(min-width:768px){.swatches-section{padding:7rem 3rem 8rem}}
+.swatches-intro{margin:0 0 3.5rem;text-align:center}
+.swatches-intro h2{color:var(--charcoal);margin:0.75rem 0 0.75rem}
+.swatches-intro p{font-size:0.9rem;max-width:480px;margin:0 auto}
+.swatches-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0 1.25rem;max-width:1100px;margin:0 auto;overflow:visible}
+@media(min-width:600px){.swatches-grid{grid-template-columns:repeat(6,1fr)}}
+@media(min-width:900px){.swatches-grid{grid-template-columns:repeat(6,1fr);gap:0 2rem}}
+.swatches-grid-6{grid-template-columns:repeat(3,1fr)}
+@media(min-width:600px){.swatches-grid-6{grid-template-columns:repeat(6,1fr)}}
+.swatch{display:flex;flex-direction:column;align-items:center;cursor:pointer;padding-top:72px;margin-bottom:1.5rem}
+.swatch-tile{width:80%;max-width:110px;aspect-ratio:1;background:var(--clr);position:relative;overflow:hidden;transition:transform 0.6s cubic-bezier(0.22,1.2,0.36,1),box-shadow 0.6s cubic-bezier(0.22,1.2,0.36,1)}
+@media(min-width:768px){.swatch-tile{max-width:130px}}
+.swatch:hover .swatch-tile,.swatch.active .swatch-tile{transform:translateY(-52px) scale(2.15);box-shadow:0 48px 96px rgba(0,0,0,0.45),0 20px 40px rgba(0,0,0,0.28),0 6px 12px rgba(0,0,0,0.15)}
+.swatch-noise{position:absolute;inset:0;background-size:100% 100%;mix-blend-mode:overlay;pointer-events:none;opacity:0.14}
+.swatch-noise-1{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='6' seed='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.swatch-noise-2{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='6' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.swatch-noise-3{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.58' numOctaves='6' seed='13' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.swatch-noise-4{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.80' numOctaves='6' seed='19' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.swatch-accent{position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:scaleX(0);transition:transform 0.5s cubic-bezier(0.22,1.2,0.36,1) 0.05s}
+.swatch:hover .swatch-accent,.swatch.active .swatch-accent{transform:scaleX(1)}
+.swatch-info{margin-top:1rem;text-align:center;transition:transform 0.4s ease}
+.swatch:hover .swatch-info,.swatch.active .swatch-info{transform:translateY(-10px)}
+.swatch-name{font-family:'Jost',sans-serif;font-size:0.62rem;font-weight:500;letter-spacing:0.1em;color:var(--charcoal);text-transform:uppercase;line-height:1.3}
+.swatch-code{font-family:'Jost',sans-serif;font-size:0.58rem;font-weight:300;color:var(--muted);margin-top:0.18rem;letter-spacing:0.06em}
+.swatches-collection-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.3rem,2.5vw,1.7rem);font-weight:300;color:var(--charcoal);margin:4rem 0 2rem;max-width:1100px;padding-bottom:0.75rem;border-bottom:1px solid var(--border)}
+
 /* ── BRAND INTRO ── */
 .brand-intro{padding:5rem 2rem;background:var(--bg)}
 @media(min-width:768px){.brand-intro{padding:7rem 3rem}}
@@ -1299,106 +1327,160 @@ p{line-height:1.7;color:#6f6a61}
       <p>From warm neutrals to bold statements. Every MONOCEM colour is formulated with mineral pigments for depth and longevity that paint can't match.</p>
     </div>
   </div>
-  <section class="section">
-    <div class="section-inner">
-      <div class="fade-up"><p class="label">Core Collection</p></div>
-      <div class="fade-up" style="transition-delay:0.1s">
-        <h2 style="color:var(--charcoal);margin:0.75rem 0 0">The Foundation <em style="font-style:italic;color:var(--muted)">Palette</em></h2>
+  <section class="swatches-section">
+    <div style="max-width:1100px;margin:0 auto">
+
+      <!-- Core Collection -->
+      <div class="fade-up swatches-intro">
+        <p class="label">Core Collection</p>
+        <h2>The Foundation <em style="font-style:italic;color:var(--muted)">Palette</em></h2>
+        <p>Twelve essential tones — the backbone of every MONOCEM installation. Hover each swatch to see the mineral texture and depth.</p>
       </div>
-      <div class="colours-grid">
-        <div class="fade-up colour-swatch" style="transition-delay:0.02s">
-          <div class="colour-swatch-box" style="background:#eeece8"></div>
-          <h5>Soft White</h5><p>#eeece8</p>
+      <div class="swatches-grid">
+        <div class="swatch fade-up" style="transition-delay:0.02s" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
+          <div class="swatch-tile" style="--clr:#eeece8"><div class="swatch-noise swatch-noise-1"></div><div class="swatch-accent"></div></div>
+          <div class="swatch-info"><div class="swatch-name">Soft White</div><div class="swatch-code">#eeece8</div></div>
         </div>
-        <div class="fade-up colour-swatch" style="transition-delay:0.04s">
-          <div class="colour-swatch-box" style="background:#e0ddd7"></div>
-          <h5>Linen</h5><p>#e0ddd7</p>
+        <div class="swatch fade-up" style="transition-delay:0.04s" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
+          <div class="swatch-tile" style="--clr:#e0ddd7"><div class="swatch-noise swatch-noise-2"></div><div class="swatch-accent"></div></div>
+          <div class="swatch-info"><div class="swatch-name">Linen</div><div class="swatch-code">#e0ddd7</div></div>
         </div>
-        <div class="fade-up colour-swatch" style="transition-delay:0.06s">
-          <div class="colour-swatch-box" style="background:#d0ccc4"></div>
-          <h5>Warm Grey</h5><p>#d0ccc4</p>
+        <div class="swatch fade-up" style="transition-delay:0.06s" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
+          <div class="swatch-tile" style="--clr:#d0ccc4"><div class="swatch-noise swatch-noise-3"></div><div class="swatch-accent"></div></div>
+          <div class="swatch-info"><div class="swatch-name">Warm Grey</div><div class="swatch-code">#d0ccc4</div></div>
         </div>
-        <div class="fade-up colour-swatch" style="transition-delay:0.08s">
-          <div class="colour-swatch-box" style="background:#b8b4ac"></div>
-          <h5>Stone</h5><p>#b8b4ac</p>
+        <div class="swatch fade-up" style="transition-delay:0.08s" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
+          <div class="swatch-tile" style="--clr:#b8b4ac"><div class="swatch-noise swatch-noise-4"></div><div class="swatch-accent"></div></div>
+          <div class="swatch-info"><div class="swatch-name">Stone</div><div class="swatch-code">#b8b4ac</div></div>
         </div>
-        <div class="fade-up colour-swatch" style="transition-delay:0.1s">
-          <div class="colour-swatch-box" style="background:#9e9a92"></div>
-          <h5>Pebble</h5><p>#9e9a92</p>
+        <div class="swatch fade-up" style="transition-delay:0.10s" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
+          <div class="swatch-tile" style="--clr:#9e9a92"><div class="swatch-noise swatch-noise-1"></div><div class="swatch-accent"></div></div>
+          <div class="swatch-info"><div class="swatch-name">Pebble</div><div class="swatch-code">#9e9a92</div></div>
         </div>
-        <div class="fade-up colour-swatch" style="transition-delay:0.12s">
-          <div class="colour-swatch-box" style="background:#8a8680"></div>
-          <h5>Slate</h5><p>#8a8680</p>
+        <div class="swatch fade-up" style="transition-delay:0.12s" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
+          <div class="swatch-tile" style="--clr:#8a8680"><div class="swatch-noise swatch-noise-2"></div><div class="swatch-accent"></div></div>
+          <div class="swatch-info"><div class="swatch-name">Slate</div><div class="swatch-code">#8a8680</div></div>
         </div>
-        <div class="fade-up colour-swatch" style="transition-delay:0.14s">
-          <div class="colour-swatch-box" style="background:#c4b49a"></div>
-          <h5>Sand</h5><p>#c4b49a</p>
+        <div class="swatch fade-up" style="transition-delay:0.14s" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
+          <div class="swatch-tile" style="--clr:#c4b49a"><div class="swatch-noise swatch-noise-3"></div><div class="swatch-accent"></div></div>
+          <div class="swatch-info"><div class="swatch-name">Sand</div><div class="swatch-code">#c4b49a</div></div>
         </div>
-        <div class="fade-up colour-swatch" style="transition-delay:0.16s">
-          <div class="colour-swatch-box" style="background:#b09878"></div>
-          <h5>Dune</h5><p>#b09878</p>
+        <div class="swatch fade-up" style="transition-delay:0.16s" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
+          <div class="swatch-tile" style="--clr:#b09878"><div class="swatch-noise swatch-noise-4"></div><div class="swatch-accent"></div></div>
+          <div class="swatch-info"><div class="swatch-name">Dune</div><div class="swatch-code">#b09878</div></div>
         </div>
-        <div class="fade-up colour-swatch" style="transition-delay:0.18s">
-          <div class="colour-swatch-box" style="background:#6e5e4a"></div>
-          <h5>Earth</h5><p>#6e5e4a</p>
+        <div class="swatch fade-up" style="transition-delay:0.18s" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
+          <div class="swatch-tile" style="--clr:#6e5e4a"><div class="swatch-noise swatch-noise-1"></div><div class="swatch-accent"></div></div>
+          <div class="swatch-info"><div class="swatch-name">Earth</div><div class="swatch-code">#6e5e4a</div></div>
         </div>
-        <div class="fade-up colour-swatch" style="transition-delay:0.2s">
-          <div class="colour-swatch-box" style="background:#504438"></div>
-          <h5>Mocha</h5><p>#504438</p>
+        <div class="swatch fade-up" style="transition-delay:0.20s" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
+          <div class="swatch-tile" style="--clr:#504438"><div class="swatch-noise swatch-noise-2"></div><div class="swatch-accent"></div></div>
+          <div class="swatch-info"><div class="swatch-name">Mocha</div><div class="swatch-code">#504438</div></div>
         </div>
-        <div class="fade-up colour-swatch" style="transition-delay:0.22s">
-          <div class="colour-swatch-box" style="background:#2e2824"></div>
-          <h5>Espresso</h5><p>#2e2824</p>
+        <div class="swatch fade-up" style="transition-delay:0.22s" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
+          <div class="swatch-tile" style="--clr:#2e2824"><div class="swatch-noise swatch-noise-3"></div><div class="swatch-accent"></div></div>
+          <div class="swatch-info"><div class="swatch-name">Espresso</div><div class="swatch-code">#2e2824</div></div>
         </div>
-        <div class="fade-up colour-swatch" style="transition-delay:0.24s">
-          <div class="colour-swatch-box" style="background:#1a1a18"></div>
-          <h5>Black Stone</h5><p>#1a1a18</p>
-        </div>
-      </div>
-      <!-- Extended: Cool Tones -->
-      <div class="fade-up colour-collection">
-        <h3 class="colour-collection-title">Cool <em style="font-style:italic;color:var(--muted)">Tones</em></h3>
-        <div class="colours-grid">
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#e8eaec"></div><h5>Mist</h5><p>#e8eaec</p></div>
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#cdd2d6"></div><h5>Cloud</h5><p>#cdd2d6</p></div>
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#b2bcc4"></div><h5>Steel</h5><p>#b2bcc4</p></div>
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#8a9aa6"></div><h5>Gunmetal</h5><p>#8a9aa6</p></div>
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#607888"></div><h5>Marine</h5><p>#607888</p></div>
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#3c5060"></div><h5>Deep Navy</h5><p>#3c5060</p></div>
+        <div class="swatch fade-up" style="transition-delay:0.24s" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
+          <div class="swatch-tile" style="--clr:#1a1a18"><div class="swatch-noise swatch-noise-4"></div><div class="swatch-accent"></div></div>
+          <div class="swatch-info"><div class="swatch-name">Black Stone</div><div class="swatch-code">#1a1a18</div></div>
         </div>
       </div>
 
-      <!-- Extended: Warm Tones -->
-      <div class="fade-up colour-collection">
-        <h3 class="colour-collection-title">Warm <em style="font-style:italic;color:var(--muted)">Tones</em></h3>
-        <div class="colours-grid">
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#f0e8d8"></div><h5>Ivory</h5><p>#f0e8d8</p></div>
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#ddc8a8"></div><h5>Butter</h5><p>#ddc8a8</p></div>
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#c8a87a"></div><h5>Honey</h5><p>#c8a87a</p></div>
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#a87848"></div><h5>Amber</h5><p>#a87848</p></div>
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#784830"></div><h5>Terracotta</h5><p>#784830</p></div>
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#502818"></div><h5>Rust</h5><p>#502818</p></div>
+      <!-- Cool Tones -->
+      <h3 class="fade-up swatches-collection-title">Cool <em style="font-style:italic;color:var(--muted)">Tones</em></h3>
+      <div class="swatches-grid swatches-grid-6">
+        <div class="swatch" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
+          <div class="swatch-tile" style="--clr:#e8eaec"><div class="swatch-noise swatch-noise-1"></div><div class="swatch-accent"></div></div>
+          <div class="swatch-info"><div class="swatch-name">Mist</div><div class="swatch-code">#e8eaec</div></div>
+        </div>
+        <div class="swatch" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
+          <div class="swatch-tile" style="--clr:#cdd2d6"><div class="swatch-noise swatch-noise-2"></div><div class="swatch-accent"></div></div>
+          <div class="swatch-info"><div class="swatch-name">Cloud</div><div class="swatch-code">#cdd2d6</div></div>
+        </div>
+        <div class="swatch" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
+          <div class="swatch-tile" style="--clr:#b2bcc4"><div class="swatch-noise swatch-noise-3"></div><div class="swatch-accent"></div></div>
+          <div class="swatch-info"><div class="swatch-name">Steel</div><div class="swatch-code">#b2bcc4</div></div>
+        </div>
+        <div class="swatch" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
+          <div class="swatch-tile" style="--clr:#8a9aa6"><div class="swatch-noise swatch-noise-4"></div><div class="swatch-accent"></div></div>
+          <div class="swatch-info"><div class="swatch-name">Gunmetal</div><div class="swatch-code">#8a9aa6</div></div>
+        </div>
+        <div class="swatch" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
+          <div class="swatch-tile" style="--clr:#607888"><div class="swatch-noise swatch-noise-1"></div><div class="swatch-accent"></div></div>
+          <div class="swatch-info"><div class="swatch-name">Marine</div><div class="swatch-code">#607888</div></div>
+        </div>
+        <div class="swatch" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
+          <div class="swatch-tile" style="--clr:#3c5060"><div class="swatch-noise swatch-noise-2"></div><div class="swatch-accent"></div></div>
+          <div class="swatch-info"><div class="swatch-name">Deep Navy</div><div class="swatch-code">#3c5060</div></div>
         </div>
       </div>
 
-      <!-- Extended: Outdoor / Industrial -->
-      <div class="fade-up colour-collection">
-        <h3 class="colour-collection-title">Outdoor &amp; <em style="font-style:italic;color:var(--muted)">Industrial</em></h3>
-        <div class="colours-grid">
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#d8d4cc"></div><h5>Cement</h5><p>#d8d4cc</p></div>
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#b8b4ac"></div><h5>Aggregate</h5><p>#b8b4ac</p></div>
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#909088"></div><h5>Ash</h5><p>#909088</p></div>
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#686860"></div><h5>Graphite</h5><p>#686860</p></div>
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#404038"></div><h5>Anthracite</h5><p>#404038</p></div>
-          <div class="colour-swatch"><div class="colour-swatch-box" style="background:#202018"></div><h5>Charcoal</h5><p>#202018</p></div>
+      <!-- Warm Tones -->
+      <h3 class="fade-up swatches-collection-title">Warm <em style="font-style:italic;color:var(--muted)">Tones</em></h3>
+      <div class="swatches-grid swatches-grid-6">
+        <div class="swatch" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
+          <div class="swatch-tile" style="--clr:#f0e8d8"><div class="swatch-noise swatch-noise-3"></div><div class="swatch-accent"></div></div>
+          <div class="swatch-info"><div class="swatch-name">Ivory</div><div class="swatch-code">#f0e8d8</div></div>
+        </div>
+        <div class="swatch" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
+          <div class="swatch-tile" style="--clr:#ddc8a8"><div class="swatch-noise swatch-noise-4"></div><div class="swatch-accent"></div></div>
+          <div class="swatch-info"><div class="swatch-name">Butter</div><div class="swatch-code">#ddc8a8</div></div>
+        </div>
+        <div class="swatch" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
+          <div class="swatch-tile" style="--clr:#c8a87a"><div class="swatch-noise swatch-noise-1"></div><div class="swatch-accent"></div></div>
+          <div class="swatch-info"><div class="swatch-name">Honey</div><div class="swatch-code">#c8a87a</div></div>
+        </div>
+        <div class="swatch" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
+          <div class="swatch-tile" style="--clr:#a87848"><div class="swatch-noise swatch-noise-2"></div><div class="swatch-accent"></div></div>
+          <div class="swatch-info"><div class="swatch-name">Amber</div><div class="swatch-code">#a87848</div></div>
+        </div>
+        <div class="swatch" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
+          <div class="swatch-tile" style="--clr:#784830"><div class="swatch-noise swatch-noise-3"></div><div class="swatch-accent"></div></div>
+          <div class="swatch-info"><div class="swatch-name">Terracotta</div><div class="swatch-code">#784830</div></div>
+        </div>
+        <div class="swatch" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
+          <div class="swatch-tile" style="--clr:#502818"><div class="swatch-noise swatch-noise-4"></div><div class="swatch-accent"></div></div>
+          <div class="swatch-info"><div class="swatch-name">Rust</div><div class="swatch-code">#502818</div></div>
         </div>
       </div>
 
-      <div class="fade-up" style="margin-top:4rem;padding:3rem;background:#f0ece4;text-align:center">
+      <!-- Industrial -->
+      <h3 class="fade-up swatches-collection-title">Outdoor &amp; <em style="font-style:italic;color:var(--muted)">Industrial</em></h3>
+      <div class="swatches-grid swatches-grid-6">
+        <div class="swatch" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
+          <div class="swatch-tile" style="--clr:#d8d4cc"><div class="swatch-noise swatch-noise-1"></div><div class="swatch-accent"></div></div>
+          <div class="swatch-info"><div class="swatch-name">Cement</div><div class="swatch-code">#d8d4cc</div></div>
+        </div>
+        <div class="swatch" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
+          <div class="swatch-tile" style="--clr:#909088"><div class="swatch-noise swatch-noise-2"></div><div class="swatch-accent"></div></div>
+          <div class="swatch-info"><div class="swatch-name">Ash</div><div class="swatch-code">#909088</div></div>
+        </div>
+        <div class="swatch" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
+          <div class="swatch-tile" style="--clr:#686860"><div class="swatch-noise swatch-noise-3"></div><div class="swatch-accent"></div></div>
+          <div class="swatch-info"><div class="swatch-name">Graphite</div><div class="swatch-code">#686860</div></div>
+        </div>
+        <div class="swatch" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
+          <div class="swatch-tile" style="--clr:#404038"><div class="swatch-noise swatch-noise-4"></div><div class="swatch-accent"></div></div>
+          <div class="swatch-info"><div class="swatch-name">Anthracite</div><div class="swatch-code">#404038</div></div>
+        </div>
+        <div class="swatch" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
+          <div class="swatch-tile" style="--clr:#202018"><div class="swatch-noise swatch-noise-1"></div><div class="swatch-accent"></div></div>
+          <div class="swatch-info"><div class="swatch-name">Charcoal</div><div class="swatch-code">#202018</div></div>
+        </div>
+        <div class="swatch" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
+          <div class="swatch-tile" style="--clr:#080808"><div class="swatch-noise swatch-noise-2"></div><div class="swatch-accent"></div></div>
+          <div class="swatch-info"><div class="swatch-name">Obsidian</div><div class="swatch-code">#080808</div></div>
+        </div>
+      </div>
+
+      <!-- Bespoke CTA -->
+      <div class="fade-up" style="margin-top:5rem;padding:3rem;background:#f0ece4;text-align:center">
         <h3 style="color:var(--charcoal);margin-bottom:1rem">Want a Bespoke Colour?</h3>
         <p style="color:var(--muted);max-width:480px;margin:0 auto 1.5rem">We can match virtually any colour using our mineral pigment system. Bring us a RAL code, a paint chip, or even a fabric swatch.</p>
         <a class="btn btn-outline" onclick="showPage('contact')">Discuss Colour Options</a>
       </div>
+
     </div>
   </section>
 </div>
