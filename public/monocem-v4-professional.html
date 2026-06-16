@@ -277,14 +277,14 @@ p{line-height:1.7;color:#6f6a61}
 .bg-floor{background:linear-gradient(135deg,#c4b89a 0%,#a89378 50%,#8a7560 100%)}
 .bg-wall{background:linear-gradient(135deg,#d0cec9 0%,#b8b5ae 50%,#9a9690 100%)}
 .bg-bath{background:linear-gradient(135deg,#9bb0b4 0%,#7a9397 50%,#5e787d 100%)}
-.bg-kitchen{background:linear-gradient(135deg,#c0bab2 0%,#a09890 50%,#7d7570 100%)}
-.bg-worktop{background:linear-gradient(135deg,#b0a898 0%,#918b80 50%,#706a60 100%)}
-.bg-stair{background:linear-gradient(135deg,#b8a890 0%,#9a8a72 50%,#7c6c54 100%)}
-.bg-proj-1{background:linear-gradient(135deg,#8a9a8a 0%,#6a7a6a 50%,#4a5a4a 100%)}
-.bg-proj-2{background:linear-gradient(135deg,#c0a890 0%,#a08870 50%,#806850 100%)}
-.bg-proj-3{background:linear-gradient(135deg,#b0b8c0 0%,#909aa2 50%,#707880 100%)}
-.bg-proj-4{background:linear-gradient(135deg,#c8b898 0%,#a89878 50%,#887858 100%)}
-.bg-proj-5{background:linear-gradient(135deg,#a0b0b8 0%,#809098 50%,#607078 100%)}
+.bg-kitchen{background-image:url('/images/img-kitchens.png');background-size:cover;background-position:center}
+.bg-worktop{background-image:url('/images/img-proj-kitchen.png');background-size:cover;background-position:center}
+.bg-stair{background-image:url('/images/img-stairs.png');background-size:cover;background-position:center}
+.bg-proj-1{background-image:url('/images/img-floors.png');background-size:cover;background-position:center}
+.bg-proj-2{background-image:url('/images/img-proj-bathroom.png');background-size:cover;background-position:center}
+.bg-proj-3{background-image:url('/images/img-proj-kitchen.png');background-size:cover;background-position:center}
+.bg-proj-4{background-image:url('/images/img-stairs.png');background-size:cover;background-position:center}
+.bg-proj-5{background-image:url('/images/img-walls.png');background-size:cover;background-position:center}
 .bg-proj-6{background:linear-gradient(135deg,#b8c0a8 0%,#98a088 50%,#788068 100%)}
 .bg-article-1{background:linear-gradient(135deg,#c8c0b0 0%,#a8a090 50%,#888070 100%)}
 .bg-article-2{background:linear-gradient(135deg,#b0c0b8 0%,#90a0a0 50%,#708080 100%)}
@@ -377,6 +377,17 @@ p{line-height:1.7;color:#6f6a61}
 .lux-single-project:hover .lux-single-project-bg{transform:scale(1.04)}
 .lux-single-project-info{position:absolute;bottom:0;left:0;right:0;padding:2rem;background:linear-gradient(to top,rgba(0,0,0,0.75) 0%,transparent 100%)}
 
+/* Why MONOCEM — image split */
+.why-split{display:grid;grid-template-columns:1fr}
+@media(min-width:768px){.why-split{grid-template-columns:55fr 45fr}}
+.why-img{background-size:cover;background-position:center;min-height:360px}
+@media(min-width:768px){.why-img{min-height:0}}
+.why-content{padding:4rem 2rem}
+@media(min-width:1024px){.why-content{padding:5rem 4rem}}
+.why-attrs{display:grid;grid-template-columns:1fr 1fr;gap:1.75rem 2.5rem;margin:2.5rem 0 2rem}
+.why-attrs h5{font-family:'Jost',sans-serif;font-size:0.62rem;font-weight:500;letter-spacing:0.13em;text-transform:uppercase;color:var(--gold);margin:0 0 0.4rem}
+.why-attrs p{font-size:0.8rem;color:rgba(255,255,255,0.42);line-height:1.6;margin:0}
+
 /* Applications grid */
 .app-section{background:var(--dark);padding:4.5rem 0 0}
 .app-section-header{padding:0 2rem 3rem;max-width:1200px;margin:0 auto}
@@ -385,25 +396,43 @@ p{line-height:1.7;color:#6f6a61}
 .app-card{position:relative;aspect-ratio:3/4;overflow:hidden;cursor:pointer}
 @media(min-width:600px){.app-card{aspect-ratio:4/5}}
 @media(min-width:900px){.app-card{aspect-ratio:3/4}}
-.app-card-bg{position:absolute;inset:0;transition:transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94)}
+.app-card-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94)}
 .app-card:hover .app-card-bg{transform:scale(1.06)}
-.app-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.08) 60%,transparent 100%);transition:background 0.4s}
-.app-card:hover .app-card-overlay{background:linear-gradient(to top,rgba(0,0,0,0.84) 0%,rgba(0,0,0,0.14) 60%,transparent 100%)}
+.app-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.06) 60%,transparent 100%);transition:background 0.4s}
+.app-card:hover .app-card-overlay{background:linear-gradient(to top,rgba(0,0,0,0.78) 0%,rgba(0,0,0,0.1) 60%,transparent 100%)}
 .app-card-info{position:absolute;bottom:0;left:0;right:0;padding:1.25rem 1.1rem}
 @media(min-width:768px){.app-card-info{padding:1.75rem 1.5rem}}
 .app-card-info h3{font-family:'Cormorant Garamond',serif;font-size:clamp(1.15rem,2.2vw,1.55rem);font-weight:300;color:#fff;margin:0 0 0.25rem;line-height:1.2}
 .app-card-arrow{font-family:'Jost',sans-serif;font-size:0.6rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.38);display:inline-flex;align-items:center;gap:0.35rem;transition:color 0.25s,gap 0.3s}
 .app-card:hover .app-card-arrow{color:var(--gold);gap:0.75rem}
 
-/* Colour section — editorial material presentation */
+/* Projects — full-width hero + thumbnails */
+.proj-section{background:var(--bg)}
+.proj-section-header{max-width:1200px;margin:0 auto;padding:4rem 2rem 2rem;display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:1rem}
+.proj-hero{position:relative;width:100%;overflow:hidden;cursor:pointer;aspect-ratio:4/3}
+@media(min-width:600px){.proj-hero{aspect-ratio:16/8}}
+@media(min-width:1024px){.proj-hero{aspect-ratio:16/7}}
+.proj-hero-bg,.proj-thumb-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94)}
+.proj-hero:hover .proj-hero-bg{transform:scale(1.04)}
+.proj-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.68) 0%,rgba(0,0,0,0.05) 55%,transparent 100%)}
+.proj-hero-info{position:absolute;bottom:2rem;left:2rem}
+@media(min-width:768px){.proj-hero-info{bottom:3.5rem;left:4rem}}
+.proj-hero-info h3{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,4vw,2.8rem);font-weight:300;color:#fff;margin:0 0 0.4rem;line-height:1.2}
+.proj-meta{font-family:'Jost',sans-serif;font-size:0.62rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.45)}
+.proj-thumb-row{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-top:3px}
+.proj-thumb{position:relative;aspect-ratio:4/3;overflow:hidden;cursor:pointer}
+.proj-thumb:hover .proj-thumb-bg{transform:scale(1.05)}
+.proj-thumb-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.65) 0%,transparent 100%)}
+.proj-thumb-info{position:absolute;bottom:0;left:0;right:0;padding:1.25rem}
+.proj-thumb-info h4{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,2vw,1.35rem);font-weight:300;color:#fff;margin:0 0 0.2rem;line-height:1.2}
+.proj-section-footer{padding:2rem 2rem 4rem;text-align:center}
+
+/* Colour section — editorial texture photograph */
 .lux-colour-section{background:#f0ece4;padding:2.25rem 0}
 .lux-colour-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:1fr;gap:2rem;align-items:center}
 @media(min-width:768px){.lux-colour-inner{grid-template-columns:1.72fr 1fr;gap:4rem}}
-.lux-colour-mosaic{display:grid;grid-template-columns:repeat(5,1fr);gap:3px;height:80px;overflow:hidden;border-radius:1px;background:#c8c3bb}
-@media(min-width:768px){.lux-colour-mosaic{grid-template-columns:2fr 1fr 1fr;grid-template-rows:1fr 1fr;height:285px}}
-.lux-swatch{display:block;position:relative}
-.lux-swatch-span{background:linear-gradient(145deg,#ede9e2 0%,#d4d0c8 100%)}
-@media(min-width:768px){.lux-swatch-span{grid-row:1/span 2}}
+.lux-colour-photo{width:100%;height:220px;background-size:cover;background-position:center;border-radius:1px}
+@media(min-width:768px){.lux-colour-photo{height:285px}}
 .lux-colour-content .label{display:block;margin-bottom:1.25rem}
 .lux-colour-content h2{margin:0 0 1.25rem;color:var(--charcoal)}
 .lux-colour-content>p{font-size:1rem;line-height:1.75;margin:0 0 2rem}
@@ -525,21 +554,37 @@ p{line-height:1.7;color:#6f6a61}
     </div>
   </div>
 
-  <!-- 3. Why MONOCEM -->
-  <div style="background:var(--dark);padding:5rem 2rem">
-    <div class="section-inner">
-      <div class="fade-up"><p class="label label-dark">Why MONOCEM</p></div>
-      <div class="fade-up" style="transition-delay:0.1s">
-        <h2 style="color:#fff;margin:1rem 0 0">Crafted to<br><em style="font-style:italic;color:rgba(255,255,255,0.45)">Last Decades.</em></h2>
-      </div>
-      <div class="fade-up lux-stat-row" style="transition-delay:0.15s">
-        <div class="lux-stat"><h3>15+</h3><p>Years of expertise</p></div>
-        <div class="lux-stat"><h3>2,400+</h3><p>Projects completed</p></div>
-        <div class="lux-stat"><h3>40+</h3><p>UK cities covered</p></div>
-        <div class="lux-stat"><h3>5yr</h3><p>Workmanship guarantee</p></div>
-      </div>
-      <div class="fade-up" style="transition-delay:0.2s;margin-top:3rem">
-        <a class="btn-ghost" style="color:rgba(255,255,255,0.6);--ghost-hover:#fff" onclick="showPage('about')">Our Story <span>&#x2192;</span></a>
+  <!-- 3. Why MONOCEM — image split -->
+  <div style="background:var(--dark)">
+    <div class="why-split">
+      <div class="fade-up why-img" style="background-image:url('/images/img-waterproof.png')"></div>
+      <div class="why-content">
+        <div class="fade-up"><p class="label label-dark">Why MONOCEM</p></div>
+        <h2 class="fade-up" style="color:#fff;margin:1rem 0 0;transition-delay:0.08s">Crafted to<br><em style="font-style:italic;color:rgba(255,255,255,0.38)">Last Decades.</em></h2>
+        <div class="fade-up why-attrs" style="transition-delay:0.12s">
+          <div>
+            <h5>Seamless</h5>
+            <p>No grout lines. No joints. A single continuous surface from floor to ceiling.</p>
+          </div>
+          <div>
+            <h5>Waterproof</h5>
+            <p>Fully sealed against water penetration. Safe for wet rooms, showers and pools.</p>
+          </div>
+          <div>
+            <h5>Durable</h5>
+            <p>Hardwearing mineral composition resists scratches, stains and heavy traffic.</p>
+          </div>
+          <div>
+            <h5>Architectural</h5>
+            <p>2mm thin. Applied over existing surfaces without raising floor height.</p>
+          </div>
+        </div>
+        <div class="fade-up lux-stat-row" style="transition-delay:0.16s;margin-top:0">
+          <div class="lux-stat"><h3>15+</h3><p>Years expertise</p></div>
+          <div class="lux-stat"><h3>2,400+</h3><p>Projects done</p></div>
+          <div class="lux-stat"><h3>40+</h3><p>UK cities</p></div>
+          <div class="lux-stat"><h3>5yr</h3><p>Guarantee</p></div>
+        </div>
       </div>
     </div>
   </div>
@@ -552,7 +597,7 @@ p{line-height:1.7;color:#6f6a61}
     </div>
     <div class="app-grid">
       <div class="app-card" onclick="showPage('bathrooms')">
-        <div class="app-card-bg" style="background:linear-gradient(155deg,#ccd4da 0%,#40525f 100%)"></div>
+        <div class="app-card-bg" style="background-image:url('/images/img-bathrooms.png');background-position:50% 40%"></div>
         <div class="app-card-overlay"></div>
         <div class="app-card-info">
           <h3>Bathrooms</h3>
@@ -560,7 +605,7 @@ p{line-height:1.7;color:#6f6a61}
         </div>
       </div>
       <div class="app-card" onclick="showPage('applications')">
-        <div class="app-card-bg" style="background:linear-gradient(155deg,#e2dbd2 0%,#887060 100%)"></div>
+        <div class="app-card-bg" style="background-image:url('/images/img-kitchens.png')"></div>
         <div class="app-card-overlay"></div>
         <div class="app-card-info">
           <h3>Kitchens</h3>
@@ -568,7 +613,7 @@ p{line-height:1.7;color:#6f6a61}
         </div>
       </div>
       <div class="app-card" onclick="showPage('floors')">
-        <div class="app-card-bg" style="background:linear-gradient(155deg,#c8c2b6 0%,#302820 100%)"></div>
+        <div class="app-card-bg" style="background-image:url('/images/img-floors.png')"></div>
         <div class="app-card-overlay"></div>
         <div class="app-card-info">
           <h3>Floors</h3>
@@ -576,7 +621,7 @@ p{line-height:1.7;color:#6f6a61}
         </div>
       </div>
       <div class="app-card" onclick="showPage('walls')">
-        <div class="app-card-bg" style="background:linear-gradient(155deg,#d4d0cc 0%,#504e4a 100%)"></div>
+        <div class="app-card-bg" style="background-image:url('/images/img-walls.png');background-position:50% 30%"></div>
         <div class="app-card-overlay"></div>
         <div class="app-card-info">
           <h3>Walls</h3>
@@ -584,7 +629,7 @@ p{line-height:1.7;color:#6f6a61}
         </div>
       </div>
       <div class="app-card" onclick="showPage('applications')">
-        <div class="app-card-bg" style="background:linear-gradient(155deg,#dcd8d0 0%,#1e1c1a 100%)"></div>
+        <div class="app-card-bg" style="background-image:url('/images/img-stairs.png')"></div>
         <div class="app-card-overlay"></div>
         <div class="app-card-info">
           <h3>Stairs</h3>
@@ -592,7 +637,7 @@ p{line-height:1.7;color:#6f6a61}
         </div>
       </div>
       <div class="app-card" onclick="showPage('applications')">
-        <div class="app-card-bg" style="background:linear-gradient(155deg,#bec2ca 0%,#24282e 100%)"></div>
+        <div class="app-card-bg" style="background-image:url('/images/img-commercial.png');background-position:50% 30%"></div>
         <div class="app-card-overlay"></div>
         <div class="app-card-info">
           <h3>Commercial</h3>
@@ -602,36 +647,47 @@ p{line-height:1.7;color:#6f6a61}
     </div>
   </div>
 
-  <!-- 5. Projects (single featured) -->
-  <div style="background:var(--bg);padding:5rem 2rem">
-    <div class="section-inner">
-      <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:1rem">
-        <div class="fade-up"><p class="label">Portfolio</p></div>
-        <div class="fade-up" style="transition-delay:0.08s"><a class="btn-ghost" onclick="showPage('projects')">View All Projects <span>&#x2192;</span></a></div>
+  <!-- 5. Projects — full-width hero + two thumbnails -->
+  <div class="proj-section">
+    <div class="proj-section-header">
+      <div class="fade-up"><p class="label">Portfolio</p></div>
+      <a class="fade-up btn-ghost" style="transition-delay:0.06s" onclick="showPage('projects')">View All Projects <span>&#x2192;</span></a>
+    </div>
+    <div class="fade-up proj-hero" onclick="showPage('projects')">
+      <div class="proj-hero-bg" style="background-image:url('/images/img-proj-kitchen.png');background-position:center 40%"></div>
+      <div class="proj-hero-overlay"></div>
+      <div class="proj-hero-info">
+        <h3>Kensington Residence</h3>
+        <span class="proj-meta">Kitchen &amp; Worktops · London</span>
       </div>
-      <div class="fade-up lux-single-project" style="transition-delay:0.12s" onclick="showPage('projects')">
-        <div class="lux-single-project-bg bg-proj-1"></div>
-        <div class="lux-full-image-overlay"></div>
-        <div class="lux-single-project-info">
-          <h3 style="color:#fff;font-weight:300;margin-bottom:0.25rem">Chelsea Residence</h3>
-          <span style="font-size:0.65rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5)">Floors &amp; Walls · London</span>
+    </div>
+    <div class="proj-thumb-row">
+      <div class="fade-up proj-thumb" onclick="showPage('projects')">
+        <div class="proj-thumb-bg" style="background-image:url('/images/img-proj-shower.png');background-position:center 20%"></div>
+        <div class="proj-thumb-overlay"></div>
+        <div class="proj-thumb-info">
+          <h4>Notting Hill Spa</h4>
+          <span class="proj-meta">Wet Room · London</span>
+        </div>
+      </div>
+      <div class="fade-up proj-thumb" style="transition-delay:0.08s" onclick="showPage('projects')">
+        <div class="proj-thumb-bg" style="background-image:url('/images/img-proj-basin.png')"></div>
+        <div class="proj-thumb-overlay"></div>
+        <div class="proj-thumb-info">
+          <h4>Chelsea Bathroom</h4>
+          <span class="proj-meta">Bathroom &amp; Vanity · London</span>
         </div>
       </div>
     </div>
+    <div class="proj-section-footer">
+      <a class="fade-up btn-ghost" onclick="showPage('projects')">View All Projects <span>&#x2192;</span></a>
+    </div>
   </div>
 
-  <!-- 6. Colours — luxury material presentation -->
+  <!-- 6. Colours — editorial texture photograph -->
   <div class="lux-colour-section">
     <div class="lux-colour-inner">
-      <!-- Colour mosaic: mobile = 5-swatch filmstrip · desktop = editorial 5-tile asymmetric grid -->
-      <div class="fade-up lux-colour-mosaic">
-        <div class="lux-swatch lux-swatch-span"></div>
-        <div class="lux-swatch" style="background:linear-gradient(145deg,#d4c8b4 0%,#b8aa96 100%)"></div>
-        <div class="lux-swatch" style="background:linear-gradient(145deg,#9a9490 0%,#787270 100%)"></div>
-        <div class="lux-swatch" style="background:linear-gradient(145deg,#7a6a58 0%,#584c3c 100%)"></div>
-        <div class="lux-swatch" style="background:linear-gradient(145deg,#2e2a26 0%,#191816 100%)"></div>
-      </div>
-      <!-- Text content -->
+      <div class="fade-up lux-colour-photo" style="background-image:url('/images/img-texture.png')"></div>
       <div class="fade-up lux-colour-content" style="transition-delay:0.15s">
         <p class="label">Colour Palette</p>
         <h2>100+ Curated <em>Colours</em></h2>
