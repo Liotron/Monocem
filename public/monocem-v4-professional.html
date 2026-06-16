@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MONOCEM | Professional Microcement UK</title>
+<meta name="description" content="MONOCEM — premium microcement for floors, walls, bathrooms and kitchens. Professional installation across the UK. Request a free quote today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Jost',sans-serif;font-weight:300;color:#1d1b18;background:#f7f4ef;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+
+/* ── TYPOGRAPHY ── */
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:300;line-height:1.15;letter-spacing:-0.01em}
+h1{font-size:clamp(2.8rem,8vw,5.5rem)}
+h2{font-size:clamp(2rem,5vw,3.5rem)}
+h3{font-size:clamp(1.4rem,3vw,2rem)}
+h4{font-size:1.2rem}
+p{line-height:1.7;color:#6f6a61}
+.label{font-size:0.65rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#b9975b}
+.label-dark{color:rgba(255,255,255,0.45)}
+
+/* ── COLOURS ── */
+:root{
+  --bg:#f7f4ef;
+  --dark:#111111;
+  --charcoal:#1d1b18;
+  --gold:#b9975b;
+  --muted:#6f6a61;
+  --border:rgba(29,27,24,0.1);
+  --border-dark:rgba(255,255,255,0.08);
+}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;gap:0.5rem;font-family:'Jost',sans-serif;font-size:0.7rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;padding:0.85rem 2rem;transition:all 0.3s ease;cursor:pointer}
+.btn-gold{background:var(--gold);color:#fff}
+.btn-gold:hover{background:#a8834a}
+.btn-outline{border:1px solid var(--charcoal);color:var(--charcoal)}
+.btn-outline:hover{background:var(--charcoal);color:#fff}
+.btn-outline-light{border:1px solid rgba(255,255,255,0.4);color:#fff}
+.btn-outline-light:hover{background:rgba(255,255,255,0.1)}
+.btn-ghost{color:var(--gold);font-family:'Jost',sans-serif;font-size:0.7rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;display:inline-flex;align-items:center;gap:0.5rem;padding:0;background:none;border:none;cursor:pointer;transition:gap 0.3s ease}
+.btn-ghost:hover{gap:0.9rem}
+
+/* ── HEADER ── */
+#header{position:fixed;top:0;left:0;right:0;z-index:900;padding:0 2rem;height:72px;display:flex;align-items:center;justify-content:space-between;transition:background 0.4s ease,backdrop-filter 0.4s ease}
+#header.transparent{background:transparent}
+#header.solid{background:rgba(17,17,17,0.97);backdrop-filter:blur(12px)}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;letter-spacing:0.12em;color:#fff;text-transform:uppercase}
+.nav-desktop{display:none}
+@media(min-width:960px){.nav-desktop{display:flex;align-items:center;gap:2rem}}
+.nav-desktop a{font-size:0.7rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.75);transition:color 0.2s}
+.nav-desktop a:hover{color:#fff}
+.nav-desktop .btn-gold{padding:0.6rem 1.4rem;font-size:0.65rem}
+.burger{display:flex;flex-direction:column;gap:5px;padding:8px;cursor:pointer}
+.burger span{display:block;width:24px;height:1.5px;background:#fff;transition:all 0.3s ease}
+@media(min-width:960px){.burger{display:none}}
+
+/* ── MENU OVERLAY ── */
+#menu-overlay{position:fixed;inset:0;z-index:950;display:flex;pointer-events:none}
+#menu-backdrop{position:absolute;inset:0;background:rgba(0,0,0,0);transition:background 0.4s ease}
+#menu-drawer{position:absolute;top:0;right:0;bottom:0;width:min(380px,100vw);background:var(--dark);transform:translateX(100%);transition:transform 0.45s cubic-bezier(0.77,0,0.18,1);display:flex;flex-direction:column;padding:5rem 2.5rem 3rem}
+.menu-open #menu-overlay{pointer-events:all}
+.menu-open #menu-backdrop{background:rgba(0,0,0,0.6)}
+.menu-open #menu-drawer{transform:translateX(0)}
+.menu-close{position:absolute;top:1.5rem;right:1.5rem;width:40px;height:40px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.5rem;cursor:pointer;opacity:0.7;transition:opacity 0.2s}
+.menu-close:hover{opacity:1}
+.menu-nav{display:flex;flex-direction:column;gap:0.25rem;margin-bottom:2rem}
+.menu-nav a{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:rgba(255,255,255,0.85);padding:0.4rem 0;transition:color 0.2s;line-height:1.2;cursor:pointer;display:block}
+.menu-nav a:hover{color:#fff}
+.menu-nav .menu-sub{font-family:'Jost',sans-serif;font-size:0.7rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.4);padding:0.5rem 0;font-size:0.65rem}
+.menu-cta{margin-top:auto}
+.menu-cta a{display:block;padding:0.9rem 2rem;background:var(--gold);color:#fff;font-size:0.7rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;text-align:center;cursor:pointer;transition:background 0.2s}
+.menu-cta a:hover{background:#a8834a}
+
+/* ── PAGES ── */
+.page{display:none;min-height:100vh}
+.page.active{display:block}
+
+/* ── HERO ── */
+#hero-section{min-height:100svh;background:linear-gradient(160deg,#3d3830 0%,#272320 35%,#181613 65%,#0e0c0b 100%);position:relative;display:flex;align-items:flex-end;padding:0 2rem 4rem;overflow:hidden}
+.hero-texture{position:absolute;inset:0;opacity:0.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='1' height='1' fill='%23fff'/%3E%3C/svg%3E");background-size:4px 4px}
+.hero-content{position:relative;z-index:1;max-width:680px}
+.hero-content .label{margin-bottom:1.5rem}
+.hero-content h1{color:#fff;margin-bottom:1.5rem}
+.hero-content h1 em{font-style:italic;color:rgba(255,255,255,0.7)}
+.hero-content p{color:rgba(255,255,255,0.6);max-width:440px;margin-bottom:2.5rem;font-size:1rem}
+.hero-btns{display:flex;flex-wrap:wrap;gap:1rem}
+.hero-scroll{position:absolute;bottom:2rem;right:2rem;display:flex;flex-direction:column;align-items:center;gap:0.5rem}
+.hero-scroll span{font-size:0.6rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.35);writing-mode:vertical-rl}
+.hero-scroll::before{content:'';display:block;width:1px;height:48px;background:rgba(255,255,255,0.2)}
+
+/* ── SECTION WRAPPER ── */
+.section{padding:5rem 2rem}
+.section-inner{max-width:1200px;margin:0 auto}
+@media(min-width:768px){.section{padding:6rem 3rem}}
+@media(min-width:1200px){.section{padding:8rem 4rem}}
+
+/* ── SYSTEMS CARDS (portrait) ── */
+.systems-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;margin-top:3rem}
+@media(min-width:600px){.systems-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.systems-grid{grid-template-columns:repeat(3,1fr)}}
+.system-card{position:relative;aspect-ratio:4/5;overflow:hidden;cursor:pointer}
+.system-card-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 0.6s ease}
+.system-card:hover .system-card-bg{transform:scale(1.04)}
+.system-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.75) 0%,rgba(0,0,0,0.1) 60%,transparent 100%)}
+.system-card-content{position:absolute;bottom:0;left:0;right:0;padding:1.5rem}
+.system-card-content h3{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#fff;margin-bottom:0.3rem}
+.system-card-content p{font-size:0.75rem;color:rgba(255,255,255,0.6);margin:0}
+.system-card-arrow{position:absolute;top:1.5rem;right:1.5rem;width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem;transition:all 0.3s ease}
+.system-card:hover .system-card-arrow{background:rgba(255,255,255,0.15);border-color:#fff}
+
+/* ── WHY CHOOSE (dark) ── */
+.dark-section{background:var(--dark);color:#fff;padding:5rem 2rem}
+@media(min-width:768px){.dark-section{padding:7rem 3rem}}
+.why-grid{display:grid;grid-template-columns:1fr;margin-top:3rem}
+.why-item{padding:2rem 0;border-bottom:1px solid var(--border-dark);display:grid;grid-template-columns:1fr}
+@media(min-width:768px){
+  .why-grid{grid-template-columns:repeat(2,1fr);gap:0}
+  .why-item{padding:2.5rem 2rem;border-bottom:1px solid var(--border-dark);border-right:none}
+  .why-item:nth-child(odd){border-right:1px solid var(--border-dark);padding-left:0}
+  .why-item:nth-child(even){padding-right:0}
+  .why-item:nth-last-child(-n+2){border-bottom:none}
+}
+.why-item h4{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:#fff;margin-bottom:0.75rem}
+.why-item p{color:rgba(255,255,255,0.5);font-size:0.9rem;margin:0}
+.why-num{font-size:0.6rem;font-weight:500;letter-spacing:0.18em;color:var(--gold);margin-bottom:1rem;display:block}
+
+/* ── PROJECTS ── */
+.projects-grid{display:grid;grid-template-columns:1fr;gap:2px;margin-top:3rem}
+@media(min-width:768px){.projects-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.projects-grid{grid-template-columns:repeat(3,1fr)}}
+.project-card{position:relative;aspect-ratio:3/4;overflow:hidden;cursor:pointer}
+.project-card-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 0.6s ease}
+.project-card:hover .project-card-bg{transform:scale(1.04)}
+.project-card-info{position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(0,0,0,0.8) 0%,transparent 100%)}
+.project-card-info h4{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:#fff;font-weight:300}
+.project-card-info span{font-size:0.65rem;color:rgba(255,255,255,0.5);letter-spacing:0.1em;text-transform:uppercase}
+
+/* ── COLOURS GRID ── */
+.colours-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3rem}
+@media(min-width:600px){.colours-grid{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:960px){.colours-grid{grid-template-columns:repeat(6,1fr)}}
+.colour-swatch{cursor:pointer}
+.colour-swatch-box{aspect-ratio:1;margin-bottom:0.75rem;transition:transform 0.2s ease}
+.colour-swatch:hover .colour-swatch-box{transform:scale(0.95)}
+.colour-swatch h5{font-family:'Jost',sans-serif;font-size:0.7rem;font-weight:500;color:var(--charcoal);letter-spacing:0.05em}
+.colour-swatch p{font-size:0.65rem;color:var(--muted)}
+
+/* ── PROCESS STEPS ── */
+.steps-list{margin-top:3rem;display:grid;grid-template-columns:1fr;gap:0}
+.step-item{padding:2rem 0;border-bottom:1px solid var(--border);display:flex;gap:2rem;align-items:flex-start}
+.step-item:last-child{border-bottom:none}
+.step-num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:rgba(29,27,24,0.12);line-height:1;flex-shrink:0;min-width:2.5rem}
+.step-content h4{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:var(--charcoal);margin-bottom:0.5rem}
+.step-content p{font-size:0.9rem;margin:0}
+
+/* ── QUOTE / FORM ── */
+.form-section{background:var(--dark);padding:5rem 2rem}
+.form-inner{max-width:640px;margin:0 auto}
+.form-row{display:grid;grid-template-columns:1fr;gap:1rem;margin-bottom:1rem}
+@media(min-width:600px){.form-row.two{grid-template-columns:1fr 1fr}}
+.form-field{display:flex;flex-direction:column;gap:0.4rem}
+.form-field label{font-size:0.65rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.5)}
+.form-field input,.form-field select,.form-field textarea{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);color:#fff;padding:0.8rem 1rem;font-family:'Jost',sans-serif;font-size:0.9rem;font-weight:300;outline:none;transition:border-color 0.2s;width:100%}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:rgba(255,255,255,0.35)}
+.form-field select option{background:var(--dark)}
+.form-field textarea{resize:vertical;min-height:120px}
+.form-submit{margin-top:1.5rem}
+
+/* ── INNER PAGE HERO ── */
+.inner-hero{padding:9rem 2rem 4rem;background:var(--dark);color:#fff;text-align:left}
+.inner-hero h1{color:#fff;margin:1rem 0 1.5rem}
+.inner-hero p{color:rgba(255,255,255,0.55);max-width:560px;font-size:1rem}
+.inner-hero h1 em{font-style:italic;color:rgba(255,255,255,0.6)}
+
+/* ── CONTENT SECTIONS ── */
+.content-block{max-width:760px;margin:0 auto}
+.content-block h2{color:var(--charcoal);margin:3rem 0 1rem}
+.content-block h3{color:var(--charcoal);font-size:1.5rem;margin:2rem 0 0.75rem}
+.content-block p{margin-bottom:1.25rem}
+.content-block ul{margin:1rem 0 1.5rem 1.5rem;list-style:disc}
+.content-block ul li{color:var(--muted);margin-bottom:0.5rem;font-size:0.95rem;line-height:1.6}
+
+/* ── ABOUT ── */
+.about-grid{display:grid;grid-template-columns:1fr;gap:4rem;align-items:center}
+@media(min-width:768px){.about-grid{grid-template-columns:1fr 1fr}}
+.about-stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
+.about-stat h3{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:var(--charcoal);line-height:1}
+.about-stat p{font-size:0.8rem;color:var(--muted);margin-top:0.25rem}
+
+/* ── CONTACT ── */
+.contact-grid{display:grid;grid-template-columns:1fr;gap:4rem}
+@media(min-width:768px){.contact-grid{grid-template-columns:1fr 1fr}}
+.contact-info h3{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--charcoal);margin-bottom:2rem}
+.contact-detail{display:flex;flex-direction:column;gap:0.25rem;margin-bottom:2rem}
+.contact-detail .label{margin-bottom:0.25rem}
+.contact-detail a,.contact-detail p{color:var(--charcoal);font-size:1rem;transition:color 0.2s}
+.contact-detail a:hover{color:var(--gold)}
+
+/* ── LEGAL PAGES ── */
+.legal-content{max-width:760px;margin:0 auto;padding:2rem 0}
+.legal-content h2{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--charcoal);margin:2.5rem 0 0.75rem;padding-top:0.5rem}
+.legal-content p{margin-bottom:1.25rem;font-size:0.95rem;line-height:1.75}
+.legal-content ul{margin:0.75rem 0 1.5rem 1.5rem;list-style:disc}
+.legal-content ul li{color:var(--muted);margin-bottom:0.4rem;font-size:0.95rem;line-height:1.6}
+.legal-date{font-size:0.75rem;color:var(--muted);border-bottom:1px solid var(--border);padding-bottom:1.5rem;margin-bottom:0.5rem}
+
+/* ── FOOTER ── */
+#footer{background:var(--dark);color:rgba(255,255,255,0.55);padding:5rem 2rem 2.5rem}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:1fr;gap:3rem;padding-bottom:4rem;border-bottom:1px solid var(--border-dark)}
+@media(min-width:768px){.footer-top{grid-template-columns:2fr 1fr 1fr 1fr}}
+.footer-brand .logo{margin-bottom:1rem;display:inline-block}
+.footer-brand p{font-size:0.85rem;line-height:1.7;max-width:260px}
+.footer-col h5{font-family:'Jost',sans-serif;font-size:0.65rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1.25rem}
+.footer-col ul{display:flex;flex-direction:column;gap:0.6rem}
+.footer-col ul li a,.footer-col ul li span{font-size:0.85rem;color:rgba(255,255,255,0.5);transition:color 0.2s;cursor:pointer;display:block}
+.footer-col ul li a:hover,.footer-col ul li span:hover{color:#fff}
+.footer-bottom{padding-top:2rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem}
+.footer-bottom p{font-size:0.75rem}
+.footer-bottom nav{display:flex;gap:1.5rem}
+.footer-bottom nav span{font-size:0.75rem;cursor:pointer;transition:color 0.2s}
+.footer-bottom nav span:hover{color:#fff}
+
+/* ── WHATSAPP FLOAT ── */
+#wa-float{position:fixed;bottom:2rem;right:2rem;z-index:800;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,0.2);opacity:0;transform:translateY(20px);transition:all 0.4s ease;pointer-events:none}
+#wa-float.visible{opacity:1;transform:translateY(0);pointer-events:all}
+#wa-float svg{width:26px;height:26px;fill:#fff}
+#wa-float:hover{background:#1ebe5a;transform:translateY(-2px)}
+
+/* ── FADE UP ── */
+.fade-up{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+
+/* ── PRODUCT CARDS ── */
+.products-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;margin-top:3rem}
+@media(min-width:600px){.products-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.products-grid{grid-template-columns:repeat(3,1fr)}}
+.product-card{border:1px solid var(--border);padding:2rem;transition:border-color 0.3s ease,transform 0.3s ease;cursor:pointer}
+.product-card:hover{border-color:var(--gold);transform:translateY(-4px)}
+.product-icon{width:48px;height:48px;margin-bottom:1.5rem;background:var(--gold);opacity:0.15;border-radius:2px}
+.product-card h4{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:var(--charcoal);margin-bottom:0.5rem}
+.product-card p{font-size:0.85rem;margin:0}
+.product-card .price{margin-top:1rem;font-size:0.75rem;font-weight:500;color:var(--gold);letter-spacing:0.1em}
+
+/* ── TESTIMONIALS ── */
+.testimonials-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;margin-top:3rem}
+@media(min-width:768px){.testimonials-grid{grid-template-columns:repeat(3,1fr)}}
+.testimonial{padding:2rem;border:1px solid var(--border)}
+.testimonial blockquote{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:300;font-style:italic;color:var(--charcoal);line-height:1.6;margin-bottom:1.5rem}
+.testimonial cite{font-size:0.7rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);font-style:normal}
+.stars{color:var(--gold);font-size:0.9rem;margin-bottom:0.75rem;letter-spacing:2px}
+
+/* ── SURFACE PAGE ── */
+.surface-features{display:grid;grid-template-columns:1fr;gap:1.5rem;margin-top:2.5rem}
+@media(min-width:768px){.surface-features{grid-template-columns:repeat(2,1fr)}}
+.feature-item{display:flex;gap:1.25rem;align-items:flex-start}
+.feature-icon{width:36px;height:36px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold);font-size:0.9rem}
+.feature-item h5{font-family:'Jost',sans-serif;font-size:0.85rem;font-weight:500;color:var(--charcoal);margin-bottom:0.3rem}
+.feature-item p{font-size:0.82rem;margin:0}
+
+/* ── LEARN CARDS ── */
+.learn-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;margin-top:3rem}
+@media(min-width:768px){.learn-grid{grid-template-columns:repeat(3,1fr)}}
+.learn-card{cursor:pointer}
+.learn-card-img{aspect-ratio:3/2;margin-bottom:1.25rem;overflow:hidden}
+.learn-card-img-bg{width:100%;height:100%;background-size:cover;background-position:center;transition:transform 0.5s ease}
+.learn-card:hover .learn-card-img-bg{transform:scale(1.04)}
+.learn-card h4{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;color:var(--charcoal);margin-bottom:0.5rem}
+.learn-card p{font-size:0.82rem;margin-bottom:1rem}
+
+/* ── BG PLACEHOLDERS ── */
+.bg-floor{background:linear-gradient(135deg,#c4b89a 0%,#a89378 50%,#8a7560 100%)}
+.bg-wall{background:linear-gradient(135deg,#d0cec9 0%,#b8b5ae 50%,#9a9690 100%)}
+.bg-bath{background:linear-gradient(135deg,#9bb0b4 0%,#7a9397 50%,#5e787d 100%)}
+.bg-kitchen{background:linear-gradient(135deg,#c0bab2 0%,#a09890 50%,#7d7570 100%)}
+.bg-worktop{background:linear-gradient(135deg,#b0a898 0%,#918b80 50%,#706a60 100%)}
+.bg-stair{background:linear-gradient(135deg,#b8a890 0%,#9a8a72 50%,#7c6c54 100%)}
+.bg-proj-1{background:linear-gradient(135deg,#8a9a8a 0%,#6a7a6a 50%,#4a5a4a 100%)}
+.bg-proj-2{background:linear-gradient(135deg,#c0a890 0%,#a08870 50%,#806850 100%)}
+.bg-proj-3{background:linear-gradient(135deg,#b0b8c0 0%,#909aa2 50%,#707880 100%)}
+.bg-proj-4{background:linear-gradient(135deg,#c8b898 0%,#a89878 50%,#887858 100%)}
+.bg-proj-5{background:linear-gradient(135deg,#a0b0b8 0%,#809098 50%,#607078 100%)}
+.bg-proj-6{background:linear-gradient(135deg,#b8c0a8 0%,#98a088 50%,#788068 100%)}
+.bg-article-1{background:linear-gradient(135deg,#c8c0b0 0%,#a8a090 50%,#888070 100%)}
+.bg-article-2{background:linear-gradient(135deg,#b0c0b8 0%,#90a0a0 50%,#708080 100%)}
+.bg-article-3{background:linear-gradient(135deg,#c0b8a8 0%,#a09888 50%,#807868 100%)}
+
+/* ── FORM SUCCESS ── */
+.form-success{display:none;text-align:center;padding:3rem 2rem}
+.form-success.show{display:block}
+.form-success h3{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:#fff;margin-bottom:1rem}
+.form-success p{color:rgba(255,255,255,0.6)}
+
+/* ── NAV ACTIVE ── */
+.nav-desktop a.active,.menu-nav a.active{color:#fff}
+
+/* ── DIVIDER ── */
+.divider{height:1px;background:var(--border);margin:0}
+.divider-dark{height:1px;background:var(--border-dark);margin:0}
+
+/* ── TWO-COL TEXT ── */
+.two-col-text{display:grid;grid-template-columns:1fr;gap:3rem}
+@media(min-width:768px){.two-col-text{grid-template-columns:1fr 1fr}}
+
+/* ── SURFACE PAGE IMG ── */
+.surface-hero-img{aspect-ratio:16/9;width:100%;margin:3rem 0}
+@media(min-width:768px){.surface-hero-img{aspect-ratio:21/9}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header" class="solid">
+  <a class="logo" onclick="showPage('home')" style="cursor:pointer">MONOCEM</a>
+  <nav class="nav-desktop">
+    <a onclick="showPage('systems')">Systems</a>
+    <a onclick="showPage('projects')">Projects</a>
+    <a onclick="showPage('products')">Products</a>
+    <a onclick="showPage('colours')">Colours</a>
+    <a onclick="showPage('about')">About</a>
+    <a onclick="showPage('contact')" class="btn btn-gold">Free Quote</a>
+  </nav>
+  <div class="burger" onclick="openMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+
+<!-- MENU OVERLAY -->
+<div id="menu-overlay">
+  <div id="menu-backdrop" onclick="closeMenu()"></div>
+  <div id="menu-drawer">
+    <button class="menu-close" onclick="closeMenu()">&#x2715;</button>
+    <nav class="menu-nav">
+      <span class="menu-sub">Systems</span>
+      <a onclick="showPage('floors')">Floors</a>
+      <a onclick="showPage('walls')">Walls</a>
+      <a onclick="showPage('bathrooms')">Bathrooms</a>
+      <a onclick="showPage('applications')">All Applications</a>
+      <span class="menu-sub" style="margin-top:0.75rem">Explore</span>
+      <a onclick="showPage('projects')">Projects</a>
+      <a onclick="showPage('products')">Products</a>
+      <a onclick="showPage('colours')">Colours</a>
+      <a onclick="showPage('about')">About</a>
+    </nav>
+    <div class="menu-cta">
+      <a onclick="showPage('contact')">Get a Free Quote →</a>
+    </div>
+  </div>
+</div>
+
+<!-- WHATSAPP FLOAT -->
+<a id="wa-float" href="https://wa.me/447000000000" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE: HOME
+═══════════════════════════════════════════════════════════ -->
+<div id="page-home" class="page active">
+
+  <!-- Hero -->
+  <section id="hero-section">
+    <div class="hero-texture"></div>
+    <div class="hero-content">
+      <p class="label">Premium Microcement · UK</p>
+      <h1>The Surface<br>That Defines<br><em>Every Space</em></h1>
+      <p>Seamless, durable, and endlessly adaptable. MONOCEM microcement transforms floors, walls, and bathrooms into architectural statements.</p>
+      <div class="hero-btns">
+        <a class="btn btn-gold" onclick="showPage('contact')">Get a Free Quote</a>
+        <a class="btn btn-outline-light" onclick="showPage('systems')">Our Systems</a>
+      </div>
+    </div>
+    <div class="hero-scroll"><span>Scroll</span></div>
+  </section>
+
+  <!-- Systems overview -->
+  <section class="section" style="background:var(--bg)">
+    <div class="section-inner">
+      <div class="fade-up"><p class="label">What We Do</p></div>
+      <div class="fade-up" style="transition-delay:0.1s">
+        <h2 style="margin:1rem 0 0.5rem;color:var(--charcoal);max-width:600px">Microcement for Every<br><em style="color:var(--muted);font-style:italic">Surface &amp; Space</em></h2>
+      </div>
+      <div class="systems-grid">
+        <div class="fade-up system-card" style="transition-delay:0.05s" onclick="showPage('floors')">
+          <div class="system-card-bg bg-floor"></div>
+          <div class="system-card-overlay"></div>
+          <div class="system-card-arrow">&#x2192;</div>
+          <div class="system-card-content">
+            <h3>Floors</h3>
+            <p>Seamless, polished, durable</p>
+          </div>
+        </div>
+        <div class="fade-up system-card" style="transition-delay:0.1s" onclick="showPage('walls')">
+          <div class="system-card-bg bg-wall"></div>
+          <div class="system-card-overlay"></div>
+          <div class="system-card-arrow">&#x2192;</div>
+          <div class="system-card-content">
+            <h3>Walls</h3>
+            <p>Texture without grout lines</p>
+          </div>
+        </div>
+        <div class="fade-up system-card" style="transition-delay:0.15s" onclick="showPage('bathrooms')">
+          <div class="system-card-bg bg-bath"></div>
+          <div class="system-card-overlay"></div>
+          <div class="system-card-arrow">&#x2192;</div>
+          <div class="system-card-content">
+            <h3>Bathrooms</h3>
+            <p>100% waterproof elegance</p>
+          </div>
+        </div>
+        <div class="fade-up system-card" style="transition-delay:0.2s" onclick="showPage('applications')">
+          <div class="system-card-bg bg-kitchen"></div>
+          <div class="system-card-overlay"></div>
+          <div class="system-card-arrow">&#x2192;</div>
+          <div class="system-card-content">
+            <h3>Kitchens</h3>
+            <p>Heat and stain resistant</p>
+          </div>
+        </div>
+        <div class="fade-up system-card" style="transition-delay:0.25s" onclick="showPage('applications')">
+          <div class="system-card-bg bg-worktop"></div>
+          <div class="system-card-overlay"></div>
+          <div class="system-card-arrow">&#x2192;</div>
+          <div class="system-card-content">
+            <h3>Worktops</h3>
+            <p>Hygienic continuous surface</p>
+          </div>
+        </div>
+        <div class="fade-up system-card" style="transition-delay:0.3s" onclick="showPage('applications')">
+          <div class="system-card-bg bg-stair"></div>
+          <div class="system-card-overlay"></div>
+          <div class="system-card-arrow">&#x2192;</div>
+          <div class="system-card-content">
+            <h3>Stairs</h3>
+            <p>Bold architectural flow</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose -->
+  <div class="dark-section">
+    <div class="section-inner">
+      <div class="fade-up"><p class="label label-dark">Why MONOCEM</p></div>
+      <div class="fade-up" style="transition-delay:0.1s">
+        <h2 style="color:#fff;margin:1rem 0">The Standard<br><em style="color:rgba(255,255,255,0.5);font-style:italic">Others Follow</em></h2>
+      </div>
+      <div class="why-grid">
+        <div class="fade-up why-item">
+          <span class="why-num">01</span>
+          <h4>15+ Years Experience</h4>
+          <p>Over a decade of professional microcement application across residential and commercial projects throughout the UK.</p>
+        </div>
+        <div class="fade-up why-item" style="transition-delay:0.05s">
+          <span class="why-num">02</span>
+          <h4>Certified Installers</h4>
+          <p>Our technicians are fully certified and trained in the latest microcement application techniques and systems.</p>
+        </div>
+        <div class="fade-up why-item" style="transition-delay:0.1s">
+          <span class="why-num">03</span>
+          <h4>2mm Thin Application</h4>
+          <p>Applied at just 2–3mm, MONOCEM adds virtually no height, making it ideal for renovation projects.</p>
+        </div>
+        <div class="fade-up why-item" style="transition-delay:0.15s">
+          <span class="why-num">04</span>
+          <h4>Nationwide Coverage</h4>
+          <p>Professional installation teams operating in over 40 cities across England, Scotland, and Wales.</p>
+        </div>
+        <div class="fade-up why-item" style="transition-delay:0.2s">
+          <span class="why-num">05</span>
+          <h4>5-Year Guarantee</h4>
+          <p>Every MONOCEM installation is backed by our comprehensive 5-year workmanship guarantee.</p>
+        </div>
+        <div class="fade-up why-item" style="transition-delay:0.25s">
+          <span class="why-num">06</span>
+          <h4>100+ Colour Options</h4>
+          <p>Choose from over 100 curated shades, or work with our design team on a completely bespoke palette.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Projects teaser -->
+  <section class="section" style="background:var(--bg)">
+    <div class="section-inner">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;margin-bottom:0">
+        <div>
+          <div class="fade-up"><p class="label">Portfolio</p></div>
+          <div class="fade-up" style="transition-delay:0.1s">
+            <h2 style="color:var(--charcoal);margin:0.75rem 0 0">Recent <em style="font-style:italic;color:var(--muted)">Projects</em></h2>
+          </div>
+        </div>
+        <div class="fade-up" style="transition-delay:0.15s">
+          <a class="btn-ghost" onclick="showPage('projects')">View All Projects <span>&#x2192;</span></a>
+        </div>
+      </div>
+      <div class="projects-grid" style="margin-top:2.5rem">
+        <div class="fade-up project-card" style="transition-delay:0.05s" onclick="showPage('projects')">
+          <div class="project-card-bg bg-proj-1"></div>
+          <div class="project-card-info">
+            <h4>Chelsea Residence</h4>
+            <span>Floors &amp; Walls · London</span>
+          </div>
+        </div>
+        <div class="fade-up project-card" style="transition-delay:0.1s" onclick="showPage('projects')">
+          <div class="project-card-bg bg-proj-2"></div>
+          <div class="project-card-info">
+            <h4>Spa Bathroom Suite</h4>
+            <span>Bathroom · Manchester</span>
+          </div>
+        </div>
+        <div class="fade-up project-card" style="transition-delay:0.15s" onclick="showPage('projects')">
+          <div class="project-card-bg bg-proj-3"></div>
+          <div class="project-card-info">
+            <h4>Open-Plan Kitchen</h4>
+            <span>Kitchen &amp; Worktop · Bristol</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section" style="background:#f0ece4">
+    <div class="section-inner">
+      <div class="fade-up"><p class="label">Client Reviews</p></div>
+      <div class="fade-up" style="transition-delay:0.1s">
+        <h2 style="color:var(--charcoal);margin:0.75rem 0 0">What Our Clients<br><em style="font-style:italic;color:var(--muted)">Say</em></h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="fade-up testimonial" style="transition-delay:0.05s">
+          <div class="stars">★★★★★</div>
+          <blockquote>"The finish is absolutely breathtaking. Our entire ground floor looks like a completely different space. The team were professional, tidy, and incredibly skilled."</blockquote>
+          <cite>Sarah M. — Chelsea, London</cite>
+        </div>
+        <div class="fade-up testimonial" style="transition-delay:0.1s">
+          <div class="stars">★★★★★</div>
+          <blockquote>"We had our bathroom transformed with MONOCEM and couldn't be happier. Seamless, waterproof, and stunning. Zero grout lines — a dream to clean."</blockquote>
+          <cite>James K. — Alderley Edge</cite>
+        </div>
+        <div class="fade-up testimonial" style="transition-delay:0.15s">
+          <div class="stars">★★★★★</div>
+          <blockquote>"From design consultation to final seal, the process was seamless. MONOCEM delivered exactly what they promised — and it exceeded our expectations."</blockquote>
+          <cite>Rachel T. — Edinburgh</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <div class="dark-section" style="padding:5rem 2rem;text-align:center">
+    <div class="fade-up"><p class="label label-dark">Start Your Project</p></div>
+    <div class="fade-up" style="transition-delay:0.1s">
+      <h2 style="color:#fff;margin:1rem auto 1.5rem;max-width:640px">Ready to Transform<br><em style="font-style:italic;color:rgba(255,255,255,0.5)">Your Space?</em></h2>
+    </div>
+    <div class="fade-up" style="transition-delay:0.2s;display:flex;justify-content:center;gap:1rem;flex-wrap:wrap">
+      <a class="btn btn-gold" onclick="showPage('contact')">Get a Free Quote</a>
+      <a class="btn btn-outline-light" onclick="showPage('about')">Learn About Us</a>
+    </div>
+  </div>
+
+</div><!-- /page-home -->
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE: SYSTEMS
+═══════════════════════════════════════════════════════════ -->
+<div id="page-systems" class="page">
+  <div class="inner-hero">
+    <div class="section-inner">
+      <p class="label label-dark">What We Install</p>
+      <h1>Microcement <em>Systems</em></h1>
+      <p>From polished concrete floors to waterproof bathroom surfaces — MONOCEM covers every application with precision and artistry.</p>
+    </div>
+  </div>
+  <section class="section">
+    <div class="section-inner">
+      <div class="systems-grid">
+        <div class="fade-up system-card" onclick="showPage('floors')">
+          <div class="system-card-bg bg-floor"></div>
+          <div class="system-card-overlay"></div>
+          <div class="system-card-arrow">&#x2192;</div>
+          <div class="system-card-content"><h3>Floors</h3><p>Seamless, polished, durable</p></div>
+        </div>
+        <div class="fade-up system-card" style="transition-delay:0.05s" onclick="showPage('walls')">
+          <div class="system-card-bg bg-wall"></div>
+          <div class="system-card-overlay"></div>
+          <div class="system-card-arrow">&#x2192;</div>
+          <div class="system-card-content"><h3>Walls</h3><p>Texture without grout lines</p></div>
+        </div>
+        <div class="fade-up system-card" style="transition-delay:0.1s" onclick="showPage('bathrooms')">
+          <div class="system-card-bg bg-bath"></div>
+          <div class="system-card-overlay"></div>
+          <div class="system-card-arrow">&#x2192;</div>
+          <div class="system-card-content"><h3>Bathrooms</h3><p>100% waterproof elegance</p></div>
+        </div>
+        <div class="fade-up system-card" style="transition-delay:0.15s" onclick="showPage('applications')">
+          <div class="system-card-bg bg-kitchen"></div>
+          <div class="system-card-overlay"></div>
+          <div class="system-card-arrow">&#x2192;</div>
+          <div class="system-card-content"><h3>Kitchens</h3><p>Heat and stain resistant</p></div>
+        </div>
+        <div class="fade-up system-card" style="transition-delay:0.2s" onclick="showPage('applications')">
+          <div class="system-card-bg bg-worktop"></div>
+          <div class="system-card-overlay"></div>
+          <div class="system-card-arrow">&#x2192;</div>
+          <div class="system-card-content"><h3>Worktops</h3><p>Hygienic continuous surface</p></div>
+        </div>
+        <div class="fade-up system-card" style="transition-delay:0.25s" onclick="showPage('applications')">
+          <div class="system-card-bg bg-stair"></div>
+          <div class="system-card-overlay"></div>
+          <div class="system-card-arrow">&#x2192;</div>
+          <div class="system-card-content"><h3>Stairs</h3><p>Bold architectural flow</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="dark-section" style="text-align:center;padding:5rem 2rem">
+    <h2 style="color:#fff;margin-bottom:1.5rem">Not Sure Which System?</h2>
+    <p style="color:rgba(255,255,255,0.55);max-width:480px;margin:0 auto 2rem">Our team will help you choose the right MONOCEM system for your space, substrate, and budget.</p>
+    <a class="btn btn-gold" onclick="showPage('contact')">Get Expert Advice</a>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE: BATHROOMS
+═══════════════════════════════════════════════════════════ -->
+<div id="page-bathrooms" class="page">
+  <div class="inner-hero">
+    <div class="section-inner">
+      <p class="label label-dark">Microcement Bathrooms</p>
+      <h1>Waterproof <em>Elegance</em></h1>
+      <p>Transform your bathroom into a spa-like sanctuary with fully waterproof, seamless microcement surfaces that are beautiful and hygienic.</p>
+    </div>
+  </div>
+  <section class="section">
+    <div class="section-inner">
+      <div class="surface-hero-img bg-bath fade-up"></div>
+      <div class="two-col-text">
+        <div class="fade-up content-block" style="max-width:none">
+          <p class="label">The System</p>
+          <h2>Why Microcement<br>for Bathrooms?</h2>
+          <p>MONOCEM's bathroom system creates a completely seamless surface with no grout lines — eliminating the places where mould and bacteria hide. Applied at just 2–3mm, it can be installed directly over existing tiles, saving time and disruption.</p>
+          <p>Our bathroom-grade topcoats provide an impenetrable waterproof barrier rated for full submersion, making it perfect for wet rooms, walk-in showers, and bath surrounds.</p>
+        </div>
+        <div class="fade-up" style="transition-delay:0.1s">
+          <div class="surface-features">
+            <div class="feature-item">
+              <div class="feature-icon">&#x2713;</div>
+              <div><h5>100% Waterproof</h5><p>Fully sealed topcoat rated for constant water exposure</p></div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">&#x2713;</div>
+              <div><h5>Zero Grout Lines</h5><p>Seamless surface with nowhere for mould to grow</p></div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">&#x2713;</div>
+              <div><h5>Over Existing Tiles</h5><p>Applied directly over tiles with no demolition required</p></div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">&#x2713;</div>
+              <div><h5>Anti-Slip Options</h5><p>Anti-slip topcoat available for shower floors</p></div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">&#x2713;</div>
+              <div><h5>Underfloor Heating</h5><p>Fully compatible with all UFH systems</p></div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">&#x2713;</div>
+              <div><h5>Easy to Clean</h5><p>Wipe-clean surface with no grout to scrub</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="dark-section" style="text-align:center;padding:5rem 2rem">
+    <h2 style="color:#fff;margin-bottom:1.5rem">Ready to Transform<br><em style="font-style:italic;color:rgba(255,255,255,0.5)">Your Bathroom?</em></h2>
+    <a class="btn btn-gold" onclick="showPage('contact')">Request a Free Quote</a>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE: FLOORS
+═══════════════════════════════════════════════════════════ -->
+<div id="page-floors" class="page">
+  <div class="inner-hero">
+    <div class="section-inner">
+      <p class="label label-dark">Microcement Floors</p>
+      <h1>Seamless <em>Floors</em></h1>
+      <p>Polished concrete aesthetics without the weight. MONOCEM floor systems deliver stunning, durable, seamless surfaces for residential and commercial spaces.</p>
+    </div>
+  </div>
+  <section class="section">
+    <div class="section-inner">
+      <div class="surface-hero-img bg-floor fade-up"></div>
+      <div class="two-col-text">
+        <div class="fade-up content-block" style="max-width:none">
+          <p class="label">Floor Systems</p>
+          <h2>The MONOCEM<br>Floor Difference</h2>
+          <p>Applied at 2–3mm directly over existing substrates including concrete, screed, wood, and tiles, MONOCEM floors achieve the polished concrete look at a fraction of the cost and disruption.</p>
+          <p>Available in matt, satin, and gloss finishes, our floor systems are sealed with industrial-grade polyurethane topcoats that withstand heavy foot traffic, pet claws, and daily life.</p>
+        </div>
+        <div class="fade-up" style="transition-delay:0.1s">
+          <div class="surface-features">
+            <div class="feature-item">
+              <div class="feature-icon">&#x2713;</div>
+              <div><h5>Polished Concrete Look</h5><p>Premium aesthetic without the structural requirements</p></div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">&#x2713;</div>
+              <div><h5>Over Existing Floors</h5><p>No demolition — applied directly over tiles or wood</p></div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">&#x2713;</div>
+              <div><h5>UFH Compatible</h5><p>Ideal thermal conductor for underfloor heating</p></div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">&#x2713;</div>
+              <div><h5>Traffic Resistant</h5><p>Industrial sealers for heavy residential and commercial use</p></div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">&#x2713;</div>
+              <div><h5>3 Finish Options</h5><p>Matt, satin, or gloss to match your aesthetic</p></div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">&#x2713;</div>
+              <div><h5>Indoor &amp; Outdoor</h5><p>Specialist exterior systems available</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="dark-section" style="text-align:center;padding:5rem 2rem">
+    <h2 style="color:#fff;margin-bottom:1.5rem">See Floors in Your <em style="font-style:italic;color:rgba(255,255,255,0.5)">Space</em></h2>
+    <a class="btn btn-gold" onclick="showPage('contact')">Book a Consultation</a>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE: WALLS
+═══════════════════════════════════════════════════════════ -->
+<div id="page-walls" class="page">
+  <div class="inner-hero">
+    <div class="section-inner">
+      <p class="label label-dark">Microcement Walls</p>
+      <h1>Textured <em>Walls</em></h1>
+      <p>Create dramatic feature walls or seamless transitions throughout your space. MONOCEM wall systems deliver unmatched depth and tactile beauty.</p>
+    </div>
+  </div>
+  <section class="section">
+    <div class="section-inner">
+      <div class="surface-hero-img bg-wall fade-up"></div>
+      <div class="two-col-text">
+        <div class="fade-up content-block" style="max-width:none">
+          <p class="label">Wall Systems</p>
+          <h2>Walls That Tell<br><em style="font-style:italic;color:var(--muted)">a Story</em></h2>
+          <p>MONOCEM wall systems are applied by hand using specialised trowels, creating a unique tactile surface with natural variation and depth. Unlike tiles or paint, no two MONOCEM walls are identical.</p>
+          <p>From smooth and polished to rustic and textured, we tailor the finish to complement your interior vision — from minimal Scandi to industrial loft.</p>
+        </div>
+        <div class="fade-up" style="transition-delay:0.1s">
+          <div class="surface-features">
+            <div class="feature-item">
+              <div class="feature-icon">&#x2713;</div>
+              <div><h5>Hand Applied</h5><p>Unique artisan finish — no two surfaces are identical</p></div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">&#x2713;</div>
+              <div><h5>Multiple Textures</h5><p>Smooth, medium, or coarse finishes available</p></div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">&#x2713;</div>
+              <div><h5>Waterproof Options</h5><p>Sealed wall system for kitchens and bathrooms</p></div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">&#x2713;</div>
+              <div><h5>100+ Colours</h5><p>Custom colour matching available</p></div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">&#x2713;</div>
+              <div><h5>Feature Walls</h5><p>Create a stunning focal point in any room</p></div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">&#x2713;</div>
+              <div><h5>Crack Resistant</h5><p>Flexible compound prevents surface cracking</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="dark-section" style="text-align:center;padding:5rem 2rem">
+    <h2 style="color:#fff;margin-bottom:1.5rem">Start Your Wall <em style="font-style:italic;color:rgba(255,255,255,0.5)">Project</em></h2>
+    <a class="btn btn-gold" onclick="showPage('contact')">Get a Free Quote</a>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE: APPLICATIONS
+═══════════════════════════════════════════════════════════ -->
+<div id="page-applications" class="page">
+  <div class="inner-hero">
+    <div class="section-inner">
+      <p class="label label-dark">All Applications</p>
+      <h1>Every Surface, <em>One System</em></h1>
+      <p>Microcement works on virtually any surface. Here's where MONOCEM can be applied.</p>
+    </div>
+  </div>
+  <section class="section">
+    <div class="section-inner">
+      <div style="display:grid;grid-template-columns:1fr;gap:2px">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px">
+          <div class="fade-up" style="background:#f0ece4;padding:2.5rem 2rem">
+            <p class="label" style="margin-bottom:0.75rem">Residential</p>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin:0">
+              <li style="color:var(--muted);font-size:0.9rem">&#x2192; Living Room Floors</li>
+              <li style="color:var(--muted);font-size:0.9rem">&#x2192; Bedroom Floors</li>
+              <li style="color:var(--muted);font-size:0.9rem">&#x2192; Bathroom Walls &amp; Floors</li>
+              <li style="color:var(--muted);font-size:0.9rem">&#x2192; Kitchen Splashbacks</li>
+              <li style="color:var(--muted);font-size:0.9rem">&#x2192; Kitchen Worktops</li>
+              <li style="color:var(--muted);font-size:0.9rem">&#x2192; Staircase Treads</li>
+              <li style="color:var(--muted);font-size:0.9rem">&#x2192; Feature Walls</li>
+              <li style="color:var(--muted);font-size:0.9rem">&#x2192; Garden / Exterior</li>
+            </ul>
+          </div>
+          <div class="fade-up" style="background:#e8e4de;padding:2.5rem 2rem;transition-delay:0.05s">
+            <p class="label" style="margin-bottom:0.75rem">Commercial</p>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin:0">
+              <li style="color:var(--muted);font-size:0.9rem">&#x2192; Hotel Lobbies</li>
+              <li style="color:var(--muted);font-size:0.9rem">&#x2192; Restaurant Floors</li>
+              <li style="color:var(--muted);font-size:0.9rem">&#x2192; Retail Spaces</li>
+              <li style="color:var(--muted);font-size:0.9rem">&#x2192; Office Floors</li>
+              <li style="color:var(--muted);font-size:0.9rem">&#x2192; Spa &amp; Wellness</li>
+              <li style="color:var(--muted);font-size:0.9rem">&#x2192; Bar Counters</li>
+              <li style="color:var(--muted);font-size:0.9rem">&#x2192; Reception Areas</li>
+              <li style="color:var(--muted);font-size:0.9rem">&#x2192; Showrooms</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="fade-up" style="margin-top:5rem;text-align:center">
+        <h2 style="color:var(--charcoal);margin-bottom:1rem">Not Sure If Your Surface Qualifies?</h2>
+        <p style="color:var(--muted);max-width:480px;margin:0 auto 2rem">Microcement can be applied to concrete, screed, wood, OSB, plasterboard, existing tiles, and more. Contact us and we'll advise.</p>
+        <a class="btn btn-gold" onclick="showPage('contact')">Ask Our Experts</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE: PROJECTS
+═══════════════════════════════════════════════════════════ -->
+<div id="page-projects" class="page">
+  <div class="inner-hero">
+    <div class="section-inner">
+      <p class="label label-dark">Portfolio</p>
+      <h1>Our Recent <em>Projects</em></h1>
+      <p>A selection of residential and commercial microcement installations by MONOCEM across the United Kingdom.</p>
+    </div>
+  </div>
+  <section class="section">
+    <div class="section-inner">
+      <div class="projects-grid">
+        <div class="fade-up project-card" style="transition-delay:0.05s">
+          <div class="project-card-bg bg-proj-1"></div>
+          <div class="project-card-info"><h4>Chelsea Residence</h4><span>Floors &amp; Walls · London</span></div>
+        </div>
+        <div class="fade-up project-card" style="transition-delay:0.1s">
+          <div class="project-card-bg bg-proj-2"></div>
+          <div class="project-card-info"><h4>Spa Bathroom Suite</h4><span>Bathroom · Manchester</span></div>
+        </div>
+        <div class="fade-up project-card" style="transition-delay:0.15s">
+          <div class="project-card-bg bg-proj-3"></div>
+          <div class="project-card-info"><h4>Open-Plan Kitchen</h4><span>Kitchen &amp; Worktop · Bristol</span></div>
+        </div>
+        <div class="fade-up project-card" style="transition-delay:0.05s">
+          <div class="project-card-bg bg-proj-4"></div>
+          <div class="project-card-info"><h4>Boutique Hotel Lobby</h4><span>Commercial Floors · Edinburgh</span></div>
+        </div>
+        <div class="fade-up project-card" style="transition-delay:0.1s">
+          <div class="project-card-bg bg-proj-5"></div>
+          <div class="project-card-info"><h4>Penthouse Bathroom</h4><span>Wet Room · Leeds</span></div>
+        </div>
+        <div class="fade-up project-card" style="transition-delay:0.15s">
+          <div class="project-card-bg bg-proj-6"></div>
+          <div class="project-card-info"><h4>Staircase Feature</h4><span>Stairs &amp; Feature Wall · Birmingham</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="dark-section" style="text-align:center;padding:5rem 2rem">
+    <h2 style="color:#fff;margin-bottom:1.5rem">Ready to Create<br><em style="font-style:italic;color:rgba(255,255,255,0.5)">Your Project?</em></h2>
+    <a class="btn btn-gold" onclick="showPage('contact')">Request a Free Quote</a>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE: PRODUCTS
+═══════════════════════════════════════════════════════════ -->
+<div id="page-products" class="page">
+  <div class="inner-hero">
+    <div class="section-inner">
+      <p class="label label-dark">The Range</p>
+      <h1>MONOCEM <em>Products</em></h1>
+      <p>Professional microcement systems and products. Available for trade and direct supply.</p>
+    </div>
+  </div>
+  <section class="section">
+    <div class="section-inner">
+      <div class="fade-up"><p class="label">Professional Systems</p></div>
+      <div class="fade-up" style="transition-delay:0.1s">
+        <h2 style="color:var(--charcoal);margin:0.75rem 0 0">The Complete<br><em style="font-style:italic;color:var(--muted)">MONOCEM Range</em></h2>
+      </div>
+      <div class="products-grid">
+        <div class="fade-up product-card" style="transition-delay:0.05s">
+          <div class="product-icon"></div>
+          <h4>Microcement Base Coat</h4>
+          <p>High-build base layer for optimal adhesion and surface build-up. Available in 25kg bags covering approx. 4m² per coat.</p>
+          <div class="price">From £85 / 25kg</div>
+        </div>
+        <div class="fade-up product-card" style="transition-delay:0.1s">
+          <div class="product-icon"></div>
+          <h4>Microcement Finish Coat</h4>
+          <p>Fine-grain finishing layer in 100+ colours. Trowel-applied for a smooth, tactile surface with natural variation.</p>
+          <div class="price">From £95 / 25kg</div>
+        </div>
+        <div class="fade-up product-card" style="transition-delay:0.15s">
+          <div class="product-icon"></div>
+          <h4>Epoxy Primer</h4>
+          <p>Two-component epoxy primer for maximum adhesion to concrete, screed, tiles, and wood substrates.</p>
+          <div class="price">From £65 / set</div>
+        </div>
+        <div class="fade-up product-card" style="transition-delay:0.05s">
+          <div class="product-icon"></div>
+          <h4>Polyurethane Sealer</h4>
+          <p>Professional PU topcoat in water-based matt, satin, or gloss. Resistant to abrasion, chemicals, and UV.</p>
+          <div class="price">From £75 / 5L</div>
+        </div>
+        <div class="fade-up product-card" style="transition-delay:0.1s">
+          <div class="product-icon"></div>
+          <h4>Colour Pigments</h4>
+          <p>100% mineral pigments for bespoke colour creation. Mix into base or finish coat for complete colour freedom.</p>
+          <div class="price">From £18 / 250g</div>
+        </div>
+        <div class="fade-up product-card" style="transition-delay:0.15s">
+          <div class="product-icon"></div>
+          <h4>Complete Starter Kit</h4>
+          <p>Everything needed for your first microcement project: primer, base, finish, sealer, and tools in one box.</p>
+          <div class="price">From £295 / kit</div>
+        </div>
+      </div>
+      <div class="fade-up" style="margin-top:3rem;text-align:center">
+        <p style="color:var(--muted);max-width:480px;margin:0 auto 1.5rem">All products are available for direct purchase or can be supplied as part of a professional installation project.</p>
+        <a class="btn btn-gold" onclick="showPage('contact')">Request Trade Pricing</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE: COLOURS
+═══════════════════════════════════════════════════════════ -->
+<div id="page-colours" class="page">
+  <div class="inner-hero">
+    <div class="section-inner">
+      <p class="label label-dark">The Palette</p>
+      <h1>100+ <em>Colours</em></h1>
+      <p>From warm neutrals to bold statements. Every MONOCEM colour is formulated with mineral pigments for depth and longevity that paint can't match.</p>
+    </div>
+  </div>
+  <section class="section">
+    <div class="section-inner">
+      <div class="fade-up"><p class="label">Core Collection</p></div>
+      <div class="fade-up" style="transition-delay:0.1s">
+        <h2 style="color:var(--charcoal);margin:0.75rem 0 0">The Foundation <em style="font-style:italic;color:var(--muted)">Palette</em></h2>
+      </div>
+      <div class="colours-grid">
+        <div class="fade-up colour-swatch" style="transition-delay:0.02s">
+          <div class="colour-swatch-box" style="background:#eeece8"></div>
+          <h5>Soft White</h5><p>#eeece8</p>
+        </div>
+        <div class="fade-up colour-swatch" style="transition-delay:0.04s">
+          <div class="colour-swatch-box" style="background:#e0ddd7"></div>
+          <h5>Linen</h5><p>#e0ddd7</p>
+        </div>
+        <div class="fade-up colour-swatch" style="transition-delay:0.06s">
+          <div class="colour-swatch-box" style="background:#d0ccc4"></div>
+          <h5>Warm Grey</h5><p>#d0ccc4</p>
+        </div>
+        <div class="fade-up colour-swatch" style="transition-delay:0.08s">
+          <div class="colour-swatch-box" style="background:#b8b4ac"></div>
+          <h5>Stone</h5><p>#b8b4ac</p>
+        </div>
+        <div class="fade-up colour-swatch" style="transition-delay:0.1s">
+          <div class="colour-swatch-box" style="background:#9e9a92"></div>
+          <h5>Pebble</h5><p>#9e9a92</p>
+        </div>
+        <div class="fade-up colour-swatch" style="transition-delay:0.12s">
+          <div class="colour-swatch-box" style="background:#8a8680"></div>
+          <h5>Slate</h5><p>#8a8680</p>
+        </div>
+        <div class="fade-up colour-swatch" style="transition-delay:0.14s">
+          <div class="colour-swatch-box" style="background:#c4b49a"></div>
+          <h5>Sand</h5><p>#c4b49a</p>
+        </div>
+        <div class="fade-up colour-swatch" style="transition-delay:0.16s">
+          <div class="colour-swatch-box" style="background:#b09878"></div>
+          <h5>Dune</h5><p>#b09878</p>
+        </div>
+        <div class="fade-up colour-swatch" style="transition-delay:0.18s">
+          <div class="colour-swatch-box" style="background:#6e5e4a"></div>
+          <h5>Earth</h5><p>#6e5e4a</p>
+        </div>
+        <div class="fade-up colour-swatch" style="transition-delay:0.2s">
+          <div class="colour-swatch-box" style="background:#504438"></div>
+          <h5>Mocha</h5><p>#504438</p>
+        </div>
+        <div class="fade-up colour-swatch" style="transition-delay:0.22s">
+          <div class="colour-swatch-box" style="background:#2e2824"></div>
+          <h5>Espresso</h5><p>#2e2824</p>
+        </div>
+        <div class="fade-up colour-swatch" style="transition-delay:0.24s">
+          <div class="colour-swatch-box" style="background:#1a1a18"></div>
+          <h5>Black Stone</h5><p>#1a1a18</p>
+        </div>
+      </div>
+      <div class="fade-up" style="margin-top:4rem;padding:3rem;background:#f0ece4;text-align:center">
+        <h3 style="color:var(--charcoal);margin-bottom:1rem">Want a Bespoke Colour?</h3>
+        <p style="color:var(--muted);max-width:480px;margin:0 auto 1.5rem">We can match virtually any colour using our mineral pigment system. Bring us a RAL code, a paint chip, or even a fabric swatch.</p>
+        <a class="btn btn-outline" onclick="showPage('contact')">Discuss Colour Options</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE: ABOUT
+═══════════════════════════════════════════════════════════ -->
+<div id="page-about" class="page">
+  <div class="inner-hero">
+    <div class="section-inner">
+      <p class="label label-dark">Our Story</p>
+      <h1>Craftsmen Who <em>Care</em></h1>
+      <p>Founded in 2009, MONOCEM has grown from a small specialist team into the UK's most trusted microcement contractor — without ever compromising on craft.</p>
+    </div>
+  </div>
+  <section class="section">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="fade-up">
+          <p class="label">Who We Are</p>
+          <h2 style="color:var(--charcoal);margin:0.75rem 0 1.5rem">Microcement<br><em style="font-style:italic;color:var(--muted)">Specialists</em></h2>
+          <p>MONOCEM was founded with a single ambition: to bring the beauty of seamless mineral surfaces to homes and businesses across the UK, delivered by people who truly understand the craft.</p>
+          <p>Every project is led by a certified senior technician with years of hands-on experience. We don't sub-contract. We don't cut corners. We deliver surfaces that last decades and look better with age.</p>
+          <p>Today, our teams operate from studios in London, Manchester, and Edinburgh, serving clients throughout England, Scotland, and Wales.</p>
+        </div>
+        <div class="fade-up" style="transition-delay:0.15s">
+          <div style="aspect-ratio:3/4;background:linear-gradient(135deg,#c8c0b0 0%,#a8a090 100%)"></div>
+        </div>
+      </div>
+      <div class="about-stat-row">
+        <div class="fade-up about-stat">
+          <h3>15+</h3>
+          <p>Years in business</p>
+        </div>
+        <div class="fade-up about-stat" style="transition-delay:0.1s">
+          <h3>2,400+</h3>
+          <p>Projects completed</p>
+        </div>
+        <div class="fade-up about-stat" style="transition-delay:0.2s">
+          <h3>40+</h3>
+          <p>UK cities covered</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section" style="background:#f0ece4">
+    <div class="section-inner">
+      <div class="fade-up"><p class="label">How It Works</p></div>
+      <div class="fade-up" style="transition-delay:0.1s">
+        <h2 style="color:var(--charcoal);margin:0.75rem 0 0">Our Installation <em style="font-style:italic;color:var(--muted)">Process</em></h2>
+      </div>
+      <div class="steps-list" style="max-width:760px">
+        <div class="fade-up step-item"><div class="step-num">01</div><div class="step-content"><h4>Free Consultation</h4><p>We visit your site, assess the substrate, discuss your vision, and provide a detailed no-obligation quote.</p></div></div>
+        <div class="fade-up step-item"><div class="step-num">02</div><div class="step-content"><h4>Surface Preparation</h4><p>The existing surface is cleaned, repaired if necessary, and primed to ensure a perfect bond.</p></div></div>
+        <div class="fade-up step-item"><div class="step-num">03</div><div class="step-content"><h4>Base Coat Application</h4><p>Our technicians apply one to two coats of microcement base, building thickness and establishing the form.</p></div></div>
+        <div class="fade-up step-item"><div class="step-num">04</div><div class="step-content"><h4>Colour Finish Coat</h4><p>The finish coat is hand-applied in your chosen colour, creating the characteristic texture and depth.</p></div></div>
+        <div class="fade-up step-item"><div class="step-num">05</div><div class="step-content"><h4>Sealing &amp; Protection</h4><p>Two to three coats of professional topcoat are applied, fully cured, and polished to your chosen sheen level.</p></div></div>
+        <div class="fade-up step-item"><div class="step-num">06</div><div class="step-content"><h4>Handover &amp; Aftercare</h4><p>We walk you through the care guide, confirm all finishing details, and issue your 5-year guarantee certificate.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="dark-section" style="text-align:center;padding:5rem 2rem">
+    <h2 style="color:#fff;margin-bottom:1.5rem">Work With <em style="font-style:italic;color:rgba(255,255,255,0.5)">Us</em></h2>
+    <p style="color:rgba(255,255,255,0.55);max-width:480px;margin:0 auto 2rem">Whether you're an interior designer, architect, or homeowner — we'd love to hear about your project.</p>
+    <a class="btn btn-gold" onclick="showPage('contact')">Get in Touch</a>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE: CONTACT
+═══════════════════════════════════════════════════════════ -->
+<div id="page-contact" class="page">
+  <div class="inner-hero">
+    <div class="section-inner">
+      <p class="label label-dark">Get in Touch</p>
+      <h1>Request a <em>Free Quote</em></h1>
+      <p>Tell us about your project and we'll get back within one business day with a detailed, no-obligation quote.</p>
+    </div>
+  </div>
+  <section class="section">
+    <div class="section-inner">
+      <div class="contact-grid">
+        <div class="fade-up contact-info">
+          <h3>Contact Information</h3>
+          <div class="contact-detail">
+            <p class="label">Email</p>
+            <a href="mailto:info@monocem.co.uk">info@monocem.co.uk</a>
+          </div>
+          <div class="contact-detail">
+            <p class="label">Phone</p>
+            <a href="tel:+447000000000">+44 (0)7000 000 000</a>
+          </div>
+          <div class="contact-detail">
+            <p class="label">WhatsApp</p>
+            <a href="https://wa.me/447000000000" target="_blank">Message us on WhatsApp</a>
+          </div>
+          <div class="contact-detail">
+            <p class="label">Coverage</p>
+            <p>England, Scotland &amp; Wales<br>40+ cities nationwide</p>
+          </div>
+          <div class="contact-detail">
+            <p class="label">Office Hours</p>
+            <p>Monday–Friday 8am–6pm<br>Saturday 9am–1pm</p>
+          </div>
+        </div>
+        <div class="fade-up" style="transition-delay:0.15s">
+          <div class="form-section" style="padding:3rem 2rem">
+            <div id="quote-success" class="form-success">
+              <h3>Thank You!</h3>
+              <p>Your message has been sent. We'll be in touch within one business day.</p>
+            </div>
+            <form id="quote-form" onsubmit="submitQuoteForm(event)">
+              <div class="form-row two">
+                <div class="form-field">
+                  <label>First Name *</label>
+                  <input type="text" name="first_name" required placeholder="Jane">
+                </div>
+                <div class="form-field">
+                  <label>Last Name *</label>
+                  <input type="text" name="last_name" required placeholder="Smith">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-field">
+                  <label>Email Address *</label>
+                  <input type="email" name="email" required placeholder="jane@example.com">
+                </div>
+              </div>
+              <div class="form-row two">
+                <div class="form-field">
+                  <label>Phone Number</label>
+                  <input type="tel" name="phone" placeholder="+44 7000 000000">
+                </div>
+                <div class="form-field">
+                  <label>Location / City *</label>
+                  <input type="text" name="location" required placeholder="London">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-field">
+                  <label>Surface Type *</label>
+                  <select name="surface" required>
+                    <option value="" disabled selected>Select surface</option>
+                    <option>Floors</option>
+                    <option>Walls</option>
+                    <option>Bathroom (wet room)</option>
+                    <option>Kitchen / Worktops</option>
+                    <option>Stairs</option>
+                    <option>Multiple surfaces</option>
+                    <option>Not sure yet</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-field">
+                  <label>Approximate Area (m²)</label>
+                  <input type="text" name="area" placeholder="e.g. 30m²">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-field">
+                  <label>Tell Us About Your Project</label>
+                  <textarea name="message" placeholder="Describe your project, timeline, and any specific requirements..."></textarea>
+                </div>
+              </div>
+              <div class="form-submit">
+                <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center">Send Quote Request &nbsp;&#x2192;</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE: PRIVACY
+═══════════════════════════════════════════════════════════ -->
+<div id="page-privacy" class="page">
+  <div class="inner-hero" style="padding-bottom:3rem">
+    <div class="section-inner">
+      <p class="label label-dark">Legal</p>
+      <h1>Privacy <em>Policy</em></h1>
+    </div>
+  </div>
+  <section class="section">
+    <div class="section-inner">
+      <div class="legal-content">
+        <p class="legal-date">Last updated: January 2024</p>
+        <p>This Privacy Policy explains how MONOCEM Ltd ("MONOCEM", "we", "our", "us") collects, uses, and protects your personal information when you use our website at monocem.co.uk or contact us regarding our services.</p>
+
+        <h2>1. Information We Collect</h2>
+        <p>We collect information you provide directly to us, such as when you complete a contact or quote request form, send us an email, or call us by telephone. This may include:</p>
+        <ul>
+          <li>Your name, email address, and telephone number</li>
+          <li>Your address or location details</li>
+          <li>Information about your project requirements</li>
+          <li>Any other information you choose to provide</li>
+        </ul>
+        <p>We also automatically collect certain technical information when you visit our website, including your IP address, browser type, pages visited, and the date and time of your visit. This is collected via standard server logs and analytics tools.</p>
+
+        <h2>2. How We Use Your Information</h2>
+        <p>We use the information we collect to:</p>
+        <ul>
+          <li>Respond to your enquiries and provide quotes for our services</li>
+          <li>Deliver microcement installation services you have engaged us for</li>
+          <li>Send you updates about your project or our services (where you have consented)</li>
+          <li>Improve our website and services</li>
+          <li>Comply with our legal obligations</li>
+        </ul>
+
+        <h2>3. Legal Basis for Processing</h2>
+        <p>We process your personal data on the following legal bases:</p>
+        <ul>
+          <li><strong>Contract performance</strong> — to fulfil a contract we have with you or to take steps at your request prior to entering a contract</li>
+          <li><strong>Legitimate interests</strong> — for our business interests, such as responding to enquiries and improving our services</li>
+          <li><strong>Legal obligation</strong> — where we are required to comply with a legal obligation</li>
+          <li><strong>Consent</strong> — where you have given us specific consent to process your data for marketing purposes</li>
+        </ul>
+
+        <h2>4. Sharing Your Information</h2>
+        <p>We do not sell, trade, or rent your personal information to third parties. We may share your information with trusted service providers who assist us in operating our website and business, provided they agree to keep this information confidential. We may also disclose your information if required by law.</p>
+
+        <h2>5. Data Retention</h2>
+        <p>We retain your personal information for as long as necessary to fulfil the purposes outlined in this policy, or as required by law. Typically, client records are retained for seven years following the completion of a project.</p>
+
+        <h2>6. Your Rights</h2>
+        <p>Under UK GDPR, you have the right to:</p>
+        <ul>
+          <li>Access the personal data we hold about you</li>
+          <li>Request correction of inaccurate data</li>
+          <li>Request deletion of your data (subject to legal requirements)</li>
+          <li>Object to or restrict processing of your data</li>
+          <li>Data portability</li>
+          <li>Withdraw consent at any time (where processing is based on consent)</li>
+        </ul>
+        <p>To exercise any of these rights, please contact us at <a href="mailto:privacy@monocem.co.uk" style="color:var(--gold)">privacy@monocem.co.uk</a>.</p>
+
+        <h2>7. Cookies</h2>
+        <p>Our website uses essential cookies to ensure it functions correctly. We may also use analytics cookies to understand how visitors use our website. You can control cookies through your browser settings. By continuing to use our website, you consent to our use of cookies as described in this policy.</p>
+
+        <h2>8. Security</h2>
+        <p>We implement appropriate technical and organisational measures to protect your personal information against unauthorised access, alteration, disclosure, or destruction.</p>
+
+        <h2>9. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. We will notify you of significant changes by posting the new policy on our website with an updated date. We encourage you to review this policy periodically.</p>
+
+        <h2>10. Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy or our data practices, please contact us at:</p>
+        <p><strong>MONOCEM Ltd</strong><br>
+        Email: <a href="mailto:privacy@monocem.co.uk" style="color:var(--gold)">privacy@monocem.co.uk</a><br>
+        We are registered with the Information Commissioner's Office (ICO).</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE: TERMS
+═══════════════════════════════════════════════════════════ -->
+<div id="page-terms" class="page">
+  <div class="inner-hero" style="padding-bottom:3rem">
+    <div class="section-inner">
+      <p class="label label-dark">Legal</p>
+      <h1>Terms of <em>Use</em></h1>
+    </div>
+  </div>
+  <section class="section">
+    <div class="section-inner">
+      <div class="legal-content">
+        <p class="legal-date">Last updated: January 2024</p>
+        <p>These Terms of Use govern your use of the MONOCEM website at monocem.co.uk (the "Website"). By accessing or using the Website, you agree to be bound by these terms. If you do not agree, please do not use our Website.</p>
+
+        <h2>1. Acceptance of Terms</h2>
+        <p>By using the MONOCEM website, you confirm that you are at least 18 years of age and accept these Terms of Use in full. MONOCEM reserves the right to modify these terms at any time. Continued use of the Website following changes constitutes acceptance of the revised terms.</p>
+
+        <h2>2. Website Use</h2>
+        <p>This Website is provided for informational purposes about MONOCEM products and services. You may use the Website only for lawful purposes and in accordance with these terms. You agree not to:</p>
+        <ul>
+          <li>Use the Website in any way that violates applicable law</li>
+          <li>Transmit any unsolicited commercial communications</li>
+          <li>Attempt to gain unauthorised access to any part of the Website or its systems</li>
+          <li>Use the Website to distribute malware or other harmful material</li>
+          <li>Scrape or harvest data from the Website without our express written consent</li>
+        </ul>
+
+        <h2>3. Intellectual Property</h2>
+        <p>All content on this Website, including text, images, graphics, logos, and design elements, is the property of MONOCEM Ltd or its licensors and is protected by UK and international copyright laws. You may not reproduce, distribute, or create derivative works from any content on this Website without our prior written permission.</p>
+
+        <h2>4. Accuracy of Information</h2>
+        <p>We make every effort to ensure the accuracy of information on this Website, but we do not warrant that the information is complete, accurate, or up to date. Pricing, availability, and specifications are subject to change without notice. Always contact us directly to confirm current details before placing an order or making a decision based on Website information.</p>
+
+        <h2>5. Third-Party Links</h2>
+        <p>Our Website may contain links to third-party websites. These links are provided for your convenience only. We have no control over those sites and accept no responsibility for them or for any loss or damage that may arise from your use of them.</p>
+
+        <h2>6. Disclaimer of Warranties</h2>
+        <p>The Website and all content are provided on an "as is" and "as available" basis without any warranty of any kind, either express or implied. MONOCEM does not warrant that the Website will be uninterrupted, error-free, or free of viruses or other harmful components.</p>
+
+        <h2>7. Limitation of Liability</h2>
+        <p>To the maximum extent permitted by applicable law, MONOCEM Ltd shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of, or inability to use, this Website or its content. Our total liability for any claim arising from your use of the Website shall not exceed £100.</p>
+
+        <h2>8. Indemnification</h2>
+        <p>You agree to indemnify and hold harmless MONOCEM Ltd and its officers, directors, employees, and agents from any claims, damages, losses, or expenses (including reasonable legal fees) arising from your use of the Website or your breach of these terms.</p>
+
+        <h2>9. Governing Law</h2>
+        <p>These Terms of Use and any disputes arising from them shall be governed by and construed in accordance with the laws of England and Wales. Any legal proceedings shall be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+
+        <h2>10. Contact</h2>
+        <p>If you have any questions about these Terms of Use, please contact us at <a href="mailto:legal@monocem.co.uk" style="color:var(--gold)">legal@monocem.co.uk</a>.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════════ -->
+<footer id="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="logo">MONOCEM</span>
+        <p>Professional microcement installation across the United Kingdom. Seamless surfaces, certified craftsmen, 5-year guarantee.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Systems</h5>
+        <ul>
+          <li><span onclick="showPage('floors')">Floors</span></li>
+          <li><span onclick="showPage('walls')">Walls</span></li>
+          <li><span onclick="showPage('bathrooms')">Bathrooms</span></li>
+          <li><span onclick="showPage('applications')">Kitchens</span></li>
+          <li><span onclick="showPage('applications')">Worktops</span></li>
+          <li><span onclick="showPage('applications')">Stairs</span></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><span onclick="showPage('projects')">Projects</span></li>
+          <li><span onclick="showPage('products')">Products</span></li>
+          <li><span onclick="showPage('colours')">Colours</span></li>
+          <li><span onclick="showPage('about')">About</span></li>
+          <li><span onclick="showPage('contact')">Contact</span></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:info@monocem.co.uk">info@monocem.co.uk</a></li>
+          <li><a href="tel:+447000000000">+44 (0)7000 000 000</a></li>
+          <li><a href="https://wa.me/447000000000" target="_blank">WhatsApp</a></li>
+          <li style="margin-top:1rem"><span style="color:rgba(255,255,255,0.35);font-size:0.75rem">Mon–Fri 8am–6pm<br>Sat 9am–1pm</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 MONOCEM Ltd. All rights reserved.</p>
+      <nav>
+        <span onclick="showPage('privacy')">Privacy Policy</span>
+        <span onclick="showPage('terms')">Terms of Use</span>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+// ── PAGE ROUTING ──
+var currentPage = 'home';
+
+function showPage(id) {
+  // Hide all pages
+  document.querySelectorAll('.page').forEach(function(p) {
+    p.classList.remove('active');
+  });
+  // Show requested page
+  var target = document.getElementById('page-' + id);
+  if (!target) return;
+  target.classList.add('active');
+  currentPage = id;
+  // Scroll to top
+  window.scrollTo({top: 0, behavior: 'instant'});
+  // Close mobile menu
+  closeMenu();
+  // Update header state
+  updateHeader();
+  // Trigger fade-up for visible elements
+  setTimeout(triggerFadeUps, 50);
+}
+
+// ── HEADER ──
+var header = document.getElementById('header');
+
+function updateHeader() {
+  var scrollY = window.scrollY || window.pageYOffset;
+  if (currentPage === 'home' && scrollY < 60) {
+    header.className = 'transparent';
+  } else {
+    header.className = 'solid';
+  }
+}
+
+window.addEventListener('scroll', updateHeader, {passive: true});
+updateHeader();
+
+// ── MENU ──
+function openMenu() {
+  document.body.classList.add('menu-open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMenu() {
+  document.body.classList.remove('menu-open');
+  document.body.style.overflow = '';
+}
+
+// ── WHATSAPP FLOAT ──
+var waFloat = document.getElementById('wa-float');
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 300) {
+    waFloat.classList.add('visible');
+  } else {
+    waFloat.classList.remove('visible');
+  }
+}, {passive: true});
+
+// ── FADE-UP ANIMATION ──
+function triggerFadeUps() {
+  if (!window.IntersectionObserver) {
+    document.querySelectorAll('.fade-up').forEach(function(el) {
+      el.classList.add('visible');
+    });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold: 0.1, rootMargin: '0px 0px -40px 0px'});
+
+  document.querySelectorAll('.fade-up:not(.visible)').forEach(function(el) {
+    observer.observe(el);
+  });
+}
+// Initial trigger
+setTimeout(triggerFadeUps, 100);
+// Re-trigger on scroll
+window.addEventListener('scroll', triggerFadeUps, {passive: true});
+
+// ── QUOTE FORM ──
+function submitQuoteForm(e) {
+  e.preventDefault();
+  var form = document.getElementById('quote-form');
+  var data = new FormData(form);
+  var fields = {};
+  data.forEach(function(v, k) { fields[k] = v; });
+
+  // Build mailto fallback
+  var subject = encodeURIComponent('MONOCEM Quote Request – ' + (fields.first_name || '') + ' ' + (fields.last_name || ''));
+  var body = encodeURIComponent(
+    'Name: ' + (fields.first_name || '') + ' ' + (fields.last_name || '') + '\n' +
+    'Email: ' + (fields.email || '') + '\n' +
+    'Phone: ' + (fields.phone || '') + '\n' +
+    'Location: ' + (fields.location || '') + '\n' +
+    'Surface: ' + (fields.surface || '') + '\n' +
+    'Area: ' + (fields.area || '') + '\n\n' +
+    'Message:\n' + (fields.message || '')
+  );
+  var mailtoLink = 'mailto:info@monocem.co.uk?subject=' + subject + '&body=' + body;
+
+  // Try mailto
+  window.location.href = mailtoLink;
+
+  // Show success state
+  setTimeout(function() {
+    form.style.display = 'none';
+    var success = document.getElementById('quote-success');
+    success.classList.add('show');
+  }, 500);
+}
+
+// ── INIT ──
+// Make sure home page is active
+showPage('home');
+</script>
+</body>
+</html>
