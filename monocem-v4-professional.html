@@ -350,6 +350,50 @@ p{line-height:1.7;color:#6f6a61}
 .preview-faq-item h5{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;color:var(--charcoal);margin-bottom:0.35rem}
 .preview-faq-item p{font-size:0.82rem;margin:0}
 
+/* ── LUXURY HOMEPAGE SECTIONS ── */
+.lux-intro{padding:5rem 2rem}
+@media(min-width:768px){.lux-intro{padding:7rem 3rem}}
+.lux-attr-row{display:grid;grid-template-columns:1fr;margin-top:3rem;border-top:1px solid var(--border)}
+@media(min-width:600px){.lux-attr-row{grid-template-columns:repeat(3,1fr)}}
+.lux-attr{padding:1.75rem 0;border-bottom:1px solid var(--border)}
+@media(min-width:600px){.lux-attr{padding:2rem 2rem 2rem 0;border-bottom:none;border-right:1px solid var(--border)}.lux-attr:last-child{border-right:none;padding-right:0;padding-left:2rem}.lux-attr:nth-child(2){padding-left:2rem}}
+.lux-attr .label{display:block;margin-bottom:0.5rem}
+.lux-attr p{font-size:0.85rem;margin:0;color:var(--muted)}
+
+.lux-stat-row{display:grid;grid-template-columns:repeat(2,1fr);margin-top:3rem}
+@media(min-width:768px){.lux-stat-row{grid-template-columns:repeat(4,1fr)}}
+.lux-stat{padding:2rem 0;border-top:1px solid var(--border-dark)}
+@media(min-width:768px){.lux-stat{padding:2rem;border-top:none;border-right:1px solid var(--border-dark)}.lux-stat:last-child{border-right:none}}
+.lux-stat h3{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,2.8rem);font-weight:300;color:#fff;line-height:1;margin-bottom:0.3rem}
+.lux-stat p{font-size:0.75rem;color:rgba(255,255,255,0.4);margin:0;letter-spacing:0.05em}
+
+.lux-full-image{width:100%;aspect-ratio:4/3;position:relative;overflow:hidden;cursor:pointer;display:block}
+@media(min-width:600px){.lux-full-image{aspect-ratio:16/7}}
+.lux-full-image-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94)}
+.lux-full-image:hover .lux-full-image-bg{transform:scale(1.04)}
+.lux-full-image-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.1) 55%,transparent 100%)}
+.lux-full-image-content{position:absolute;bottom:2.5rem;left:2.5rem;right:2.5rem}
+@media(min-width:768px){.lux-full-image-content{bottom:3.5rem;left:4rem}}
+
+.lux-single-project{width:100%;aspect-ratio:3/2;position:relative;overflow:hidden;cursor:pointer;margin:2rem 0 1.5rem}
+@media(min-width:600px){.lux-single-project{aspect-ratio:16/7}}
+.lux-single-project-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94)}
+.lux-single-project:hover .lux-single-project-bg{transform:scale(1.04)}
+.lux-single-project-info{position:absolute;bottom:0;left:0;right:0;padding:2rem;background:linear-gradient(to top,rgba(0,0,0,0.75) 0%,transparent 100%)}
+
+.lux-palette-band{height:72px;width:100%;margin:2.5rem 0 1.5rem;display:block}
+@media(min-width:768px){.lux-palette-band{height:104px}}
+
+.lux-testimonial-section{padding:6rem 2rem;background:var(--dark);text-align:center}
+.lux-testimonial-section .stars{font-size:0.85rem;letter-spacing:4px;color:var(--gold);margin-bottom:2.5rem;display:block}
+.lux-testimonial-section blockquote{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,4.5vw,2.4rem);font-weight:300;font-style:italic;color:#fff;line-height:1.45;max-width:760px;margin:0 auto 2rem}
+.lux-testimonial-section cite{font-size:0.62rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);font-style:normal}
+
+.lux-faq-line{display:flex;flex-direction:column;gap:0.4rem;padding:1.3rem 0;border-bottom:1px solid var(--border)}
+@media(min-width:600px){.lux-faq-line{flex-direction:row;gap:2rem;align-items:baseline}}
+.lux-faq-line h5{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:300;color:var(--charcoal);flex-shrink:0;min-width:220px;margin:0}
+.lux-faq-line p{font-size:0.82rem;color:var(--muted);margin:0}
+
 /* ── EXTENDED COLOUR COLLECTIONS ── */
 .colour-collection{margin-top:4rem}
 .colour-collection-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--charcoal);margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
@@ -428,142 +472,129 @@ p{line-height:1.7;color:#6f6a61}
     <div class="hero-scroll"><span>Scroll</span></div>
   </section>
 
-  <!-- Applications teaser -->
-  <section class="section" style="background:var(--bg)">
-    <div class="section-inner">
-      <div class="fade-up"><p class="label">Applications</p></div>
+  <!-- 2. What is Microcement -->
+  <div class="lux-intro" style="background:var(--bg)">
+    <div class="section-inner" style="max-width:860px">
+      <div class="fade-up"><p class="label">The Material</p></div>
       <div class="fade-up" style="transition-delay:0.1s">
-        <h2 style="margin:1rem 0 1rem;color:var(--charcoal);max-width:640px">Microcement For Every<br><em style="color:var(--muted);font-style:italic">Surface &amp; Space</em></h2>
+        <h2 style="color:var(--charcoal);margin:1rem 0 1.25rem;max-width:640px">A seamless mineral surface,<br><em style="font-style:italic;color:var(--muted)">applied at just 2mm.</em></h2>
       </div>
       <div class="fade-up" style="transition-delay:0.15s">
-        <p style="max-width:540px;margin-bottom:2.5rem">From polished floors and waterproof bathrooms to seamless kitchen worktops and dramatic feature walls — MONOCEM microcement is engineered for every surface in every space.</p>
+        <p style="max-width:560px">Microcement is a hand-applied cementitious coating that transforms any substrate into a continuous, grout-free surface. Floors, walls, bathrooms, kitchens — one material, boundless possibility.</p>
       </div>
-      <div class="fade-up" style="transition-delay:0.2s">
-        <div style="aspect-ratio:16/7;width:100%;background:linear-gradient(160deg,#3d3830 0%,#272320 40%,#b8a890 100%);margin-bottom:2.5rem;position:relative;overflow:hidden">
-          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#c4b89a 0%,#9a8a72 40%,#3d3830 100%);opacity:0.85"></div>
-          <div style="position:absolute;bottom:2rem;left:2rem">
-            <p style="font-family:'Jost',sans-serif;font-size:0.65rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:0.4rem">Floors · Walls · Bathrooms · Kitchens · Worktops · Stairs</p>
-            <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,4vw,2.2rem);font-weight:300;color:#fff;line-height:1.2;margin:0">One material.<br><em style="font-style:italic;color:rgba(255,255,255,0.6)">Limitless application.</em></p>
-          </div>
+      <div class="fade-up lux-attr-row" style="transition-delay:0.2s">
+        <div class="lux-attr">
+          <span class="label">Thickness</span>
+          <p>2–3mm — applied over existing surfaces with no demolition</p>
+        </div>
+        <div class="lux-attr">
+          <span class="label">Surfaces</span>
+          <p>Floors, walls, bathrooms, kitchens, worktops &amp; stairs</p>
+        </div>
+        <div class="lux-attr">
+          <span class="label">Finish</span>
+          <p>Matt, satin, or gloss in 100+ mineral-pigment colours</p>
         </div>
       </div>
-      <div class="fade-up" style="transition-delay:0.25s">
-        <a class="btn-ghost" onclick="showPage('applications')">Explore Applications <span>&#x2192;</span></a>
-      </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Projects preview -->
-  <section class="section" style="background:var(--bg)">
+  <!-- 3. Why MONOCEM -->
+  <div style="background:var(--dark);padding:5rem 2rem">
     <div class="section-inner">
-      <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem">
-        <div>
-          <div class="fade-up"><p class="label">Portfolio</p></div>
-          <div class="fade-up" style="transition-delay:0.08s"><h2 style="color:var(--charcoal);margin:0.75rem 0 0">Recent <em style="font-style:italic;color:var(--muted)">Projects</em></h2></div>
-        </div>
-        <div class="fade-up" style="transition-delay:0.12s"><a class="btn-ghost" onclick="showPage('projects')">View All Projects <span>&#x2192;</span></a></div>
+      <div class="fade-up"><p class="label label-dark">Why MONOCEM</p></div>
+      <div class="fade-up" style="transition-delay:0.1s">
+        <h2 style="color:#fff;margin:1rem 0 0">Crafted to<br><em style="font-style:italic;color:rgba(255,255,255,0.45)">Last Decades.</em></h2>
       </div>
-      <div class="home-preview-grid">
-        <div class="fade-up project-card" style="transition-delay:0.05s" onclick="showPage('projects')">
-          <div class="project-card-bg bg-proj-1"></div>
-          <div class="project-card-info"><h4>Chelsea Residence</h4><span>Floors &amp; Walls · London</span></div>
-        </div>
-        <div class="fade-up project-card" style="transition-delay:0.1s" onclick="showPage('projects')">
-          <div class="project-card-bg bg-proj-2"></div>
-          <div class="project-card-info"><h4>Spa Bathroom Suite</h4><span>Bathroom · Manchester</span></div>
-        </div>
-        <div class="fade-up project-card" style="display:none;transition-delay:0.15s" onclick="showPage('projects')">
-          <div class="project-card-bg bg-proj-3"></div>
-          <div class="project-card-info"><h4>Open-Plan Kitchen</h4><span>Kitchen · Bristol</span></div>
-        </div>
+      <div class="fade-up lux-stat-row" style="transition-delay:0.15s">
+        <div class="lux-stat"><h3>15+</h3><p>Years of expertise</p></div>
+        <div class="lux-stat"><h3>2,400+</h3><p>Projects completed</p></div>
+        <div class="lux-stat"><h3>40+</h3><p>UK cities covered</p></div>
+        <div class="lux-stat"><h3>5yr</h3><p>Workmanship guarantee</p></div>
+      </div>
+      <div class="fade-up" style="transition-delay:0.2s;margin-top:3rem">
+        <a class="btn-ghost" style="color:rgba(255,255,255,0.6);--ghost-hover:#fff" onclick="showPage('about')">Our Story <span>&#x2192;</span></a>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Colours preview -->
-  <section class="section" style="background:#f0ece4;padding-top:4rem;padding-bottom:4rem">
+  <!-- 4. Applications (full-width image) -->
+  <div class="fade-up" onclick="showPage('applications')" style="cursor:pointer">
+    <div class="lux-full-image">
+      <div class="lux-full-image-bg" style="background:linear-gradient(135deg,#c4b89a 0%,#9a8a72 35%,#5a4e42 65%,#2a2320 100%)"></div>
+      <div class="lux-full-image-overlay"></div>
+      <div class="lux-full-image-content">
+        <p class="label" style="color:rgba(255,255,255,0.5);margin-bottom:0.75rem">Applications</p>
+        <h2 style="color:#fff;margin:0 0 1.5rem;max-width:480px">Floors. Walls. Bathrooms.<br><em style="font-style:italic;color:rgba(255,255,255,0.55)">Every space, reimagined.</em></h2>
+        <span class="btn-ghost" style="color:#fff;pointer-events:none">Explore Applications <span>&#x2192;</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Projects (single featured) -->
+  <div style="background:var(--bg);padding:5rem 2rem">
     <div class="section-inner">
-      <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem">
-        <div>
-          <div class="fade-up"><p class="label">Colour Palette</p></div>
-          <div class="fade-up" style="transition-delay:0.08s"><h2 style="color:var(--charcoal);margin:0.75rem 0 0">100+ <em style="font-style:italic;color:var(--muted)">Colours</em></h2></div>
-        </div>
-        <div class="fade-up" style="transition-delay:0.12s"><a class="btn-ghost" onclick="showPage('colours')">View Full Palette <span>&#x2192;</span></a></div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:1rem">
+        <div class="fade-up"><p class="label">Portfolio</p></div>
+        <div class="fade-up" style="transition-delay:0.08s"><a class="btn-ghost" onclick="showPage('projects')">View All Projects <span>&#x2192;</span></a></div>
       </div>
-      <div class="fade-up preview-swatch-strip" style="transition-delay:0.1s">
-        <div><div class="preview-swatch-box" style="background:#eeece8"></div><p class="preview-swatch-label">Soft White</p></div>
-        <div><div class="preview-swatch-box" style="background:#d0ccc4"></div><p class="preview-swatch-label">Warm Grey</p></div>
-        <div><div class="preview-swatch-box" style="background:#c4b49a"></div><p class="preview-swatch-label">Sand</p></div>
-        <div><div class="preview-swatch-box" style="background:#8a8680"></div><p class="preview-swatch-label">Slate</p></div>
-        <div><div class="preview-swatch-box" style="background:#504438"></div><p class="preview-swatch-label">Mocha</p></div>
-        <div><div class="preview-swatch-box" style="background:#1a1a18"></div><p class="preview-swatch-label">Black Stone</p></div>
+      <div class="fade-up lux-single-project" style="transition-delay:0.12s" onclick="showPage('projects')">
+        <div class="lux-single-project-bg bg-proj-1"></div>
+        <div class="lux-full-image-overlay"></div>
+        <div class="lux-single-project-info">
+          <h3 style="color:#fff;font-weight:300;margin-bottom:0.25rem">Chelsea Residence</h3>
+          <span style="font-size:0.65rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5)">Floors &amp; Walls · London</span>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Products preview -->
-  <section class="section" style="background:var(--bg);padding-top:4rem;padding-bottom:4rem">
+  <!-- 6. Colours (palette gradient) -->
+  <div style="background:#f0ece4;padding:5rem 2rem">
     <div class="section-inner">
-      <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem">
-        <div>
-          <div class="fade-up"><p class="label">The Range</p></div>
-          <div class="fade-up" style="transition-delay:0.08s"><h2 style="color:var(--charcoal);margin:0.75rem 0 0">MONOCEM <em style="font-style:italic;color:var(--muted)">Products</em></h2></div>
-        </div>
-        <div class="fade-up" style="transition-delay:0.12s"><a class="btn-ghost" onclick="showPage('products')">View Full Range <span>&#x2192;</span></a></div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:1rem">
+        <div class="fade-up"><p class="label">Colour Palette</p></div>
+        <div class="fade-up" style="transition-delay:0.08s"><a class="btn-ghost" onclick="showPage('colours')">View Full Palette <span>&#x2192;</span></a></div>
       </div>
-      <div class="fade-up preview-product-row" style="transition-delay:0.1s">
-        <div class="preview-product-item">
-          <div class="preview-product-icon"></div>
-          <div><h5>Microcement Base Coat</h5><p>High-build base layer. 25kg covers approx. 4m² per coat.</p><span class="price">From £85 / 25kg</span></div>
-        </div>
-        <div class="preview-product-item">
-          <div class="preview-product-icon"></div>
-          <div><h5>Microcement Finish Coat</h5><p>Fine-grain finish layer in 100+ colours, hand-trowelled.</p><span class="price">From £95 / 25kg</span></div>
-        </div>
-        <div class="preview-product-item" style="border-bottom:none">
-          <div class="preview-product-icon"></div>
-          <div><h5>Polyurethane Sealer</h5><p>Professional PU topcoat in matt, satin, or gloss.</p><span class="price">From £75 / 5L</span></div>
-        </div>
+      <div class="fade-up" style="transition-delay:0.1s">
+        <div class="lux-palette-band" style="background:linear-gradient(to right,#eeece8 0%,#d0ccc4 16%,#c4b49a 32%,#8a8680 48%,#6e5e4a 64%,#504438 80%,#1a1a18 100%)"></div>
+        <h2 style="color:var(--charcoal);margin:0 0 0.75rem">100+ Curated <em style="font-style:italic;color:var(--muted)">Colours</em></h2>
+        <p style="max-width:480px;margin-bottom:0">From soft mineral whites to deep anthracite. Every shade formulated with natural pigments for depth that paint can never match.</p>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- FAQ preview -->
-  <section class="section" style="background:#f0ece4;padding-top:4rem;padding-bottom:4rem">
+  <!-- 7. Testimonial (single, dark, centered) -->
+  <div class="fade-up lux-testimonial-section">
+    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+    <blockquote>"The finish is absolutely breathtaking. Our entire ground floor looks like a completely different space. The team were professional, tidy, and incredibly skilled."</blockquote>
+    <cite>Sarah M. &nbsp;—&nbsp; Chelsea, London</cite>
+  </div>
+
+  <!-- 8. FAQ Preview (3 lines only) -->
+  <div style="background:var(--bg);padding:5rem 2rem">
     <div class="section-inner">
-      <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem">
-        <div>
-          <div class="fade-up"><p class="label">Common Questions</p></div>
-          <div class="fade-up" style="transition-delay:0.08s"><h2 style="color:var(--charcoal);margin:0.75rem 0 0">Quick <em style="font-style:italic;color:var(--muted)">Answers</em></h2></div>
-        </div>
-        <div class="fade-up" style="transition-delay:0.12s"><a class="btn-ghost" onclick="showPage('faq')">View All FAQs <span>&#x2192;</span></a></div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem">
+        <div class="fade-up"><p class="label">Questions</p></div>
+        <div class="fade-up" style="transition-delay:0.08s"><a class="btn-ghost" onclick="showPage('faq')">View All FAQs <span>&#x2192;</span></a></div>
       </div>
-      <div class="fade-up" style="transition-delay:0.1s;margin-top:1.5rem">
-        <div class="preview-faq-item">
-          <h5>How thick is microcement?</h5>
-          <p>MONOCEM is applied at 2–3mm — thin enough to lay over existing tiles with no height gain.</p>
-        </div>
-        <div class="preview-faq-item">
-          <h5>Is microcement waterproof?</h5>
-          <p>Yes. Our sealed bathroom and wet-room systems are 100% waterproof when correctly applied and sealed.</p>
-        </div>
-        <div class="preview-faq-item" style="border-bottom:none">
-          <h5>How long does installation take?</h5>
-          <p>Most residential floors take 2–3 days. Bathrooms and multi-room projects typically 3–5 days.</p>
-        </div>
+      <div class="fade-up" style="transition-delay:0.1s">
+        <div class="lux-faq-line"><h5>How thick is microcement?</h5><p>2–3mm, applied directly over existing tiles or substrate.</p></div>
+        <div class="lux-faq-line"><h5>Is it waterproof?</h5><p>Yes — our sealed systems are fully waterproof for wet rooms and showers.</p></div>
+        <div class="lux-faq-line" style="border-bottom:none"><h5>How long does installation take?</h5><p>Typically 2–3 days for floors, 3–5 days for multi-room projects.</p></div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- CTA Banner -->
-  <div class="dark-section" style="padding:5rem 2rem;text-align:center">
+  <!-- 9. Strong CTA -->
+  <div style="background:var(--dark);padding:7rem 2rem;text-align:center">
     <div class="fade-up"><p class="label label-dark">Start Your Project</p></div>
     <div class="fade-up" style="transition-delay:0.1s">
-      <h2 style="color:#fff;margin:1rem auto 1.5rem;max-width:640px">Ready to Transform<br><em style="font-style:italic;color:rgba(255,255,255,0.5)">Your Space?</em></h2>
+      <h2 style="color:#fff;margin:1.25rem auto 2rem;max-width:600px;font-size:clamp(2rem,6vw,3.8rem)">Transform Your Space<br><em style="font-style:italic;color:rgba(255,255,255,0.4)">with MONOCEM.</em></h2>
     </div>
     <div class="fade-up" style="transition-delay:0.2s;display:flex;justify-content:center;gap:1rem;flex-wrap:wrap">
-      <a class="btn btn-gold" onclick="showPage('contact')">Get a Free Quote</a>
-      <a class="btn btn-outline-light" onclick="showPage('about')">Learn About Us</a>
+      <a class="btn btn-gold" onclick="showPage('contact')">Request a Free Quote</a>
+      <a class="btn btn-outline-light" onclick="showPage('about')">Discover Our Story</a>
     </div>
   </div>
 
