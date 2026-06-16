@@ -51,8 +51,7 @@ p{line-height:1.7;color:#6f6a61}
 
 /* ── HEADER ── */
 #header{position:fixed;top:0;left:0;right:0;z-index:900;padding:0 2rem;height:72px;display:flex;align-items:center;justify-content:space-between;transition:background 0.4s ease,backdrop-filter 0.4s ease}
-#header.transparent{background:transparent}
-#header.solid{background:rgba(17,17,17,0.97);backdrop-filter:blur(12px)}
+#header.solid{background:rgba(8,8,8,0.97);backdrop-filter:blur(12px)}
 .logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;letter-spacing:0.12em;color:#fff;text-transform:uppercase}
 .nav-desktop{display:none}
 @media(min-width:960px){.nav-desktop{display:flex;align-items:center;gap:2rem}}
@@ -95,7 +94,8 @@ p{line-height:1.7;color:#6f6a61}
 .hero-btns{display:flex;flex-wrap:wrap;gap:1rem}
 .hero-scroll{position:absolute;bottom:2rem;right:2rem;display:flex;flex-direction:column;align-items:center;gap:0.5rem}
 .hero-scroll span{font-size:0.6rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.35);writing-mode:vertical-rl}
-.hero-scroll::before{content:'';display:block;width:1px;height:48px;background:rgba(255,255,255,0.2)}
+.hero-scroll::before{content:'';display:block;width:1px;height:48px;background:rgba(255,255,255,0.5);transform-origin:top;animation:scrollPulse 2.2s ease-in-out infinite}
+@keyframes scrollPulse{0%{transform:scaleY(0);opacity:1}65%{transform:scaleY(1);opacity:0.9}100%{transform:scaleY(1);opacity:0}}
 
 /* ── SECTION WRAPPER ── */
 .section{padding:5rem 2rem}
@@ -458,6 +458,28 @@ p{line-height:1.7;color:#6f6a61}
 .tech-table th{font-family:'Jost',sans-serif;font-size:0.62rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);padding:0.75rem 1rem;border-bottom:2px solid var(--border);text-align:left}
 .tech-table td{padding:0.85rem 1rem;border-bottom:1px solid var(--border);color:var(--charcoal)}
 .tech-table tr:hover td{background:rgba(0,0,0,0.02)}
+
+/* ── BRAND INTRO ── */
+.brand-intro{padding:5rem 2rem;background:var(--bg)}
+@media(min-width:768px){.brand-intro{padding:7rem 3rem}}
+@media(min-width:1200px){.brand-intro{padding:8rem 5rem}}
+.brand-intro-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:4rem;align-items:center}
+@media(min-width:800px){.brand-intro-grid{grid-template-columns:1fr 1fr;gap:5rem}}
+@media(min-width:1100px){.brand-intro-grid{grid-template-columns:1.15fr 1fr}}
+.brand-intro-left h2{line-height:1.08;margin:1.25rem 0 1.5rem}
+.brand-intro-left>p{max-width:420px;margin:0 0 2.75rem;font-size:0.95rem;line-height:1.75}
+.brand-intro-points{display:flex;flex-direction:column;gap:1.75rem}
+.brand-intro-point{display:flex;gap:1.5rem;align-items:flex-start}
+.brand-point-num{font-family:'Cormorant Garamond',serif;font-size:1.75rem;font-weight:300;color:var(--gold);line-height:1;flex-shrink:0;min-width:2rem}
+.brand-intro-point h5{font-family:'Jost',sans-serif;font-size:0.68rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--charcoal);margin:0 0 0.35rem}
+.brand-intro-point p{font-size:0.82rem;margin:0;color:var(--muted);line-height:1.65}
+.brand-intro-right{position:relative;padding-bottom:2rem}
+@media(min-width:800px){.brand-intro-right{padding-bottom:2.5rem}}
+.brand-intro-img{aspect-ratio:4/5;width:100%;background-size:cover;background-position:center}
+.brand-intro-badge{position:absolute;bottom:0;left:-1rem;background:var(--gold);color:#fff;padding:1.25rem 1.75rem;text-align:center}
+@media(min-width:800px){.brand-intro-badge{left:-2rem}}
+.brand-badge-num{display:block;font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:300;line-height:1;margin-bottom:0.2rem}
+.brand-badge-label{display:block;font-family:'Jost',sans-serif;font-size:0.52rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;opacity:0.88}
 </style>
 </head>
 <body>
@@ -527,28 +549,53 @@ p{line-height:1.7;color:#6f6a61}
     <div class="hero-scroll"><span>Scroll</span></div>
   </section>
 
-  <!-- 2. What is Microcement -->
-  <div class="lux-intro" style="background:var(--bg)">
-    <div class="section-inner" style="max-width:860px">
-      <div class="fade-up"><p class="label">The Material</p></div>
-      <div class="fade-up" style="transition-delay:0.1s">
-        <h2 style="color:var(--charcoal);margin:1rem 0 1.25rem;max-width:640px">A seamless mineral surface,<br><em style="font-style:italic;color:var(--muted)">applied at just 2mm.</em></h2>
-      </div>
-      <div class="fade-up" style="transition-delay:0.15s">
-        <p style="max-width:560px">Microcement is a hand-applied cementitious coating that transforms any substrate into a continuous, grout-free surface. Floors, walls, bathrooms, kitchens — one material, boundless possibility.</p>
-      </div>
-      <div class="fade-up lux-attr-row" style="transition-delay:0.2s">
-        <div class="lux-attr">
-          <span class="label">Thickness</span>
-          <p>2–3mm — applied over existing surfaces with no demolition</p>
+  <!-- 2. Brand Intro -->
+  <div class="brand-intro">
+    <div class="brand-intro-grid">
+      <div class="brand-intro-left">
+        <div class="fade-up"><p class="label">The Material</p></div>
+        <div class="fade-up" style="transition-delay:0.08s">
+          <h2 style="color:var(--charcoal)">Seamless.<br>Waterproof.<br><em style="font-style:italic;color:var(--muted)">Architectural.</em></h2>
         </div>
-        <div class="lux-attr">
-          <span class="label">Surfaces</span>
-          <p>Floors, walls, bathrooms, kitchens, worktops &amp; stairs</p>
+        <div class="fade-up" style="transition-delay:0.12s">
+          <p>Microcement is a hand-applied mineral coating — 2mm thin and endlessly versatile. One material that transforms floors, walls, bathrooms and kitchens into continuous, grout-free architectural surfaces.</p>
         </div>
-        <div class="lux-attr">
-          <span class="label">Finish</span>
-          <p>Matt, satin, or gloss in 100+ mineral-pigment colours</p>
+        <div class="fade-up brand-intro-points" style="transition-delay:0.16s">
+          <div class="brand-intro-point">
+            <span class="brand-point-num">01</span>
+            <div>
+              <h5>Seamless Application</h5>
+              <p>No grout lines. A single continuous surface from floor to ceiling.</p>
+            </div>
+          </div>
+          <div class="brand-intro-point">
+            <span class="brand-point-num">02</span>
+            <div>
+              <h5>Fully Waterproof</h5>
+              <p>Sealed systems safe for wet rooms, showers and pools.</p>
+            </div>
+          </div>
+          <div class="brand-intro-point">
+            <span class="brand-point-num">03</span>
+            <div>
+              <h5>Exceptionally Durable</h5>
+              <p>Mineral composition resists scratches, stains and heavy traffic.</p>
+            </div>
+          </div>
+          <div class="brand-intro-point">
+            <span class="brand-point-num">04</span>
+            <div>
+              <h5>2mm Profile</h5>
+              <p>Applied over existing surfaces with no demolition required.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fade-up brand-intro-right" style="transition-delay:0.1s">
+        <div class="brand-intro-img" style="background-image:url('/images/img-proj-bathroom.png')"></div>
+        <div class="brand-intro-badge">
+          <span class="brand-badge-num">15+</span>
+          <span class="brand-badge-label">Years of Expertise</span>
         </div>
       </div>
     </div>
@@ -1928,15 +1975,9 @@ window.addEventListener('popstate', function(e) {
 var header = document.getElementById('header');
 
 function updateHeader() {
-  var scrollY = window.scrollY || window.pageYOffset;
-  if (currentPage === 'home' && scrollY < 60) {
-    header.className = 'transparent';
-  } else {
-    header.className = 'solid';
-  }
+  header.className = 'solid';
 }
 
-window.addEventListener('scroll', updateHeader, {passive: true});
 updateHeader();
 
 // ── MENU ──
