@@ -1875,26 +1875,54 @@ p{line-height:1.7;color:#6f6a61}
 <script>
 // ── PAGE ROUTING ──
 var currentPage = 'home';
+var _scrollPos = {};
 
-function showPage(id) {
-  // Hide all pages
-  document.querySelectorAll('.page').forEach(function(p) {
-    p.classList.remove('active');
-  });
-  // Show requested page
+// Hand scroll restoration entirely to JS
+if (history.scrollRestoration) history.scrollRestoration = 'manual';
+
+// Internal: swap visible page, no history side-effects
+function _applyPage(id) {
   var target = document.getElementById('page-' + id);
-  if (!target) return;
+  if (!target) return false;
+  document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
   target.classList.add('active');
   currentPage = id;
-  // Scroll to top
-  window.scrollTo({top: 0, behavior: 'instant'});
-  // Close mobile menu
   closeMenu();
-  // Update header state
   updateHeader();
-  // Trigger fade-up for visible elements
   setTimeout(triggerFadeUps, 50);
+  return true;
 }
+
+// Public: called by all navigation clicks
+function showPage(id) {
+  // Stamp the history entry we are leaving with its current scroll position
+  _scrollPos[currentPage] = window.scrollY || window.pageYOffset;
+  history.replaceState(
+    { page: currentPage, scrollY: _scrollPos[currentPage] },
+    '',
+    currentPage === 'home' ? location.pathname + location.search : '#' + currentPage
+  );
+  // Push a new entry for the destination
+  history.pushState(
+    { page: id, scrollY: 0 },
+    '',
+    id === 'home' ? location.pathname + location.search : '#' + id
+  );
+  if (!_applyPage(id)) return;
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}
+
+// Back / Forward button
+window.addEventListener('popstate', function(e) {
+  var state = e.state;
+  var targetId     = (state && state.page)    || (location.hash.replace('#', '') || 'home');
+  var targetScroll = (state && state.scrollY) || 0;
+  if (!_applyPage(targetId)) return;
+  // Restore scroll after paint so layout is ready
+  requestAnimationFrame(function() {
+    window.scrollTo({ top: targetScroll, behavior: 'instant' });
+  });
+});
 
 // ── HEADER ──
 var header = document.getElementById('header');
@@ -2014,7 +2042,19 @@ function toggleFaq(questionEl) {
 }
 
 // ── INIT ──
-showPage('home');
+(function() {
+  var hash = location.hash.replace('#', '');
+  if (hash && document.getElementById('page-' + hash)) {
+    // Deep-link: honour the URL hash on first load
+    _applyPage(hash);
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    history.replaceState({ page: hash, scrollY: 0 }, '', '#' + hash);
+  } else {
+    // Normal entry: show home and stamp the initial history entry
+    _applyPage('home');
+    history.replaceState({ page: 'home', scrollY: 0 }, '', location.pathname + location.search);
+  }
+})();
 </script>
 </body>
 </html>
