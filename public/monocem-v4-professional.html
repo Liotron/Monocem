@@ -214,21 +214,17 @@ p{line-height:1.7;color:#6f6a61}
 .legal-date{font-size:0.75rem;color:var(--muted);border-bottom:1px solid var(--border);padding-bottom:1.5rem;margin-bottom:0.5rem}
 
 /* ── FOOTER ── */
-#footer{background:var(--dark);color:rgba(255,255,255,0.55);padding:5rem 2rem 2.5rem}
+#footer{background:var(--dark);color:rgba(255,255,255,0.55);padding:3rem 2rem 2rem}
 .footer-inner{max-width:1200px;margin:0 auto}
-.footer-top{display:grid;grid-template-columns:1fr;gap:3rem;padding-bottom:4rem;border-bottom:1px solid var(--border-dark)}
-@media(min-width:768px){.footer-top{grid-template-columns:2fr 1fr 1fr 1fr}}
-.footer-brand .logo{margin-bottom:1rem;display:inline-block}
-.footer-brand p{font-size:0.85rem;line-height:1.7;max-width:260px}
-.footer-col h5{font-family:'Jost',sans-serif;font-size:0.65rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1.25rem}
-.footer-col ul{display:flex;flex-direction:column;gap:0.6rem}
-.footer-col ul li a,.footer-col ul li span{font-size:0.85rem;color:rgba(255,255,255,0.5);transition:color 0.2s;cursor:pointer;display:block}
+.footer-top{display:grid;grid-template-columns:1fr;gap:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border-dark)}
+@media(min-width:600px){.footer-top{grid-template-columns:2fr 1fr 1fr}}
+.footer-brand .logo{margin-bottom:0.75rem;display:inline-block}
+.footer-brand p{font-size:0.82rem;line-height:1.7;max-width:260px}
+.footer-col h5{font-family:'Jost',sans-serif;font-size:0.65rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1rem}
+.footer-col ul{display:flex;flex-direction:column;gap:0.5rem}
+.footer-col ul li a,.footer-col ul li span{font-size:0.82rem;color:rgba(255,255,255,0.5);transition:color 0.2s;cursor:pointer;display:block}
 .footer-col ul li a:hover,.footer-col ul li span:hover{color:#fff}
-.footer-bottom{padding-top:2rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem}
-.footer-bottom p{font-size:0.75rem}
-.footer-bottom nav{display:flex;gap:1.5rem}
-.footer-bottom nav span{font-size:0.75rem;cursor:pointer;transition:color 0.2s}
-.footer-bottom nav span:hover{color:#fff}
+.footer-bottom{padding-top:1.5rem;font-size:0.72rem}
 
 /* ── WHATSAPP FLOAT ── */
 #wa-float{position:fixed;bottom:2rem;right:2rem;z-index:800;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,0.2);opacity:0;transform:translateY(20px);transition:all 0.4s ease;pointer-events:none}
@@ -1715,43 +1711,25 @@ p{line-height:1.7;color:#6f6a61}
         <p>Professional microcement installation across the United Kingdom. Seamless surfaces, certified craftsmen, 5-year guarantee.</p>
       </div>
       <div class="footer-col">
-        <h5>Systems</h5>
-        <ul>
-          <li><span onclick="showPage('floors')">Floors</span></li>
-          <li><span onclick="showPage('walls')">Walls</span></li>
-          <li><span onclick="showPage('bathrooms')">Bathrooms</span></li>
-          <li><span onclick="showPage('applications')">Kitchens</span></li>
-          <li><span onclick="showPage('applications')">Worktops</span></li>
-          <li><span onclick="showPage('applications')">Stairs</span></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Company</h5>
-        <ul>
-          <li><span onclick="showPage('projects')">Projects</span></li>
-          <li><span onclick="showPage('products')">Products</span></li>
-          <li><span onclick="showPage('colours')">Colours</span></li>
-          <li><span onclick="showPage('faq')">FAQ</span></li>
-          <li><span onclick="showPage('about')">About</span></li>
-          <li><span onclick="showPage('contact')">Contact</span></li>
-        </ul>
-      </div>
-      <div class="footer-col">
         <h5>Contact</h5>
         <ul>
           <li><a href="mailto:info@monocem.co.uk">info@monocem.co.uk</a></li>
           <li><a href="tel:+447000000000">+44 (0)7000 000 000</a></li>
           <li><a href="https://wa.me/447000000000" target="_blank">WhatsApp</a></li>
-          <li style="margin-top:1rem"><span style="color:rgba(255,255,255,0.35);font-size:0.75rem">Mon–Fri 8am–6pm<br>Sat 9am–1pm</span></li>
+          <li><a href="https://instagram.com/monocem" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><span onclick="showPage('about')">About Us</span></li>
+          <li><span onclick="showPage('privacy')">Privacy Policy</span></li>
+          <li><span onclick="showPage('terms')">Terms of Use</span></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <p>&copy; 2024 MONOCEM Ltd. All rights reserved.</p>
-      <nav>
-        <span onclick="showPage('privacy')">Privacy Policy</span>
-        <span onclick="showPage('terms')">Terms of Use</span>
-      </nav>
     </div>
   </div>
 </footer>
