@@ -93,8 +93,9 @@ p{line-height:1.7;color:#6f6a61}
 @keyframes heroKenBurns{to{transform:scale(1)}}
 .hero-overlay{position:absolute;inset:0;background:radial-gradient(ellipse 130% 75% at 0% 100%,rgba(16,13,11,0.6) 0%,rgba(16,13,11,0.32) 42%,rgba(16,13,11,0) 75%)}
 #hero-section .fade-up{transition:opacity 0.9s ease-out,transform 0.9s ease-out}
+.hero-label{position:absolute;top:7rem;left:2rem;z-index:1;display:flex;align-items:center;gap:0.75rem;color:#d4b07a;letter-spacing:0.3em;text-shadow:0 2px 10px rgba(0,0,0,0.4)}
+.hero-label::before{content:'';display:block;width:32px;height:1px;background:#d4b07a;flex-shrink:0}
 .hero-content{position:relative;z-index:1;max-width:680px}
-.hero-content .label{position:relative;top:-32px;margin-bottom:1.5rem;color:rgba(212,176,122,0.88);letter-spacing:0.22em;text-shadow:0 2px 10px rgba(0,0,0,0.4)}
 .hero-content h1{color:#fff;margin-bottom:1.5rem;text-shadow:0 2px 16px rgba(0,0,0,0.45)}
 .hero-content h1 em{font-style:italic;color:rgba(255,255,255,0.7)}
 .hero-content p{color:#fff;font-weight:400;line-height:1.85;max-width:440px;margin-bottom:2.5rem;font-size:1rem;text-shadow:0 2px 10px rgba(0,0,0,0.4)}
@@ -621,8 +622,8 @@ p{line-height:1.7;color:#6f6a61}
   <section id="hero-section">
     <div class="hero-bg" style="background-image:url('/images/img-hero.png')"></div>
     <div class="hero-overlay"></div>
+    <p class="hero-label label fade-up">Seamless Mineral Surfaces · UK</p>
     <div class="hero-content">
-      <p class="label fade-up">Premium Microcement · UK</p>
       <h1 class="fade-up" style="transition-delay:0.12s">The Surface<br>That Defines<br><em>Every Space</em></h1>
       <p class="fade-up" style="transition-delay:0.24s">Seamless, durable, and endlessly adaptable. MONOCEM microcement transforms floors, walls, and bathrooms into architectural statements.</p>
       <div class="hero-btns fade-up" style="transition-delay:0.36s">
