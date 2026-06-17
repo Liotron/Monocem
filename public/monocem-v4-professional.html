@@ -432,14 +432,16 @@ p{line-height:1.7;color:#6f6a61}
 .proj-section-footer{padding:2rem 2rem 4rem;text-align:center}
 
 /* Colour section — editorial texture photograph */
-.lux-colour-section{background:#f0ece4;padding:2.25rem 0}
-.lux-colour-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:1fr;gap:2rem;align-items:center}
-@media(min-width:768px){.lux-colour-inner{grid-template-columns:1.72fr 1fr;gap:4rem}}
-.lux-colour-photo{width:100%;height:220px;background-size:cover;background-position:center;border-radius:1px}
-@media(min-width:768px){.lux-colour-photo{height:285px}}
+.lux-colour-section{background:#f0ece4;padding:5rem 2rem}
+@media(min-width:768px){.lux-colour-section{padding:7rem 2rem}}
+.lux-colour-inner{max-width:1200px;margin:0 auto}
+.lux-colour-content{max-width:640px;margin:0 0 3rem}
 .lux-colour-content .label{display:block;margin-bottom:1.25rem}
 .lux-colour-content h2{margin:0 0 1.25rem;color:var(--charcoal)}
-.lux-colour-content>p{font-size:1rem;line-height:1.75;margin:0 0 2rem}
+.lux-colour-content>p{font-size:1rem;line-height:1.75;margin:0}
+.lux-colour-photo{width:100%;height:320px;background-size:cover;background-position:center;border-radius:1px}
+@media(min-width:768px){.lux-colour-photo{height:460px}}
+.lux-colour-cta{margin-top:2.25rem}
 .btn-palette{display:inline-flex;align-items:center;gap:0.55rem;font-family:'Jost',sans-serif;font-size:0.72rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--charcoal);border:none;border-bottom:1px solid var(--gold);padding:0 0 0.25rem;background:none;cursor:pointer;transition:color 0.25s ease,gap 0.3s ease}
 .btn-palette:hover{color:var(--gold);gap:1rem}
 
@@ -825,11 +827,13 @@ p{line-height:1.7;color:#6f6a61}
   <!-- 6. Colours — editorial texture photograph -->
   <div class="lux-colour-section">
     <div class="lux-colour-inner">
-      <div class="fade-up lux-colour-photo" style="background-image:url('/images/img-texture.png')"></div>
-      <div class="fade-up lux-colour-content" style="transition-delay:0.15s">
+      <div class="fade-up lux-colour-content">
         <p class="label">Colour Palette</p>
         <h2>100+ Curated <em>Colours</em></h2>
         <p>Mineral tones developed for architecture and interiors, formulated with natural pigments for depth that paint can never replicate.</p>
+      </div>
+      <div class="fade-up lux-colour-photo" style="transition-delay:0.1s;background-image:url('/images/img-texture.png')"></div>
+      <div class="fade-up lux-colour-cta" style="transition-delay:0.18s">
         <button class="btn-palette" onclick="showPage('colours')">View Full Palette &#x2192;</button>
       </div>
     </div>
