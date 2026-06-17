@@ -403,7 +403,7 @@ p{line-height:1.7;color:#6f6a61}
 }
 
 /* Applications grid */
-.app-section{background:var(--dark);padding:4.5rem 0 0}
+.app-section{background:#181613;padding:4.5rem 0 0}
 .app-section-header{padding:0 2rem 3rem;max-width:1200px;margin:0 auto}
 .app-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px}
 @media(min-width:900px){.app-grid{grid-template-columns:repeat(3,1fr)}}
@@ -458,6 +458,11 @@ p{line-height:1.7;color:#6f6a61}
 .lux-testimonial-section .stars{font-size:0.85rem;letter-spacing:4px;color:var(--gold);margin-bottom:2.5rem;display:block}
 .lux-testimonial-section blockquote{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,4.5vw,2.4rem);font-weight:300;font-style:italic;color:#fff;line-height:1.45;max-width:760px;margin:0 auto 2rem}
 .lux-testimonial-section cite{font-size:0.62rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);font-style:normal}
+.lux-testimonial-more{display:flex;flex-direction:column;gap:2rem;max-width:820px;margin:3.5rem auto 0;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,0.12);text-align:center}
+@media(min-width:700px){.lux-testimonial-more{flex-direction:row;gap:3rem;text-align:left}}
+.lux-testimonial-more .mini{flex:1}
+.lux-testimonial-more .mini blockquote{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:300;font-style:italic;color:rgba(255,255,255,0.75);line-height:1.6;margin:0 0 0.75rem}
+.lux-testimonial-more .mini cite{font-size:0.6rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.35);font-style:normal}
 
 .lux-faq-line{display:flex;flex-direction:column;gap:0.4rem;padding:1.3rem 0;border-bottom:1px solid var(--border)}
 @media(min-width:600px){.lux-faq-line{flex-direction:row;gap:2rem;align-items:baseline}}
@@ -829,6 +834,16 @@ p{line-height:1.7;color:#6f6a61}
     <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
     <blockquote>"The finish is absolutely breathtaking. Our entire ground floor looks like a completely different space. The team were professional, tidy, and incredibly skilled."</blockquote>
     <cite>Sarah M. &nbsp;—&nbsp; Chelsea, London</cite>
+    <div class="lux-testimonial-more">
+      <div class="mini">
+        <blockquote>"Flawless finish, on time and on budget. Couldn't recommend MONOCEM more."</blockquote>
+        <cite>James R. &nbsp;—&nbsp; Notting Hill, London</cite>
+      </div>
+      <div class="mini">
+        <blockquote>"Five years on, our microcement worktops still look brand new. Outstanding craftsmanship."</blockquote>
+        <cite>Olivia T. &nbsp;—&nbsp; Richmond, London</cite>
+      </div>
+    </div>
   </div>
 
   <!-- 8. FAQ Preview (3 lines only) -->
@@ -851,7 +866,7 @@ p{line-height:1.7;color:#6f6a61}
   </div>
 
   <!-- 9. Strong CTA -->
-  <div style="background:var(--dark);padding:7rem 2rem;text-align:center">
+  <div style="background:var(--dark);padding:7rem 2rem 4.5rem;text-align:center">
     <div class="fade-up"><p class="label label-dark">Start Your Project</p></div>
     <div class="fade-up" style="transition-delay:0.1s">
       <h2 style="color:#fff;margin:1.25rem auto 2rem;max-width:600px;font-size:clamp(2rem,6vw,3.8rem)">Transform Your Space<br><em style="font-style:italic;color:rgba(255,255,255,0.4)">with MONOCEM.</em></h2>
