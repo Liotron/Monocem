@@ -91,13 +91,13 @@ p{line-height:1.7;color:#6f6a61}
 #hero-section{min-height:100svh;background:#181613;position:relative;display:flex;align-items:flex-end;padding:0 2rem 4rem;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.05);animation:heroKenBurns 9s ease-out forwards}
 @keyframes heroKenBurns{to{transform:scale(1)}}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,26,21,0.08) 0%,rgba(28,24,20,0.12) 30%,rgba(26,22,18,0.32) 60%,rgba(20,17,14,0.58) 100%)}
+.hero-overlay{position:absolute;inset:0;background:radial-gradient(ellipse 130% 75% at 0% 100%,rgba(16,13,11,0.6) 0%,rgba(16,13,11,0.32) 42%,rgba(16,13,11,0) 75%)}
 #hero-section .fade-up{transition:opacity 0.9s ease-out,transform 0.9s ease-out}
 .hero-content{position:relative;z-index:1;max-width:680px}
-.hero-content .label{margin-bottom:1.5rem}
-.hero-content h1{color:#fff;margin-bottom:1.5rem}
+.hero-content .label{margin-bottom:1.5rem;text-shadow:0 2px 10px rgba(0,0,0,0.4)}
+.hero-content h1{color:#fff;margin-bottom:1.5rem;text-shadow:0 2px 16px rgba(0,0,0,0.45)}
 .hero-content h1 em{font-style:italic;color:rgba(255,255,255,0.7)}
-.hero-content p{color:rgba(255,255,255,0.6);max-width:440px;margin-bottom:2.5rem;font-size:1rem}
+.hero-content p{color:rgba(255,255,255,0.6);max-width:440px;margin-bottom:2.5rem;font-size:1rem;text-shadow:0 2px 10px rgba(0,0,0,0.4)}
 .hero-btns{display:flex;flex-wrap:wrap;gap:1rem}
 .hero-scroll{position:absolute;bottom:2rem;right:2rem;display:flex;flex-direction:column;align-items:center;gap:0.5rem}
 .hero-scroll span{font-size:0.6rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.35);writing-mode:vertical-rl}
