@@ -540,26 +540,21 @@ p{line-height:1.7;color:#6f6a61}
 .swatches-collection-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.3rem,2.5vw,1.7rem);font-weight:300;color:var(--charcoal);margin:4rem 0 2rem;max-width:1100px;padding-bottom:0.75rem;border-bottom:1px solid var(--border)}
 
 /* ── BRAND INTRO ── */
-.brand-intro{padding:5rem 2rem;background:var(--bg)}
-@media(min-width:768px){.brand-intro{padding:7rem 3rem}}
-@media(min-width:1200px){.brand-intro{padding:8rem 5rem}}
-.brand-intro-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:4rem;align-items:center}
-@media(min-width:800px){.brand-intro-grid{grid-template-columns:1fr 1fr;gap:5rem}}
-@media(min-width:1100px){.brand-intro-grid{grid-template-columns:1.15fr 1fr}}
-.brand-intro-left h2{line-height:1.08;margin:1.25rem 0 1.5rem}
-.brand-intro-left>p{max-width:420px;margin:0 0 2.75rem;font-size:0.95rem;line-height:1.75}
-.brand-intro-points{display:flex;flex-direction:column;gap:1.75rem}
-.brand-intro-point{display:flex;gap:1.5rem;align-items:flex-start}
-.brand-point-num{font-family:'Cormorant Garamond',serif;font-size:1.75rem;font-weight:300;color:var(--gold);line-height:1;flex-shrink:0;min-width:2rem}
-.brand-intro-point h5{font-family:'Jost',sans-serif;font-size:0.68rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--charcoal);margin:0 0 0.35rem}
-.brand-intro-point p{font-size:0.82rem;margin:0;color:var(--muted);line-height:1.65}
-.brand-intro-right{position:relative;padding-bottom:2rem}
-@media(min-width:800px){.brand-intro-right{padding-bottom:2.5rem}}
-.brand-intro-img{aspect-ratio:4/5;width:100%;background-size:cover;background-position:center}
-.brand-intro-badge{position:absolute;bottom:0;left:-1rem;background:var(--gold);color:#fff;padding:1.25rem 1.75rem;text-align:center}
-@media(min-width:800px){.brand-intro-badge{left:-2rem}}
-.brand-badge-num{display:block;font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:300;line-height:1;margin-bottom:0.2rem}
-.brand-badge-label{display:block;font-family:'Jost',sans-serif;font-size:0.52rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;opacity:0.88}
+.brand-intro{padding:2.5rem 1.5rem 4rem;background:var(--bg)}
+@media(min-width:768px){.brand-intro{padding:3.5rem 3rem 5rem}}
+@media(min-width:1200px){.brand-intro{padding:4rem 5rem 6rem}}
+.material-wrap{max-width:760px;margin:0 auto}
+.material-wrap .label{margin-bottom:0.6rem}
+.material-wrap h2{line-height:1.08;margin:0 0 1.75rem}
+.material-image{display:block;width:100%;border-radius:12px;box-shadow:0 30px 70px -25px rgba(29,27,24,0.35);margin:0 0 3rem}
+.material-copy p{max-width:620px;margin:0 0 3.5rem;font-size:1.375rem;line-height:1.8;color:var(--muted)}
+.material-points{display:flex;flex-direction:column}
+.material-point{display:flex;gap:1.75rem;align-items:flex-start;padding:2rem 0;border-bottom:1px solid var(--border)}
+.material-point:first-child{padding-top:0}
+.material-point:last-child{border-bottom:none;padding-bottom:0}
+.material-point-num{font-family:'Cormorant Garamond',serif;font-size:1.85rem;font-weight:300;color:var(--gold);line-height:1;flex-shrink:0;min-width:2.25rem}
+.material-point h5{font-family:'Jost',sans-serif;font-size:0.72rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--charcoal);margin:0 0 0.5rem}
+.material-point p{font-size:0.92rem;margin:0;color:var(--muted);line-height:1.7}
 </style>
 </head>
 <body>
@@ -637,51 +632,45 @@ p{line-height:1.7;color:#6f6a61}
 
   <!-- 2. Brand Intro -->
   <div class="brand-intro">
-    <div class="brand-intro-grid">
-      <div class="brand-intro-left">
-        <div class="fade-up"><p class="label">The Material</p></div>
-        <div class="fade-up" style="transition-delay:0.08s">
-          <h2 style="color:var(--charcoal)">Seamless.<br>Waterproof.<br><em style="font-style:italic;color:var(--muted)">Architectural.</em></h2>
-        </div>
-        <div class="fade-up" style="transition-delay:0.12s">
-          <p>Microcement is a hand-applied mineral coating — 2mm thin and endlessly versatile. One material that transforms floors, walls, bathrooms and kitchens into continuous, grout-free architectural surfaces.</p>
-        </div>
-        <div class="fade-up brand-intro-points" style="transition-delay:0.16s">
-          <div class="brand-intro-point">
-            <span class="brand-point-num">01</span>
-            <div>
-              <h5>Seamless Application</h5>
-              <p>No grout lines. A single continuous surface from floor to ceiling.</p>
-            </div>
-          </div>
-          <div class="brand-intro-point">
-            <span class="brand-point-num">02</span>
-            <div>
-              <h5>Fully Waterproof</h5>
-              <p>Sealed systems safe for wet rooms, showers and pools.</p>
-            </div>
-          </div>
-          <div class="brand-intro-point">
-            <span class="brand-point-num">03</span>
-            <div>
-              <h5>Exceptionally Durable</h5>
-              <p>Mineral composition resists scratches, stains and heavy traffic.</p>
-            </div>
-          </div>
-          <div class="brand-intro-point">
-            <span class="brand-point-num">04</span>
-            <div>
-              <h5>2mm Profile</h5>
-              <p>Applied over existing surfaces with no demolition required.</p>
-            </div>
-          </div>
-        </div>
+    <div class="material-wrap">
+      <div class="fade-up"><p class="label">The Material</p></div>
+      <div class="fade-up" style="transition-delay:0.06s">
+        <h2 style="color:var(--charcoal)">Seamless.<br>Waterproof.<br><em style="font-style:italic;color:var(--muted)">Architectural.</em></h2>
       </div>
-      <div class="fade-up brand-intro-right" style="transition-delay:0.1s">
-        <div class="brand-intro-img" style="background-image:url('/images/img-proj-bathroom.png')"></div>
-        <div class="brand-intro-badge">
-          <span class="brand-badge-num">15+</span>
-          <span class="brand-badge-label">Years of Expertise</span>
+      <div class="fade-up" style="transition-delay:0.12s">
+        <img class="material-image" src="/images/img-material-hero.png" alt="Close-up of a microcement countertop corner with a ceramic vase">
+      </div>
+      <div class="fade-up material-copy" style="transition-delay:0.16s">
+        <p>Microcement is a hand-applied mineral coating — 2mm thin and endlessly versatile. One material that transforms floors, walls, bathrooms and kitchens into continuous, grout-free architectural surfaces.</p>
+      </div>
+      <div class="fade-up material-points" style="transition-delay:0.2s">
+        <div class="material-point">
+          <span class="material-point-num">01</span>
+          <div>
+            <h5>Seamless Application</h5>
+            <p>No grout lines. A single continuous surface from floor to ceiling.</p>
+          </div>
+        </div>
+        <div class="material-point">
+          <span class="material-point-num">02</span>
+          <div>
+            <h5>Fully Waterproof</h5>
+            <p>Sealed systems safe for wet rooms, showers and pools.</p>
+          </div>
+        </div>
+        <div class="material-point">
+          <span class="material-point-num">03</span>
+          <div>
+            <h5>Highly Durable</h5>
+            <p>Mineral composition resists scratches, stains and heavy traffic.</p>
+          </div>
+        </div>
+        <div class="material-point">
+          <span class="material-point-num">04</span>
+          <div>
+            <h5>Design Freedom</h5>
+            <p>Endless colours, textures and finishes — tailored to any architectural vision.</p>
+          </div>
         </div>
       </div>
     </div>
