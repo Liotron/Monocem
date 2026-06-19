@@ -104,13 +104,18 @@ p{line-height:1.7;color:#6f6a61}
 .menu-sublist{display:flex;flex-direction:column}
 .menu-sublink{font-family:'Jost',sans-serif;font-size:0.95rem;font-weight:400;color:#111;min-height:60px;padding:0.5rem 0;border-bottom:1px solid rgba(0,0,0,0.08);display:flex;align-items:center;cursor:pointer;transition:color 0.3s ease,transform 0.3s cubic-bezier(0.65,0,0.35,1)}
 .menu-sublink:hover{color:var(--gold);transform:translateX(8px)}
+.menu-panel-sub[data-panel="colours"]{background:linear-gradient(165deg,#f7f2e8 0%,#f2ecdd 50%,#ece3d0 100%)}
+.menu-panel-sub[data-panel="colours"]::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 140% 70% at 15% -10%,rgba(255,255,255,0.6) 0%,rgba(255,255,255,0) 55%),radial-gradient(ellipse 120% 70% at 90% 110%,rgba(112,90,60,0.1) 0%,rgba(112,90,60,0) 60%)}
+.menu-panel-sub[data-panel="colours"]::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:0.045;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012' numOctaves='4' seed='5' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.menu-panel-sub[data-panel="colours"]>*{position:relative}
 .menu-swatch-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem 1rem;margin-top:0.5rem}
 @media(min-width:600px){.menu-swatch-grid{grid-template-columns:repeat(3,1fr)}}
 .menu-swatch{display:flex;flex-direction:column;align-items:center;gap:0.65rem;cursor:pointer;padding:0.5rem 0;min-height:60px}
-.menu-swatch-tile{width:100%;aspect-ratio:1;border-radius:2px;transition:transform 0.4s cubic-bezier(0.22,1.2,0.36,1),box-shadow 0.4s ease}
-.menu-swatch:hover .menu-swatch-tile{transform:scale(1.08) translateY(-4px);box-shadow:0 16px 32px rgba(0,0,0,0.18)}
+.menu-swatch-tile{position:relative;width:100%;aspect-ratio:1;transition:transform 0.4s cubic-bezier(0.22,1.2,0.36,1),filter 0.4s ease;filter:drop-shadow(0 10px 16px rgba(54,42,28,0.16)) drop-shadow(0 2px 5px rgba(54,42,28,0.12))}
+.menu-swatch:hover .menu-swatch-tile{transform:translateY(-4px) scale(1.05);filter:drop-shadow(0 16px 26px rgba(54,42,28,0.22)) drop-shadow(0 4px 8px rgba(54,42,28,0.15))}
 .menu-swatch-label{font-family:'Jost',sans-serif;font-size:0.7rem;font-weight:500;letter-spacing:0.06em;color:#111;text-align:center;transition:color 0.3s}
 .menu-swatch:hover .menu-swatch-label{color:var(--gold)}
+.menu-order-samples-btn{margin-top:1.75rem}
 
 /* ── PAGES ── */
 .page{display:none;min-height:100vh}
@@ -696,30 +701,31 @@ p{line-height:1.7;color:#6f6a61}
       <h3 class="menu-panel-title">Colors</h3>
       <div class="menu-swatch-grid">
         <div class="menu-swatch" onclick="showPage('colours')">
-          <div class="menu-swatch-tile" style="background:linear-gradient(135deg,#eeece8 50%,#e0ddd7 50%)"></div>
-          <span class="menu-swatch-label">Light Greys</span>
+          <div class="menu-swatch-tile"><div class="mc-tile-face" style="--clr:#efe7d6"><div class="mc-tile-grain swatch-noise-1"></div><div class="mc-tile-sheen"></div></div><div class="mc-tile-side" style="--clr:#efe7d6"></div></div>
+          <span class="menu-swatch-label">Cream</span>
         </div>
         <div class="menu-swatch" onclick="showPage('colours')">
-          <div class="menu-swatch-tile" style="background:linear-gradient(135deg,#d0ccc4 50%,#b8b4ac 50%)"></div>
-          <span class="menu-swatch-label">Mid Greys</span>
+          <div class="menu-swatch-tile"><div class="mc-tile-face" style="--clr:#c4b49a"><div class="mc-tile-grain swatch-noise-2"></div><div class="mc-tile-sheen"></div></div><div class="mc-tile-side" style="--clr:#c4b49a"></div></div>
+          <span class="menu-swatch-label">Sand</span>
         </div>
         <div class="menu-swatch" onclick="showPage('colours')">
-          <div class="menu-swatch-tile" style="background:linear-gradient(135deg,#8a8680 50%,#1a1a18 50%)"></div>
-          <span class="menu-swatch-label">Dark Greys</span>
+          <div class="menu-swatch-tile"><div class="mc-tile-face" style="--clr:#b6ab9c"><div class="mc-tile-grain swatch-noise-3"></div><div class="mc-tile-sheen"></div></div><div class="mc-tile-side" style="--clr:#b6ab9c"></div></div>
+          <span class="menu-swatch-label">Greige</span>
         </div>
         <div class="menu-swatch" onclick="showPage('colours')">
-          <div class="menu-swatch-tile" style="background:linear-gradient(135deg,#c4b49a 50%,#b09878 50%)"></div>
-          <span class="menu-swatch-label">Beige &amp; Sand</span>
+          <div class="menu-swatch-tile"><div class="mc-tile-face" style="--clr:#b8b4ac"><div class="mc-tile-grain swatch-noise-4"></div><div class="mc-tile-sheen"></div></div><div class="mc-tile-side" style="--clr:#b8b4ac"></div></div>
+          <span class="menu-swatch-label">Stone</span>
         </div>
         <div class="menu-swatch" onclick="showPage('colours')">
-          <div class="menu-swatch-tile" style="background:linear-gradient(135deg,#6e5e4a 50%,#504438 50%)"></div>
-          <span class="menu-swatch-label">Earth Tones</span>
+          <div class="menu-swatch-tile"><div class="mc-tile-face" style="--clr:#404038"><div class="mc-tile-grain swatch-noise-1"></div><div class="mc-tile-sheen"></div></div><div class="mc-tile-side" style="--clr:#404038"></div></div>
+          <span class="menu-swatch-label">Anthracite</span>
         </div>
         <div class="menu-swatch" onclick="showPage('colours')">
-          <div class="menu-swatch-tile" style="background:linear-gradient(135deg,#c4b49a,#8a8680,#6e5e4a)"></div>
-          <span class="menu-swatch-label">Custom Colours</span>
+          <div class="menu-swatch-tile"><div class="mc-tile-face" style="--clr:#202018"><div class="mc-tile-grain swatch-noise-2"></div><div class="mc-tile-sheen"></div></div><div class="mc-tile-side" style="--clr:#202018"></div></div>
+          <span class="menu-swatch-label">Charcoal</span>
         </div>
       </div>
+      <button class="menu-cta-btn menu-order-samples-btn" onclick="showPage('contact')">Order Samples</button>
     </div>
 
     <!-- SUBMENU: PRODUCTS -->
