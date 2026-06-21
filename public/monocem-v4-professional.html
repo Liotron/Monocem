@@ -361,6 +361,21 @@ p{line-height:1.7;color:#6f6a61}
 .surface-hero-img{aspect-ratio:16/9;width:100%;margin:3rem 0}
 @media(min-width:768px){.surface-hero-img{aspect-ratio:21/9}}
 
+/* ── WALLS PAGE: EDITORIAL STORY ── */
+#page-walls .inner-hero{padding:10rem 2rem 5.5rem}
+@media(min-width:768px){#page-walls .inner-hero{padding:12rem 3rem 7rem}}
+#page-walls .inner-hero h1{font-size:clamp(3.1rem,8.5vw,6.2rem);margin:1.75rem 0 2rem}
+.walls-story{padding:4.5rem 2rem 0}
+@media(min-width:768px){.walls-story{padding:5.5rem 3rem 0}}
+@media(min-width:1200px){.walls-story{padding:6.5rem 4rem 0}}
+.walls-edit-figure{margin-bottom:5rem}
+@media(min-width:768px){.walls-edit-figure{margin-bottom:6rem}}
+.walls-edit-img{width:100%;aspect-ratio:16/9;border-radius:16px;background-size:cover;background-position:center}
+@media(min-width:768px){.walls-edit-img{aspect-ratio:21/9}}
+.walls-caption{margin-top:1.25rem;font-size:0.65rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);text-align:center}
+.bg-wall-texture{background-image:url('/images/img-wall-texture.png')}
+.bg-wall-detail{background-image:url('/images/img-why-monocem.png');background-position:center 30%}
+
 /* ── CATEGORY FILTER TABS ── */
 .filter-tabs{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2.5rem}
 .filter-tab{font-family:'Jost',sans-serif;font-size:0.62rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;padding:0.5rem 1.1rem;border:1px solid var(--border);color:var(--muted);cursor:pointer;transition:all 0.2s ease;background:none}
@@ -1216,14 +1231,29 @@ p{line-height:1.7;color:#6f6a61}
 <div id="page-walls" class="page">
   <div class="inner-hero">
     <div class="section-inner">
-      <p class="label label-dark">Microcement Walls</p>
-      <h1>Textured <em>Walls</em></h1>
-      <p>Create dramatic feature walls or seamless transitions throughout your space. MONOCEM wall systems deliver unmatched depth and tactile beauty.</p>
+      <p class="label label-dark fade-up">Microcement Walls</p>
+      <h1 class="fade-up" style="transition-delay:0.08s">Textured <em>Walls</em></h1>
+      <p class="fade-up" style="transition-delay:0.16s">Create dramatic feature walls or seamless transitions throughout your space. MONOCEM wall systems deliver unmatched depth and tactile beauty.</p>
     </div>
   </div>
-  <section class="section">
+  <section class="walls-story">
     <div class="section-inner">
-      <div class="surface-hero-img bg-wall-hero fade-up"></div>
+      <figure class="walls-edit-figure fade-up">
+        <div class="walls-edit-img bg-wall-hero"></div>
+        <figcaption class="walls-caption">Warm Limestone Finish</figcaption>
+      </figure>
+      <figure class="walls-edit-figure fade-up" style="transition-delay:0.08s">
+        <div class="walls-edit-img bg-wall-texture"></div>
+        <figcaption class="walls-caption">Hand-Trowelled Texture</figcaption>
+      </figure>
+      <figure class="walls-edit-figure fade-up" style="transition-delay:0.08s">
+        <div class="walls-edit-img bg-wall-detail"></div>
+        <figcaption class="walls-caption">Architectural Microcement</figcaption>
+      </figure>
+    </div>
+  </section>
+  <section class="section" style="padding-top:0">
+    <div class="section-inner">
       <div class="two-col-text">
         <div class="fade-up content-block" style="max-width:none">
           <p class="label">Wall Systems</p>
