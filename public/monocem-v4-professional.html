@@ -365,16 +365,18 @@ p{line-height:1.7;color:#6f6a61}
 #page-walls .inner-hero{padding:10rem 2rem 5.5rem}
 @media(min-width:768px){#page-walls .inner-hero{padding:12rem 3rem 7rem}}
 #page-walls .inner-hero h1{font-size:clamp(3.1rem,8.5vw,6.2rem);margin:1.75rem 0 2rem}
-.walls-story{padding:4.5rem 2rem 0}
-@media(min-width:768px){.walls-story{padding:5.5rem 3rem 0}}
-@media(min-width:1200px){.walls-story{padding:6.5rem 4rem 0}}
-.walls-edit-figure{margin-bottom:5rem}
-@media(min-width:768px){.walls-edit-figure{margin-bottom:6rem}}
+.walls-story{padding:2.7rem 2rem 0}
+@media(min-width:768px){.walls-story{padding:3.3rem 3rem 0}}
+@media(min-width:1200px){.walls-story{padding:3.9rem 4rem 0}}
+.walls-edit-figure{margin-bottom:3rem}
+@media(min-width:768px){.walls-edit-figure{margin-bottom:3.6rem}}
+.walls-edit-figure:last-child{margin-bottom:0}
 .walls-edit-img{width:100%;aspect-ratio:16/9;border-radius:16px;background-size:cover;background-position:center}
 @media(min-width:768px){.walls-edit-img{aspect-ratio:21/9}}
-.walls-caption{margin-top:1.25rem;font-size:0.65rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);text-align:center}
+.walls-edit-img.bg-wall-texture{aspect-ratio:5/2}
+@media(min-width:768px){.walls-edit-img.bg-wall-texture{aspect-ratio:10/3}}
+.walls-caption{margin-top:0.75rem;font-size:0.65rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);text-align:center}
 .bg-wall-texture{background-image:url('/images/img-wall-texture.png')}
-.bg-wall-detail{background-image:url('/images/img-why-monocem.png');background-position:center 30%}
 
 /* ── CATEGORY FILTER TABS ── */
 .filter-tabs{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2.5rem}
@@ -1245,10 +1247,6 @@ p{line-height:1.7;color:#6f6a61}
       <figure class="walls-edit-figure fade-up" style="transition-delay:0.08s">
         <div class="walls-edit-img bg-wall-texture"></div>
         <figcaption class="walls-caption">Hand-Trowelled Texture</figcaption>
-      </figure>
-      <figure class="walls-edit-figure fade-up" style="transition-delay:0.08s">
-        <div class="walls-edit-img bg-wall-detail"></div>
-        <figcaption class="walls-caption">Architectural Microcement</figcaption>
       </figure>
     </div>
   </section>
