@@ -9,7 +9,6 @@ import WhyMonocem from "@/components/sections/WhyMonocem";
 import InstallerSection from "@/components/sections/InstallerSection";
 import QuoteForm from "@/components/sections/QuoteForm";
 import FAQAccordion from "@/components/sections/FAQAccordion";
-import WhatsAppFloat from "@/components/ui/WhatsAppFloat";
 
 export const metadata: Metadata = {
   title: "MONOCEM — Premium Microcement Systems UK | Supply & Installation",
@@ -38,7 +37,6 @@ export default function HomePage() {
       <InstallerSection />
       <QuoteForm />
       <FAQAccordion />
-      <WhatsAppFloat />
     </>
   );
 }
