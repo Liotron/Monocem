@@ -3,7 +3,12 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Logo from "@/components/ui/Logo";
-import { colours } from "@/lib/data/colours";
+import { allColours } from "@/lib/data/colours";
+
+const menuColourNames = ["Soft White", "Sand", "Stone", "Honey", "Terracotta", "Steel", "Anthracite", "Charcoal"];
+const menuColours = menuColourNames
+  .map((name) => allColours.find((c) => c.name === name))
+  .filter((c): c is NonNullable<typeof c> => Boolean(c));
 
 interface SubLink {
   label: string;
@@ -212,23 +217,33 @@ export default function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
           </button>
           <h3 className="relative z-10 font-display text-[2.2rem] font-light text-charcoal mt-3 mb-6">Colours</h3>
           <div className="relative z-10 grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-5">
-            {colours.map((colour) => (
+            {menuColours.map((colour, i) => (
               <Link
-                key={colour.cssClass}
-                href="/#colours"
+                key={colour.name}
+                href="/colours"
                 onClick={onClose}
                 className="group flex flex-col items-center gap-[0.65rem] py-2"
               >
-                <div
-                  className="tile-sheen w-full aspect-square transition-transform duration-300 ease-[cubic-bezier(0.22,1.2,0.36,1)] group-hover:-translate-y-1 group-hover:scale-105 shadow-[0_10px_16px_rgba(54,42,28,0.16),0_2px_5px_rgba(54,42,28,0.12)] group-hover:shadow-[0_16px_26px_rgba(54,42,28,0.22),0_4px_8px_rgba(54,42,28,0.15)]"
-                  style={{ backgroundColor: colour.hex }}
-                />
+                <div className="mc-tile">
+                  <div className="mc-tile-face" style={{ "--clr": colour.hex } as React.CSSProperties}>
+                    <div className={`mc-tile-grain mc-tile-grain-${(i % 4) + 1}`} />
+                    <div className="mc-tile-sheen" />
+                  </div>
+                  <div className="mc-tile-side" style={{ "--clr": colour.hex } as React.CSSProperties} />
+                </div>
                 <span className="font-body text-[0.7rem] font-medium tracking-[0.06em] text-charcoal text-center group-hover:text-gold transition-colors">
                   {colour.name}
                 </span>
               </Link>
             ))}
           </div>
+          <Link
+            href="/get-a-quote"
+            onClick={onClose}
+            className="relative z-10 btn-outline-dark self-center mt-10 mb-4"
+          >
+            Order Samples
+          </Link>
         </div>
       </div>
     </div>

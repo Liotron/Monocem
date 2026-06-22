@@ -34,7 +34,7 @@ const data = {
     },
     {
       heading: "What colours is microcement available in?",
-      content: "MONOCEM offers 12 professionally curated colours — from Soft White through warm beiges and earthy neutrals to deep Charcoal and Black Stone. Beyond our standard palette, custom colours can be achieved using our professional pigment range. All colours are tested for consistency across application batches, so every coat matches precisely.",
+      content: "MONOCEM offers over 100 professionally curated colours — from Soft White through warm beiges and earthy neutrals to deep Charcoal and Obsidian. Beyond our standard palette, custom colours can be achieved using our professional pigment range. All colours are tested for consistency across application batches, so every coat matches precisely.",
     },
   ],
   relatedLinks: [

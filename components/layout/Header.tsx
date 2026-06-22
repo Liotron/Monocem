@@ -9,7 +9,7 @@ const topLinks = [
   { label: "Applications", href: "/installation" },
   { label: "Projects", href: "/inspiration/projects" },
   { label: "Products", href: "/products" },
-  { label: "Colours", href: "/#colours" },
+  { label: "Colours", href: "/colours" },
   { label: "Locations", href: "/locations" },
 ];
 

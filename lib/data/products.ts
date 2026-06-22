@@ -18,7 +18,7 @@ export const products: Product[] = [
     features: [
       "Complete system — base, finish coat and primer included",
       "Coverage: approximately 3–5m² per kg (finish coat)",
-      "Available in all 12 MONOCEM colours",
+      "Available in all 100+ MONOCEM colours",
       "For interior use on floors, walls, and furniture",
       "Compatible with underfloor heating",
       "Water-based, low VOC formula",
@@ -33,7 +33,7 @@ export const products: Product[] = [
       "Allow to cure, then apply 2–3 coats of MONOCEM sealer",
     ],
     seoTitle: "Microcement Kits UK | Complete Microcement System | MONOCEM",
-    seoDescription: "Professional microcement kits available to buy from MONOCEM. Complete systems including primer, base and finish coat. Available in 12 colours for UK delivery.",
+    seoDescription: "Professional microcement kits available to buy from MONOCEM. Complete systems including primer, base and finish coat. Available in 100+ colours for UK delivery.",
   },
   {
     name: "Microcement Primer",

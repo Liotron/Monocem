@@ -1,10 +1,10 @@
 import Link from "next/link";
 import SectionLabel from "@/components/ui/SectionLabel";
 import FadeUp from "@/components/ui/FadeUp";
-import { colours } from "@/lib/data/colours";
+import { allColours } from "@/lib/data/colours";
 
 export default function SampleRequest() {
-  const sampleColours = colours.slice(0, 6);
+  const sampleColours = allColours.slice(0, 6);
 
   return (
     <section className="py-24 lg:py-32 bg-charcoal-2">
@@ -51,7 +51,7 @@ export default function SampleRequest() {
           <FadeUp delay={1}>
             <div className="grid grid-cols-3 gap-1.5">
               {sampleColours.map((colour) => (
-                <div key={colour.cssClass}>
+                <div key={colour.name}>
                   <div
                     className="aspect-square relative overflow-hidden"
                     style={{ backgroundColor: colour.hex }}
