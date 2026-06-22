@@ -27,13 +27,14 @@ export default function HomePage() {
         subtext="MONOCEM supplies and installs premium microcement across the UK — seamless, waterproof surfaces for floors, walls, bathrooms, and worktops."
         primaryCta={{ label: "Request a Quote", href: "/get-a-quote" }}
         secondaryCta={{ label: "View Our Systems", href: "/installation" }}
+        backgroundImage="/images/img-hero.png"
       />
       <BrandIntro />
+      <WhyMonocem />
       <SystemsGrid />
+      <ProjectsGallery />
       <ColourCollection />
       <SampleRequest />
-      <ProjectsGallery />
-      <WhyMonocem />
       <InstallerSection />
       <QuoteForm />
       <FAQAccordion />

@@ -120,4 +120,30 @@ body {
   .ease-menu {
     transition-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
   }
+
+  @keyframes heroKenBurns {
+    to { transform: scale(1); }
+  }
+  .animate-hero-kenburns {
+    transform: scale(1.05);
+    animation: heroKenBurns 9s ease-out forwards;
+  }
+
+  @keyframes materialKenBurns {
+    from { transform: scale(1); }
+    to { transform: scale(1.04); }
+  }
+  .animate-material-kenburns {
+    animation: materialKenBurns 20s ease-in-out infinite alternate;
+  }
+
+  @keyframes scrollPulse {
+    0% { transform: scaleY(0); opacity: 1; }
+    65% { transform: scaleY(1); opacity: 0.9; }
+    100% { transform: scaleY(1); opacity: 0; }
+  }
+  .animate-scroll-pulse {
+    transform-origin: top;
+    animation: scrollPulse 2.2s ease-in-out infinite;
+  }
 }
