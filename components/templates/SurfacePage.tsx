@@ -30,34 +30,76 @@ export default function SurfacePage({ surface }: SurfacePageProps) {
         secondaryCta={{ label: "View Products", href: "/products" }}
       />
 
-      {/* Description */}
-      <section className="py-24 lg:py-32 bg-warm-white">
+      {/* Editorial hero photo(s) */}
+      {surface.storyFigures ? (
+        <section className="pt-10 md:pt-14 lg:pt-16 bg-warm-white">
+          <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col gap-12 md:gap-14">
+            {surface.storyFigures.map((fig, i) => (
+              <FadeUp key={fig.image} delay={(i === 1 ? 1 : 0) as 0 | 1}>
+                <figure>
+                  <div
+                    className={`w-full bg-cover bg-center ${fig.wide ? "aspect-[5/2] md:aspect-[10/3]" : "aspect-[16/9] md:aspect-[21/9]"}`}
+                    style={{ backgroundImage: `url('${fig.image}')`, borderRadius: 16 }}
+                  />
+                  <figcaption className="mt-3 text-center text-[0.65rem] font-body font-medium tracking-[0.22em] uppercase text-text-light">
+                    {fig.caption}
+                  </figcaption>
+                </figure>
+              </FadeUp>
+            ))}
+          </div>
+        </section>
+      ) : (
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-10 md:pt-14 lg:pt-16">
+          <FadeUp>
+            <div
+              className="w-full aspect-[16/9] md:aspect-[21/9] bg-cover"
+              style={{ backgroundImage: `url('${surface.heroImage}')`, backgroundPosition: surface.heroImagePosition ?? "center", borderRadius: 16 }}
+            />
+          </FadeUp>
+        </div>
+      )}
+
+      {/* Editorial text + features */}
+      <section className="py-16 md:py-20 lg:py-24 bg-warm-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
               <FadeUp>
-                <SectionLabel className="mb-6">About this System</SectionLabel>
+                <SectionLabel className="mb-6">{surface.sectionLabel}</SectionLabel>
               </FadeUp>
               <FadeUp delay={1}>
                 <h2 className="font-display font-light text-charcoal text-4xl leading-tight tracking-tight mb-6">
-                  Microcement {surface.name}
+                  {surface.sectionHeadingLine1}
+                  <br />
+                  {surface.sectionHeadingLine2Italic ? (
+                    <em className="italic font-light text-text-light">{surface.sectionHeadingLine2}</em>
+                  ) : (
+                    surface.sectionHeadingLine2
+                  )}
                 </h2>
               </FadeUp>
               <FadeUp delay={2}>
-                <p className="font-body font-light text-text-mid text-base leading-relaxed">{surface.description}</p>
+                {surface.sectionParagraphs.map((p, i) => (
+                  <p key={i} className="font-body font-light text-text-mid text-base leading-relaxed mb-4 last:mb-0">
+                    {p}
+                  </p>
+                ))}
               </FadeUp>
             </div>
             <div>
               <FadeUp delay={1}>
-                <h3 className="font-display font-light text-charcoal text-2xl mb-6">Key Benefits</h3>
-                <ul className="space-y-4">
-                  {surface.benefits.map((benefit, i) => (
-                    <li key={i} className="flex items-start gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
+                  {surface.features.map((feature, i) => (
+                    <div key={i} className="flex items-start gap-4">
                       <span className="text-gold mt-1 shrink-0">—</span>
-                      <p className="font-body font-light text-text-mid text-sm leading-relaxed">{benefit}</p>
-                    </li>
+                      <div>
+                        <h5 className="font-body text-[0.8rem] font-medium tracking-wide text-charcoal mb-1">{feature.title}</h5>
+                        <p className="font-body font-light text-text-light text-[0.82rem] leading-relaxed">{feature.desc}</p>
+                      </div>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </FadeUp>
             </div>
           </div>
@@ -89,6 +131,19 @@ export default function SurfacePage({ surface }: SurfacePageProps) {
           </div>
         </div>
       </section>
+
+      {/* CTA */}
+      <div className="text-center py-20 lg:py-28 px-6 bg-charcoal">
+        <FadeUp>
+          <h2 className="font-display font-light text-white text-4xl lg:text-5xl leading-tight tracking-tight mb-8">
+            {surface.ctaHeading}{" "}
+            <em className="italic font-light text-white/50">{surface.ctaHeadingItalic}</em>
+          </h2>
+          <Link href="/get-a-quote" className="btn-gold">
+            {surface.ctaButtonLabel}
+          </Link>
+        </FadeUp>
+      </div>
 
       <ColourCollection />
 
