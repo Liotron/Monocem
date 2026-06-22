@@ -1,18 +1,13 @@
 import Link from "next/link";
 import SectionLabel from "@/components/ui/SectionLabel";
 import FadeUp from "@/components/ui/FadeUp";
+import { projects } from "@/lib/data/projects";
 
-const heroProject = {
-  title: "Kensington Residence",
-  meta: "Kitchen & Worktops · London",
-  image: "/images/img-proj-kitchen.png",
-  position: "center 40%",
-};
+const heroProject = projects.find((p) => p.slug === "kensington-residence")!;
 
-const thumbProjects = [
-  { title: "Notting Hill Spa", meta: "Wet Room · London", image: "/images/img-proj-shower.png", position: "center 20%" },
-  { title: "Chelsea Bathroom", meta: "Bathroom & Vanity · London", image: "/images/img-proj-basin.png", position: "center" },
-];
+const thumbProjects = ["notting-hill-spa", "chelsea-bathroom"].map(
+  (slug) => projects.find((p) => p.slug === slug)!
+);
 
 export default function ProjectsGallery() {
   return (
@@ -43,12 +38,12 @@ export default function ProjectsGallery() {
 
         <FadeUp>
           <Link
-            href="/inspiration/projects"
+            href={`/inspiration/projects/${heroProject.slug}`}
             className="group relative block w-full aspect-[4/3] overflow-hidden"
           >
             <div
               className="absolute inset-0 transition-transform duration-[800ms] ease-brand group-hover:scale-[1.04]"
-              style={{ backgroundImage: `url('${heroProject.image}')`, backgroundSize: "cover", backgroundPosition: heroProject.position }}
+              style={{ backgroundImage: `url('${heroProject.image}')`, backgroundSize: "cover", backgroundPosition: heroProject.imagePosition || "center" }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/[0.68] via-black/[0.05] to-transparent" />
             <div className="absolute bottom-8 left-8">
@@ -64,14 +59,14 @@ export default function ProjectsGallery() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-[3px] mt-[3px]">
           {thumbProjects.map((proj, i) => (
-            <FadeUp key={proj.title} delay={(i === 1 ? 1 : 0) as 0 | 1}>
+            <FadeUp key={proj.slug} delay={(i === 1 ? 1 : 0) as 0 | 1}>
               <Link
-                href="/inspiration/projects"
+                href={`/inspiration/projects/${proj.slug}`}
                 className="group relative block aspect-[4/3] overflow-hidden"
               >
                 <div
                   className="absolute inset-0 transition-transform duration-[800ms] ease-brand group-hover:scale-105"
-                  style={{ backgroundImage: `url('${proj.image}')`, backgroundSize: "cover", backgroundPosition: proj.position }}
+                  style={{ backgroundImage: `url('${proj.image}')`, backgroundSize: "cover", backgroundPosition: proj.imagePosition || "center" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/65 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-5">

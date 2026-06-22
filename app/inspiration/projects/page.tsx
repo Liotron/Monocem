@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Hero from "@/components/sections/Hero";
-import ProjectsGallery from "@/components/sections/ProjectsGallery";
+import ProjectsFilterGrid from "@/components/sections/ProjectsFilterGrid";
 import QuoteForm from "@/components/sections/QuoteForm";
 
 export const metadata: Metadata = {
@@ -20,7 +20,7 @@ export default function ProjectsPage() {
         primaryCta={{ label: "Start Your Project", href: "/get-a-quote" }}
         secondaryCta={{ label: "Our Systems", href: "/installation" }}
       />
-      <ProjectsGallery />
+      <ProjectsFilterGrid />
       <QuoteForm />
     </>
   );

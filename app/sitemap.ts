@@ -2,6 +2,7 @@ import { MetadataRoute } from "next";
 import { locations } from "@/lib/data/locations";
 import { surfaces } from "@/lib/data/surfaces";
 import { products } from "@/lib/data/products";
+import { projects } from "@/lib/data/projects";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://monocem.co.uk";
 
@@ -45,6 +46,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const projectPages: MetadataRoute.Sitemap = projects.map((project) => ({
+    url: `${siteUrl}/inspiration/projects/${project.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
   const learnPages: MetadataRoute.Sitemap = [
     "what-is-microcement",
     "microcement-vs-polished-concrete",
@@ -58,5 +66,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...locationPages, ...surfacePages, ...productPages, ...learnPages];
+  return [...staticPages, ...locationPages, ...surfacePages, ...productPages, ...projectPages, ...learnPages];
 }
