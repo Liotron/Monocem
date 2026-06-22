@@ -4,6 +4,24 @@ import { Resend } from "resend";
 const FROM_ADDRESS = "MONOCEM <onboarding@resend.dev>";
 const NOTIFICATION_EMAIL = process.env.QUOTE_NOTIFICATION_EMAIL || "monocem.surface@gmail.com";
 
+const SUBJECTS: Record<string, string> = {
+  quote: "New Quote Enquiry",
+  "trade-account": "New Trade Account Request",
+  "installer-application": "New Installer Programme Application",
+  "training-enquiry": "New Training Enquiry",
+};
+
+const CONFIRMATIONS: Record<string, string> = {
+  quote:
+    "Thank you for your enquiry with MONOCEM. We've received your project details and a member of our team will be in touch within 1–2 business days with a detailed quote.",
+  "trade-account":
+    "Thank you for applying to open a MONOCEM trade account. Our trade team will review your details and be in touch within 1–2 business days.",
+  "installer-application":
+    "Thank you for applying to the MONOCEM Approved Installer Programme. We'll review your application and be in touch within 1–2 business days.",
+  "training-enquiry":
+    "Thank you for your interest in MONOCEM training. A member of our team will be in touch within 1–2 business days with available dates.",
+};
+
 function escapeHtml(value: string) {
   return value
     .replace(/&/g, "&amp;")
@@ -13,30 +31,23 @@ function escapeHtml(value: string) {
     .replace(/'/g, "&#39;");
 }
 
+function labelize(key: string) {
+  return key.replace(/([A-Z])/g, " $1").replace(/^./, (c) => c.toUpperCase());
+}
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-
-    const { name, email, phone, projectType, surfaces, area, location, timeline, notes } = body;
+    const { name, email, phone, formType: rawType, ...rest } = body;
+    const formType = typeof rawType === "string" && rawType in SUBJECTS ? rawType : "quote";
 
     if (!name || !email) {
       return NextResponse.json({ error: "Name and email are required" }, { status: 400 });
     }
 
-    const enquiry = {
-      name,
-      email,
-      phone,
-      projectType,
-      surfaces,
-      area,
-      location,
-      timeline,
-      notes,
-      timestamp: new Date().toISOString(),
-    };
+    const enquiry = { formType, name, email, phone, ...rest, timestamp: new Date().toISOString() };
 
-    console.log("Quote enquiry received:", enquiry);
+    console.log(`${SUBJECTS[formType]} received:`, enquiry);
 
     const apiKey = process.env.RESEND_API_KEY;
     if (!apiKey) {
@@ -46,22 +57,24 @@ export async function POST(request: NextRequest) {
 
     const resend = new Resend(apiKey);
 
+    const fieldRows = Object.entries(rest)
+      .map(([key, value]) => {
+        const display = Array.isArray(value) ? value.join(", ") : value;
+        return `<p><strong>${escapeHtml(labelize(key))}:</strong> ${escapeHtml(String(display || "—"))}</p>`;
+      })
+      .join("");
+
     const notificationHtml = `
-      <h2>New Quote Enquiry</h2>
+      <h2>${SUBJECTS[formType]}</h2>
       <p><strong>Name:</strong> ${escapeHtml(name)}</p>
       <p><strong>Email:</strong> ${escapeHtml(email)}</p>
       <p><strong>Phone:</strong> ${escapeHtml(phone || "—")}</p>
-      <p><strong>Project Type:</strong> ${escapeHtml(projectType || "—")}</p>
-      <p><strong>Surface(s):</strong> ${escapeHtml(Array.isArray(surfaces) ? surfaces.join(", ") : surfaces || "—")}</p>
-      <p><strong>Area:</strong> ${escapeHtml(area || "—")}</p>
-      <p><strong>Location:</strong> ${escapeHtml(location || "—")}</p>
-      <p><strong>Timeline:</strong> ${escapeHtml(timeline || "—")}</p>
-      <p><strong>Notes:</strong> ${escapeHtml(notes || "—")}</p>
+      ${fieldRows}
     `;
 
     const confirmationHtml = `
       <p>Hi ${escapeHtml(name)},</p>
-      <p>Thank you for your enquiry with MONOCEM. We've received your project details and a member of our team will be in touch within 1–2 business days with a detailed quote.</p>
+      <p>${CONFIRMATIONS[formType]}</p>
       <p>— The MONOCEM Team</p>
     `;
 
@@ -70,7 +83,7 @@ export async function POST(request: NextRequest) {
         from: FROM_ADDRESS,
         to: NOTIFICATION_EMAIL,
         replyTo: email,
-        subject: `New Quote Enquiry — ${name}`,
+        subject: `${SUBJECTS[formType]} — ${name}`,
         html: notificationHtml,
       }),
       resend.emails.send({

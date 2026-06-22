@@ -4,7 +4,7 @@ import Hero from "@/components/sections/Hero";
 import InstallerSection from "@/components/sections/InstallerSection";
 import SectionLabel from "@/components/ui/SectionLabel";
 import FadeUp from "@/components/ui/FadeUp";
-import QuoteForm from "@/components/sections/QuoteForm";
+import TradeAccountForm from "@/components/sections/TradeAccountForm";
 
 export const metadata: Metadata = {
   title: "Trade Microcement Supply UK | MONOCEM Trade Programme",
@@ -58,7 +58,7 @@ export default function TradePage() {
                 </ul>
               </FadeUp>
               <FadeUp delay={3}>
-                <Link href="/get-a-quote" className="btn-outline-dark">
+                <Link href="#trade-account" className="btn-outline-dark">
                   Open a Trade Account
                 </Link>
               </FadeUp>
@@ -89,7 +89,7 @@ export default function TradePage() {
       </section>
 
       <InstallerSection />
-      <QuoteForm />
+      <TradeAccountForm />
     </>
   );
 }

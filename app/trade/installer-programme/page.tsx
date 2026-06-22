@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Hero from "@/components/sections/Hero";
-import SectionLabel from "@/components/ui/SectionLabel";
 import FadeUp from "@/components/ui/FadeUp";
-import QuoteForm from "@/components/sections/QuoteForm";
+import TrainingEnquiryForm from "@/components/sections/TrainingEnquiryForm";
+import InstallerApplicationForm from "@/components/sections/InstallerApplicationForm";
 
 export const metadata: Metadata = {
   title: "MONOCEM Installer Programme | Microcement Training UK",
@@ -70,30 +69,8 @@ export default function InstallerProgrammePage() {
         </div>
       </section>
 
-      <section className="py-24 lg:py-32 bg-charcoal-2" id="apply">
-        <div className="max-w-3xl mx-auto px-6 lg:px-10 text-center">
-          <FadeUp>
-            <SectionLabel light className="mb-6">Apply</SectionLabel>
-          </FadeUp>
-          <FadeUp delay={1}>
-            <h2 className="font-display font-light text-white text-4xl mb-6">
-              Ready to Apply?
-            </h2>
-          </FadeUp>
-          <FadeUp delay={2}>
-            <p className="font-body font-light text-white/60 text-base leading-relaxed mb-8">
-              Use the enquiry form below to apply to the MONOCEM Installer Programme. Include details about your existing trade background and the types of projects you work on.
-            </p>
-          </FadeUp>
-          <FadeUp delay={3}>
-            <Link href="/get-a-quote" className="btn-gold">
-              Submit an Application
-            </Link>
-          </FadeUp>
-        </div>
-      </section>
-
-      <QuoteForm />
+      <TrainingEnquiryForm />
+      <InstallerApplicationForm />
     </>
   );
 }
