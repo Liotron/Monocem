@@ -5,7 +5,7 @@ import { colours } from "@/lib/data/colours";
 
 export default function ColourCollection() {
   return (
-    <section className="py-24 lg:py-32 bg-cream">
+    <section id="colours" className="py-24 lg:py-32 bg-cream">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-8 mb-14">
           <div>

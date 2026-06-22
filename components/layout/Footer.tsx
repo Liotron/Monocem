@@ -1,18 +1,17 @@
 import Link from "next/link";
+import Logo from "@/components/ui/Logo";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a0a0a] text-white/60">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16 lg:py-20">
+    <footer className="bg-[#111111] text-white/[0.55]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-12 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand column */}
           <div>
-            <Link href="/" className="inline-block mb-6">
-              <span className="font-display text-2xl font-light tracking-[0.25em] text-white">
-                MONO<span className="text-gold">CEM</span>
-              </span>
+            <Link href="/" className="inline-flex items-center text-white mb-3">
+              <Logo className="h-[0.84rem] w-auto" />
             </Link>
-            <p className="text-[13px] font-body font-light leading-relaxed text-white/50 mb-6">
+            <p className="text-[0.82rem] font-body font-light leading-[1.7] text-white/50 mb-6 max-w-[260px]">
               Premium microcement systems for floors, walls, bathrooms, and worktops. Supply and professional installation across the UK.
             </p>
             <div className="flex gap-4">
@@ -30,7 +29,7 @@ export default function Footer() {
 
           {/* Systems */}
           <div>
-            <p className="section-label mb-6 text-gold/70">Systems</p>
+            <p className="font-body text-[0.65rem] font-medium tracking-[0.18em] uppercase text-white/35 mb-6">Systems</p>
             <ul className="space-y-3">
               {[
                 { label: "Microcement Floors", href: "/installation/floors" },
@@ -43,7 +42,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-[12px] font-body font-light text-white/50 hover:text-white transition-colors duration-200"
+                    className="text-[0.82rem] font-body font-light text-white/50 hover:text-white transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -54,7 +53,7 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <p className="section-label mb-6 text-gold/70">Company</p>
+            <p className="font-body text-[0.65rem] font-medium tracking-[0.18em] uppercase text-white/35 mb-6">Company</p>
             <ul className="space-y-3">
               {[
                 { label: "Products", href: "/products" },
@@ -69,7 +68,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-[12px] font-body font-light text-white/50 hover:text-white transition-colors duration-200"
+                    className="text-[0.82rem] font-body font-light text-white/50 hover:text-white transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -80,13 +79,13 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <p className="section-label mb-6 text-gold/70">Contact</p>
+            <p className="font-body text-[0.65rem] font-medium tracking-[0.18em] uppercase text-white/35 mb-6">Contact</p>
             <ul className="space-y-4">
               <li>
                 <p className="text-[10px] font-body font-medium tracking-label uppercase text-white/30 mb-1">Email</p>
                 <a
                   href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL || "info@monocem.co.uk"}`}
-                  className="text-[12px] font-body font-light text-white/50 hover:text-white transition-colors duration-200"
+                  className="text-[0.82rem] font-body font-light text-white/50 hover:text-white transition-colors duration-200"
                 >
                   {process.env.NEXT_PUBLIC_CONTACT_EMAIL || "info@monocem.co.uk"}
                 </a>
@@ -95,14 +94,14 @@ export default function Footer() {
                 <p className="text-[10px] font-body font-medium tracking-label uppercase text-white/30 mb-1">WhatsApp</p>
                 <a
                   href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "447000000000"}`}
-                  className="text-[12px] font-body font-light text-white/50 hover:text-white transition-colors duration-200"
+                  className="text-[0.82rem] font-body font-light text-white/50 hover:text-white transition-colors duration-200"
                 >
                   Message us on WhatsApp
                 </a>
               </li>
               <li>
                 <p className="text-[10px] font-body font-medium tracking-label uppercase text-white/30 mb-1">Coverage</p>
-                <p className="text-[12px] font-body font-light text-white/50">
+                <p className="text-[0.82rem] font-body font-light text-white/50">
                   Nationwide UK installation
                 </p>
               </li>
@@ -110,11 +109,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-[11px] font-body font-light text-white/30">
-            © {new Date().getFullYear()} MONOCEM. All rights reserved.
+        <div className="mt-10 pt-6 border-t border-white/[0.08] flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-[0.72rem] font-body font-light text-white/40">
+            © {new Date().getFullYear()} MONOCEM Ltd. All rights reserved.
           </p>
-          <p className="text-[11px] font-body font-light text-white/20">
+          <p className="text-[0.72rem] font-body font-light text-white/30">
             Premium microcement systems — United Kingdom
           </p>
         </div>
