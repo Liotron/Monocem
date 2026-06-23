@@ -54,7 +54,7 @@ export default function GuideArticle({ data }: GuideArticleProps) {
 
       {/* Hero banner */}
       <section
-        className="relative pt-40 pb-24 flex items-end"
+        className="relative pt-32 pb-20 lg:pt-40 lg:pb-24 flex items-end"
         style={{ minHeight: "50vh", background: "linear-gradient(160deg, #4a4540 0%, #2e2a26 50%, #1a1816 100%)" }}
       >
         <div
@@ -90,18 +90,18 @@ export default function GuideArticle({ data }: GuideArticleProps) {
       </section>
 
       {/* Article content */}
-      <article className="py-24 lg:py-32 bg-warm-white">
+      <article className="pt-20 pb-24 lg:py-32 bg-warm-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-16">
             <div className="max-w-3xl">
               <FadeUp>
-                <p className="font-body font-light text-text-mid text-lg leading-relaxed mb-12 border-l-2 border-gold pl-6">
+                <p className="font-body font-light text-text-mid text-lg leading-relaxed mb-10 lg:mb-12 border-l-2 border-gold pl-6">
                   {data.intro}
                 </p>
               </FadeUp>
 
               {/* Mobile-only collapsible TOC */}
-              <details className="lg:hidden mb-10 border border-charcoal/10 p-5">
+              <details className="lg:hidden mb-8 border border-charcoal/10 p-5">
                 <summary className="cursor-pointer font-body text-[11px] font-medium tracking-button uppercase text-gold">
                   On This Page
                 </summary>
