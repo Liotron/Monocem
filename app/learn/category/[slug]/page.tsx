@@ -37,6 +37,7 @@ export default async function GuideCategoryPage({ params }: Props) {
         subtext={category.description}
         primaryCta={{ label: "Get a Quote", href: "/get-a-quote" }}
         secondaryCta={{ label: "All Guides", href: "/learn" }}
+        minHeight="55vh"
       />
 
       <GuidesIndex activeCategory={category.slug} />

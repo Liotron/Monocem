@@ -18,6 +18,7 @@ export default function LearnHubPage() {
         subtext="Everything you need to know about microcement — from what it is to how much it costs. Expert guides written by our installation team."
         primaryCta={{ label: "Get a Quote", href: "/get-a-quote" }}
         secondaryCta={{ label: "View Systems", href: "/installation" }}
+        minHeight="55vh"
       />
 
       <GuidesIndex />

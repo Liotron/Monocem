@@ -21,7 +21,7 @@ export default function GuidesIndex({ activeCategory }: GuidesIndexProps) {
           <div className="flex flex-wrap gap-2 mb-12">
             <Link
               href="/learn"
-              className={`px-5 py-2.5 text-[10px] font-body font-medium tracking-button uppercase border transition-all duration-200 ${
+              className={`px-5 py-3.5 text-[10px] font-body font-medium tracking-button uppercase border transition-all duration-200 ${
                 !activeCategory
                   ? "bg-charcoal text-white border-charcoal"
                   : "bg-transparent text-charcoal border-charcoal/30 hover:border-charcoal"
@@ -33,7 +33,7 @@ export default function GuidesIndex({ activeCategory }: GuidesIndexProps) {
               <Link
                 key={cat.slug}
                 href={`/learn/category/${cat.slug}`}
-                className={`px-5 py-2.5 text-[10px] font-body font-medium tracking-button uppercase border transition-all duration-200 ${
+                className={`px-5 py-3.5 text-[10px] font-body font-medium tracking-button uppercase border transition-all duration-200 ${
                   activeCategory === cat.slug
                     ? "bg-charcoal text-white border-charcoal"
                     : "bg-transparent text-charcoal border-charcoal/30 hover:border-charcoal"
