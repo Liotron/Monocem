@@ -120,7 +120,7 @@ export default function GuideArticle({ data }: GuideArticleProps) {
                 {data.sections.map((section, i) => (
                   <FadeUp key={section.id} delay={(Math.min(i % 4, 4) as 0 | 1 | 2 | 3 | 4)}>
                     <div id={section.id} className="mb-12">
-                      <h2 className="font-display font-light text-charcoal text-3xl leading-tight tracking-tight mb-4">
+                      <h2 className="font-display font-light text-charcoal text-3xl leading-tight tracking-tight mt-[50.4px] lg:mt-14 mb-[14.4px] lg:mb-4">
                         {section.heading}
                       </h2>
                       <p className="font-body font-light text-text-mid text-base leading-relaxed">
