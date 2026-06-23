@@ -58,7 +58,7 @@ export default function Footer() {
               {[
                 { label: "Products", href: "/products" },
                 { label: "Inspiration", href: "/inspiration" },
-                { label: "Learn", href: "/learn" },
+                { label: "Guides", href: "/learn" },
                 { label: "Locations", href: "/locations" },
                 { label: "Trade Programme", href: "/trade" },
                 { label: "Get a Quote", href: "/get-a-quote" },

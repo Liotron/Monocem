@@ -10,6 +10,7 @@ const topLinks = [
   { label: "Projects", href: "/inspiration/projects" },
   { label: "Products", href: "/products" },
   { label: "Colours", href: "/colours" },
+  { label: "Guides", href: "/learn" },
   { label: "Locations", href: "/locations" },
 ];
 

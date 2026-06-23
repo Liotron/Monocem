@@ -3,6 +3,7 @@ import { locations } from "@/lib/data/locations";
 import { surfaces } from "@/lib/data/surfaces";
 import { products } from "@/lib/data/products";
 import { projects } from "@/lib/data/projects";
+import { guides, guideCategories } from "@/lib/data/guides";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://monocem.co.uk";
 
@@ -53,18 +54,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  const learnPages: MetadataRoute.Sitemap = [
-    "what-is-microcement",
-    "microcement-vs-polished-concrete",
-    "how-to-apply-microcement",
-    "microcement-maintenance",
-    "microcement-cost-uk",
-  ].map((slug) => ({
-    url: `${siteUrl}/learn/${slug}`,
+  const learnPages: MetadataRoute.Sitemap = guides.map((guide) => ({
+    url: `${siteUrl}/learn/${guide.slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly",
     priority: 0.7,
   }));
 
-  return [...staticPages, ...locationPages, ...surfacePages, ...productPages, ...projectPages, ...learnPages];
+  const learnCategoryPages: MetadataRoute.Sitemap = guideCategories.map((category) => ({
+    url: `${siteUrl}/learn/category/${category.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
+  return [
+    ...staticPages,
+    ...locationPages,
+    ...surfacePages,
+    ...productPages,
+    ...projectPages,
+    ...learnPages,
+    ...learnCategoryPages,
+  ];
 }

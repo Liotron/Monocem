@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import Logo from "@/components/ui/Logo";
 import { allColours } from "@/lib/data/colours";
+import { guideCategories } from "@/lib/data/guides";
 
 const menuColourNames = ["Soft White", "Sand", "Stone", "Honey", "Terracotta", "Steel", "Anthracite", "Charcoal"];
 const menuColours = menuColourNames
@@ -62,11 +63,19 @@ const categories: Category[] = [
       { label: "View All Products", href: "/products", emphasis: true },
     ],
   },
+  {
+    key: "guides",
+    label: "Guides",
+    title: "Guides",
+    items: [
+      ...guideCategories.map((cat) => ({ label: cat.label, href: `/learn/category/${cat.slug}` })),
+      { label: "View All Guides", href: "/learn", emphasis: true },
+    ],
+  },
 ];
 
 const directLinks: SubLink[] = [
   { label: "Locations", href: "/locations" },
-  { label: "Learn", href: "/learn" },
   { label: "Trade", href: "/trade" },
 ];
 
