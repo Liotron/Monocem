@@ -11,17 +11,17 @@ export default function GuidesIndex({ activeCategory }: GuidesIndexProps) {
   const filtered = activeCategory ? guides.filter((g) => g.category === activeCategory) : guides;
 
   return (
-    <section className="py-24 lg:py-32 bg-warm-white">
+    <section className="pt-20 pb-24 lg:py-32 bg-warm-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <FadeUp>
           <SectionLabel className="mb-6">Articles & Guides</SectionLabel>
         </FadeUp>
 
         <FadeUp delay={1}>
-          <div className="flex flex-wrap gap-2 mb-12">
+          <div className="flex flex-wrap gap-x-2 gap-y-[7px] lg:gap-y-2 mb-10 lg:mb-12">
             <Link
               href="/learn"
-              className={`px-5 py-3.5 text-[10px] font-body font-medium tracking-button uppercase border transition-all duration-200 ${
+              className={`px-5 py-2.5 lg:py-3.5 text-[10px] font-body font-medium tracking-button uppercase border transition-all duration-200 ${
                 !activeCategory
                   ? "bg-charcoal text-white border-charcoal"
                   : "bg-transparent text-charcoal border-charcoal/30 hover:border-charcoal"
@@ -33,7 +33,7 @@ export default function GuidesIndex({ activeCategory }: GuidesIndexProps) {
               <Link
                 key={cat.slug}
                 href={`/learn/category/${cat.slug}`}
-                className={`px-5 py-3.5 text-[10px] font-body font-medium tracking-button uppercase border transition-all duration-200 ${
+                className={`px-5 py-2.5 lg:py-3.5 text-[10px] font-body font-medium tracking-button uppercase border transition-all duration-200 ${
                   activeCategory === cat.slug
                     ? "bg-charcoal text-white border-charcoal"
                     : "bg-transparent text-charcoal border-charcoal/30 hover:border-charcoal"
