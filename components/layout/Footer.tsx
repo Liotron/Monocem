@@ -394,7 +394,10 @@ export default function Footer() {
         <div className="lg:hidden">
           <div
             className="pb-[14px] border-b border-white/[0.08]"
-            style={{ background: "linear-gradient(165deg, #161a22 0%, #111111 70%)" }}
+            style={{
+              background:
+                "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), linear-gradient(165deg, #161a22 0%, #111111 70%)",
+            }}
           >
             <Link href="/" className="inline-flex items-center text-white mb-[9px]">
               <Logo className="h-4 w-auto" />
