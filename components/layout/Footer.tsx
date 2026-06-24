@@ -380,10 +380,10 @@ export default function Footer() {
             <Link href="/" className="inline-flex items-center text-white mb-[9px]">
               <Logo className="h-4 w-auto" />
             </Link>
-            <p className="text-[0.62rem] font-body font-medium tracking-[0.2em] uppercase text-white/35 mb-3">
+            <p className="text-[0.62rem] font-body font-medium tracking-[0.2em] uppercase text-white/35 mb-[23px]">
               Microcement Systems
             </p>
-            <p className="text-[0.82rem] font-body font-light leading-[1.7] text-white/[0.72] mb-3 max-w-[320px]">
+            <p className="text-[0.82rem] font-body font-light leading-[1.7] text-white/[0.72] mb-[33px] max-w-[320px]">
               Architectural microcement systems for floors, walls, bathrooms and furniture. Designed for modern interiors. Installed by professionals.
             </p>
             <ul className="space-y-[7.5px]">
