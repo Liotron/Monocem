@@ -150,8 +150,18 @@ function IconLeaf() {
   );
 }
 
-function SwatchSquare({ hex }: { hex: string }) {
-  return <span className="block w-[14px] h-[14px] rounded-[2px]" style={{ backgroundColor: hex }} />;
+function IconBadge() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+      <path
+        d="M9 2L15 4.5V9C15 13 12.5 15.5 9 16.5C5.5 15.5 3 13 3 9V4.5L9 2Z"
+        stroke="currentColor"
+        strokeWidth="1.3"
+        strokeLinejoin="round"
+      />
+      <path d="M6.5 9L8.5 11L12 6.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
 }
 
 const exploreLinks: SimpleLink[] = [
@@ -186,10 +196,19 @@ const supportLinks: SimpleLink[] = [
   { label: "Cookies Policy", href: "/cookies-policy" },
 ];
 
-const trustBadges: { label: string; icon: React.ReactNode }[] = [
-  { label: "Fast UK Delivery", icon: <IconTruck /> },
+const trustBadges: { label: React.ReactNode; icon: React.ReactNode }[] = [
+  {
+    label: (
+      <>
+        Fast UK
+        <br />
+        Delivery
+      </>
+    ),
+    icon: <IconTruck />,
+  },
   { label: "Low VOC Environmentally Friendly", icon: <IconLeaf /> },
-  { label: "Designed in the UK, Made in Europe", icon: <SwatchSquare hex="#c4b49a" /> },
+  { label: "Designed in the UK, Made in Europe", icon: <IconBadge /> },
 ];
 
 function SimpleLinkRow({ label, href }: SimpleLink) {
@@ -450,8 +469,8 @@ export default function Footer() {
           </div>
 
           <div className="grid grid-cols-3 gap-3 py-5 border-t border-white/[0.08] mt-2">
-            {trustBadges.map((badge) => (
-              <div key={badge.label} className="flex items-start gap-1.5">
+            {trustBadges.map((badge, index) => (
+              <div key={index} className="flex items-start gap-1.5">
                 <span className="text-white/45 mt-0.5 shrink-0">{badge.icon}</span>
                 <span className="text-[0.68rem] font-body font-light text-white/55 leading-snug">{badge.label}</span>
               </div>
