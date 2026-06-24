@@ -486,9 +486,9 @@ export default function Footer() {
             </FooterAccordionSection>
           </div>
 
-          <div className="grid grid-cols-[0.88fr_1fr_1.12fr] gap-1.5 pt-[34px] pb-5 border-t border-b border-white/[0.08] mt-2">
+          <div className="grid grid-cols-[0.88fr_1fr_1.12fr] divide-x divide-white/[0.08] pt-[34px] pb-5 border-t border-b border-white/[0.08] mt-2">
             {trustBadges.map((badge, index) => (
-              <div key={index} className="flex items-start gap-1">
+              <div key={index} className="flex items-start gap-1 px-1.5 first:pl-0 last:pr-0">
                 <span className="text-white/45 mt-[3px] shrink-0">{badge.icon}</span>
                 <span className="text-[0.68rem] font-body font-light text-white/55 leading-[1.6]">{badge.label}</span>
               </div>
