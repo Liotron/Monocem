@@ -128,7 +128,7 @@ function IconBook() {
 
 function IconTruck() {
   return (
-    <svg width="24" height="20" viewBox="0 0 20 16" fill="none">
+    <svg width="16" height="13" viewBox="0 0 20 16" fill="none">
       <path d="M1 3H12V12H1V3Z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
       <path d="M12 6.5H15.5L18.5 9.5V12H12V6.5Z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
       <circle cx="4.5" cy="13" r="1.5" stroke="currentColor" strokeWidth="1.2" />
@@ -139,7 +139,7 @@ function IconTruck() {
 
 function IconLeaf() {
   return (
-    <svg width="21" height="21" viewBox="0 0 18 18" fill="none">
+    <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
       <path
         d="M3.5 15.5C3.5 15.5 2.5 10 6 6.5C9 3.5 15.5 2.5 15.5 2.5C15.5 2.5 14.5 9 11 12.5C8 15.5 3.5 15.5 3.5 15.5Z"
         stroke="currentColor"
@@ -151,7 +151,7 @@ function IconLeaf() {
 }
 
 function SwatchSquare({ hex }: { hex: string }) {
-  return <span className="block w-[21px] h-[21px] rounded-[3px]" style={{ backgroundColor: hex }} />;
+  return <span className="block w-[14px] h-[14px] rounded-[2px]" style={{ backgroundColor: hex }} />;
 }
 
 const exploreLinks: SimpleLink[] = [
@@ -449,11 +449,11 @@ export default function Footer() {
             </FooterAccordionSection>
           </div>
 
-          <div className="grid grid-cols-3 gap-4 py-6 border-t border-white/[0.08] mt-2">
+          <div className="grid grid-cols-3 gap-3 py-5 border-t border-white/[0.08] mt-2">
             {trustBadges.map((badge) => (
-              <div key={badge.label} className="flex flex-col items-start gap-2">
-                <span className="text-white/45">{badge.icon}</span>
-                <span className="text-[0.82rem] font-body font-light text-white/75 leading-snug">{badge.label}</span>
+              <div key={badge.label} className="flex items-start gap-1.5">
+                <span className="text-white/45 mt-0.5 shrink-0">{badge.icon}</span>
+                <span className="text-[0.68rem] font-body font-light text-white/55 leading-snug">{badge.label}</span>
               </div>
             ))}
           </div>
