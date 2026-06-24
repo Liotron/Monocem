@@ -128,7 +128,7 @@ function IconBook() {
 
 function IconTruck() {
   return (
-    <svg width="21" height="17" viewBox="0 0 20 16" fill="none">
+    <svg width="24" height="20" viewBox="0 0 20 16" fill="none">
       <path d="M1 3H12V12H1V3Z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
       <path d="M12 6.5H15.5L18.5 9.5V12H12V6.5Z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
       <circle cx="4.5" cy="13" r="1.5" stroke="currentColor" strokeWidth="1.2" />
@@ -139,7 +139,7 @@ function IconTruck() {
 
 function IconLeaf() {
   return (
-    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+    <svg width="21" height="21" viewBox="0 0 18 18" fill="none">
       <path
         d="M3.5 15.5C3.5 15.5 2.5 10 6 6.5C9 3.5 15.5 2.5 15.5 2.5C15.5 2.5 14.5 9 11 12.5C8 15.5 3.5 15.5 3.5 15.5Z"
         stroke="currentColor"
@@ -152,7 +152,7 @@ function IconLeaf() {
 
 function IconSwatch() {
   return (
-    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+    <svg width="21" height="21" viewBox="0 0 18 18" fill="none">
       <rect x="2" y="2" width="14" height="14" rx="2" stroke="currentColor" strokeWidth="1.3" />
       <path d="M2 11L6 7L9 10L16 4" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
@@ -378,45 +378,48 @@ export default function Footer() {
 
         {/* ---------- MOBILE (new) ---------- */}
         <div className="lg:hidden">
-          <div className="pb-[18px] border-b border-white/[0.08]">
-            <Link href="/" className="inline-flex items-center text-white mb-3">
-              <Logo className="h-[0.84rem] w-auto" />
+          <div
+            className="pb-[14px] border-b border-white/[0.08]"
+            style={{ background: "linear-gradient(165deg, #161a22 0%, #111111 70%)" }}
+          >
+            <Link href="/" className="inline-flex items-center text-white mb-[9px]">
+              <Logo className="h-4 w-auto" />
             </Link>
-            <p className="text-[0.62rem] font-body font-medium tracking-[0.2em] uppercase text-white/35 mb-4">
+            <p className="text-[0.62rem] font-body font-medium tracking-[0.2em] uppercase text-white/35 mb-3">
               Architectural Microcement
             </p>
-            <p className="text-[0.82rem] font-body font-light leading-[1.7] text-white/60 mb-4 max-w-[320px]">
+            <p className="text-[0.82rem] font-body font-light leading-[1.7] text-white/[0.72] mb-3 max-w-[320px]">
               Premium microcement systems for floors, walls, bathrooms, and worktops. Supply and professional installation across the UK.
             </p>
-            <ul className="space-y-2.5">
+            <ul className="space-y-[7.5px]">
               <li className="flex items-center gap-3">
-                <span className="text-white/35 shrink-0">
+                <span className="text-white/[0.46] shrink-0">
                   <IconEmail />
                 </span>
-                <a href={`mailto:${email}`} className="text-[0.82rem] font-body font-light text-white/55 hover:text-white transition-colors duration-200">
+                <a href={`mailto:${email}`} className="text-[0.82rem] font-body font-light text-white/[0.72] hover:text-white transition-colors duration-200">
                   {email}
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <span className="text-white/35 shrink-0">
+                <span className="text-white/[0.46] shrink-0">
                   <IconPhone />
                 </span>
                 <a
                   href={`tel:${phone.replace(/\s+/g, "")}`}
-                  className="text-[0.82rem] font-body font-light text-white/55 hover:text-white transition-colors duration-200"
+                  className="text-[0.82rem] font-body font-light text-white/[0.72] hover:text-white transition-colors duration-200"
                 >
                   {phone}
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <span className="text-white/35 shrink-0">
+                <span className="text-white/[0.46] shrink-0">
                   <IconInstagram />
                 </span>
                 <a
                   href="https://instagram.com/monocem.surface"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[0.82rem] font-body font-light text-white/55 hover:text-white transition-colors duration-200"
+                  className="text-[0.82rem] font-body font-light text-white/[0.72] hover:text-white transition-colors duration-200"
                 >
                   @monocem.surface
                 </a>
@@ -455,7 +458,7 @@ export default function Footer() {
             {trustBadges.map((badge) => (
               <div key={badge.label} className="flex flex-col items-start gap-2">
                 <span className="text-white/40">{badge.icon}</span>
-                <span className="text-[0.71rem] font-body font-light text-white/45 leading-snug">{badge.label}</span>
+                <span className="text-[0.82rem] font-body font-light text-white/45 leading-snug">{badge.label}</span>
               </div>
             ))}
           </div>
