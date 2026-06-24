@@ -295,7 +295,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#111111] text-white/[0.55]">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-12 pb-8">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-6 pb-2 lg:pt-12 lg:pb-8">
         {/* ---------- DESKTOP / TABLET (unchanged) ---------- */}
         <div className="hidden lg:block">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
@@ -411,19 +411,19 @@ export default function Footer() {
         {/* ---------- MOBILE (new) ---------- */}
         <div className="lg:hidden">
           <div
-            className="pb-[14px] border-b border-white/[0.08]"
+            className="pb-[6px] border-b border-white/[0.08]"
             style={{ background: "linear-gradient(165deg, #161a22 0%, #111111 70%)" }}
           >
-            <Link href="/" className="inline-flex items-center text-white mb-[9px]">
+            <Link href="/" className="inline-flex items-center text-white mb-[7px]">
               <Logo className="h-4 w-auto" />
             </Link>
-            <p className="text-[0.62rem] font-body font-medium tracking-[0.2em] uppercase text-white/35 mb-[23px]">
+            <p className="text-[0.62rem] font-body font-medium tracking-[0.2em] uppercase text-white/35 mb-[19px]">
               Microcement Systems
             </p>
-            <p className="text-[0.82rem] font-body font-light leading-[1.7] text-white/[0.72] mb-[33px] max-w-[320px]">
+            <p className="text-[0.82rem] font-body font-light leading-[1.7] text-white/[0.72] mb-[27px] max-w-[320px]">
               Architectural microcement systems for floors, walls, bathrooms and furniture. Designed for modern interiors. Installed by professionals.
             </p>
-            <ul className="space-y-[7.5px]">
+            <ul className="space-y-[4px]">
               <li className="flex items-center gap-3">
                 <span className="text-white/45 shrink-0">
                   <IconEmail />
@@ -486,7 +486,7 @@ export default function Footer() {
             </FooterAccordionSection>
           </div>
 
-          <div className="grid grid-cols-3 gap-x-6 pt-[34px] pb-5 border-b border-white/[0.08] mt-2">
+          <div className="grid grid-cols-3 gap-x-6 pt-[28px] pb-[17px] border-b border-white/[0.08]">
             {trustBadges.map((badge, index) => (
               <div key={index} className="flex flex-col items-center text-center gap-2">
                 <span className="h-[18px] flex items-center justify-center text-white/45">{badge.icon}</span>
@@ -495,7 +495,7 @@ export default function Footer() {
             ))}
           </div>
 
-          <div className="flex items-center justify-center gap-2 pt-5 text-[0.72rem] font-body font-light text-white/40">
+          <div className="flex items-center justify-center gap-2 pt-[14px] text-[0.72rem] font-body font-light text-white/40">
             <Link href="/terms-of-use" className="hover:text-white transition-colors duration-200">
               Terms
             </Link>
@@ -509,7 +509,7 @@ export default function Footer() {
             </Link>
           </div>
 
-          <p className="text-[0.72rem] font-body font-light text-white/40 pt-2 text-center">
+          <p className="text-[0.72rem] font-body font-light text-white/40 pt-[5px] text-center">
             © {new Date().getFullYear()} MONOCEM Ltd. All rights reserved.
           </p>
         </div>
