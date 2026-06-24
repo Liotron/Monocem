@@ -150,13 +150,8 @@ function IconLeaf() {
   );
 }
 
-function IconSwatch() {
-  return (
-    <svg width="21" height="21" viewBox="0 0 18 18" fill="none">
-      <rect x="2" y="2" width="14" height="14" rx="2" stroke="currentColor" strokeWidth="1.3" />
-      <path d="M2 11L6 7L9 10L16 4" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
+function SwatchSquare({ hex }: { hex: string }) {
+  return <span className="block w-[21px] h-[21px] rounded-[3px]" style={{ backgroundColor: hex }} />;
 }
 
 const exploreLinks: SimpleLink[] = [
@@ -194,7 +189,7 @@ const supportLinks: SimpleLink[] = [
 const trustBadges: { label: string; icon: React.ReactNode }[] = [
   { label: "Fast UK Delivery", icon: <IconTruck /> },
   { label: "Low VOC Environmentally Friendly", icon: <IconLeaf /> },
-  { label: "Designed in the UK, Made in Europe", icon: <IconSwatch /> },
+  { label: "Designed in the UK, Made in Europe", icon: <SwatchSquare hex="#c4b49a" /> },
 ];
 
 function SimpleLinkRow({ label, href }: SimpleLink) {
@@ -386,40 +381,40 @@ export default function Footer() {
               <Logo className="h-4 w-auto" />
             </Link>
             <p className="text-[0.62rem] font-body font-medium tracking-[0.2em] uppercase text-white/35 mb-3">
-              Architectural Microcement
+              Microcement Systems
             </p>
             <p className="text-[0.82rem] font-body font-light leading-[1.7] text-white/[0.72] mb-3 max-w-[320px]">
-              Premium microcement systems for floors, walls, bathrooms, and worktops. Supply and professional installation across the UK.
+              Architectural microcement systems for floors, walls, bathrooms and furniture. Designed for modern interiors. Installed by professionals.
             </p>
             <ul className="space-y-[7.5px]">
               <li className="flex items-center gap-3">
-                <span className="text-gold-light shrink-0">
+                <span className="text-white/45 shrink-0">
                   <IconEmail />
                 </span>
-                <a href={`mailto:${email}`} className="text-[0.82rem] font-body font-light text-white/85 hover:text-gold-light transition-colors duration-200">
+                <a href={`mailto:${email}`} className="text-[0.82rem] font-body font-light text-white/85 hover:text-white transition-colors duration-200">
                   {email}
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <span className="text-gold-light shrink-0">
+                <span className="text-white/45 shrink-0">
                   <IconPhone />
                 </span>
                 <a
                   href={`tel:${phone.replace(/\s+/g, "")}`}
-                  className="text-[0.82rem] font-body font-light text-white/85 hover:text-gold-light transition-colors duration-200"
+                  className="text-[0.82rem] font-body font-light text-white/85 hover:text-white transition-colors duration-200"
                 >
                   {phone}
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <span className="text-gold-light shrink-0">
+                <span className="text-white/45 shrink-0">
                   <IconInstagram />
                 </span>
                 <a
                   href="https://instagram.com/monocem.surface"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[0.82rem] font-body font-light text-white/85 hover:text-gold-light transition-colors duration-200"
+                  className="text-[0.82rem] font-body font-light text-white/85 hover:text-white transition-colors duration-200"
                 >
                   @monocem.surface
                 </a>
@@ -457,7 +452,7 @@ export default function Footer() {
           <div className="grid grid-cols-3 gap-4 py-6 border-t border-white/[0.08] mt-2">
             {trustBadges.map((badge) => (
               <div key={badge.label} className="flex flex-col items-start gap-2">
-                <span className="text-gold-light">{badge.icon}</span>
+                <span className="text-white/45">{badge.icon}</span>
                 <span className="text-[0.82rem] font-body font-light text-white/75 leading-snug">{badge.label}</span>
               </div>
             ))}
