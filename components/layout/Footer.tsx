@@ -6,6 +6,7 @@ import Logo from "@/components/ui/Logo";
 
 const email = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "info@monocem.co.uk";
 const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "447000000000";
+const phone = process.env.NEXT_PUBLIC_CONTACT_PHONE || "+44 7411 223 111";
 
 interface SimpleLink {
   label: string;
@@ -41,6 +42,20 @@ function IconChat() {
         d="M1.5 8C1.5 4.41 4.41 1.5 8 1.5C11.59 1.5 14.5 4.41 14.5 8C14.5 11.59 11.59 14.5 8 14.5C6.86 14.5 5.79 14.21 4.86 13.69L1.5 14.5L2.31 11.14C1.79 10.21 1.5 9.14 1.5 8Z"
         stroke="currentColor"
         strokeWidth="1.3"
+        strokeLinejoin="round"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function IconPhone() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <path
+        d="M5.5 2.5C5 2.5 4.5 3 4.3 3.6C3.8 5.1 4.2 7.4 6 9.2C7.8 11 10.1 11.4 11.6 10.9C12.2 10.7 12.7 10.2 12.7 9.7L12.5 8.3C12.45 8 12.2 7.75 11.9 7.7L10.3 7.4C10.05 7.35 9.8 7.43 9.6 7.6L9.1 8.05C8.2 7.55 7.55 6.9 7.05 6L7.5 5.5C7.67 5.3 7.75 5.05 7.7 4.8L7.4 3.2C7.35 2.9 7.1 2.65 6.8 2.6L5.5 2.5Z"
+        stroke="currentColor"
+        strokeWidth="1.2"
         strokeLinejoin="round"
         strokeLinecap="round"
       />
@@ -394,6 +409,17 @@ export default function Footer() {
                 </span>
                 <a href={`mailto:${email}`} className="text-[0.82rem] font-body font-light text-white/55 hover:text-white transition-colors duration-200">
                   {email}
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="text-white/35 shrink-0">
+                  <IconPhone />
+                </span>
+                <a
+                  href={`tel:${phone.replace(/\s+/g, "")}`}
+                  className="text-[0.82rem] font-body font-light text-white/55 hover:text-white transition-colors duration-200"
+                >
+                  {phone}
                 </a>
               </li>
               <li className="flex items-center gap-3">
