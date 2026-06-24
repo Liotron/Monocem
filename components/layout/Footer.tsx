@@ -6,7 +6,7 @@ import Logo from "@/components/ui/Logo";
 
 const email = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "info@monocem.co.uk";
 const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "447000000000";
-const phone = process.env.NEXT_PUBLIC_CONTACT_PHONE || "+44 7411 223 111";
+const phone = process.env.NEXT_PUBLIC_CONTACT_PHONE || "+44 7774 708801";
 
 interface SimpleLink {
   label: string;
@@ -31,20 +31,6 @@ function IconEmail() {
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
       <rect x="1.5" y="3" width="13" height="10" rx="1" stroke="currentColor" strokeWidth="1.3" />
       <path d="M2 4L8 9L14 4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function IconChat() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-      <path
-        d="M1.5 8C1.5 4.41 4.41 1.5 8 1.5C11.59 1.5 14.5 4.41 14.5 8C14.5 11.59 11.59 14.5 8 14.5C6.86 14.5 5.79 14.21 4.86 13.69L1.5 14.5L2.31 11.14C1.79 10.21 1.5 9.14 1.5 8Z"
-        stroke="currentColor"
-        strokeWidth="1.3"
-        strokeLinejoin="round"
-        strokeLinecap="round"
-      />
     </svg>
   );
 }
@@ -142,7 +128,7 @@ function IconBook() {
 
 function IconTruck() {
   return (
-    <svg width="18" height="15" viewBox="0 0 20 16" fill="none">
+    <svg width="21" height="17" viewBox="0 0 20 16" fill="none">
       <path d="M1 3H12V12H1V3Z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
       <path d="M12 6.5H15.5L18.5 9.5V12H12V6.5Z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
       <circle cx="4.5" cy="13" r="1.5" stroke="currentColor" strokeWidth="1.2" />
@@ -153,7 +139,7 @@ function IconTruck() {
 
 function IconLeaf() {
   return (
-    <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
       <path
         d="M3.5 15.5C3.5 15.5 2.5 10 6 6.5C9 3.5 15.5 2.5 15.5 2.5C15.5 2.5 14.5 9 11 12.5C8 15.5 3.5 15.5 3.5 15.5Z"
         stroke="currentColor"
@@ -166,7 +152,7 @@ function IconLeaf() {
 
 function IconSwatch() {
   return (
-    <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
       <rect x="2" y="2" width="14" height="14" rx="2" stroke="currentColor" strokeWidth="1.3" />
       <path d="M2 11L6 7L9 10L16 4" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
@@ -392,17 +378,17 @@ export default function Footer() {
 
         {/* ---------- MOBILE (new) ---------- */}
         <div className="lg:hidden">
-          <div className="pb-6 border-b border-white/[0.08]">
+          <div className="pb-[18px] border-b border-white/[0.08]">
             <Link href="/" className="inline-flex items-center text-white mb-3">
               <Logo className="h-[0.84rem] w-auto" />
             </Link>
             <p className="text-[0.62rem] font-body font-medium tracking-[0.2em] uppercase text-white/35 mb-4">
-              Microcement Systems
+              Architectural Microcement
             </p>
-            <p className="text-[0.82rem] font-body font-light leading-[1.7] text-white/50 mb-6 max-w-[320px]">
+            <p className="text-[0.82rem] font-body font-light leading-[1.7] text-white/60 mb-4 max-w-[320px]">
               Premium microcement systems for floors, walls, bathrooms, and worktops. Supply and professional installation across the UK.
             </p>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5">
               <li className="flex items-center gap-3">
                 <span className="text-white/35 shrink-0">
                   <IconEmail />
@@ -424,20 +410,14 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <span className="text-white/35 shrink-0">
-                  <IconChat />
-                </span>
-                <a
-                  href={`https://wa.me/${whatsapp}`}
-                  className="text-[0.82rem] font-body font-light text-white/55 hover:text-white transition-colors duration-200"
-                >
-                  Message us on WhatsApp
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="text-white/35 shrink-0">
                   <IconInstagram />
                 </span>
-                <a href="#" className="text-[0.82rem] font-body font-light text-white/55 hover:text-white transition-colors duration-200">
+                <a
+                  href="https://instagram.com/monocem.surface"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[0.82rem] font-body font-light text-white/55 hover:text-white transition-colors duration-200"
+                >
                   @monocem.surface
                 </a>
               </li>
@@ -471,11 +451,11 @@ export default function Footer() {
             </FooterAccordionSection>
           </div>
 
-          <div className="grid grid-cols-3 gap-3 py-6 border-t border-white/[0.08] mt-2">
+          <div className="grid grid-cols-3 gap-4 py-6 border-t border-white/[0.08] mt-2">
             {trustBadges.map((badge) => (
-              <div key={badge.label} className="flex flex-col items-start gap-1.5">
-                <span className="text-white/35">{badge.icon}</span>
-                <span className="text-[0.62rem] font-body font-light text-white/40 leading-snug">{badge.label}</span>
+              <div key={badge.label} className="flex flex-col items-start gap-2">
+                <span className="text-white/40">{badge.icon}</span>
+                <span className="text-[0.71rem] font-body font-light text-white/45 leading-snug">{badge.label}</span>
               </div>
             ))}
           </div>
