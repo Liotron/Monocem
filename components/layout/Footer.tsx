@@ -393,33 +393,33 @@ export default function Footer() {
             </p>
             <ul className="space-y-[7.5px]">
               <li className="flex items-center gap-3">
-                <span className="text-white/[0.46] shrink-0">
+                <span className="text-gold-light shrink-0">
                   <IconEmail />
                 </span>
-                <a href={`mailto:${email}`} className="text-[0.82rem] font-body font-light text-white/[0.72] hover:text-white transition-colors duration-200">
+                <a href={`mailto:${email}`} className="text-[0.82rem] font-body font-light text-white/85 hover:text-gold-light transition-colors duration-200">
                   {email}
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <span className="text-white/[0.46] shrink-0">
+                <span className="text-gold-light shrink-0">
                   <IconPhone />
                 </span>
                 <a
                   href={`tel:${phone.replace(/\s+/g, "")}`}
-                  className="text-[0.82rem] font-body font-light text-white/[0.72] hover:text-white transition-colors duration-200"
+                  className="text-[0.82rem] font-body font-light text-white/85 hover:text-gold-light transition-colors duration-200"
                 >
                   {phone}
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <span className="text-white/[0.46] shrink-0">
+                <span className="text-gold-light shrink-0">
                   <IconInstagram />
                 </span>
                 <a
                   href="https://instagram.com/monocem.surface"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[0.82rem] font-body font-light text-white/[0.72] hover:text-white transition-colors duration-200"
+                  className="text-[0.82rem] font-body font-light text-white/85 hover:text-gold-light transition-colors duration-200"
                 >
                   @monocem.surface
                 </a>
@@ -457,8 +457,8 @@ export default function Footer() {
           <div className="grid grid-cols-3 gap-4 py-6 border-t border-white/[0.08] mt-2">
             {trustBadges.map((badge) => (
               <div key={badge.label} className="flex flex-col items-start gap-2">
-                <span className="text-white/40">{badge.icon}</span>
-                <span className="text-[0.82rem] font-body font-light text-white/45 leading-snug">{badge.label}</span>
+                <span className="text-gold-light">{badge.icon}</span>
+                <span className="text-[0.82rem] font-body font-light text-white/75 leading-snug">{badge.label}</span>
               </div>
             ))}
           </div>
