@@ -128,7 +128,7 @@ function IconBook() {
 
 function IconTruck() {
   return (
-    <svg width="14" height="11.4" viewBox="0 0 20 16" fill="none">
+    <svg width="17" height="13.6" viewBox="0 0 20 16" fill="none">
       <path d="M1 3H12V12H1V3Z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
       <path d="M12 6.5H15.5L18.5 9.5V12H12V6.5Z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
       <circle cx="4.5" cy="13" r="1.5" stroke="currentColor" strokeWidth="1.2" />
@@ -139,7 +139,7 @@ function IconTruck() {
 
 function IconLeaf() {
   return (
-    <svg width="12.3" height="12.3" viewBox="0 0 18 18" fill="none">
+    <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
       <path
         d="M3.5 15.5C3.5 15.5 2.5 10 6 6.5C9 3.5 15.5 2.5 15.5 2.5C15.5 2.5 14.5 9 11 12.5C8 15.5 3.5 15.5 3.5 15.5Z"
         stroke="currentColor"
@@ -152,7 +152,7 @@ function IconLeaf() {
 
 function IconBadge() {
   return (
-    <svg width="12.3" height="12.3" viewBox="0 0 18 18" fill="none">
+    <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
       <path
         d="M9 2L15 4.5V9C15 13 12.5 15.5 9 16.5C5.5 15.5 3 13 3 9V4.5L9 2Z"
         stroke="currentColor"
@@ -486,11 +486,11 @@ export default function Footer() {
             </FooterAccordionSection>
           </div>
 
-          <div className="grid grid-cols-[0.88fr_1fr_1.12fr] divide-x divide-white/[0.08] pt-[34px] pb-5 border-t border-b border-white/[0.08] mt-2">
+          <div className="grid grid-cols-3 gap-x-6 pt-[34px] pb-5 border-b border-white/[0.08] mt-2">
             {trustBadges.map((badge, index) => (
-              <div key={index} className="flex items-start gap-1 px-1.5 first:pl-0 last:pr-0">
-                <span className="text-white/45 mt-[3px] shrink-0">{badge.icon}</span>
-                <span className="text-[0.68rem] font-body font-light text-white/55 leading-[1.6]">{badge.label}</span>
+              <div key={index} className="flex flex-col items-center text-center gap-2">
+                <span className="h-[18px] flex items-center justify-center text-white/45">{badge.icon}</span>
+                <span className="text-[0.68rem] font-body font-light text-white/55 leading-[1.5]">{badge.label}</span>
               </div>
             ))}
           </div>
@@ -499,11 +499,11 @@ export default function Footer() {
             <Link href="/terms-of-use" className="hover:text-white transition-colors duration-200">
               Terms
             </Link>
-            <span className="text-white/25">·</span>
+            <span className="text-white/40">·</span>
             <Link href="/privacy-policy" className="hover:text-white transition-colors duration-200">
               Privacy
             </Link>
-            <span className="text-white/25">·</span>
+            <span className="text-white/40">·</span>
             <Link href="/cookies-policy" className="hover:text-white transition-colors duration-200">
               Cookies
             </Link>
