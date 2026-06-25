@@ -312,7 +312,7 @@ export default function Footer() {
                   <a
                     key={social}
                     href="#"
-                    className="text-[10px] font-body font-medium tracking-label uppercase text-white/30 hover:text-gold transition-colors duration-brand ease-brand"
+                    className="text-[10px] font-body font-medium tracking-label uppercase text-white hover:text-gold transition-colors duration-brand ease-brand"
                   >
                     {social}
                   </a>
@@ -322,7 +322,7 @@ export default function Footer() {
 
             {/* Systems */}
             <div>
-              <p className="font-body text-[0.65rem] font-medium tracking-[0.18em] uppercase text-white/35 mb-6">Systems</p>
+              <p className="font-body text-[0.65rem] font-medium tracking-[0.18em] uppercase text-white mb-6">Systems</p>
               <ul className="space-y-3">
                 {[
                   { label: "Microcement Floors", href: "/installation/floors" },
@@ -346,7 +346,7 @@ export default function Footer() {
 
             {/* Navigation */}
             <div>
-              <p className="font-body text-[0.65rem] font-medium tracking-[0.18em] uppercase text-white/35 mb-6">Company</p>
+              <p className="font-body text-[0.65rem] font-medium tracking-[0.18em] uppercase text-white mb-6">Company</p>
               <ul className="space-y-3">
                 {[
                   { label: "Products", href: "/products" },
@@ -372,10 +372,10 @@ export default function Footer() {
 
             {/* Contact */}
             <div>
-              <p className="font-body text-[0.65rem] font-medium tracking-[0.18em] uppercase text-white/35 mb-6">Contact</p>
+              <p className="font-body text-[0.65rem] font-medium tracking-[0.18em] uppercase text-white mb-6">Contact</p>
               <ul className="space-y-4">
                 <li>
-                  <p className="text-[10px] font-body font-medium tracking-label uppercase text-white/30 mb-1">Email</p>
+                  <p className="text-[10px] font-body font-medium tracking-label uppercase text-white mb-1">Email</p>
                   <a
                     href={`mailto:${email}`}
                     className="text-[0.82rem] font-body font-light text-white/50 hover:text-white transition-colors duration-200"
@@ -384,7 +384,7 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <p className="text-[10px] font-body font-medium tracking-label uppercase text-white/30 mb-1">WhatsApp</p>
+                  <p className="text-[10px] font-body font-medium tracking-label uppercase text-white mb-1">WhatsApp</p>
                   <a
                     href={`https://wa.me/${whatsapp}`}
                     className="text-[0.82rem] font-body font-light text-white/50 hover:text-white transition-colors duration-200"
@@ -393,7 +393,7 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <p className="text-[10px] font-body font-medium tracking-label uppercase text-white/30 mb-1">Coverage</p>
+                  <p className="text-[10px] font-body font-medium tracking-label uppercase text-white mb-1">Coverage</p>
                   <p className="text-[0.82rem] font-body font-light text-white/50">Nationwide UK installation</p>
                 </li>
               </ul>
@@ -401,10 +401,10 @@ export default function Footer() {
           </div>
 
           <div className="mt-10 pt-6 border-t border-white/[0.08] flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-[0.8rem] font-body font-light text-white/40">
+            <p className="text-[0.8rem] font-body font-light text-white/85">
               © {new Date().getFullYear()} MONOCEM Ltd. All rights reserved.
             </p>
-            <p className="text-[0.8rem] font-body font-light text-white/30">Premium microcement systems — United Kingdom</p>
+            <p className="text-[0.8rem] font-body font-light text-white/85">Premium microcement systems — United Kingdom</p>
           </div>
         </div>
 
@@ -417,7 +417,7 @@ export default function Footer() {
             <Link href="/" className="inline-flex items-center text-white mb-[9px]">
               <Logo className="h-4 w-auto" />
             </Link>
-            <p className="text-[0.62rem] font-body font-medium tracking-[0.2em] uppercase text-white/35 mb-[23px]">
+            <p className="text-[0.62rem] font-body font-medium tracking-[0.2em] uppercase text-white mb-[23px]">
               Microcement Systems
             </p>
             <p className="text-[0.82rem] font-body font-light leading-[1.7] text-white/[0.72] mb-[33px] max-w-[320px]">
@@ -495,7 +495,7 @@ export default function Footer() {
             ))}
           </div>
 
-          <div className="flex items-center justify-center gap-2 pt-5 text-[0.8rem] font-body font-light text-white/40">
+          <div className="flex items-center justify-center gap-2 pt-5 text-[0.8rem] font-body font-light text-white">
             <Link href="/terms-of-use" className="hover:text-white transition-colors duration-200">
               Terms
             </Link>
@@ -509,7 +509,7 @@ export default function Footer() {
             </Link>
           </div>
 
-          <p className="text-[0.8rem] font-body font-light text-white/40 pt-2 text-center">
+          <p className="text-[0.8rem] font-body font-light text-white/85 pt-2 text-center">
             © {new Date().getFullYear()} MONOCEM Ltd. All rights reserved.
           </p>
         </div>
