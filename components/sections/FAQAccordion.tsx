@@ -87,7 +87,7 @@ export default function FAQAccordion({ faqs = defaultFaqs, dark = false }: FAQAc
                       dark ? "text-white hover:text-gold-light" : "text-charcoal hover:text-gold"
                     }`}
                   >
-                    <span className="font-body font-light text-base leading-snug">{faq.q}</span>
+                    <span className="font-body font-normal text-base leading-snug">{faq.q}</span>
                     <span className={`shrink-0 text-gold transition-transform duration-400 ease-brand mt-1 ${open === i ? "rotate-45" : ""}`}>
                       +
                     </span>
