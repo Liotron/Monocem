@@ -186,7 +186,7 @@ export default function GuideArticle({ data }: GuideArticleProps) {
                     href={link.href}
                     className="group block border border-charcoal/10 p-6 hover:border-gold/40 transition-colors duration-200"
                   >
-                    <p className="font-body font-light text-text-light text-xs mb-1">{link.description}</p>
+                    <p className="font-body font-light text-text-light text-[0.8rem] mb-1">{link.description}</p>
                     <p className="font-display font-light text-charcoal text-base group-hover:text-gold transition-colors duration-200">
                       {link.label} →
                     </p>

@@ -51,8 +51,8 @@ export default function InstallationPage() {
                   <ul className="space-y-2 mb-6">
                     {surface.benefits.slice(0, 3).map((b, bi) => (
                       <li key={bi} className="flex items-start gap-2">
-                        <span className="text-gold text-xs shrink-0 mt-0.5">—</span>
-                        <span className="font-body font-light text-text-light text-xs">{b}</span>
+                        <span className="text-gold text-[0.8rem] shrink-0 mt-0.5">—</span>
+                        <span className="font-body font-light text-text-light text-[0.8rem]">{b}</span>
                       </li>
                     ))}
                   </ul>

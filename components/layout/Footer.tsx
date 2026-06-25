@@ -249,7 +249,7 @@ function RichLinkRow({ label, description, href, icon }: RichLink) {
         <span className="block text-[0.84rem] font-body font-medium text-white/85 mb-0.5 group-hover:text-white transition-colors duration-200">
           {label}
         </span>
-        <span className="block text-[0.72rem] font-body font-light text-white/40 leading-snug">{description}</span>
+        <span className="block text-[0.8rem] font-body font-light text-white/40 leading-snug">{description}</span>
       </span>
       <span className="mt-1 text-white/25 group-hover:text-gold transition-colors duration-200 shrink-0">→</span>
     </Link>
@@ -401,10 +401,10 @@ export default function Footer() {
           </div>
 
           <div className="mt-10 pt-6 border-t border-white/[0.08] flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-[0.72rem] font-body font-light text-white/40">
+            <p className="text-[0.8rem] font-body font-light text-white/40">
               © {new Date().getFullYear()} MONOCEM Ltd. All rights reserved.
             </p>
-            <p className="text-[0.72rem] font-body font-light text-white/30">Premium microcement systems — United Kingdom</p>
+            <p className="text-[0.8rem] font-body font-light text-white/30">Premium microcement systems — United Kingdom</p>
           </div>
         </div>
 
@@ -490,12 +490,12 @@ export default function Footer() {
             {trustBadges.map((badge, index) => (
               <div key={index} className="flex flex-col items-center text-center gap-2">
                 <span className="h-[18px] flex items-center justify-center text-white/45">{badge.icon}</span>
-                <span className="text-[0.68rem] font-body font-light text-white/55 leading-[1.5]">{badge.label}</span>
+                <span className="text-[0.72rem] font-body font-light text-white/55 leading-[1.5]">{badge.label}</span>
               </div>
             ))}
           </div>
 
-          <div className="flex items-center justify-center gap-2 pt-5 text-[0.72rem] font-body font-light text-white/40">
+          <div className="flex items-center justify-center gap-2 pt-5 text-[0.8rem] font-body font-light text-white/40">
             <Link href="/terms-of-use" className="hover:text-white transition-colors duration-200">
               Terms
             </Link>
@@ -509,7 +509,7 @@ export default function Footer() {
             </Link>
           </div>
 
-          <p className="text-[0.72rem] font-body font-light text-white/40 pt-2 text-center">
+          <p className="text-[0.8rem] font-body font-light text-white/40 pt-2 text-center">
             © {new Date().getFullYear()} MONOCEM Ltd. All rights reserved.
           </p>
         </div>
