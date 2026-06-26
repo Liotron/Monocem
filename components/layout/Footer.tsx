@@ -20,7 +20,7 @@ interface RichLink extends SimpleLink {
 
 function IconChevron({ className = "" }: { className?: string }) {
   return (
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className={className}>
+    <svg width="13.3" height="13.3" viewBox="0 0 14 14" fill="none" className={className}>
       <path d="M2.5 5L7 9.5L11.5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
@@ -41,7 +41,7 @@ function IconPhone() {
       <path
         d="M5.5 2.5C5 2.5 4.5 3 4.3 3.6C3.8 5.1 4.2 7.4 6 9.2C7.8 11 10.1 11.4 11.6 10.9C12.2 10.7 12.7 10.2 12.7 9.7L12.5 8.3C12.45 8 12.2 7.75 11.9 7.7L10.3 7.4C10.05 7.35 9.8 7.43 9.6 7.6L9.1 8.05C8.2 7.55 7.55 6.9 7.05 6L7.5 5.5C7.67 5.3 7.75 5.05 7.7 4.8L7.4 3.2C7.35 2.9 7.1 2.65 6.8 2.6L5.5 2.5Z"
         stroke="currentColor"
-        strokeWidth="1.2"
+        strokeWidth="1.3"
         strokeLinejoin="round"
         strokeLinecap="round"
       />
@@ -128,7 +128,7 @@ function IconBook() {
 
 function IconTruck() {
   return (
-    <svg width="17" height="13.6" viewBox="0 0 20 16" fill="none">
+    <svg width="18.7" height="15" viewBox="0 0 20 16" fill="none">
       <path d="M1 3H12V12H1V3Z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
       <path d="M12 6.5H15.5L18.5 9.5V12H12V6.5Z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
       <circle cx="4.5" cy="13" r="1.5" stroke="currentColor" strokeWidth="1.2" />
@@ -139,7 +139,7 @@ function IconTruck() {
 
 function IconLeaf() {
   return (
-    <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
+    <svg width="17.6" height="17.6" viewBox="0 0 18 18" fill="none">
       <path
         d="M3.5 15.5C3.5 15.5 2.5 10 6 6.5C9 3.5 15.5 2.5 15.5 2.5C15.5 2.5 14.5 9 11 12.5C8 15.5 3.5 15.5 3.5 15.5Z"
         stroke="currentColor"
@@ -152,7 +152,7 @@ function IconLeaf() {
 
 function IconBadge() {
   return (
-    <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
+    <svg width="17.6" height="17.6" viewBox="0 0 18 18" fill="none">
       <path
         d="M9 2L15 4.5V9C15 13 12.5 15.5 9 16.5C5.5 15.5 3 13 3 9V4.5L9 2Z"
         stroke="currentColor"
@@ -273,13 +273,13 @@ function FooterAccordionSection({
         type="button"
         onClick={onToggle}
         aria-expanded={isOpen}
-        className="w-full flex items-center justify-between py-4 text-left"
+        className="w-full flex items-center justify-between py-3 text-left"
       >
-        <span className="font-body text-[0.7rem] font-medium tracking-[0.18em] uppercase text-white/70">{label}</span>
+        <span className="font-body text-[0.7rem] font-normal tracking-[0.15em] uppercase text-white/70">{label}</span>
         <IconChevron className={`text-white/40 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
       </button>
       <div
-        className={`overflow-hidden transition-all duration-300 ease-brand ${
+        className={`overflow-hidden transition-all duration-[240ms] ease-in-out ${
           isOpen ? "max-h-[1200px] opacity-100 pb-2" : "max-h-0 opacity-0"
         }`}
       >
@@ -410,20 +410,17 @@ export default function Footer() {
 
         {/* ---------- MOBILE (new) ---------- */}
         <div className="lg:hidden">
-          <div
-            className="pb-[14px] border-b border-white/[0.08]"
-            style={{ background: "linear-gradient(165deg, #161a22 0%, #111111 70%)" }}
-          >
-            <Link href="/" className="inline-flex items-center text-white mb-[9px]">
+          <div className="pb-[8px] border-b border-white/[0.08]">
+            <Link href="/" className="inline-flex items-center text-white mb-[4px]">
               <Logo className="h-4 w-auto" />
             </Link>
-            <p className="text-[0.62rem] font-body font-medium tracking-[0.2em] uppercase text-white mb-[23px]">
+            <p className="text-[0.62rem] font-body font-medium tracking-[0.2em] uppercase text-white mb-[12px]">
               Microcement Systems
             </p>
-            <p className="text-[0.82rem] font-body font-light leading-[1.7] text-white/[0.72] mb-[33px] max-w-[320px]">
+            <p className="text-[0.76rem] font-body font-light leading-[1.6] text-white/[0.72] mb-[20px] max-w-[300px]">
               Architectural microcement systems for floors, walls, bathrooms and furniture. Designed for modern interiors. Installed by professionals.
             </p>
-            <ul className="space-y-[7.5px]">
+            <ul className="space-y-[7px]">
               <li className="flex items-center gap-3">
                 <span className="text-white/45 shrink-0">
                   <IconEmail />
@@ -486,16 +483,16 @@ export default function Footer() {
             </FooterAccordionSection>
           </div>
 
-          <div className="grid grid-cols-3 gap-x-6 pt-[34px] pb-5 border-b border-white/[0.08] mt-2">
+          <div className="grid grid-cols-3 gap-x-6 pt-[24px] pb-4 border-b border-white/[0.08] mt-2">
             {trustBadges.map((badge, index) => (
-              <div key={index} className="flex flex-col items-center text-center gap-2">
-                <span className="h-[18px] flex items-center justify-center text-white/45">{badge.icon}</span>
-                <span className="text-[0.72rem] font-body font-light text-white/55 leading-[1.5]">{badge.label}</span>
+              <div key={index} className="flex flex-col items-center text-center gap-[10px]">
+                <span className="h-[19px] flex items-center justify-center text-white/45">{badge.icon}</span>
+                <span className="text-[0.69rem] font-body font-light text-white/55 leading-[1.5]">{badge.label}</span>
               </div>
             ))}
           </div>
 
-          <div className="flex items-center justify-center gap-2 pt-5 text-[0.8rem] font-body font-light text-white">
+          <div className="flex items-center justify-center gap-2 pt-4 text-[0.8rem] font-body font-light text-white">
             <Link href="/terms-of-use" className="hover:text-white transition-colors duration-200">
               Terms
             </Link>
@@ -509,7 +506,7 @@ export default function Footer() {
             </Link>
           </div>
 
-          <p className="text-[0.8rem] font-body font-light text-white/85 pt-2 text-center">
+          <p className="text-[0.8rem] font-body font-light text-white/90 pt-1 text-center">
             © {new Date().getFullYear()} MONOCEM Ltd. All rights reserved.
           </p>
         </div>

@@ -52,8 +52,8 @@ export default function WhatsAppFloat() {
         pointerEvents: visible ? "auto" : "none",
         visibility: visible ? "visible" : "hidden",
         transition: visible
-          ? "opacity 380ms ease, transform 380ms ease, visibility 0s linear 0s"
-          : "opacity 380ms ease, transform 380ms ease, visibility 0s linear 380ms",
+          ? "opacity 300ms ease, transform 300ms ease, visibility 0s linear 0s"
+          : "opacity 300ms ease, transform 300ms ease, visibility 0s linear 300ms",
       }}
     >
       <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
