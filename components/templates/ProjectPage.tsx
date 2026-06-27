@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Project } from "@/lib/data/projects";
 import { projects } from "@/lib/data/projects";
+import { firstSentence } from "@/lib/utils/text";
 import Hero from "@/components/sections/Hero";
 import SectionLabel from "@/components/ui/SectionLabel";
 import FadeUp from "@/components/ui/FadeUp";
@@ -29,7 +30,7 @@ export default function ProjectPage({ project }: ProjectPageProps) {
       <Hero
         eyebrow={project.meta}
         headline={project.title}
-        subtext={project.description}
+        subtext={firstSentence(project.description)}
         backgroundImage={project.image}
         imagePosition={project.imagePosition}
         primaryCta={{ label: "Start Your Project", href: "/get-a-quote" }}

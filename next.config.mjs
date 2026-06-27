@@ -4,6 +4,15 @@ const nextConfig = {
     domains: ["images.unsplash.com"],
   },
   trailingSlash: false,
+  async redirects() {
+    return [
+      {
+        source: "/delivery-returns",
+        destination: "/delivery",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

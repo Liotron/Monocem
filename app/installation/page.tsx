@@ -5,6 +5,7 @@ import SectionLabel from "@/components/ui/SectionLabel";
 import FadeUp from "@/components/ui/FadeUp";
 import QuoteForm from "@/components/sections/QuoteForm";
 import { surfaces } from "@/lib/data/surfaces";
+import { truncateAtWord } from "@/lib/utils/text";
 
 export const metadata: Metadata = {
   title: "Microcement Installation UK | All Surface Systems | MONOCEM",
@@ -46,7 +47,7 @@ export default function InstallationPage() {
                     {surface.name}
                   </h3>
                   <p className="font-body font-light text-text-light text-sm leading-relaxed mb-6">
-                    {surface.description.slice(0, 120)}...
+                    {truncateAtWord(surface.description, 120)}
                   </p>
                   <ul className="space-y-2 mb-6">
                     {surface.benefits.slice(0, 3).map((b, bi) => (

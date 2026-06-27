@@ -190,7 +190,7 @@ const professionalLinks: RichLink[] = [
 ];
 
 const supportLinks: SimpleLink[] = [
-  { label: "Delivery & Returns", href: "/delivery-returns" },
+  { label: "Delivery & Returns", href: "/delivery" },
   { label: "Terms & Conditions", href: "/terms-of-use" },
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Cookies Policy", href: "/cookies-policy" },

@@ -25,7 +25,7 @@ export default function SurfacePage({ surface }: SurfacePageProps) {
       <Hero
         eyebrow="Installation"
         headline={surface.headline}
-        subtext={surface.description.slice(0, 150)}
+        subtext={surface.description}
         primaryCta={{ label: "Get a Free Quote", href: "/get-a-quote" }}
         secondaryCta={{ label: "View Products", href: "/products" }}
       />
