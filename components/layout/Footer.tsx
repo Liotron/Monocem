@@ -196,7 +196,7 @@ const supportLinks: SimpleLink[] = [
   { label: "Cookies Policy", href: "/cookies-policy" },
 ];
 
-const trustBadges: { label: React.ReactNode; icon: React.ReactNode }[] = [
+const trustBadges: { label: React.ReactNode; icon: React.ReactNode; href: string }[] = [
   {
     label: (
       <>
@@ -206,6 +206,7 @@ const trustBadges: { label: React.ReactNode; icon: React.ReactNode }[] = [
       </>
     ),
     icon: <IconTruck />,
+    href: "/delivery",
   },
   {
     label: (
@@ -216,6 +217,7 @@ const trustBadges: { label: React.ReactNode; icon: React.ReactNode }[] = [
       </>
     ),
     icon: <IconLeaf />,
+    href: "/technical",
   },
   {
     label: (
@@ -226,6 +228,7 @@ const trustBadges: { label: React.ReactNode; icon: React.ReactNode }[] = [
       </>
     ),
     icon: <IconBadge />,
+    href: "/about",
   },
 ];
 
@@ -485,10 +488,14 @@ export default function Footer() {
 
           <div className="grid grid-cols-3 gap-x-6 pt-[24px] pb-4 border-b border-white/[0.08] mt-2">
             {trustBadges.map((badge, index) => (
-              <div key={index} className="flex flex-col items-center text-center gap-[10px]">
+              <Link
+                key={index}
+                href={badge.href}
+                className="flex flex-col items-center text-center gap-[10px] transition-all duration-[220ms] ease-[ease] hover:-translate-y-[2px] hover:opacity-90"
+              >
                 <span className="h-[19px] flex items-center justify-center text-white/45">{badge.icon}</span>
                 <span className="text-[0.69rem] font-body font-light text-white/55 leading-[1.5]">{badge.label}</span>
-              </div>
+              </Link>
             ))}
           </div>
 
