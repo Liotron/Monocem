@@ -417,7 +417,7 @@ export default function Footer() {
             <p className="text-[0.62rem] font-body font-medium tracking-[0.2em] uppercase text-white mb-[12px]">
               Microcement Systems
             </p>
-            <p className="text-[0.76rem] font-body font-light leading-[1.6] text-white/[0.72] mb-[20px] max-w-[300px]">
+            <p className="text-[16px] font-body font-normal tracking-normal leading-[1.65] text-white/[0.72] mb-[20px] max-w-[335px]">
               Architectural microcement systems for floors, walls, bathrooms and furniture. Designed for modern interiors. Installed by professionals.
             </p>
             <ul className="space-y-[7px]">
