@@ -31,7 +31,7 @@ export default function SampleRequest() {
                   "6 colour tiles from your chosen palette",
                   "150mm × 150mm format — meaningful scale",
                   "Sealed finish — exactly as installed",
-                  "Sent within 5 working days",
+                  "Dispatched within 1–3 working days",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <span className="text-gold mt-1 text-sm shrink-0">—</span>

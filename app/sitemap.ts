@@ -25,8 +25,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}/delivery`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${siteUrl}/technical`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${siteUrl}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${siteUrl}/faq`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
+    { url: `${siteUrl}/sample-pack`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${siteUrl}/trade/systems`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
+    { url: `${siteUrl}/trade/training-academy`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
+    { url: `${siteUrl}/trade/approved-installers`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
+    { url: `${siteUrl}/trade/technical-data`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
+    { url: `${siteUrl}/trade/installation-guides`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
     { url: `${siteUrl}/privacy-policy`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
     { url: `${siteUrl}/terms-of-use`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
+    { url: `${siteUrl}/cookies-policy`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
   ];
 
   const locationPages: MetadataRoute.Sitemap = locations.map((loc) => ({

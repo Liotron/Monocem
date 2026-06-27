@@ -71,12 +71,13 @@ export default function TrainingEnquiryForm() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="section-label block mb-3">Experience Level</label>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2" role="group" aria-label="Experience Level">
                   {experienceLevels.map((level) => (
                     <button
                       key={level}
                       type="button"
                       onClick={() => setFormData((p) => ({ ...p, experienceLevel: level }))}
+                      aria-pressed={formData.experienceLevel === level}
                       className={`px-5 py-2.5 text-[10px] font-body font-medium tracking-button uppercase border transition-all duration-200 ${
                         formData.experienceLevel === level
                           ? "bg-charcoal text-white border-charcoal"

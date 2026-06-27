@@ -13,6 +13,19 @@ const data = {
   intro: "Microcement costs in the UK vary depending on a range of factors — substrate condition, area size, surface type, and whether you're looking for professional installation or supply-only. This guide provides honest, realistic price ranges based on our experience installing microcement across the UK.",
   sections: [
     {
+      heading: "Microcement cost at a glance",
+      content: "A quick reference for typical MONOCEM pricing — see the sections below for what drives each figure.",
+      table: {
+        headers: ["Project type", "Typical price"],
+        rows: [
+          ["Professional installation (supply & install)", "£60–90 per m²"],
+          ["Supply-only kit (5m² coverage)", "£80–120 + VAT"],
+          ["Bathroom, floor & walls (5m²)", "£1,200–2,000"],
+          ["Kitchen floor (15–25m²)", "£900–2,250"],
+        ],
+      },
+    },
+    {
       heading: "Professional installation pricing",
       content: "For MONOCEM professional installation (labour and materials), expect to budget £60–90 per m² for standard residential projects. This covers substrate preparation, primer, two coats of microcement, and full sealing. Complex substrates (highly uneven surfaces, significant remediation required), wet rooms requiring additional waterproofing, and access-difficult areas may increase costs. Minimum project sizes apply — smaller rooms carry a higher per-m² rate.",
     },

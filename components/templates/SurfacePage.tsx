@@ -19,9 +19,27 @@ const topCities = [
   { name: "Edinburgh", slug: "edinburgh" },
 ];
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://monocem.co.uk";
+
 export default function SurfacePage({ surface }: SurfacePageProps) {
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: `Microcement ${surface.name} Installation`,
+    name: surface.headline,
+    description: surface.description,
+    provider: { "@type": "Organization", name: "MONOCEM", url: siteUrl },
+    areaServed: { "@type": "Country", name: "United Kingdom" },
+    url: `${siteUrl}/installation/${surface.slug}`,
+    image: surface.heroImage ? `${siteUrl}${surface.heroImage}` : undefined,
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <Hero
         eyebrow="Installation"
         headline={surface.headline}

@@ -10,11 +10,26 @@ interface ProductPageProps {
   product: Product;
 }
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://monocem.co.uk";
+
 export default function ProductPage({ product }: ProductPageProps) {
   const related = products.filter((p) => p.slug !== product.slug).slice(0, 3);
 
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.description,
+    brand: { "@type": "Brand", name: "MONOCEM" },
+    url: `${siteUrl}/products/${product.slug}`,
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
       <Hero
         eyebrow="Products"
         headline={product.name}

@@ -13,9 +13,26 @@ export const metadata: Metadata = {
   alternates: { canonical: "/installation" },
 };
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://monocem.co.uk";
+
+const surfacesListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  itemListElement: surfaces.map((surface, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    url: `${siteUrl}/installation/${surface.slug}`,
+    name: surface.name,
+  })),
+};
+
 export default function InstallationPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(surfacesListSchema) }}
+      />
       <Hero
         eyebrow="Installation"
         headline="Professional Microcement"

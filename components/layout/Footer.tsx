@@ -352,14 +352,18 @@ export default function Footer() {
               <p className="font-body text-[0.65rem] font-medium tracking-[0.18em] uppercase text-white mb-6">Company</p>
               <ul className="space-y-3">
                 {[
+                  { label: "About Us", href: "/about" },
                   { label: "Products", href: "/products" },
                   { label: "Inspiration", href: "/inspiration" },
                   { label: "Guides", href: "/learn" },
                   { label: "Locations", href: "/locations" },
                   { label: "Trade Programme", href: "/trade" },
+                  { label: "Sample Pack", href: "/sample-pack" },
+                  { label: "FAQ", href: "/faq" },
                   { label: "Get a Quote", href: "/get-a-quote" },
                   { label: "Privacy Policy", href: "/privacy-policy" },
                   { label: "Terms of Use", href: "/terms-of-use" },
+                  { label: "Cookies Policy", href: "/cookies-policy" },
                 ].map((link) => (
                   <li key={link.href}>
                     <Link

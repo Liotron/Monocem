@@ -6,6 +6,10 @@ import QuoteForm from "@/components/sections/QuoteForm";
 interface LearnSection {
   heading: string;
   content: string;
+  table?: {
+    headers: string[];
+    rows: string[][];
+  };
 }
 
 interface LearnPageData {
@@ -78,6 +82,38 @@ export default function LearnPage({ data }: LearnPageProps) {
                   <p className="font-body font-light text-text-mid text-base leading-relaxed">
                     {section.content}
                   </p>
+                  {section.table && (
+                    <div className="mt-6 overflow-x-auto">
+                      <table className="w-full text-left border-collapse">
+                        <thead>
+                          <tr className="border-b border-charcoal/15">
+                            {section.table.headers.map((header, hi) => (
+                              <th
+                                key={hi}
+                                className="py-3 pr-6 font-body font-medium text-[11px] tracking-button uppercase text-text-light"
+                              >
+                                {header}
+                              </th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {section.table.rows.map((row, ri) => (
+                            <tr key={ri} className="border-b border-stone/50">
+                              {row.map((cell, ci) => (
+                                <td
+                                  key={ci}
+                                  className="py-3 pr-6 font-body font-light text-text-mid text-sm leading-relaxed"
+                                >
+                                  {cell}
+                                </td>
+                              ))}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
                 </div>
               </FadeUp>
             ))}

@@ -18,10 +18,10 @@
 }
 
 * {
-  border-radius: 2px !important;
+  border-radius: 2px;
 }
 *:where(a, button, input, select, textarea) {
-  border-radius: 2px !important;
+  border-radius: 2px;
 }
 
 html {
@@ -188,5 +188,19 @@ body {
   .animate-scroll-pulse {
     transform-origin: top;
     animation: scrollPulse 2.2s ease-in-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+  .animate-hero-kenburns,
+  .animate-material-kenburns,
+  .animate-scroll-pulse {
+    animation: none;
+    transform: none;
   }
 }

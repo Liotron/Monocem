@@ -72,12 +72,13 @@ export default function TradeAccountForm() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="section-label block mb-3">Trade Type</label>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2" role="group" aria-label="Trade Type">
                   {tradeTypes.map((type) => (
                     <button
                       key={type}
                       type="button"
                       onClick={() => setFormData((p) => ({ ...p, tradeType: type }))}
+                      aria-pressed={formData.tradeType === type}
                       className={`px-5 py-2.5 text-[10px] font-body font-medium tracking-button uppercase border transition-all duration-200 ${
                         formData.tradeType === type
                           ? "bg-charcoal text-white border-charcoal"

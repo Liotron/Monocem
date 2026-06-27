@@ -72,12 +72,13 @@ export default function InstallerApplicationForm() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="section-label !text-gold/70 block mb-3">Trade Background</label>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2" role="group" aria-label="Trade Background">
                   {backgrounds.map((b) => (
                     <button
                       key={b}
                       type="button"
                       onClick={() => setFormData((p) => ({ ...p, tradeBackground: b }))}
+                      aria-pressed={formData.tradeBackground === b}
                       className={`px-5 py-2.5 text-[10px] font-body font-medium tracking-button uppercase border transition-all duration-200 ${
                         formData.tradeBackground === b
                           ? "bg-white text-charcoal border-white"

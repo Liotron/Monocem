@@ -82,16 +82,17 @@ export default function QuoteForm() {
           </div>
 
           <FadeUp delay={1}>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6 pb-24 lg:pb-0">
               {/* Project type */}
               <div>
                 <label className="section-label block mb-3">Project Type</label>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2" role="group" aria-label="Project Type">
                   {["Installation", "Supply", "Both"].map((type) => (
                     <button
                       key={type}
                       type="button"
                       onClick={() => setFormData((p) => ({ ...p, projectType: type }))}
+                      aria-pressed={formData.projectType === type}
                       className={`px-5 py-2.5 text-[10px] font-body font-medium tracking-button uppercase border transition-all duration-200 ${
                         formData.projectType === type
                           ? "bg-charcoal text-white border-charcoal"
@@ -107,12 +108,13 @@ export default function QuoteForm() {
               {/* Surfaces */}
               <div>
                 <label className="section-label block mb-3">Surface(s) Required</label>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2" role="group" aria-label="Surface(s) Required">
                   {surfaces.map((s) => (
                     <button
                       key={s}
                       type="button"
                       onClick={() => toggleSurface(s)}
+                      aria-pressed={formData.surfaces.includes(s)}
                       className={`px-4 py-2 text-[10px] font-body font-medium tracking-button uppercase border transition-all duration-200 ${
                         formData.surfaces.includes(s)
                           ? "bg-charcoal text-white border-charcoal"
@@ -201,13 +203,15 @@ export default function QuoteForm() {
                 <p className="text-[12px] font-body text-red-500">Something went wrong. Please try again or email us directly.</p>
               )}
 
-              <button
-                type="submit"
-                disabled={status === "sending"}
-                className="btn-gold disabled:opacity-50"
-              >
-                {status === "sending" ? "Sending..." : "Submit Enquiry"}
-              </button>
+              <div className="fixed bottom-0 inset-x-0 z-30 bg-warm-white/95 backdrop-blur-sm border-t border-charcoal/10 p-4 pb-[max(1rem,env(safe-area-inset-bottom))] lg:static lg:bg-transparent lg:border-0 lg:backdrop-blur-none lg:p-0">
+                <button
+                  type="submit"
+                  disabled={status === "sending"}
+                  className="btn-gold w-full justify-center lg:w-auto disabled:opacity-50"
+                >
+                  {status === "sending" ? "Sending..." : "Submit Enquiry"}
+                </button>
+              </div>
             </form>
           </FadeUp>
         </div>

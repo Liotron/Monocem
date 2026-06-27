@@ -9,7 +9,7 @@ interface FAQ {
   a: string;
 }
 
-const defaultFaqs: FAQ[] = [
+export const defaultFaqs: FAQ[] = [
   {
     q: "What is microcement and how is it different from polished concrete?",
     a: "Microcement is a thin-coat decorative material (1–3mm) applied over existing surfaces. Unlike polished concrete, it doesn't require a structural slab — it can be applied over tiles, plaster, wood, and other substrates. The result is visually similar to polished concrete but with far greater versatility in application.",
@@ -39,9 +39,16 @@ const defaultFaqs: FAQ[] = [
 interface FAQAccordionProps {
   faqs?: FAQ[];
   dark?: boolean;
+  heading?: string;
+  headingItalic?: string;
 }
 
-export default function FAQAccordion({ faqs = defaultFaqs, dark = false }: FAQAccordionProps) {
+export default function FAQAccordion({
+  faqs = defaultFaqs,
+  dark = false,
+  heading = "Common",
+  headingItalic = "Questions",
+}: FAQAccordionProps) {
   const [open, setOpen] = useState<number | null>(null);
 
   const faqSchema = {
@@ -71,8 +78,8 @@ export default function FAQAccordion({ faqs = defaultFaqs, dark = false }: FAQAc
             </FadeUp>
             <FadeUp delay={1}>
               <h2 className={`font-display font-light text-4xl lg:text-5xl leading-tight tracking-tight ${dark ? "text-white" : "text-charcoal"}`}>
-                Common{" "}
-                <em className="italic font-light">Questions</em>
+                {heading}{" "}
+                <em className="italic font-light">{headingItalic}</em>
               </h2>
             </FadeUp>
           </div>
@@ -82,7 +89,10 @@ export default function FAQAccordion({ faqs = defaultFaqs, dark = false }: FAQAc
               <FadeUp key={i} delay={(Math.min(i % 4, 4) as 0 | 1 | 2 | 3 | 4)}>
                 <div className={`border-b ${dark ? "border-white/10" : "border-charcoal/10"}`}>
                   <button
+                    id={`faq-trigger-${i}`}
                     onClick={() => setOpen(open === i ? null : i)}
+                    aria-expanded={open === i}
+                    aria-controls={`faq-panel-${i}`}
                     className={`w-full flex items-start justify-between gap-6 py-6 text-left transition-colors duration-200 ${
                       dark ? "text-white hover:text-gold-light" : "text-charcoal hover:text-gold"
                     }`}
@@ -93,6 +103,10 @@ export default function FAQAccordion({ faqs = defaultFaqs, dark = false }: FAQAc
                     </span>
                   </button>
                   <div
+                    id={`faq-panel-${i}`}
+                    role="region"
+                    aria-labelledby={`faq-trigger-${i}`}
+                    aria-hidden={open !== i}
                     className={`overflow-hidden transition-all duration-400 ease-brand ${
                       open === i ? "max-h-96 pb-6" : "max-h-0"
                     }`}

@@ -5,6 +5,7 @@ import SectionLabel from "@/components/ui/SectionLabel";
 import FadeUp from "@/components/ui/FadeUp";
 import QuoteForm from "@/components/sections/QuoteForm";
 import { products } from "@/lib/data/products";
+import { truncateAtWord } from "@/lib/utils/text";
 
 export const metadata: Metadata = {
   title: "Microcement Products UK | Buy Professional Microcement | MONOCEM",
@@ -12,9 +13,26 @@ export const metadata: Metadata = {
   alternates: { canonical: "/products" },
 };
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://monocem.co.uk";
+
+const productsListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  itemListElement: products.map((product, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    url: `${siteUrl}/products/${product.slug}`,
+    name: product.name,
+  })),
+};
+
 export default function ProductsPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productsListSchema) }}
+      />
       <Hero
         eyebrow="Products"
         headline="Professional Microcement"
@@ -47,7 +65,7 @@ export default function ProductsPage() {
                   </h3>
                   <p className="text-[10px] font-body font-medium tracking-label uppercase text-gold/70 mb-4">{product.tagline}</p>
                   <p className="font-body font-light text-text-light text-sm leading-relaxed mb-6">
-                    {product.description.slice(0, 120)}...
+                    {truncateAtWord(product.description, 120)}
                   </p>
                   <span className="inline-flex items-center gap-1 text-[10px] font-body font-medium tracking-button uppercase text-gold">
                     View product <span className="transition-transform duration-400 ease-brand group-hover:translate-x-1">→</span>
