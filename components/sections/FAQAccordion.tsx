@@ -98,8 +98,28 @@ export default function FAQAccordion({
                     }`}
                   >
                     <span className="font-body font-normal text-base leading-snug">{faq.q}</span>
-                    <span className={`shrink-0 text-gold transition-transform duration-400 ease-brand mt-1 ${open === i ? "rotate-45" : ""}`}>
-                      +
+                    <span
+                      className={`shrink-0 w-7 h-7 rounded-full border flex items-center justify-center transition-all duration-400 ease-brand ${
+                        open === i
+                          ? "bg-gold border-gold"
+                          : dark
+                          ? "border-white/25"
+                          : "border-charcoal/20"
+                      }`}
+                    >
+                      <svg
+                        width="11"
+                        height="11"
+                        viewBox="0 0 11 11"
+                        fill="none"
+                        className={`transition-transform duration-400 ease-brand ${open === i ? "rotate-45" : ""}`}
+                      >
+                        <path
+                          d="M5.5 0V11M0 5.5H11"
+                          stroke={open === i ? "#fff" : dark ? "#fff" : "#1a1816"}
+                          strokeWidth="1.3"
+                        />
+                      </svg>
                     </span>
                   </button>
                   <div

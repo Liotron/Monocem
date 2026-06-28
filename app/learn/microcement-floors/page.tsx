@@ -11,6 +11,8 @@ const data = {
   title: "Microcement Floors: The Complete Guide",
   subtitle: "Everything you need to know before installing a seamless microcement floor",
   categorySlug: "application-technique",
+  image: "/images/img-floors.png",
+  imageCaption: "A seamless MONOCEM microcement floor",
   intro:
     "Microcement floors have become the surface of choice for architects and homeowners seeking a seamless, contemporary finish. This guide covers everything from how the system works to what it costs and how to choose the right finish for your space.",
   sections: [

@@ -4,6 +4,7 @@ import Hero from "@/components/sections/Hero";
 import InstallerSection from "@/components/sections/InstallerSection";
 import SectionLabel from "@/components/ui/SectionLabel";
 import FadeUp from "@/components/ui/FadeUp";
+import FeatureIcon from "@/components/ui/FeatureIcon";
 import TradeAccountForm from "@/components/sections/TradeAccountForm";
 
 export const metadata: Metadata = {
@@ -51,7 +52,9 @@ export default function TradePage() {
                     "Dedicated trade account manager",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
-                      <span className="text-gold mt-1 shrink-0">—</span>
+                      <span className="text-gold mt-0.5 shrink-0">
+                        <FeatureIcon text={item} />
+                      </span>
                       <span className="font-body font-light text-text-mid text-sm">{item}</span>
                     </li>
                   ))}

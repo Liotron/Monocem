@@ -4,7 +4,7 @@ import Hero from "@/components/sections/Hero";
 import SectionLabel from "@/components/ui/SectionLabel";
 import FadeUp from "@/components/ui/FadeUp";
 import ColourSwatch from "@/components/ui/ColourSwatch";
-import QuoteForm from "@/components/sections/QuoteForm";
+import CtaBanner from "@/components/sections/CtaBanner";
 import { colourGroups, bespokeCta } from "@/lib/data/colours";
 
 export const metadata: Metadata = {
@@ -67,7 +67,7 @@ export default function ColoursPage() {
                 </FadeUp>
               )}
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-5 gap-y-8 md:gap-x-8 md:gap-y-10">
+              <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-x-4 gap-y-8 md:gap-x-8 md:gap-y-10">
                 {group.colours.map((colour, ci) => (
                   <FadeUp key={colour.name} delay={(Math.min(ci % 5, 4) as 0 | 1 | 2 | 3 | 4)}>
                     <ColourSwatch colour={colour} index={ci} />
@@ -91,7 +91,14 @@ export default function ColoursPage() {
         </div>
       </section>
 
-      <QuoteForm />
+      <CtaBanner
+        eyebrow="Order Samples"
+        heading="Found Your"
+        headingItalic="Colour?"
+        text="Order a sample pack to see and feel your chosen shades in person, or request a detailed quote for your project."
+        primaryCta={{ label: "Order Sample Pack", href: "/sample-pack" }}
+        secondaryCta={{ label: "Get a Quote", href: "/get-a-quote" }}
+      />
     </>
   );
 }

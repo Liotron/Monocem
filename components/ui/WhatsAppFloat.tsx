@@ -47,7 +47,7 @@ export default function WhatsAppFloat() {
       aria-label="Chat on WhatsApp"
       aria-hidden={!visible}
       tabIndex={visible ? 0 : -1}
-      className="fixed bottom-6 right-6 z-40 w-14 h-14 bg-[#25D366] flex items-center justify-center shadow-lg"
+      className="fixed bottom-28 right-5 lg:bottom-6 lg:right-6 z-40 w-14 h-14 bg-[#25D366] flex items-center justify-center shadow-lg"
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0) scale(1)" : "translateY(14px) scale(0.96)",

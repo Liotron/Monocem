@@ -7,7 +7,6 @@ import NumberedList from "@/components/ui/NumberedList";
 import CtaBanner from "@/components/sections/CtaBanner";
 import RelatedLinks from "@/components/sections/RelatedLinks";
 import FAQAccordion from "@/components/sections/FAQAccordion";
-import QuoteForm from "@/components/sections/QuoteForm";
 
 export const metadata: Metadata = {
   title: "Technical Information | Microcement Data & Downloads | MONOCEM",
@@ -219,8 +218,6 @@ export default function TechnicalPage() {
         primaryCta={{ label: "Download Technical Guide", href: "/get-a-quote" }}
         secondaryCta={{ label: "Trade Technical Data", href: "/trade/technical-data" }}
       />
-
-      <QuoteForm />
     </>
   );
 }

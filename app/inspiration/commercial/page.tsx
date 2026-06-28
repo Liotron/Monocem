@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Hero from "@/components/sections/Hero";
-import QuoteForm from "@/components/sections/QuoteForm";
+import CtaBanner from "@/components/sections/CtaBanner";
 import SectionLabel from "@/components/ui/SectionLabel";
 import FadeUp from "@/components/ui/FadeUp";
 
@@ -49,7 +49,14 @@ export default function CommercialPage() {
           </FadeUp>
         </div>
       </section>
-      <QuoteForm />
+      <CtaBanner
+        eyebrow="Get in Touch"
+        heading="Discuss Your"
+        headingItalic="Commercial Project"
+        text="Whether it's a hotel, restaurant, office, or retail space, our team can help you specify the right system."
+        primaryCta={{ label: "Get a Quote", href: "/get-a-quote" }}
+        secondaryCta={{ label: "View Residential Work", href: "/inspiration/residential" }}
+      />
     </>
   );
 }

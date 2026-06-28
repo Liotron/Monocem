@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Hero from "@/components/sections/Hero";
 import SectionLabel from "@/components/ui/SectionLabel";
 import FadeUp from "@/components/ui/FadeUp";
-import QuoteForm from "@/components/sections/QuoteForm";
+import CtaBanner from "@/components/sections/CtaBanner";
+import FeatureIcon from "@/components/ui/FeatureIcon";
 import { surfaces } from "@/lib/data/surfaces";
 import { truncateAtWord } from "@/lib/utils/text";
+
+function surfaceThumbnail(surface: (typeof surfaces)[number]) {
+  return surface.heroImage ?? surface.storyFigures?.[0]?.image;
+}
 
 export const metadata: Metadata = {
   title: "Microcement Installation UK | All Surface Systems | MONOCEM",
@@ -58,25 +64,38 @@ export default function InstallationPage() {
               <FadeUp key={surface.slug} delay={(Math.min(i % 4, 4) as 0 | 1 | 2 | 3 | 4)}>
                 <Link
                   href={`/installation/${surface.slug}`}
-                  className="group block p-8 border border-charcoal/10 hover:border-gold/40 transition-all duration-400 ease-brand"
+                  className="group block border border-charcoal/10 hover:border-gold/40 transition-all duration-400 ease-brand overflow-hidden"
                 >
-                  <h3 className="font-display font-light text-charcoal text-2xl mb-3 group-hover:text-gold transition-colors duration-400 ease-brand">
-                    {surface.name}
-                  </h3>
-                  <p className="font-body font-light text-text-light text-sm leading-relaxed mb-6">
-                    {truncateAtWord(surface.description, 120)}
-                  </p>
-                  <ul className="space-y-2 mb-6">
-                    {surface.benefits.slice(0, 3).map((b, bi) => (
-                      <li key={bi} className="flex items-start gap-2">
-                        <span className="text-gold text-[0.8rem] shrink-0 mt-0.5">—</span>
-                        <span className="font-body font-light text-text-light text-[0.8rem]">{b}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <span className="inline-flex items-center gap-1 text-[10px] font-body font-medium tracking-button uppercase text-gold">
-                    Learn more <span className="transition-transform duration-400 ease-brand group-hover:translate-x-1">→</span>
-                  </span>
+                  <div className="relative aspect-[4/3] overflow-hidden bg-stone/30">
+                    <Image
+                      src={surfaceThumbnail(surface) ?? "/images/img-floors.png"}
+                      alt={`${surface.name} microcement installation`}
+                      fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover transition-transform duration-[800ms] ease-brand group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="p-8">
+                    <h3 className="font-display font-light text-charcoal text-2xl mb-3 group-hover:text-gold transition-colors duration-400 ease-brand">
+                      {surface.name}
+                    </h3>
+                    <p className="font-body font-light text-text-light text-sm leading-relaxed mb-6">
+                      {truncateAtWord(surface.description, 120)}
+                    </p>
+                    <ul className="space-y-2 mb-6">
+                      {surface.benefits.slice(0, 3).map((b, bi) => (
+                        <li key={bi} className="flex items-start gap-2">
+                          <span className="text-gold shrink-0 mt-0.5">
+                            <FeatureIcon text={b} className="w-[14px] h-[14px]" />
+                          </span>
+                          <span className="font-body font-light text-text-light text-[0.8rem]">{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <span className="inline-flex items-center gap-1 text-[10px] font-body font-medium tracking-button uppercase text-gold">
+                      Learn more <span className="transition-transform duration-400 ease-brand group-hover:translate-x-1">→</span>
+                    </span>
+                  </div>
                 </Link>
               </FadeUp>
             ))}
@@ -84,7 +103,13 @@ export default function InstallationPage() {
         </div>
       </section>
 
-      <QuoteForm />
+      <CtaBanner
+        heading="Ready to Transform"
+        headingItalic="Your Space?"
+        text="Tell us about your project and we'll provide a detailed quote within 1–2 business days."
+        primaryCta={{ label: "Get a Free Quote", href: "/get-a-quote" }}
+        secondaryCta={{ label: "View Products", href: "/products" }}
+      />
     </>
   );
 }

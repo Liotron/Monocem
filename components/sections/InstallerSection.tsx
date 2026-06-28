@@ -1,6 +1,7 @@
 import Link from "next/link";
 import SectionLabel from "@/components/ui/SectionLabel";
 import FadeUp from "@/components/ui/FadeUp";
+import FeatureIcon from "@/components/ui/FeatureIcon";
 
 export default function InstallerSection() {
   return (
@@ -32,7 +33,9 @@ export default function InstallerSection() {
                   "Regular technique workshops and CPD",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <span className="text-gold mt-0.5 shrink-0">—</span>
+                    <span className="text-gold mt-0.5 shrink-0">
+                      <FeatureIcon text={item} />
+                    </span>
                     <span className="font-body font-light text-white/60 text-sm">{item}</span>
                   </li>
                 ))}

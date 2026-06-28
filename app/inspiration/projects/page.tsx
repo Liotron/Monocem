@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Hero from "@/components/sections/Hero";
 import ProjectsFilterGrid from "@/components/sections/ProjectsFilterGrid";
-import QuoteForm from "@/components/sections/QuoteForm";
+import CtaBanner from "@/components/sections/CtaBanner";
 
 export const metadata: Metadata = {
   title: "Microcement Project Portfolio | MONOCEM",
@@ -21,7 +21,14 @@ export default function ProjectsPage() {
         secondaryCta={{ label: "Our Systems", href: "/installation" }}
       />
       <ProjectsFilterGrid />
-      <QuoteForm />
+      <CtaBanner
+        eyebrow="Start Your Project"
+        heading="Inspired By"
+        headingItalic="What You've Seen?"
+        text="Tell us about your project and we'll provide a detailed quote within 1–2 business days."
+        primaryCta={{ label: "Get a Free Quote", href: "/get-a-quote" }}
+        secondaryCta={{ label: "Explore Our Systems", href: "/installation" }}
+      />
     </>
   );
 }

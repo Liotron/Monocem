@@ -5,8 +5,8 @@ import Hero from "@/components/sections/Hero";
 import SectionLabel from "@/components/ui/SectionLabel";
 import FadeUp from "@/components/ui/FadeUp";
 import ColourCollection from "@/components/sections/ColourCollection";
-import QuoteForm from "@/components/sections/QuoteForm";
 import FAQAccordion from "@/components/sections/FAQAccordion";
+import FeatureIcon from "@/components/ui/FeatureIcon";
 
 interface SurfacePageProps {
   surface: Surface;
@@ -130,7 +130,9 @@ export default function SurfacePage({ surface }: SurfacePageProps) {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
                   {surface.features.map((feature, i) => (
                     <div key={i} className="flex items-start gap-4">
-                      <span className="text-gold mt-1 shrink-0">—</span>
+                      <span className="text-gold mt-1 shrink-0">
+                        <FeatureIcon text={feature.title} />
+                      </span>
                       <div>
                         <h5 className="font-body text-[0.8rem] font-medium tracking-wide text-charcoal mb-1">{feature.title}</h5>
                         <p className="font-body font-light text-text-light text-[0.82rem] leading-relaxed">{feature.desc}</p>
@@ -204,8 +206,6 @@ export default function SurfacePage({ surface }: SurfacePageProps) {
       </section>
 
       <FAQAccordion />
-
-      <QuoteForm />
     </>
   );
 }

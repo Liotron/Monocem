@@ -1,6 +1,7 @@
 import Link from "next/link";
 import SectionLabel from "@/components/ui/SectionLabel";
 import FadeUp from "@/components/ui/FadeUp";
+import FeatureIcon from "@/components/ui/FeatureIcon";
 import { allColours } from "@/lib/data/colours";
 
 export default function SampleRequest() {
@@ -34,7 +35,9 @@ export default function SampleRequest() {
                   "Dispatched within 1–3 working days",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <span className="text-gold mt-1 text-sm shrink-0">—</span>
+                    <span className="text-gold mt-0.5 shrink-0">
+                      <FeatureIcon text={item} />
+                    </span>
                     <span className="font-body font-light text-white/60 text-sm">{item}</span>
                   </li>
                 ))}

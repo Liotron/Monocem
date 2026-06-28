@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Hero from "@/components/sections/Hero";
 import FAQAccordion, { defaultFaqs } from "@/components/sections/FAQAccordion";
-import QuoteForm from "@/components/sections/QuoteForm";
+import CtaBanner from "@/components/sections/CtaBanner";
 
 export const metadata: Metadata = {
   title: "FAQ | MONOCEM",
@@ -64,7 +64,14 @@ export default function FaqPage() {
       <FAQAccordion faqs={deliveryFaqs} dark heading="Delivery &" headingItalic="Samples" />
       <FAQAccordion faqs={technicalFaqs} heading="Technical &" headingItalic="Installation" />
 
-      <QuoteForm />
+      <CtaBanner
+        eyebrow="Get Started"
+        heading="Still Have"
+        headingItalic="Questions?"
+        text="Our team is on hand to help with any technical, delivery, or product questions not covered here."
+        primaryCta={{ label: "Get a Free Quote", href: "/get-a-quote" }}
+        secondaryCta={{ label: "Order a Sample Pack", href: "/sample-pack" }}
+      />
     </>
   );
 }

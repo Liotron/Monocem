@@ -1,18 +1,23 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Location } from "@/lib/data/locations";
 import Hero from "@/components/sections/Hero";
 import SectionLabel from "@/components/ui/SectionLabel";
 import FadeUp from "@/components/ui/FadeUp";
 import ColourCollection from "@/components/sections/ColourCollection";
-import QuoteForm from "@/components/sections/QuoteForm";
+import CtaBanner from "@/components/sections/CtaBanner";
 import FAQAccordion from "@/components/sections/FAQAccordion";
+import FeatureIcon from "@/components/ui/FeatureIcon";
 import { surfaces } from "@/lib/data/surfaces";
+import { truncateAtWord } from "@/lib/utils/text";
 
 interface LocationPageProps {
   location: Location;
 }
 
 const topCities = ["London", "Manchester", "Birmingham", "Bristol", "Leeds"];
+
+const whyMonocemStats = ["15+ Years", "2,400+ Projects", "40+ UK Cities", "5-Year Guarantee"];
 
 export default function LocationPage({ location }: LocationPageProps) {
   const nearbyLocations = topCities.filter((c) => c !== location.name).slice(0, 4);
@@ -42,7 +47,7 @@ export default function LocationPage({ location }: LocationPageProps) {
         eyebrow={location.region}
         headline={`Microcement Installation in ${location.name}`}
         subtext={`MONOCEM supplies and installs premium microcement across ${location.name} and the wider ${location.region}. Seamless, waterproof surfaces for floors, walls, bathrooms, and worktops.`}
-        primaryCta={{ label: "Get a Free Quote", href: "#quote" }}
+        primaryCta={{ label: "Get a Free Quote", href: "/get-a-quote" }}
         secondaryCta={{ label: "View Our Systems", href: "/installation" }}
       />
 
@@ -74,7 +79,7 @@ export default function LocationPage({ location }: LocationPageProps) {
                     {surface.name}
                   </h3>
                   <p className="font-body font-light text-text-light text-sm leading-relaxed">
-                    {surface.description.slice(0, 100)}...
+                    {truncateAtWord(surface.description, 100)}
                   </p>
                   <span className="inline-flex items-center gap-1 text-[10px] font-body font-medium tracking-button uppercase text-gold mt-4">
                     Learn more <span className="transition-transform duration-400 ease-brand group-hover:translate-x-1">→</span>
@@ -108,7 +113,9 @@ export default function LocationPage({ location }: LocationPageProps) {
                     { title: "Full project management", desc: "From initial consultation to final seal coat, we manage every stage of your microcement project." },
                   ].map((item) => (
                     <li key={item.title} className="flex gap-4">
-                      <span className="text-gold mt-1 shrink-0">—</span>
+                      <span className="text-gold mt-1 shrink-0">
+                        <FeatureIcon text={item.title} />
+                      </span>
                       <div>
                         <p className="font-body font-medium text-white text-sm mb-1">{item.title}</p>
                         <p className="font-body font-light text-white/50 text-sm leading-relaxed">{item.desc}</p>
@@ -119,16 +126,22 @@ export default function LocationPage({ location }: LocationPageProps) {
               </FadeUp>
             </div>
             <FadeUp delay={1}>
-              <div
-                className="aspect-square"
-                style={{ background: "linear-gradient(160deg, #4a4540 0%, #2e2a26 50%, #1a1816 100%)" }}
-              >
-                <div
-                  className="w-full h-full opacity-20 mix-blend-overlay"
-                  style={{
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E")`,
-                  }}
+              <div className="relative aspect-square overflow-hidden" style={{ borderRadius: 12 }}>
+                <Image
+                  src="/images/img-why-monocem.png"
+                  alt="MONOCEM microcement finish detail"
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 flex flex-wrap gap-x-5 gap-y-2">
+                  {whyMonocemStats.map((stat) => (
+                    <span key={stat} className="font-body text-[0.7rem] font-medium tracking-wide text-white/85">
+                      {stat}
+                    </span>
+                  ))}
+                </div>
               </div>
             </FadeUp>
           </div>
@@ -137,7 +150,13 @@ export default function LocationPage({ location }: LocationPageProps) {
 
       <ColourCollection />
 
-      <QuoteForm />
+      <CtaBanner
+        heading={`Start Your ${location.name}`}
+        headingItalic="Project"
+        text="Tell us about your project and we'll provide a detailed quote within 1–2 business days."
+        primaryCta={{ label: "Get a Free Quote", href: "/get-a-quote" }}
+        secondaryCta={{ label: "View Our Systems", href: "/installation" }}
+      />
 
       <FAQAccordion faqs={faqs} />
 

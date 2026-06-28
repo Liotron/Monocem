@@ -1,13 +1,18 @@
 import Link from "next/link";
+import Image from "next/image";
 import SectionLabel from "@/components/ui/SectionLabel";
 import FadeUp from "@/components/ui/FadeUp";
-import QuoteForm from "@/components/sections/QuoteForm";
+import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import { guideCategories } from "@/lib/data/guides";
 
 interface GuideSection {
   id: string;
   heading: string;
   content: string;
+  table?: {
+    headers: string[];
+    rows: string[][];
+  };
 }
 
 interface SidebarLink {
@@ -21,6 +26,13 @@ interface GuideArticleData {
   subtitle: string;
   categorySlug: string;
   intro: string;
+  /**
+   * Featured in-article photo. Use a real existing site asset where one is
+   * topically relevant; otherwise leave undefined to show a labeled
+   * "awaiting photography" placeholder instead of fabricating an image.
+   */
+  image?: string;
+  imageCaption?: string;
   sections: GuideSection[];
   relatedLinks?: { label: string; href: string }[];
   sidebarLinks?: SidebarLink[];
@@ -100,6 +112,21 @@ export default function GuideArticle({ data }: GuideArticleProps) {
                 </p>
               </FadeUp>
 
+              <FadeUp delay={1}>
+                <figure className="mb-10 lg:mb-12">
+                  <div className="relative aspect-[16/9] overflow-hidden" style={{ borderRadius: 12 }}>
+                    {data.image ? (
+                      <Image src={data.image} alt={data.imageCaption || data.title} fill sizes="(min-width: 1024px) 700px, 100vw" className="object-cover" />
+                    ) : (
+                      <ImagePlaceholder label="Awaiting photography for this guide" />
+                    )}
+                  </div>
+                  {data.image && data.imageCaption && (
+                    <figcaption className="mt-2 font-body font-light text-text-light text-xs">{data.imageCaption}</figcaption>
+                  )}
+                </figure>
+              </FadeUp>
+
               {/* Mobile-only collapsible TOC */}
               <details className="lg:hidden mb-8 border border-charcoal/10 p-5">
                 <summary className="cursor-pointer font-body text-[11px] font-medium tracking-button uppercase text-gold">
@@ -126,6 +153,38 @@ export default function GuideArticle({ data }: GuideArticleProps) {
                       <p className="font-body font-light text-text-mid text-base leading-relaxed">
                         {section.content}
                       </p>
+                      {section.table && (
+                        <div className="mt-6 overflow-x-auto">
+                          <table className="w-full text-left border-collapse">
+                            <thead>
+                              <tr className="border-b border-charcoal/15">
+                                {section.table.headers.map((header, hi) => (
+                                  <th
+                                    key={hi}
+                                    className="py-3 pr-6 font-body font-medium text-[11px] tracking-button uppercase text-text-light"
+                                  >
+                                    {header}
+                                  </th>
+                                ))}
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {section.table.rows.map((row, ri) => (
+                                <tr key={ri} className="border-b border-stone/50">
+                                  {row.map((cell, ci) => (
+                                    <td
+                                      key={ci}
+                                      className="py-3 pr-6 font-body font-light text-text-mid text-sm leading-relaxed"
+                                    >
+                                      {cell}
+                                    </td>
+                                  ))}
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      )}
                     </div>
                   </FadeUp>
                 ))}
@@ -204,8 +263,6 @@ export default function GuideArticle({ data }: GuideArticleProps) {
           </div>
         </div>
       </article>
-
-      <QuoteForm />
     </>
   );
 }

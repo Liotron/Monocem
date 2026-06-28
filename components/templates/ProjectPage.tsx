@@ -6,7 +6,8 @@ import { firstSentence } from "@/lib/utils/text";
 import Hero from "@/components/sections/Hero";
 import SectionLabel from "@/components/ui/SectionLabel";
 import FadeUp from "@/components/ui/FadeUp";
-import QuoteForm from "@/components/sections/QuoteForm";
+import CtaBanner from "@/components/sections/CtaBanner";
+import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 
 interface ProjectPageProps {
   project: Project;
@@ -94,6 +95,41 @@ export default function ProjectPage({ project }: ProjectPageProps) {
         </div>
       </section>
 
+      {/* Project gallery — additional real job photos slot in here once supplied */}
+      <section className="pb-24 lg:pb-32 bg-warm-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <FadeUp>
+            <SectionLabel className="mb-8">Gallery</SectionLabel>
+          </FadeUp>
+          <FadeUp delay={1}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="relative aspect-[4/3] sm:col-span-2 sm:aspect-[16/8] overflow-hidden" style={{ borderRadius: 12 }}>
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  sizes="100vw"
+                  className="object-cover"
+                  style={{ objectPosition: project.imagePosition || "center" }}
+                />
+              </div>
+              {(project.gallery && project.gallery.length > 0
+                ? project.gallery
+                : ["awaiting-1", "awaiting-2"]
+              ).map((img, i) => (
+                <div key={img} className="relative aspect-[4/3] overflow-hidden" style={{ borderRadius: 12 }}>
+                  {project.gallery && project.gallery.length > 0 ? (
+                    <Image src={img} alt={`${project.title} — detail ${i + 1}`} fill sizes="(min-width: 640px) 50vw, 100vw" className="object-cover" />
+                  ) : (
+                    <ImagePlaceholder label="Awaiting additional job photography" />
+                  )}
+                </div>
+              ))}
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
       <section className="py-20 bg-cream border-t border-stone/50">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <SectionLabel className="mb-8">More Projects</SectionLabel>
@@ -125,7 +161,13 @@ export default function ProjectPage({ project }: ProjectPageProps) {
         </div>
       </section>
 
-      <QuoteForm />
+      <CtaBanner
+        heading="Start a Similar"
+        headingItalic="Project"
+        text="Tell us about your project and we'll provide a detailed quote within 1–2 business days."
+        primaryCta={{ label: "Get a Free Quote", href: "/get-a-quote" }}
+        secondaryCta={{ label: "All Projects", href: "/inspiration/projects" }}
+      />
     </>
   );
 }

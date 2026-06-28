@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Hero from "@/components/sections/Hero";
 import ProjectsGallery from "@/components/sections/ProjectsGallery";
-import QuoteForm from "@/components/sections/QuoteForm";
+import CtaBanner from "@/components/sections/CtaBanner";
 
 export const metadata: Metadata = {
   title: "Residential Microcement Projects | MONOCEM",
@@ -21,7 +21,14 @@ export default function ResidentialPage() {
         secondaryCta={{ label: "Our Systems", href: "/installation" }}
       />
       <ProjectsGallery />
-      <QuoteForm />
+      <CtaBanner
+        eyebrow="Your Home"
+        heading="Ready to Transform"
+        headingItalic="Your Space?"
+        text="Tell us about your project and we'll provide a detailed quote within 1–2 business days."
+        primaryCta={{ label: "Get a Free Quote", href: "/get-a-quote" }}
+        secondaryCta={{ label: "View Commercial Work", href: "/inspiration/commercial" }}
+      />
     </>
   );
 }

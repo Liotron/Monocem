@@ -7,7 +7,6 @@ import NumberedList from "@/components/ui/NumberedList";
 import CtaBanner from "@/components/sections/CtaBanner";
 import RelatedLinks from "@/components/sections/RelatedLinks";
 import FAQAccordion from "@/components/sections/FAQAccordion";
-import QuoteForm from "@/components/sections/QuoteForm";
 
 export const metadata: Metadata = {
   title: "Fast UK Delivery | Microcement Samples & Orders | MONOCEM",
@@ -241,8 +240,6 @@ export default function DeliveryPage() {
         primaryCta={{ label: "Order Samples", href: "/sample-pack" }}
         secondaryCta={{ label: "Get a Quote", href: "/get-a-quote" }}
       />
-
-      <QuoteForm />
     </>
   );
 }

@@ -7,6 +7,11 @@ export interface Product {
   howToUse: string[];
   seoTitle: string;
   seoDescription: string;
+  /**
+   * Pack shot, texture/finish macro, in-situ application (min. 3).
+   * Awaiting real product photography — leave undefined until supplied.
+   */
+  images?: string[];
 }
 
 export const products: Product[] = [

@@ -1,9 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Product } from "@/lib/data/products";
 import Hero from "@/components/sections/Hero";
 import SectionLabel from "@/components/ui/SectionLabel";
 import FadeUp from "@/components/ui/FadeUp";
-import QuoteForm from "@/components/sections/QuoteForm";
+import CtaBanner from "@/components/sections/CtaBanner";
+import FeatureIcon from "@/components/ui/FeatureIcon";
+import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import { products } from "@/lib/data/products";
 
 interface ProductPageProps {
@@ -39,6 +42,38 @@ export default function ProductPage({ product }: ProductPageProps) {
         secondaryCta={{ label: "All Products", href: "/products" }}
       />
 
+      {/* Product gallery — populates from product.images once real photography is supplied */}
+      <section className="pt-10 md:pt-14 lg:pt-16 bg-warm-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <FadeUp>
+            {product.images && product.images.length > 0 ? (
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {product.images.slice(0, 3).map((img, i) => (
+                  <div
+                    key={img}
+                    className={`relative aspect-square overflow-hidden ${i === 0 ? "sm:col-span-2 sm:aspect-[16/10]" : ""}`}
+                    style={{ borderRadius: 12 }}
+                  >
+                    <Image
+                      src={img}
+                      alt={`${product.name} — photo ${i + 1}`}
+                      fill
+                      priority={i === 0}
+                      sizes="(min-width: 640px) 50vw, 100vw"
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="relative w-full aspect-[21/9] overflow-hidden" style={{ borderRadius: 12 }}>
+                <ImagePlaceholder label="Awaiting product photography" />
+              </div>
+            )}
+          </FadeUp>
+        </div>
+      </section>
+
       <section className="py-24 lg:py-32 bg-warm-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -69,7 +104,9 @@ export default function ProductPage({ product }: ProductPageProps) {
                 <ul className="space-y-4 mb-10">
                   {product.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-4">
-                      <span className="text-gold mt-1 shrink-0">—</span>
+                      <span className="text-gold mt-1 shrink-0">
+                        <FeatureIcon text={feature} />
+                      </span>
                       <p className="font-body font-light text-text-mid text-sm leading-relaxed">{feature}</p>
                     </li>
                   ))}
@@ -124,7 +161,13 @@ export default function ProductPage({ product }: ProductPageProps) {
         </div>
       </section>
 
-      <QuoteForm />
+      <CtaBanner
+        heading="Request a Quote for"
+        headingItalic={product.name}
+        text="Tell us about your project and we'll provide a detailed quote within 1–2 business days."
+        primaryCta={{ label: "Get a Free Quote", href: "/get-a-quote" }}
+        secondaryCta={{ label: "All Products", href: "/products" }}
+      />
     </>
   );
 }

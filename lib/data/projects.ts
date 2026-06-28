@@ -11,6 +11,11 @@ export interface Project {
   colour: string;
   finish: string;
   description: string;
+  /**
+   * Additional real photos from this job (wide shots, detail/macro, before-after).
+   * Awaiting real photography beyond the single hero shot — leave undefined until supplied.
+   */
+  gallery?: string[];
 }
 
 export const projects: Project[] = [

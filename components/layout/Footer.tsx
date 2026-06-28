@@ -69,59 +69,11 @@ function IconLayers() {
   );
 }
 
-function IconCap() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-      <path d="M9 3L16.5 6.5L9 10L1.5 6.5L9 3Z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
-      <path d="M4.5 8V12C4.5 12 6.5 13.5 9 13.5C11.5 13.5 13.5 12 13.5 12V8" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M16.5 6.5V11" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
-    </svg>
-  );
-}
-
 function IconPerson() {
   return (
     <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
       <circle cx="9" cy="5.5" r="3" stroke="currentColor" strokeWidth="1.3" />
       <path d="M2.5 16C2.5 12.4 5.4 9.5 9 9.5C12.6 9.5 15.5 12.4 15.5 16" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-function IconPin() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-      <path
-        d="M9 16.5C9 16.5 14.5 11.8 14.5 7.5C14.5 4.46 12.04 2 9 2C5.96 2 3.5 4.46 3.5 7.5C3.5 11.8 9 16.5 9 16.5Z"
-        stroke="currentColor"
-        strokeWidth="1.3"
-        strokeLinejoin="round"
-      />
-      <circle cx="9" cy="7.5" r="2" stroke="currentColor" strokeWidth="1.3" />
-    </svg>
-  );
-}
-
-function IconDoc() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-      <path d="M4.5 1.5H11L14.5 5V16.5H4.5V1.5Z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
-      <path d="M11 1.5V5H14.5" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
-      <path d="M6.5 9H12.5M6.5 11.5H12.5M6.5 14H10" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-function IconBook() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-      <path
-        d="M9 4.5C9 4.5 7 3 3.5 3V14C7 14 9 15.5 9 15.5C9 15.5 11 14 14.5 14V3C11 3 9 4.5 9 4.5Z"
-        stroke="currentColor"
-        strokeWidth="1.3"
-        strokeLinejoin="round"
-      />
-      <path d="M9 4.5V15.5" stroke="currentColor" strokeWidth="1.3" />
     </svg>
   );
 }
@@ -181,12 +133,8 @@ const resourceLinks: SimpleLink[] = [
 ];
 
 const professionalLinks: RichLink[] = [
-  { label: "Systems", description: "Explore the complete MONOCEM professional system.", href: "/trade/systems", icon: <IconLayers /> },
-  { label: "Training Academy", description: "Professional microcement training and certification.", href: "/trade/training-academy", icon: <IconCap /> },
+  { label: "Trade Programme", description: "Trade pricing, supply and installer training overview.", href: "/trade", icon: <IconLayers /> },
   { label: "Become an Installer", description: "Join the MONOCEM installer network.", href: "/trade/installer-programme", icon: <IconPerson /> },
-  { label: "Approved Installers", description: "Find a certified MONOCEM installer near you.", href: "/trade/approved-installers", icon: <IconPin /> },
-  { label: "Technical Data Sheets", description: "Specifications, coverage rates and downloads.", href: "/trade/technical-data", icon: <IconDoc /> },
-  { label: "Installation Guides", description: "Professional application documentation.", href: "/trade/installation-guides", icon: <IconBook /> },
 ];
 
 const supportLinks: SimpleLink[] = [

@@ -6,7 +6,6 @@ import FadeUp from "@/components/ui/FadeUp";
 import NumberedList from "@/components/ui/NumberedList";
 import CtaBanner from "@/components/sections/CtaBanner";
 import RelatedLinks from "@/components/sections/RelatedLinks";
-import QuoteForm from "@/components/sections/QuoteForm";
 
 export const metadata: Metadata = {
   title: "About MONOCEM | Microcement Designed in Britain, Made in Europe",
@@ -169,8 +168,6 @@ export default function AboutPage() {
         primaryCta={{ label: "Discuss Your Project", href: "/get-a-quote" }}
         secondaryCta={{ label: "View Our Products", href: "/products" }}
       />
-
-      <QuoteForm />
     </>
   );
 }

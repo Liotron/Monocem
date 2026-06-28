@@ -82,8 +82,8 @@ export default function QuoteForm() {
             </FadeUp>
           </div>
 
-          <FadeUp delay={1}>
-            <form onSubmit={handleSubmit} className="space-y-6 pb-24 lg:pb-0">
+          <form onSubmit={handleSubmit} className="space-y-6 pb-24 lg:pb-0">
+            <FadeUp delay={1} className="space-y-6">
               <input
                 type="text"
                 name="website"
@@ -213,18 +213,18 @@ export default function QuoteForm() {
               {status === "error" && (
                 <p className="text-[12px] font-body text-red-500">Something went wrong. Please try again or email us directly.</p>
               )}
+            </FadeUp>
 
-              <div className="fixed bottom-0 inset-x-0 z-30 bg-warm-white/95 backdrop-blur-sm border-t border-charcoal/10 p-4 pb-[max(1rem,env(safe-area-inset-bottom))] lg:static lg:bg-transparent lg:border-0 lg:backdrop-blur-none lg:p-0">
-                <button
-                  type="submit"
-                  disabled={status === "sending"}
-                  className="btn-gold w-full justify-center lg:w-auto disabled:opacity-50"
-                >
-                  {status === "sending" ? "Sending..." : "Submit Enquiry"}
-                </button>
-              </div>
-            </form>
-          </FadeUp>
+            <div className="fixed bottom-0 inset-x-0 z-30 bg-warm-white/95 backdrop-blur-sm border-t border-charcoal/10 p-4 pb-[max(1rem,env(safe-area-inset-bottom))] lg:static lg:bg-transparent lg:border-0 lg:backdrop-blur-none lg:p-0">
+              <button
+                type="submit"
+                disabled={status === "sending"}
+                className="btn-gold w-full justify-center lg:w-auto disabled:opacity-50"
+              >
+                {status === "sending" ? "Sending..." : "Submit Enquiry"}
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </section>
