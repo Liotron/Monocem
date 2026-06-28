@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import SectionLabel from "@/components/ui/SectionLabel";
 import FadeUp from "@/components/ui/FadeUp";
 
@@ -23,10 +24,15 @@ export default function ColourCollection() {
         </div>
 
         <FadeUp delay={1}>
-          <div
-            className="w-full aspect-[3/2] bg-cover bg-center"
-            style={{ backgroundImage: "url('/images/img-colour-board.png')" }}
-          />
+          <div className="relative w-full aspect-[3/2]">
+            <Image
+              src="/images/img-colour-board.png"
+              alt="MONOCEM microcement colour palette board"
+              fill
+              sizes="(min-width: 1200px) 1200px, 100vw"
+              className="object-cover"
+            />
+          </div>
         </FadeUp>
 
         <FadeUp delay={2} className="mt-8">

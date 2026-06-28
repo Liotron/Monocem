@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Surface } from "@/lib/data/surfaces";
 import Hero from "@/components/sections/Hero";
 import SectionLabel from "@/components/ui/SectionLabel";
@@ -56,9 +57,18 @@ export default function SurfacePage({ surface }: SurfacePageProps) {
               <FadeUp key={fig.image} delay={(i === 1 ? 1 : 0) as 0 | 1}>
                 <figure>
                   <div
-                    className={`w-full bg-cover bg-center ${fig.wide ? "aspect-[5/2] md:aspect-[10/3]" : "aspect-[16/9] md:aspect-[21/9]"}`}
-                    style={{ backgroundImage: `url('${fig.image}')`, borderRadius: 16 }}
-                  />
+                    className={`relative w-full overflow-hidden ${fig.wide ? "aspect-[5/2] md:aspect-[10/3]" : "aspect-[16/9] md:aspect-[21/9]"}`}
+                    style={{ borderRadius: 16 }}
+                  >
+                    <Image
+                      src={fig.image}
+                      alt={fig.caption}
+                      fill
+                      priority={i === 0}
+                      sizes="100vw"
+                      className="object-cover"
+                    />
+                  </div>
                   <figcaption className="mt-3 text-center text-[0.65rem] font-body font-medium tracking-[0.22em] uppercase text-text-light">
                     {fig.caption}
                   </figcaption>
@@ -71,9 +81,19 @@ export default function SurfacePage({ surface }: SurfacePageProps) {
         <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-10 md:pt-14 lg:pt-16">
           <FadeUp>
             <div
-              className="w-full aspect-[16/9] md:aspect-[21/9] bg-cover"
-              style={{ backgroundImage: `url('${surface.heroImage}')`, backgroundPosition: surface.heroImagePosition ?? "center", borderRadius: 16 }}
-            />
+              className="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden"
+              style={{ borderRadius: 16 }}
+            >
+              <Image
+                src={surface.heroImage!}
+                alt={`${surface.name} microcement installation`}
+                fill
+                priority
+                sizes="100vw"
+                className="object-cover"
+                style={{ objectPosition: surface.heroImagePosition ?? "center" }}
+              />
+            </div>
           </FadeUp>
         </div>
       )}

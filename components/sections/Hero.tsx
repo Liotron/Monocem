@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 interface HeroProps {
@@ -39,13 +40,14 @@ export default function Hero({
         className="relative flex items-end overflow-hidden px-8 pb-16"
         style={{ minHeight }}
       >
-        <div
-          className="absolute inset-0 animate-hero-kenburns"
-          style={{
-            backgroundImage: `url('${backgroundImage}')`,
-            backgroundSize: "cover",
-            backgroundPosition: imagePosition,
-          }}
+        <Image
+          src={backgroundImage}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover animate-hero-kenburns"
+          style={{ objectPosition: imagePosition }}
         />
         <div
           className="absolute inset-0"

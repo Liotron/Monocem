@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionLabel from "@/components/ui/SectionLabel";
 import FadeUp from "@/components/ui/FadeUp";
 
@@ -27,16 +28,16 @@ export default function BrandIntro() {
 
         <FadeUp delay={2} className="mb-10">
           <div
-            className="relative overflow-hidden shadow-[0_30px_70px_-25px_rgba(29,27,24,0.35)]"
+            className="relative overflow-hidden aspect-[4/5] shadow-[0_30px_70px_-25px_rgba(29,27,24,0.35)]"
             style={{ borderRadius: 12 }}
           >
-            <div
-              className="w-full aspect-[4/5] animate-material-kenburns"
-              style={{
-                backgroundImage: "url('/images/img-material-hero.png')",
-                backgroundSize: "cover",
-                backgroundPosition: "50% 20%",
-              }}
+            <Image
+              src="/images/img-material-hero.png"
+              alt="MONOCEM microcement surface texture close-up"
+              fill
+              sizes="(min-width: 760px) 760px, 100vw"
+              className="object-cover animate-material-kenburns"
+              style={{ objectPosition: "50% 20%" }}
             />
           </div>
         </FadeUp>

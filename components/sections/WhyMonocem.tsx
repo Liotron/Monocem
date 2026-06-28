@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionLabel from "@/components/ui/SectionLabel";
 import FadeUp from "@/components/ui/FadeUp";
 
@@ -20,14 +21,17 @@ export default function WhyMonocem() {
 
         <FadeUp delay={1} className="mb-10">
           <div
-            className="w-full max-w-[640px] aspect-[4/5] shadow-[0_30px_70px_-25px_rgba(0,0,0,0.5)]"
-            style={{
-              backgroundImage: "url('/images/img-why-monocem.png')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              borderRadius: 12,
-            }}
-          />
+            className="relative w-full max-w-[640px] aspect-[4/5] overflow-hidden shadow-[0_30px_70px_-25px_rgba(0,0,0,0.5)]"
+            style={{ borderRadius: 12 }}
+          >
+            <Image
+              src="/images/img-why-monocem.png"
+              alt="MONOCEM microcement finish detail"
+              fill
+              sizes="(min-width: 640px) 640px, 100vw"
+              className="object-cover"
+            />
+          </div>
         </FadeUp>
 
         <FadeUp delay={2}>

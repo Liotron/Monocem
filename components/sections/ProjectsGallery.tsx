@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import SectionLabel from "@/components/ui/SectionLabel";
 import FadeUp from "@/components/ui/FadeUp";
 import { projects } from "@/lib/data/projects";
@@ -41,9 +42,13 @@ export default function ProjectsGallery() {
             href={`/inspiration/projects/${heroProject.slug}`}
             className="group relative block w-full aspect-[4/3] overflow-hidden"
           >
-            <div
-              className="absolute inset-0 transition-transform duration-[800ms] ease-brand group-hover:scale-[1.04]"
-              style={{ backgroundImage: `url('${heroProject.image}')`, backgroundSize: "cover", backgroundPosition: heroProject.imagePosition || "center" }}
+            <Image
+              src={heroProject.image}
+              alt={heroProject.title}
+              fill
+              sizes="(min-width: 1280px) 1280px, 100vw"
+              className="object-cover transition-transform duration-[800ms] ease-brand group-hover:scale-[1.04]"
+              style={{ objectPosition: heroProject.imagePosition || "center" }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/[0.68] via-black/[0.05] to-transparent" />
             <div className="absolute bottom-8 left-8">
@@ -64,9 +69,13 @@ export default function ProjectsGallery() {
                 href={`/inspiration/projects/${proj.slug}`}
                 className="group relative block aspect-[4/3] overflow-hidden"
               >
-                <div
-                  className="absolute inset-0 transition-transform duration-[800ms] ease-brand group-hover:scale-105"
-                  style={{ backgroundImage: `url('${proj.image}')`, backgroundSize: "cover", backgroundPosition: proj.imagePosition || "center" }}
+                <Image
+                  src={proj.image}
+                  alt={proj.title}
+                  fill
+                  sizes="(min-width: 1280px) 640px, (min-width: 640px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-[800ms] ease-brand group-hover:scale-105"
+                  style={{ objectPosition: proj.imagePosition || "center" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/65 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-5">

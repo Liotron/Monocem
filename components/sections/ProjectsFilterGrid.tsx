@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { projects, projectFilters } from "@/lib/data/projects";
 
 export default function ProjectsFilterGrid() {
@@ -36,13 +37,13 @@ export default function ProjectsFilterGrid() {
               href={`/inspiration/projects/${project.slug}`}
               className="group relative block aspect-[4/5] overflow-hidden"
             >
-              <div
-                className="absolute inset-0 transition-transform duration-[800ms] ease-brand group-hover:scale-105"
-                style={{
-                  backgroundImage: `url('${project.image}')`,
-                  backgroundSize: "cover",
-                  backgroundPosition: project.imagePosition || "center",
-                }}
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                sizes="(min-width: 1280px) 427px, (min-width: 640px) 33vw, 50vw"
+                className="object-cover transition-transform duration-[800ms] ease-brand group-hover:scale-105"
+                style={{ objectPosition: project.imagePosition || "center" }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-5">

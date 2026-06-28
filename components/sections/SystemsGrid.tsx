@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import SectionLabel from "@/components/ui/SectionLabel";
 import FadeUp from "@/components/ui/FadeUp";
 
@@ -40,9 +41,13 @@ export default function SystemsGrid() {
               href={app.href}
               className="group relative block overflow-hidden aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4]"
             >
-              <div
-                className="absolute inset-0 transition-transform duration-[800ms] ease-brand group-hover:scale-[1.06]"
-                style={{ backgroundImage: `url('${app.image}')`, backgroundSize: "cover", backgroundPosition: app.position }}
+              <Image
+                src={app.image}
+                alt={app.title}
+                fill
+                sizes="(min-width: 1024px) 427px, 50vw"
+                className="object-cover transition-transform duration-[800ms] ease-brand group-hover:scale-[1.06]"
+                style={{ objectPosition: app.position }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/[0.06] to-transparent transition-colors duration-400 group-hover:from-black/[0.78]" />
               <div

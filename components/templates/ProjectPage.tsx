@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Project } from "@/lib/data/projects";
 import { projects } from "@/lib/data/projects";
 import { firstSentence } from "@/lib/utils/text";
@@ -103,13 +104,13 @@ export default function ProjectPage({ project }: ProjectPageProps) {
                 href={`/inspiration/projects/${rel.slug}`}
                 className="group relative block aspect-[4/5] overflow-hidden"
               >
-                <div
-                  className="absolute inset-0 transition-transform duration-[800ms] ease-brand group-hover:scale-105"
-                  style={{
-                    backgroundImage: `url('${rel.image}')`,
-                    backgroundSize: "cover",
-                    backgroundPosition: rel.imagePosition || "center",
-                  }}
+                <Image
+                  src={rel.image}
+                  alt={rel.title}
+                  fill
+                  sizes="(min-width: 1280px) 427px, (min-width: 640px) 33vw, 100vw"
+                  className="object-cover transition-transform duration-[800ms] ease-brand group-hover:scale-105"
+                  style={{ objectPosition: rel.imagePosition || "center" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-5">
