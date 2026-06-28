@@ -24,10 +24,6 @@
   border-radius: 2px;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   color: var(--text-dark);
   background: var(--warm-white);

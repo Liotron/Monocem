@@ -5,6 +5,7 @@ import InstallerSection from "@/components/sections/InstallerSection";
 import SectionLabel from "@/components/ui/SectionLabel";
 import FadeUp from "@/components/ui/FadeUp";
 import FeatureIcon from "@/components/ui/FeatureIcon";
+import SmoothAnchorLink from "@/components/ui/SmoothAnchorLink";
 import TradeAccountForm from "@/components/sections/TradeAccountForm";
 
 export const metadata: Metadata = {
@@ -61,9 +62,9 @@ export default function TradePage() {
                 </ul>
               </FadeUp>
               <FadeUp delay={3}>
-                <Link href="#trade-account" className="btn-outline-dark">
+                <SmoothAnchorLink href="#trade-account" className="btn-outline-dark">
                   Open a Trade Account
-                </Link>
+                </SmoothAnchorLink>
               </FadeUp>
             </div>
 
