@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Logo from "@/components/ui/Logo";
 import MegaMenu from "./MegaMenu";
 
@@ -14,8 +14,41 @@ const topLinks = [
   { label: "Locations", href: "/locations" },
 ];
 
+// History-state marker for the open mobile menu, so the browser/device Back
+// button closes the menu as its own step instead of skipping straight to
+// whatever page was open underneath it.
+const MENU_HISTORY_KEY = "mcMobileMenuOpen";
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const onPopState = (e: PopStateEvent) => {
+      setMenuOpen(Boolean((e.state as Record<string, unknown> | null)?.[MENU_HISTORY_KEY]));
+    };
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
+
+  const openMenu = () => {
+    window.history.pushState({ ...window.history.state, [MENU_HISTORY_KEY]: true }, "", window.location.href);
+    setMenuOpen(true);
+  };
+
+  // X button / Escape key: consume the history entry we pushed so Back
+  // doesn't leave a stale "menu open" entry sitting in history.
+  const closeMenu = () => {
+    if ((window.history.state as Record<string, unknown> | null)?.[MENU_HISTORY_KEY]) {
+      window.history.back();
+    } else {
+      setMenuOpen(false);
+    }
+  };
+
+  // Clicking a link inside the menu: just hide the menu locally and let the
+  // link's own navigation push its entry on top — the menu's history entry
+  // stays in place underneath so Back returns to the menu first.
+  const handleMenuNavigate = () => setMenuOpen(false);
 
   return (
     <>
@@ -43,7 +76,7 @@ export default function Header() {
         </nav>
 
         <button
-          onClick={() => setMenuOpen(true)}
+          onClick={openMenu}
           className="min-[960px]:hidden flex flex-col gap-[5px] p-2"
           aria-label="Open menu"
         >
@@ -53,7 +86,7 @@ export default function Header() {
         </button>
       </header>
 
-      <MegaMenu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
+      <MegaMenu isOpen={menuOpen} onClose={closeMenu} onNavigate={handleMenuNavigate} />
     </>
   );
 }

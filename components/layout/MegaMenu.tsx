@@ -82,9 +82,10 @@ const directLinks: SubLink[] = [
 interface MegaMenuProps {
   isOpen: boolean;
   onClose: () => void;
+  onNavigate: () => void;
 }
 
-export default function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
+export default function MegaMenu({ isOpen, onClose, onNavigate }: MegaMenuProps) {
   const [subPanel, setSubPanel] = useState<string | null>(null);
 
   useEffect(() => {
@@ -170,7 +171,7 @@ export default function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
                 <Link
                   key={link.href}
                   href={link.href}
-                  onClick={onClose}
+                  onClick={onNavigate}
                   style={{ transitionDelay: isOpen ? `${0.05 + (categories.length + 1 + i) * 0.05}s` : "0s" }}
                   className={`font-display text-[2.1rem] sm:text-[2.75rem] lg:text-[3.25rem] font-light leading-[1.2] text-charcoal min-h-[60px] py-2 border-b border-black/[0.08] flex items-center transition-[color,transform,opacity] duration-300 ease-menu hover:text-gold hover:translate-x-2 ${
                     isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
@@ -181,7 +182,7 @@ export default function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
               ))}
             </nav>
           </div>
-          <Link href="/get-a-quote" onClick={onClose} className="block w-full min-h-[60px] px-8 bg-charcoal text-white font-body text-[0.7rem] font-medium tracking-[0.18em] uppercase text-center flex items-center justify-center hover:bg-gold transition-colors duration-300">
+          <Link href="/get-a-quote" onClick={onNavigate} className="block w-full min-h-[60px] px-8 bg-charcoal text-white font-body text-[0.7rem] font-medium tracking-[0.18em] uppercase text-center flex items-center justify-center hover:bg-gold transition-colors duration-300">
             Get a Quote
           </Link>
         </div>
@@ -203,7 +204,7 @@ export default function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
                 <Link
                   key={item.href}
                   href={item.href}
-                  onClick={onClose}
+                  onClick={onNavigate}
                   className={`py-3 border-b border-black/[0.06] font-body text-[0.95rem] font-light transition-colors ${
                     item.emphasis ? "text-gold" : "text-charcoal/80 hover:text-gold"
                   }`}
@@ -230,7 +231,7 @@ export default function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
               <Link
                 key={colour.name}
                 href="/colours"
-                onClick={onClose}
+                onClick={onNavigate}
                 className="group flex flex-col items-center gap-[0.65rem] py-2"
               >
                 <div className="mc-tile">
@@ -248,7 +249,7 @@ export default function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
           </div>
           <Link
             href="/get-a-quote"
-            onClick={onClose}
+            onClick={onNavigate}
             className="relative z-10 btn-outline-dark self-center mt-10 mb-4"
           >
             Order Samples
