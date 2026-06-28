@@ -22,6 +22,19 @@ const CONFIRMATIONS: Record<string, string> = {
     "Thank you for your interest in MONOCEM training. A member of our team will be in touch within 1–2 business days with available dates.",
 };
 
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function sameOriginHost(request: NextRequest) {
+  const host = request.headers.get("host");
+  const candidate = request.headers.get("origin") || request.headers.get("referer");
+  if (!host || !candidate) return false;
+  try {
+    return new URL(candidate).host === host;
+  } catch {
+    return false;
+  }
+}
+
 function escapeHtml(value: string) {
   return value
     .replace(/&/g, "&amp;")
@@ -37,12 +50,24 @@ function labelize(key: string) {
 
 export async function POST(request: NextRequest) {
   try {
+    if (!sameOriginHost(request)) {
+      return NextResponse.json({ error: "Invalid request origin" }, { status: 403 });
+    }
+
     const body = await request.json();
-    const { name, email, phone, formType: rawType, ...rest } = body;
+    const { name, email, phone, website, formType: rawType, ...rest } = body;
     const formType = typeof rawType === "string" && rawType in SUBJECTS ? rawType : "quote";
+
+    if (typeof website === "string" && website.trim() !== "") {
+      return NextResponse.json({ success: true, message: "Enquiry received" }, { status: 200 });
+    }
 
     if (!name || !email) {
       return NextResponse.json({ error: "Name and email are required" }, { status: 400 });
+    }
+
+    if (typeof email !== "string" || !EMAIL_REGEX.test(email)) {
+      return NextResponse.json({ error: "Please enter a valid email address" }, { status: 400 });
     }
 
     const enquiry = { formType, name, email, phone, ...rest, timestamp: new Date().toISOString() };

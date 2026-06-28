@@ -15,6 +15,7 @@ export default function TrainingEnquiryForm() {
     email: "",
     phone: "",
     notes: "",
+    website: "",
   });
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
@@ -69,6 +70,16 @@ export default function TrainingEnquiryForm() {
 
           <FadeUp delay={1}>
             <form onSubmit={handleSubmit} className="space-y-6">
+              <input
+                type="text"
+                name="website"
+                value={formData.website}
+                onChange={(e) => setFormData((p) => ({ ...p, website: e.target.value }))}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="absolute -left-[9999px] w-px h-px opacity-0"
+              />
               <div>
                 <label className="section-label block mb-3">Experience Level</label>
                 <div className="flex flex-wrap gap-2" role="group" aria-label="Experience Level">

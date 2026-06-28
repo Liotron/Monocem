@@ -17,6 +17,7 @@ export default function QuoteForm() {
     email: "",
     phone: "",
     notes: "",
+    website: "",
   });
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
@@ -83,6 +84,16 @@ export default function QuoteForm() {
 
           <FadeUp delay={1}>
             <form onSubmit={handleSubmit} className="space-y-6 pb-24 lg:pb-0">
+              <input
+                type="text"
+                name="website"
+                value={formData.website}
+                onChange={(e) => setFormData((p) => ({ ...p, website: e.target.value }))}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="absolute -left-[9999px] w-px h-px opacity-0"
+              />
               {/* Project type */}
               <div>
                 <label className="section-label block mb-3">Project Type</label>
