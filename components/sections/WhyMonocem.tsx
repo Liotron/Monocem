@@ -13,10 +13,10 @@ export default function WhyMonocem() {
           <FadeUp className="mb-10 lg:mb-0 lg:col-start-1 lg:row-start-1 max-w-[480px]">
             <SectionLabel light className="mb-3">Why MONOCEM</SectionLabel>
             <h2 className="font-display font-light text-white text-4xl lg:text-5xl leading-tight tracking-tight mb-4">
-              Crafted to <em className="italic font-light text-white/55">Last Decades.</em>
+              One Team. <em className="italic font-light text-white/55">Start to Finish.</em>
             </h2>
             <p className="font-body font-light text-white/[0.78] text-base leading-relaxed">
-              Engineered for performance. Refined for architecture.
+              We supply the material and train the installers who apply it — one accountable team, not a chain of subcontractors.
             </p>
           </FadeUp>
 
