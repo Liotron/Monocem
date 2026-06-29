@@ -45,10 +45,19 @@ export default function Header() {
     }
   };
 
-  // Clicking a link inside the menu: just hide the menu locally and let the
-  // link's own navigation push its entry on top — the menu's history entry
-  // stays in place underneath so Back returns to the menu first.
-  const handleMenuNavigate = () => setMenuOpen(false);
+  // Clicking a link inside the menu: hide the menu locally and let the
+  // link's own navigation push its entry on top, so Back returns to the
+  // menu first. Next's router skips pushing a new entry when the link's
+  // href matches the current URL (e.g. a Colours swatch while already on
+  // /colours), so we push an equivalent entry ourselves in that case —
+  // otherwise the menu's own entry would still be current after the click,
+  // and a single Back would exit it entirely instead of reopening the menu.
+  const handleMenuNavigate = (href: string) => {
+    if (href === window.location.pathname) {
+      window.history.pushState({ ...window.history.state, [MENU_HISTORY_KEY]: false }, "", href);
+    }
+    setMenuOpen(false);
+  };
 
   return (
     <>
