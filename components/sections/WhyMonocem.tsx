@@ -3,7 +3,7 @@ import SectionLabel from "@/components/ui/SectionLabel";
 import FadeUp from "@/components/ui/FadeUp";
 
 const tags = ["Seamless", "Waterproof", "Durable", "Architectural"];
-const stats = ["15+ Years", "2,400+ Projects", "40+ UK Cities", "5-Year Guarantee"];
+const stats = ["Established Expertise", "Proven Project Delivery", "UK-Wide Coverage", "Guaranteed Workmanship"];
 
 export default function WhyMonocem() {
   return (
