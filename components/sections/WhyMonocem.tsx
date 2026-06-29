@@ -2,7 +2,7 @@ import Image from "next/image";
 import SectionLabel from "@/components/ui/SectionLabel";
 import FadeUp from "@/components/ui/FadeUp";
 
-const tags = ["Seamless", "Waterproof", "Durable", "Architectural"];
+const tags = ["Supply & Install", "Trained Installers", "100+ Colours", "Technical Support"];
 const stats = ["Established Expertise", "Proven Project Delivery", "UK-Wide Coverage", "Guaranteed Workmanship"];
 
 export default function WhyMonocem() {
@@ -37,7 +37,7 @@ export default function WhyMonocem() {
 
           <FadeUp delay={2} className="lg:col-start-1 lg:row-start-2 self-end">
             <div className="flex flex-col sm:flex-row sm:justify-between lg:flex-col lg:justify-start gap-6 sm:gap-8 lg:gap-6 pt-8 border-t border-white/[0.12]">
-              <div className="flex flex-wrap gap-x-[1.1rem] gap-y-2">
+              <div className="grid grid-cols-2 gap-x-[1.1rem] gap-y-2">
                 {tags.map((tag) => (
                   <span key={tag} className="font-body text-[0.72rem] font-medium tracking-[0.12em] uppercase text-white">
                     {tag}
