@@ -6,7 +6,6 @@ import ColourCollection from "@/components/sections/ColourCollection";
 import SampleRequest from "@/components/sections/SampleRequest";
 import ProjectsGallery from "@/components/sections/ProjectsGallery";
 import WhyMonocem from "@/components/sections/WhyMonocem";
-import InstallerSection from "@/components/sections/InstallerSection";
 import QuoteForm from "@/components/sections/QuoteForm";
 import FAQAccordion from "@/components/sections/FAQAccordion";
 
@@ -34,7 +33,6 @@ export default function HomePage() {
       <ProjectsGallery />
       <ColourCollection />
       <SampleRequest />
-      <InstallerSection />
       <QuoteForm />
       <FAQAccordion />
     </>
